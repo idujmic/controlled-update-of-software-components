@@ -1,0 +1,361 @@
+22181:7:version;1:7#4:mode;7:regular;8:response;19610:13:timestamp_end;18:1579267305.5138166^15:timestamp_start;18:1579267305.5014985^7:content;19219:<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog - Microsoft.eShopOnWeb</title>
+    
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/app.css" />
+        <link rel="stylesheet" href="/css/app.component.css" />
+        <link rel="stylesheet" href="/css/shared/components/header/header.css" />
+        <link rel="stylesheet" href="/css/shared/components/identity/identity.css" />
+        <link rel="stylesheet" href="/css/shared/components/pager/pager.css" />
+        <link rel="stylesheet" href="/css/basket/basket.component.css" />
+        <link rel="stylesheet" href="/css/basket/basket-status/basket-status.component.css" />
+        <link rel="stylesheet" href="/css/catalog/catalog.component.css" />
+        <link rel="stylesheet" href="/css/orders/orders.component.css" />
+    
+    
+</head>
+<body>
+    <div class="esh-app-wrapper">
+        <header class="esh-app-header">
+            <div class="container">
+                <article class="row">
+                    <section class="col-lg-7 col-md-6 col-xs-12">
+                        <a href="/">
+                            <img src="/images/brand.png" alt="eShop On Web" />
+                        </a>
+                    </section>
+                        <section class="col-lg-4 col-md-5 col-xs-12">
+        <div class="esh-identity">
+            <form method="post" id="logoutForm" class="navbar-right" action="/Identity/Account/Logout">
+                <section class="esh-identity-section">
+                    <div class="esh-identity-name">demouser@microsoft.com</div>
+                    <img class="esh-identity-image" src="/images/arrow-down.png">
+                </section>
+                <section class="esh-identity-drop">
+                    <a class="esh-identity-item" href="/order/my-orders">
+                        <div class="esh-identity-name esh-identity-name--upper">My orders</div>
+                    </a>
+                    <a class="esh-identity-item" href="/manage/my-account">
+                        <div class="esh-identity-name esh-identity-name--upper">My account</div>
+                    </a>
+                    <a class="esh-identity-item"
+                       href="javascript:document.getElementById('logoutForm').submit()">
+                        <div class="esh-identity-name esh-identity-name--upper">Log Out</div>
+                        <img class="esh-identity-image" src="/images/logout.png">
+                    </a>
+                </section>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+        </div>
+    </section>
+    <section class="col-lg-1 col-xs-12">
+        
+
+<a class="esh-basketstatus" href="/Basket">
+        <div class="esh-basketstatus-image">
+            <img src="/images/cart.png" />
+        </div>
+        <div class="esh-basketstatus-badge">
+            0
+        </div>
+</a>
+
+    </section>
+
+                </article>
+            </div>
+        </header>
+        <section class="esh-catalog-hero">
+    <div class="container">
+        <img class="esh-catalog-title" src="/images/main_banner_text.png" />
+    </div>
+</section>
+<section class="esh-catalog-filters">
+    <div class="container">
+        <form method="get">
+            <label class="esh-catalog-label" data-title="brand">
+                <select class="esh-catalog-filter" id="CatalogModel_BrandFilterApplied" name="CatalogModel.BrandFilterApplied"><option>All</option>
+<option value="1">Azure</option>
+<option value="2">.NET</option>
+<option value="3">Visual Studio</option>
+<option value="4">SQL Server</option>
+<option value="5">Other</option>
+</select>
+            </label>
+            <label class="esh-catalog-label" data-title="type">
+                <select class="esh-catalog-filter" id="CatalogModel_TypesFilterApplied" name="CatalogModel.TypesFilterApplied"><option>All</option>
+<option value="1">Mug</option>
+<option value="2">T-Shirt</option>
+<option value="3">Sheet</option>
+<option value="4">USB Memory Stick</option>
+</select>
+            </label>
+            <input class="esh-catalog-send" type="image" src="images/arrow-right.svg" />
+        </form>
+    </div>
+</section>
+<div class="container">
+        
+<div class="esh-pager">
+	<div class="container-fluid">
+		<article class="esh-pager-wrapper row">
+			<nav>
+				<div class="col-md-2 col-xs-12">
+					<a class="esh-pager-item-left esh-pager-item--navigable esh-pager-item is-disabled" id="Previous" aria-label="Previous" href="/?pageid=-1">
+						Previous
+					</a>
+				</div>
+				
+				<div class="col-md-8 col-xs-12">
+					<span class="esh-pager-item">
+						Showing 10 of 12 products - Page 1 - 2
+					</span>
+				</div>
+		        
+				<div class="col-md-2 col-xs-12">
+					<a class="esh-pager-item-right esh-pager-item--navigable esh-pager-item " id="Next" aria-label="Next" href="/?pageid=1">
+						Next
+					</a>
+				</div>
+			</nav>
+		</article>
+	</div>
+</div>
+
+
+        <div class="esh-catalog-items row">
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/1.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>.NET Bot Black Sweatshirt</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>19.50</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="1" />
+    <input type="hidden" name="name" id="catalogItem_Name" value=".NET Bot Black Sweatshirt" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/1.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="19.50" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/2.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>.NET Black &amp; White Mug</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>8.50</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="2" />
+    <input type="hidden" name="name" id="catalogItem_Name" value=".NET Black &amp; White Mug" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/2.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="8.50" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/3.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>Prism White T-Shirt</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>12.00</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="3" />
+    <input type="hidden" name="name" id="catalogItem_Name" value="Prism White T-Shirt" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/3.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="12.00" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/4.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>.NET Foundation Sweatshirt</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>12.00</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="4" />
+    <input type="hidden" name="name" id="catalogItem_Name" value=".NET Foundation Sweatshirt" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/4.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="12.00" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/5.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>Roslyn Red Sheet</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>8.50</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="5" />
+    <input type="hidden" name="name" id="catalogItem_Name" value="Roslyn Red Sheet" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/5.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="8.50" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/6.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>.NET Blue Sweatshirt</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>12.00</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="6" />
+    <input type="hidden" name="name" id="catalogItem_Name" value=".NET Blue Sweatshirt" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/6.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="12.00" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/7.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>Roslyn Red T-Shirt</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>12.00</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="7" />
+    <input type="hidden" name="name" id="catalogItem_Name" value="Roslyn Red T-Shirt" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/7.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="12.00" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/8.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>Kudu Purple Sweatshirt</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>8.50</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="8" />
+    <input type="hidden" name="name" id="catalogItem_Name" value="Kudu Purple Sweatshirt" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/8.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="8.50" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/9.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>Cup&lt;T&gt; White Mug</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>12.00</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="9" />
+    <input type="hidden" name="name" id="catalogItem_Name" value="Cup&lt;T&gt; White Mug" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/9.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="12.00" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+                <div class="esh-catalog-item col-md-4">
+                    
+<form method="post" action="/Basket">
+    <img class="esh-catalog-thumbnail" src="/images/products/10.png" />
+    <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+    <div class="esh-catalog-name">
+        <span>.NET Foundation Sheet</span>
+    </div>
+    <div class="esh-catalog-price">
+        <span>12.00</span>
+    </div>
+    <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="10" />
+    <input type="hidden" name="name" id="catalogItem_Name" value=".NET Foundation Sheet" />
+    <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/10.png" />
+    <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="12.00" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8C1GemE0BmdNrCda7gMYFRKcjx7ESx5BGod2CBh31deXnDqB3Ve94-S1a2PmWKT1XaO7hTNg8TuzkuyTtQnpTcp5dLd-dgRaMp5RSnZGyvlzlf5j5wjSNES7RqnexKx1kLfib9epwgMkvjFX6I5joH-Gt7UjYKlS_1ZxwgeEfLYdieR3URXNrsDmvZtKkmXmtw" /></form>
+
+                </div>
+        </div>
+        
+<div class="esh-pager">
+	<div class="container-fluid">
+		<article class="esh-pager-wrapper row">
+			<nav>
+				<div class="col-md-2 col-xs-12">
+					<a class="esh-pager-item-left esh-pager-item--navigable esh-pager-item is-disabled" id="Previous" aria-label="Previous" href="/?pageid=-1">
+						Previous
+					</a>
+				</div>
+				
+				<div class="col-md-8 col-xs-12">
+					<span class="esh-pager-item">
+						Showing 10 of 12 products - Page 1 - 2
+					</span>
+				</div>
+		        
+				<div class="col-md-2 col-xs-12">
+					<a class="esh-pager-item-right esh-pager-item--navigable esh-pager-item " id="Next" aria-label="Next" href="/?pageid=1">
+						Next
+					</a>
+				</div>
+			</nav>
+		</article>
+	</div>
+</div>
+
+
+</div>
+
+        <footer class="esh-app-footer footer">
+            <div class="container">
+                <article class="row">
+                    <section class="col-sm-6"></section>
+                    <section class="col-sm-6">
+                        <div class="esh-app-footer-text hidden-xs"> e-ShopOnWeb. All rights reserved </div>
+                    </section>
+                </article>
+            </div>
+        </footer>
+    </div>
+    
+        <script src="/lib/jquery/jquery.js"></script>
+        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/js/site.js?v=Ynfdc1vuMNOWZfqTj4N3SPcebazoGXiIPgtfE-b2TO4"></script>
+    
+    
+    
+</body>
+</html>
+,7:headers;217:40:4:Date,29:Fri, 17 Jan 2020 13:21:44 GMT,]44:12:Content-Type,24:text/html; charset=utf-8,]19:6:Server,7:Kestrel,]39:13:Cache-Control,18:no-cache, no-store,]20:6:Pragma,8:no-cache,]31:17:Transfer-Encoding,7:chunked,]]6:reason;2:OK,11:status_code;3:200#12:http_version;8:HTTP/1.1,}7:request;1607:9:is_replay;5:false!13:timestamp_end;18:1579267304.9237552^15:timestamp_start;17:1579267304.892089^7:content;0:,7:headers;1341:28:4:Host,17:10.129.6.116:5106,]94:10:User-Agent,76:Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0,]87:6:Accept,74:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8,]37:15:Accept-Language,14:en-US,en;q=0.5,]36:15:Accept-Encoding,13:gzip, deflate,]61:7:Referer,47:http://10.129.6.116:5106/Identity/Account/Login,]10:3:DNT,1:1,]28:10:Connection,10:keep-alive,]886:6:Cookie,872:.AspNetCore.Antiforgery.9TtSrW0hzOs=CfDJ8C1GemE0BmdNrCda7gMYFRL5qhS3pgjiq86OnfsAosNUXCxqAIDr5-VZKeBblCY99TQMpSJVS2ivw44SlVDqnhKcK_dL7Tp0TPy4Z3_REfa70EkM9Pg1AotjKCNUh79Kn3RSbW5PuCgjXiWOevuzjeM; .AspNetCore.Identity.Application=CfDJ8C1GemE0BmdNrCda7gMYFRIOCVAOnzukaTO7C_EZAQVt4kqhJEu7whhZbG60-GCA3QdE4maXZ-zbVf5oOc84w0JkD5YXPRP7K290VVFk_qN7DSnEHvbHKCX2ce9Bbcr3kksznof0Zl0Fan7b5n0mCZSt8WRNmVC0Nrop_7Z2I7iDnaD6J8qUr3Nsqvc-YY9UrksbdtgSo5LiUIKDpTqDZEegAajM9xBnvAfOoePFKJ2kJsqbdY1HB48gqpjTYqxfBj_ME_O7YhQqRBoqZpAo672Eeiaf4uLedNEFo4dJZzQNz4ZGGX5O-wlYs7rj3k3Sq_De72RJ8IvqGG3EptH1QAqinJb3nDsV_j7EA2a_JSEyYqDcVeE10-3h5IV5j7RMRpyPy9Al5Dm30kovuyv9tk2n0AjoppW8oLuGsK2-5XoFMYKHNnJkW90bZdwKOtY6DWFGrGknJqREppVC5wE9mii-yomLUnNyhy8ztAyaiD1uI73cQ9_cJhbu2u1hj04HguKsnLsxjAcTwXN_mGOVZA1-yL0-0W4y_I8HOCkB_VMfyd1IszoG3t-ubBh43D6uRX7p4nPIDD548ZBopVL4JIEDWuPuTEKmnF7DVCLOxQnBWdCV655OExOgkBeNgDKuIQ,]33:25:Upgrade-Insecure-Requests,1:1,]]12:http_version;8:HTTP/1.1,4:path;1:/,4:port;4:5106#4:host;12:10.129.6.116,6:scheme;4:http,6:method;3:GET,17:first_line_format;8:relative;}8:metadata;0:}6:marked;5:false!11:intercepted;5:false!4:type;4:http;11:server_conn;402:3:via;0:~13:timestamp_end;0:~19:timestamp_tls_setup;0:~19:timestamp_tcp_setup;18:1579267292.8083365^15:timestamp_start;18:1579267292.8079495^11:tls_version;0:~21:alpn_proto_negotiated;0:~3:sni;0:~4:cert;0:~15:tls_established;5:false!14:source_address;24:12:10.129.6.116;5:45573#]10:ip_address;23:12:10.129.6.116;4:5106#]7:address;23:12:10.129.6.116;4:5106#]2:id;36:18e96384-cea4-4d34-9bc3-1f9ea08d50af;}11:client_conn;333:14:tls_extensions;0:~11:tls_version;0:~21:alpn_proto_negotiated;0:~11:cipher_name;0:~3:sni;0:~13:timestamp_end;0:~19:timestamp_tls_setup;0:~15:timestamp_start;17:1579267292.773288^8:mitmcert;0:~10:clientcert;0:~15:tls_established;5:false!7:address;36:16:::ffff:127.0.0.1;5:36512#1:0#1:0#]2:id;36:a511f252-203c-4da8-b1f6-8e880285f586;}5:error;0:~2:id;36:f386ce0f-2d3e-44f1-bdc6-2c5dade0b846;}
