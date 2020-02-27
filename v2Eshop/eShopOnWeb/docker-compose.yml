@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  eshopwebmvc3:
+    image: ${DOCKER_REGISTRY-}eshopwebmvc3
+    build:
+      context: .
+      dockerfile: src/Web/Dockerfile
+  ms-sql-server-1:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Pa55w0rd2019"
+      MSSQL_PID: Express
+    ports:
+    - "1433:1433"
+

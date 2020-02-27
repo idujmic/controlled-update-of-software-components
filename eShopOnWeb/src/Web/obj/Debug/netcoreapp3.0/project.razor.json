@@ -1,0 +1,235 @@
+{
+  "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Web.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 800
+  },
+  "RootNamespace": "Microsoft.eShopWeb.Web",
+  "Documents": [
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Areas/Identity/Pages/Account/Register.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/_ViewImports.cshtml",
+      "TargetPath": "Views/Manage/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/ResetAuthenticator.cshtml",
+      "TargetPath": "Views/Manage/ResetAuthenticator.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/Shared/_product.cshtml",
+      "TargetPath": "Pages/Shared/_product.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/TwoFactorAuthentication.cshtml",
+      "TargetPath": "Views/Manage/TwoFactorAuthentication.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Shared/_CookieConsentPartial.cshtml",
+      "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Areas/Identity/Pages/Account/Login.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/ChangePassword.cshtml",
+      "TargetPath": "Views/Manage/ChangePassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/MyAccount.cshtml",
+      "TargetPath": "Views/Manage/MyAccount.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/ExternalLogins.cshtml",
+      "TargetPath": "Views/Manage/ExternalLogins.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Areas/Identity/Pages/_ViewImports.cshtml",
+      "TargetPath": "Areas/Identity/Pages/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/_ManageNav.cshtml",
+      "TargetPath": "Views/Manage/_ManageNav.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Areas/Identity/Pages/Account/ConfirmEmail.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/ConfirmEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/Basket/Index.cshtml",
+      "TargetPath": "Pages/Basket/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/EnableAuthenticator.cshtml",
+      "TargetPath": "Views/Manage/EnableAuthenticator.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/_Layout.cshtml",
+      "TargetPath": "Views/Manage/_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/Shared/Components/BasketComponent/Default.cshtml",
+      "TargetPath": "Pages/Shared/Components/BasketComponent/Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/SetPassword.cshtml",
+      "TargetPath": "Views/Manage/SetPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/Privacy.cshtml",
+      "TargetPath": "Pages/Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/_ViewStart.cshtml",
+      "TargetPath": "Views/_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Shared/Components/Basket/Default.cshtml",
+      "TargetPath": "Views/Shared/Components/Basket/Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Shared/_LoginPartial.cshtml",
+      "TargetPath": "Views/Shared/_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/Error.cshtml",
+      "TargetPath": "Pages/Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Areas/Identity/Pages/_ViewStart.cshtml",
+      "TargetPath": "Areas/Identity/Pages/_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/Index.cshtml",
+      "TargetPath": "Pages/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Account/LoginWith2fa.cshtml",
+      "TargetPath": "Views/Account/LoginWith2fa.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/Disable2fa.cshtml",
+      "TargetPath": "Views/Manage/Disable2fa.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Account/Lockout.cshtml",
+      "TargetPath": "Views/Account/Lockout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/_StatusMessage.cshtml",
+      "TargetPath": "Views/Manage/_StatusMessage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/_ViewStart.cshtml",
+      "TargetPath": "Pages/_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Areas/Identity/Pages/Account/_ViewImports.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Manage/GenerateRecoveryCodes.cshtml",
+      "TargetPath": "Views/Manage/GenerateRecoveryCodes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Areas/Identity/Pages/Account/Logout.cshtml",
+      "TargetPath": "Areas/Identity/Pages/Account/Logout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Order/Detail.cshtml",
+      "TargetPath": "Views/Order/Detail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Order/MyOrders.cshtml",
+      "TargetPath": "Views/Order/MyOrders.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/Basket/Checkout.cshtml",
+      "TargetPath": "Pages/Basket/Checkout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/Shared/_pagination.cshtml",
+      "TargetPath": "Pages/Shared/_pagination.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Pages/_ViewImports.cshtml",
+      "TargetPath": "Pages/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views/Shared/_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/Shared/Error.cshtml",
+      "TargetPath": "Views/Shared/Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/ivan/ostale_aplikacije/eShopOnWeb/src/Web/Views/_ViewImports.cshtml",
+      "TargetPath": "Views/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
+  "SerializationFormat": "0.2"
+}

@@ -1,0 +1,11 @@
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.deps.json
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/bin/Debug/netstandard2.1/ApplicationCore.dll
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/bin/Debug/netstandard2.1/ApplicationCore.pdb
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csprojAssemblyReference.cache
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.AssemblyInfoInputs.cache
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.AssemblyInfo.cs
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CopyComplete
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb

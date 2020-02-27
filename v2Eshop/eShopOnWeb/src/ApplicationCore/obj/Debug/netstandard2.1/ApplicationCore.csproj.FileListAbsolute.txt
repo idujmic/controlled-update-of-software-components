@@ -1,0 +1,8 @@
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/ApplicationCore/bin/Debug/netstandard2.1/ApplicationCore.deps.json
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/ApplicationCore/bin/Debug/netstandard2.1/ApplicationCore.dll
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/ApplicationCore/bin/Debug/netstandard2.1/ApplicationCore.pdb
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.csprojAssemblyReference.cache
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.AssemblyInfoInputs.cache
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.AssemblyInfo.cs
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.dll
+/home/ivan/ostale_aplikacije/v2Eshop/eShopOnWeb/src/ApplicationCore/obj/Debug/netstandard2.1/ApplicationCore.pdb
