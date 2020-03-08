@@ -9,6 +9,10 @@ import gzip
 from bs4 import BeautifulSoup
 import time
 import socket
+from compare_html import *
+import queue
+import threading
+
 class Writer:
     def __init__(self):
         self.request_flag = True
@@ -44,6 +48,13 @@ class Writer:
         self.host = get_ip_address()
         self.first = True
         self.logged_in_original = False
+        self.has_response_5106 = False
+        self.has_response_5000 = False
+        self.flows = []
+        self.queue_5106 = queue.Queue()
+        self.queue_5000 = queue.Queue()
+        self.cmp = FlowComparator()
+        self.flows_dict = {}
         print(self.host)
     def response(self, flow: http.HTTPFlow) -> None:
         if flow.request.port == 5106:
@@ -56,6 +67,9 @@ class Writer:
                 self.logged_in_original = False
             if str(flow.request.method).lower() == 'get' and str(flow.request.path).lower() == '/basket':
                 self.w8.add(flow)
+            if "png" not in str(flow.request.path) and "avg" not in str(flow.request.path) and "images" not in flow.request.path:
+                print("DODAJEM " + str(flow.request.path))
+                self.flows_dict[str(flow.request.path)].put(flow)
         elif flow.request.port == 5000:
             if self.first_get_flag :
                 self.w4.add(flow)
@@ -90,6 +104,10 @@ class Writer:
                 print(self.token_dict)
                 self.w7.add(flow)
             self.w1.add(flow)
+            if "png" not in str(flow.request.path) and "avg" not in str(flow.request.path) and "images" not in flow.request.path:
+                print("DODAJEM " + str(flow.request.path))
+                self.flows_dict[str(flow.request.path)].put(flow)
+
 
     def request(self, flow: http.HTTPFlow) -> None:
         if flow.request.is_replay:
@@ -166,6 +184,9 @@ class Writer:
             flow1.request.headers['Cookie'] = self.cookie[0]
         if "view" in ctx.master.addons:
             ctx.master.commands.call("view.flows.add", [flow1])
+        if ".png" not in str(flow.request.path) or ".avg" not in str(flow.request.path):
+            q = queue.Queue()
+            self.flows_dict[str(flow.request.path)] = q
         print("Saljem zahtjev na " + str(flow1.request.url))
         ctx.master.commands.call("replay.client", [flow1])
     def done(self):
@@ -244,4 +265,16 @@ def get_ip_address():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8", 80))
     return s.getsockname()[0]
+
+def checker(argument):
+    print("unutra sam")
+    print(argument)
+    threading.Timer(20.0, checker, [argument]).start()
+    for k,v in argument[0].flows_dict.items():
+        if v.qsize() == 2:
+            a = v.get()
+            b = v.get()
+            argument[0].cmp.test(a,b)
+
 addons = [Writer()]
+checker(addons)
