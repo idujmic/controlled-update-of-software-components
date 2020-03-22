@@ -104,6 +104,11 @@ class Writer:
                 print(self.token_dict)
                 self.w7.add(flow)
             self.w1.add(flow)
+            if str(flow.request.method).lower() == 'post' and str(flow.request.path).lower() == '/identity/account/logout':
+                splitted_cookie = self.cookie[0].split(';')
+                self.cookie[0] = splitted_cookie[len(splitted_cookie)-1]
+                flow.request.headers['Cookie'] = self.cookie[0]
+                print("EVO PEPERMINTA " + self.cookie[0])
             if "png" not in str(flow.request.path) and "avg" not in str(flow.request.path) and "images" not in flow.request.path:
                 print("DODAJEM " + str(flow.request.path))
                 self.flows_dict[str(flow.request.path)].put(flow)
@@ -274,7 +279,7 @@ def checker(argument):
         if v.qsize() == 2:
             a = v.get()
             b = v.get()
-            argument[0].cmp.test(a,b)
+            argument[0].cmp.diff_content(a,b)
 
 addons = [Writer()]
 checker(addons)

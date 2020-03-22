@@ -10,119 +10,81 @@ class FlowComparator:
 	def __init__(self):
 		self.cnt = 0
 
-	def compare_content(self, first_content, second_content):
-		first_soup = BeautifulSoup(first_content.response.content, "html.parser")
-		second_soup = BeautifulSoup(second_content.response.content, "html.parser")
-		file_one = open("html_one" + str(self.cnt) + ".html", "w")
-		file_two = open("html_two" + str(self.cnt) + ".html", "w")
-		file_one.write(str(first_content.request.path) + '\n')
-		file_two.write(str(second_content.request.path) + '\n')
-		for line_one, line_two in zip(first_soup, second_soup):
-			file_one.write(str(line_one))
-			file_two.write(str(line_two))
-		self.cnt +=1
-		file_one.close()
-		file_two.close()
-
 	def diff_content(self, first_content, second_content):
 		first_soup = BeautifulSoup(first_content.response.content, "html.parser")
 		second_soup = BeautifulSoup(second_content.response.content, "html.parser")
 		dmp = diff_match_patch()
 		patches = dmp.patch_make(str(first_soup.prettify()), str(second_soup.prettify()))
 		diff = dmp.patch_toText(patches)
-		file = open("diff_" + str(self.cnt) + ".html", "w")
-		file.write(str(diff))
-		file.close()		
-		file_one = open("first_html_" + str(self.cnt), "w")
-		file_two = open("second_html_" + str(self.cnt), "w")
+		if len(str(diff)) != 0:
+			file = open("diff_" + str(self.cnt) + ".html", "w")
+			file.write(first_content.request.path + "\n")
+			file.write(diff)
+			file.close()		
+			first_token_dict = scrape_response_for_verification_token(first_content.response.content)
+			second_token_dict = scrape_response_for_verification_token(second_content.response.content)
+			print(first_token_dict)
+			print(second_token_dict)
+			file = open("diff_" + str(self.cnt) + ".html", "r")
+			flag = False
+			for line in file:
+				token = line[1:len(line)-1]
+				if line[0] == "-":
+					if not check_tokens(first_token_dict, token):
+						first_basket_dict = scrape_basket_items(first_content.response.content)
+						if not check_tokens(first_basket_dict, token):
+							print("ALAAAARM!!!!!! " + str(self.cnt))
+							f = open("alarm" + str(self.cnt), "w")
+							f.write(first_content.request.path + "\n")
+							f.write(str(first_basket_dict) + "\n")
+							f.write(str(first_token_dict) + "\n")
+							f.close()
+				elif line[0] == "+":
+					if not check_tokens(second_token_dict, token):
+						second_basket_dict = scrape_basket_items(second_content.response.content)
+						if not check_tokens(second_basket_dict, token):
+							print("ALAAAARM!!!!!! "+ str(self.cnt))
+							f = open("alarm" + str(self.cnt), "w")
+							f.write(second_content.request.path + "\n")
+							f.write(str(second_basket_dict) + "\n")
+							f.write(str(second_token_dict) + "\n")
+							f.close()
+				else :
+					continue					
+		file_one = open("first_html_" + str(self.cnt) + ".html", "w")
+		file_two = open("second_html_" + str(self.cnt) + ".html", "w")
 		self.cnt +=1
 		file_one.write(str(first_soup.prettify()))
 		file_two.write(str(second_soup.prettify()))
 		file_one.close()
 		file_two.close()
-	
-	def diff_line(self, first_content, second_content):
-		first_soup = BeautifulSoup(first_content.response.content, "html.parser")
-		second_soup = BeautifulSoup(second_content.response.content, "html.parser")
-		file = open("razlike_" + str(self.cnt), "w")
-		line_counter = 0
-		for line_one, line_two in zip(first_soup, second_soup):
-			dmp = diff_match_patch()
-			patches = dmp.patch_make(str(line_one), str(line_two))
-			diff = dmp.patch_toText(patches)
-			if len(str(diff)) != 0:
-				file.write("Razlika u retku " + str(line_counter))
-				file.write("Prvi odgovor: " + str(line_one))
-				file.write("Drugi odogovor: " + str(line_two))
-			line_counter+=1
-		file.close()
-		self.cnt += 1
-
-	def difference(self, first_content, second_content):
-		first_soup = BeautifulSoup(first_content.response.content, "html.parser")
-		second_soup = BeautifulSoup(second_content.response.content, "html.parser")
-		first_tree = first_soup.find_all()
-		second_tree = second_soup.find_all()
-		line_counter = 0
-		has_difference = False
-		for first_tag, second_tag in zip(first_tree, second_tree):
-			dmp = diff_match_patch()
-			patches = dmp.patch_make(str(first_tag), str(second_tag))
-			diff = dmp.patch_toText(patches)
-			if len(str(diff)) != 0:
-				if not has_difference:
-					file = open("diff" + str(self.cnt), "w")
-					has_difference = True
-				file.write("Razlika u retku " + str(line_counter))
-				file.write("Prvi odgovor: " + str(first_tag))
-				file.write("Drugi odogovor: " + str(second_tag))	
-			line_counter+=1	
-		self.cnt +=1
-		file.close()
-
-	def test(self, first_content, second_content):
-		first_content = first_content.response.content
-		second_content = second_content.response.content
-		first_soup = BeautifulSoup(first_content, "html.parser")
-		file = open("test" + str(self.cnt), "w")
-		for a in first_soup:
-			for line in a:
-				file.write("Redak " + str(line) + "\n")
-		file.close()
-		self.cnt+=1
-
-
-	def differ(self, first_content, second_content):
-		sys.stdout = open("differ" + str(self.cnt), "w")
-		first_soup  = BeautifulSoup(first_content.response.content, "html.parser")
-		second_soup = BeautifulSoup(second_content.response.content, "html.parser")
-		d = difflib.Differ()
-		for x,y in zip(first_soup, second_soup):
-			x = str(x).splitlines(keepends=True)
-			y = str(y).splitlines(keepends=True)
-			result = list(d.compare(x, y))
-			pprint(result)
-		self.cnt+=1
-
-
-	def string_compare(self, first_content, second_content):
-		first_content = str(first_content.response.content)
-		second_content = str(second_content.response.content)
-		line_counter = 0
-
-		has_difference = False
-
-		for a,b in zip(first_content, second_content):
-			if a != b:
-				if not has_difference:
-					file = open("diff" + str(self.cnt), "w")
-					has_difference = True
-				file.write("Razlika u retku " + str(line_counter) + "\n")
-				file.write("+ " + a + "\n")
-				file.write("- " + b + "\n")
-			line_counter+=1
-		self.cnt +=1
-
-
-
-
+def scrape_response_for_verification_token(content):
+    soup = BeautifulSoup(content, 'html.parser')
+    input_tags = soup.find_all('input')
+    cnt = 1
+    token_dict = {}
+    for tag in input_tags:
+        if 'name' in tag.attrs:
+            if tag['name'] == '__RequestVerificationToken':
+                token_dict[str(cnt)] = tag['value']
+                cnt +=1
+    return token_dict
+def check_tokens(token_dict, token):
+	in_dict = False
+	for k,v in token_dict.items():
+		if token in v:
+			in_dict = True
+			break
+	if not in_dict:
+		return False
+	return True
+def scrape_basket_items(content):
+    soup = BeautifulSoup(content, 'html.parser')
+    input_tags = soup.find_all('input')
+    items_dict = {}
+    for tag in input_tags:
+        if 'name' in tag.attrs:
+            if 'Items' in tag['name']:
+                items_dict[tag['name']] = tag['value']
+    print("Stvorio sam " + str(items_dict))
+    return items_dict
