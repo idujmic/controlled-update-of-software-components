@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Basket - Microsoft.eShopOnWeb
+  </title>
+  <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="/css/app.css" rel="stylesheet"/>
+  <link href="/css/app.component.css" rel="stylesheet"/>
+  <link href="/css/shared/components/header/header.css" rel="stylesheet"/>
+  <link href="/css/shared/components/identity/identity.css" rel="stylesheet"/>
+  <link href="/css/shared/components/pager/pager.css" rel="stylesheet"/>
+  <link href="/css/basket/basket.component.css" rel="stylesheet"/>
+  <link href="/css/basket/basket-status/basket-status.component.css" rel="stylesheet"/>
+  <link href="/css/catalog/catalog.component.css" rel="stylesheet"/>
+  <link href="/css/orders/orders.component.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="esh-app-wrapper">
+   <header class="esh-app-header">
+    <div class="container">
+     <article class="row">
+      <section class="col-lg-7 col-md-6 col-xs-12">
+       <a href="/">
+        <img alt="eShop On Web" src="/images/brand.png"/>
+       </a>
+      </section>
+      <section class="col-lg-4 col-md-5 col-xs-12">
+       <div class="esh-identity">
+        <form action="/Identity/Account/Logout" class="navbar-right" id="logoutForm" method="post">
+         <section class="esh-identity-section">
+          <div class="esh-identity-name">
+           demouser@microsoft.com
+          </div>
+          <img class="esh-identity-image" src="/images/arrow-down.png"/>
+         </section>
+         <section class="esh-identity-drop">
+          <a class="esh-identity-item" href="/order/my-orders">
+           <div class="esh-identity-name esh-identity-name--upper">
+            My orders
+           </div>
+          </a>
+          <a class="esh-identity-item" href="/manage/my-account">
+           <div class="esh-identity-name esh-identity-name--upper">
+            My account
+           </div>
+          </a>
+          <a class="esh-identity-item" href="javascript:document.getElementById('logoutForm').submit()">
+           <div class="esh-identity-name esh-identity-name--upper">
+            Log Out
+           </div>
+           <img class="esh-identity-image" src="/images/logout.png"/>
+          </a>
+         </section>
+         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IvOXZ-pWNVEiF3s7D13XjHLW9_nlomk02SZ3u_R21ag5H5L9vBe6ic2vZJi_o00D9_VJHoR48xBjeCA6r1kBDi1Ty5EELJ0JnaccGLw3ZXRyUICNVyi2YqrmB8UYiSuQ9hYNJ1pAUNEVZAeO6p0vGnQx-AfnZ15kcxpUCFtFQCKLUSomT8F-wHdlVJLbvX7qQ"/>
+        </form>
+       </div>
+      </section>
+      <section class="col-lg-1 col-xs-12">
+       <a class="esh-basketstatus" href="/Basket">
+        <div class="esh-basketstatus-image">
+         <img src="/images/cart.png">
+         </img>
+        </div>
+        <div class="esh-basketstatus-badge">
+         3
+        </div>
+       </a>
+      </section>
+     </article>
+    </div>
+   </header>
+   <section class="esh-catalog-hero">
+    <div class="container">
+     <img class="esh-catalog-title" src="/images/main_banner_text.png">
+     </img>
+    </div>
+   </section>
+   <div class="container">
+    <form method="post">
+     <article class="esh-basket-titles row">
+      <br/>
+      <section class="esh-basket-title col-xs-3">
+       Product
+      </section>
+      <section class="esh-basket-title col-xs-3 hidden-lg-down">
+      </section>
+      <section class="esh-basket-title col-xs-2">
+       Price
+      </section>
+      <section class="esh-basket-title col-xs-2">
+       Quantity
+      </section>
+      <section class="esh-basket-title col-xs-2">
+       Cost
+      </section>
+     </article>
+     <div class="esh-catalog-items row">
+      <article class="esh-basket-items row">
+       <div>
+        <section class="esh-basket-item esh-basket-item--middle col-lg-3 hidden-lg-down">
+         <img class="esh-basket-image" src="/images/products/1.png"/>
+        </section>
+        <section class="esh-basket-item esh-basket-item--middle col-xs-3">
+         .NET Bot Black Sweatshirt
+        </section>
+        <section class="esh-basket-item esh-basket-item--middle col-xs-2">
+         $ 19.50
+        </section>
+        <section class="esh-basket-item esh-basket-item--middle col-xs-2">
+         <input name="Items[0].Key" type="hidden" value="1162"/>
+         <input class="esh-basket-input" min="0" name="Items[0].Value" type="number" value="3"/>
+        </section>
+        <section class="esh-basket-item esh-basket-item--middle esh-basket-item--mark col-xs-2">
+         $ 58.50
+        </section>
+       </div>
+       <div class="row">
+       </div>
+      </article>
+      <div class="container">
+       <article class="esh-basket-titles esh-basket-titles--clean row">
+        <section class="esh-basket-title col-xs-10">
+        </section>
+        <section class="esh-basket-title col-xs-2">
+         Total
+        </section>
+       </article>
+       <article class="esh-basket-items row">
+        <section class="esh-basket-item col-xs-10">
+        </section>
+        <section class="esh-basket-item esh-basket-item--mark col-xs-2">
+         $ 58.50
+        </section>
+       </article>
+       <article class="esh-basket-items row">
+        <section class="esh-basket-item col-xs-7">
+        </section>
+        <section class="esh-basket-item col-xs-2">
+        </section>
+       </article>
+      </div>
+      <div class="row">
+       <section class="esh-basket-item col-xs-1">
+        <a class="btn esh-basket-checkout text-white" href="/">
+         [ Continue Shopping..]
+        </a>
+       </section>
+       <section class="esh-basket-item col-xs-push-7 col-xs-4">
+        <button class="btn esh-basket-checkout" formaction="/Basket/Update" name="updatebutton" type="submit" value="">
+         [ Update ]
+        </button>
+        <input class="btn esh-basket-checkout" formaction="/Basket/Checkout" name="action" type="submit" value="[ Checkout ]"/>
+       </section>
+      </div>
+     </div>
+     <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IvOXZ-pWNVEiF3s7D13XjHLW9_nlomk02SZ3u_R21ag5H5L9vBe6ic2vZJi_o00D9_VJHoR48xBjeCA6r1kBDi1Ty5EELJ0JnaccGLw3ZXRyUICNVyi2YqrmB8UYiSuQ9hYNJ1pAUNEVZAeO6p0vGnQx-AfnZ15kcxpUCFtFQCKLUSomT8F-wHdlVJLbvX7qQ"/>
+    </form>
+   </div>
+   <footer class="esh-app-footer footer">
+    <div class="container">
+     <article class="row">
+      <section class="col-sm-6">
+      </section>
+      <section class="col-sm-6">
+       <div class="esh-app-footer-text hidden-xs">
+        e-ShopOnWeb. All rights reserved
+       </div>
+      </section>
+     </article>
+    </div>
+   </footer>
+  </div>
+  <script src="/lib/jquery/jquery.js">
+  </script>
+  <script src="/lib/bootstrap/dist/js/bootstrap.js">
+  </script>
+  <script src="/js/site.js?v=Ynfdc1vuMNOWZfqTj4N3SPcebazoGXiIPgtfE-b2TO4">
+  </script>
+ </body>
+</html>

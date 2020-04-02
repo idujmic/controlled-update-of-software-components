@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Profile - Microsoft.eShopOnWeb
+  </title>
+  <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="/css/app.css" rel="stylesheet"/>
+  <link href="/css/app.component.css" rel="stylesheet"/>
+  <link href="/css/shared/components/header/header.css" rel="stylesheet"/>
+  <link href="/css/shared/components/identity/identity.css" rel="stylesheet"/>
+  <link href="/css/shared/components/pager/pager.css" rel="stylesheet"/>
+  <link href="/css/basket/basket.component.css" rel="stylesheet"/>
+  <link href="/css/basket/basket-status/basket-status.component.css" rel="stylesheet"/>
+  <link href="/css/catalog/catalog.component.css" rel="stylesheet"/>
+  <link href="/css/orders/orders.component.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="esh-app-wrapper">
+   <header class="esh-app-header">
+    <div class="container">
+     <article class="row">
+      <section class="col-lg-7 col-md-6 col-xs-12">
+       <a href="/">
+        <img alt="eShop On Web" src="/images/brand.png"/>
+       </a>
+      </section>
+      <section class="col-lg-4 col-md-5 col-xs-12">
+       <div class="esh-identity">
+        <form action="/Identity/Account/Logout" class="navbar-right" id="logoutForm" method="post">
+         <section class="esh-identity-section">
+          <div class="esh-identity-name">
+           demouser@microsoft.com
+          </div>
+          <img class="esh-identity-image" src="/images/arrow-down.png"/>
+         </section>
+         <section class="esh-identity-drop">
+          <a class="esh-identity-item" href="/order/my-orders">
+           <div class="esh-identity-name esh-identity-name--upper">
+            My orders
+           </div>
+          </a>
+          <a class="esh-identity-item" href="/manage/my-account">
+           <div class="esh-identity-name esh-identity-name--upper">
+            My account
+           </div>
+          </a>
+          <a class="esh-identity-item" href="javascript:document.getElementById('logoutForm').submit()">
+           <div class="esh-identity-name esh-identity-name--upper">
+            Log Out
+           </div>
+           <img class="esh-identity-image" src="/images/logout.png"/>
+          </a>
+         </section>
+         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IvOXZ-pWNVEiF3s7D13XjF0isc8BiIvOGXv4-2PDbAEEIq-cAecqhCAyU4nHtd-oQsKXXhDZdnW5N5_Pokazo4sHwA7yR9XeIvwLjGfvmIB9fs_IGJvTseNx3mCnR2GIpdZwIupX-0UqTaCtLCq8jNaE4OR36ZPkxs1tjHebMjbLbLJwYdXx49y6bmRMLtV5g"/>
+        </form>
+       </div>
+      </section>
+      <section class="col-lg-1 col-xs-12">
+       <a class="esh-basketstatus" href="/Basket">
+        <div class="esh-basketstatus-image">
+         <img src="/images/cart.png">
+         </img>
+        </div>
+        <div class="esh-basketstatus-badge">
+         0
+        </div>
+       </a>
+      </section>
+     </article>
+    </div>
+   </header>
+   <h2>
+    Manage your account
+   </h2>
+   <div>
+    <h4>
+     Change your account settings
+    </h4>
+    <hr/>
+    <div class="row">
+     <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+       <li class="active">
+        <a href="/manage/my-account">
+         Profile
+        </a>
+       </li>
+       <li>
+        <a href="/manage/change-password">
+         Password
+        </a>
+       </li>
+       <li>
+        <a href="/manage/two-factor-authentication">
+         Two-factor authentication
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-md-9">
+      <h4>
+       Profile
+      </h4>
+      <div class="row">
+       <div class="col-md-6">
+        <form method="post">
+         <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+          <ul>
+           <li style="display:none">
+           </li>
+          </ul>
+         </div>
+         <div class="form-group">
+          <label for="Username">
+           Username
+          </label>
+          <input class="form-control" disabled="" id="Username" name="Username" type="text" value="demouser@microsoft.com"/>
+         </div>
+         <div class="form-group">
+          <label for="Email">
+           Email
+          </label>
+          <input class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" type="email" value="demouser@microsoft.com"/>
+          <button class="btn btn-link" formaction="/manage/send-verification-email">
+           Send verification email
+          </button>
+          <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true">
+          </span>
+         </div>
+         <div class="form-group">
+          <label for="PhoneNumber">
+           Phone number
+          </label>
+          <input class="form-control" data-val="true" data-val-phone="The Phone number field is not a valid phone number." id="PhoneNumber" name="PhoneNumber" type="tel" value=""/>
+          <span class="text-danger field-validation-valid" data-valmsg-for="PhoneNumber" data-valmsg-replace="true">
+          </span>
+         </div>
+         <button class="btn btn-default" type="submit">
+          Save
+         </button>
+         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IvOXZ-pWNVEiF3s7D13XjF0isc8BiIvOGXv4-2PDbAEEIq-cAecqhCAyU4nHtd-oQsKXXhDZdnW5N5_Pokazo4sHwA7yR9XeIvwLjGfvmIB9fs_IGJvTseNx3mCnR2GIpdZwIupX-0UqTaCtLCq8jNaE4OR36ZPkxs1tjHebMjbLbLJwYdXx49y6bmRMLtV5g"/>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <footer class="esh-app-footer footer">
+    <div class="container">
+     <article class="row">
+      <section class="col-sm-6">
+      </section>
+      <section class="col-sm-6">
+       <div class="esh-app-footer-text hidden-xs">
+        e-ShopOnWeb. All rights reserved
+       </div>
+      </section>
+     </article>
+    </div>
+   </footer>
+  </div>
+  <script src="/lib/jquery/jquery.js">
+  </script>
+  <script src="/lib/bootstrap/dist/js/bootstrap.js">
+  </script>
+  <script src="/js/site.js?v=Ynfdc1vuMNOWZfqTj4N3SPcebazoGXiIPgtfE-b2TO4">
+  </script>
+  <script src="/lib/jquery-validation/dist/jquery.validate.js">
+  </script>
+  <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+  </script>
+ </body>
+</html>

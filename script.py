@@ -54,6 +54,7 @@ class Writer:
         self.queue_5106 = queue.Queue()
         self.queue_5000 = queue.Queue()
         self.cmp = FlowComparator()
+        self.pass_dict = {}
         self.flows_dict = {}
         print(self.host)
     def response(self, flow: http.HTTPFlow) -> None:
@@ -71,6 +72,10 @@ class Writer:
                 print("DODAJEM " + str(flow.request.path))
                 self.flows_dict[str(flow.request.path)].put(flow)
         elif flow.request.port == 5000:
+            if 'Cookie' in flow.request.headers:
+                if len(self.cookie) > 0:
+                    if flow.request.headers["Cookie"] != self.cookie[0]:
+                        flow.request.headers["Cookie"] = self.cookie[0]
             if self.first_get_flag :
                 self.w4.add(flow)
                 print("Zapisujem informacije o prvom get requestu")
@@ -82,10 +87,10 @@ class Writer:
                     line = v.split(';')
                     if len(self.cookie) > 0:
                         self.cookie[0] = line[0] + '; ' + self.cookie[0] 
-                        flow.request.headers['Cookie'] = self.cookie[0]
+                        #flow.request.headers['Cookie'] = self.cookie[0]
                     else:
                         self.cookie.append(line[0])
-                        flow.request.headers['Cookie'] = self.cookie[0]
+                        #flow.request.headers['Cookie'] = self.cookie[0]
                     print('cookie polje je postavljeno na ' + str(self.cookie[0]))
             if str(flow.request.method).lower() == 'get' and str(flow.request.path).lower() == '/basket':
                 self.items_dict = scrape_basket_items(flow.response.content)
@@ -109,6 +114,10 @@ class Writer:
                 self.cookie[0] = splitted_cookie[len(splitted_cookie)-1]
                 flow.request.headers['Cookie'] = self.cookie[0]
                 print("EVO PEPERMINTA " + self.cookie[0])
+            if str(flow.request.method).lower() == 'get' and str(flow.request.path).lower() == '/manage/change-password':
+                self.pass_dict = scrape_basket_verification(flow.response.content)
+                print("Ovo je pass_dict")
+                print(self.pass_dict)
             if "png" not in str(flow.request.path) and "avg" not in str(flow.request.path) and "images" not in flow.request.path:
                 print("DODAJEM " + str(flow.request.path))
                 self.flows_dict[str(flow.request.path)].put(flow)
@@ -183,6 +192,12 @@ class Writer:
             flow1.request.content = gzip.decompress(body)
             self.logged_in = True
             self.logged_in_original = True
+        if str(flow1.request.path).lower() == '/manage/change-password' and str(flow1.request.method).lower() == 'post':
+            pass_body = split_body(flow1.request.get_text())
+            pass_body['__RequestVerificationToken'] = self.pass_dict['__RequestVerificationToken']
+            body = build_body(pass_body)
+            body = gzip.compress(bytes(body, 'utf-8'))
+            flow1.request.content = gzip.decompress(body)
         print("Duljina cookiea je " + str(len(self.cookie)))
         if(len(self.cookie) > 0):
             print('Postavljam cookie na ' + str(self.cookie[0]))
