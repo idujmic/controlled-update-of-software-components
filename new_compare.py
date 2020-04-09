@@ -7,6 +7,11 @@ class FlowComparator:
 		self.cnt = 0
 		self.legal_diffs = legal_diffs
 	def diff_content(self, first_flow, second_flow):
+		if "Content-Type" in first_flow.response.headers:				
+			if "json" in first_flow.response.headers["Content-Type"]:
+				self.diff_json(first_flow, second_flow)
+			else: 
+				self.diff_html(first_flow, second_flow)
 	def diff_html(self, first_flow, second_flow):
 		first_soup = BeautifulSoup(first_flow.response.content, "html.parser")
 		second_soup = BeautifulSoup(second_flow.response.content, "html.parser")
@@ -24,11 +29,9 @@ class FlowComparator:
 				token = line[1:len(line)-1]
 				if line[0] == "-":
 					if not check_tags_for_token(first_diff_tags, token):
-						print("ALAAAARM111111!!!")
 						write_alarm_file(first_flow, diff, token, self.cnt, self.legal_diffs)
 				elif line[0] == "+":
 					if not check_tags_for_token(second_diff_tags, token):
-						print("ALAAAARM22222!!!!")
 						write_alarm_file(second_flow, diff, token, self.cnt, self.legal_diffs)
 				else:
 					continue
@@ -47,46 +50,48 @@ class FlowComparator:
 		patches = dmp.patch_make(str(first_soup.prettify()), str(second_soup.prettify()))
 		diff = dmp.patch_toText(patches)
 		if len(diff) > 0:
-			file = open("colour/colour_diff" + str(self.cnt), "w")
+			file = open("test_new_compare/colour_diff" + str(self.cnt), "w")
 			file.write(first_content.request.path + "\n")
 			file.write(diff)
 			file.close()
-			if "json" in first_content.response.headers["Content-Type"]:
-				first_json_dict=json.loads(str(first_soup))
-				second_json_dict = json.loads(str(second_soup))
-				file = open("colour/colour_diff" + str(self.cnt), "r")
-				for line in file:
-					token = line[1:len(line)-1]
-					if line[0] == "-":
-						check_json_alarm(first_json_dict, token, self.legal_diffs)
-					elif line[1] == "+":
-						check_json_alarm(second_json_dict, token, self.legal_diffs)
-					else:
-						continue
+			first_json_dict=json.loads(str(first_soup))
+			second_json_dict = json.loads(str(second_soup))
+			file = open("test_new_compare/colour_diff" + str(self.cnt), "r")
+			for line in file:
+				token = line[1:len(line)-1]
+				if line[0] == "-":
+					check_json_alarm(first_json_dict, token, self.legal_diffs, diff, self.cnt, first_content)
+				elif line[1] == "+":
+					check_json_alarm(second_json_dict, token, self.legal_diffs, diff, self.cnt, second_content)
+				else:
+					continue
 			file.close()
-		file_one = open("colour/first_html_" + str(self.cnt) + ".html", "w")
-		file_two = open("colour/second_html_" + str(self.cnt) + ".html", "w")
+		file_one = open("test_new_compare/first_html_" + str(self.cnt) + ".html", "w")
+		file_two = open("test_new_compare/second_html_" + str(self.cnt) + ".html", "w")
 		file_one.write(str(first_soup.prettify()))
 		file_two.write(str(second_soup.prettify()))
 		file_one.close()
 		file_two.close()
 		self.cnt +=1
-def check_json_alarm(json_dict, token, legal_diffs):
+def check_json_alarm(json_dict, token, legal_diffs, diff, cnt, flow):
+	flag = False
 	if isinstance(json_dict, dict):
 		if not check_json_for_token(token, json_dict, legal_diffs):
-			print("ALAAAARM1111!!!!")
-			break
+			write_alarm_file(flow, diff, token, cnt, legal_diffs)
+			return
 	else:
 		for dictionary in json_dict:
-			if not check_json_for_token(token, dictionary, legal_diffs):
-				print("ALAAAARM1111!!!")
+			flag = check_json_for_token(token, dictionary, legal_diffs)
+			if flag:
 				break
+		if not flag:
+			write_alarm_file(flow, diff, token, cnt, legal_diffs)
 def check_json_for_token(token, json_dict, legal_diffs):
 	for k,v in json_dict.items():
 		for legal_diff in legal_diffs:
-			if legal_diff in k and token in v:
+			if legal_diff in str(k) and token in str(v):
 				return True
-			elif legal_diff in v and token in k:
+			elif legal_diff in str(v) and token in str(k):
 				return True
 	return False
 def get_legal_diffs_from_response(first_soup, second_soup, legal_diffs):
