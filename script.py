@@ -9,9 +9,10 @@ import gzip
 from bs4 import BeautifulSoup
 import time
 import socket
-from compare_html import *
+#from compare_html import *
 import queue
 import threading
+from new_compare import *
 
 class Writer:
     def __init__(self):
@@ -53,7 +54,7 @@ class Writer:
         self.flows = []
         self.queue_5106 = queue.Queue()
         self.queue_5000 = queue.Queue()
-        self.cmp = FlowComparator()
+        self.cmp = FlowComparator(["RequestVerificationToken", "Items"])
         self.pass_dict = {}
         self.flows_dict = {}
         print(self.host)
@@ -289,7 +290,7 @@ def get_ip_address():
 def checker(argument):
     print("unutra sam")
     print(argument)
-    threading.Timer(20.0, checker, [argument]).start()
+    threading.Timer(30.0, checker, [argument]).start()
     for k,v in argument[0].flows_dict.items():
         if v.qsize() == 2:
             a = v.get()

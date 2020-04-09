@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Checkout Complete - Microsoft.eShopOnWeb
+  </title>
+  <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="/css/app.css" rel="stylesheet"/>
+  <link href="/css/app.component.css" rel="stylesheet"/>
+  <link href="/css/shared/components/header/header.css" rel="stylesheet"/>
+  <link href="/css/shared/components/identity/identity.css" rel="stylesheet"/>
+  <link href="/css/shared/components/pager/pager.css" rel="stylesheet"/>
+  <link href="/css/basket/basket.component.css" rel="stylesheet"/>
+  <link href="/css/basket/basket-status/basket-status.component.css" rel="stylesheet"/>
+  <link href="/css/catalog/catalog.component.css" rel="stylesheet"/>
+  <link href="/css/orders/orders.component.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="esh-app-wrapper">
+   <header class="esh-app-header">
+    <div class="container">
+     <article class="row">
+      <section class="col-lg-7 col-md-6 col-xs-12">
+       <a href="/">
+        <img alt="eShop On Web" src="/images/brand.png"/>
+       </a>
+      </section>
+      <section class="col-lg-4 col-md-5 col-xs-12">
+       <div class="esh-identity">
+        <form action="/Identity/Account/Logout" class="navbar-right" id="logoutForm" method="post">
+         <section class="esh-identity-section">
+          <div class="esh-identity-name">
+           demouser@microsoft.com
+          </div>
+          <img class="esh-identity-image" src="/images/arrow-down.png"/>
+         </section>
+         <section class="esh-identity-drop">
+          <a class="esh-identity-item" href="/order/my-orders">
+           <div class="esh-identity-name esh-identity-name--upper">
+            My orders
+           </div>
+          </a>
+          <a class="esh-identity-item" href="/manage/my-account">
+           <div class="esh-identity-name esh-identity-name--upper">
+            My account
+           </div>
+          </a>
+          <a class="esh-identity-item" href="javascript:document.getElementById('logoutForm').submit()">
+           <div class="esh-identity-name esh-identity-name--upper">
+            Log Out
+           </div>
+           <img class="esh-identity-image" src="/images/logout.png"/>
+          </a>
+         </section>
+         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8LW5VaOy4klLg9LorOFCz-e92uWgjYuLWmlwhhdE41MT9IOOHN6pmMBD6hDMoPTKFZ9cvX7djYADbje3MEdTi6-xofb6StLNUjCWt66TWplPsjgnf2-XVVgjOeRdUCGd5pY_f9vHniU2r7T0-41nSH1x6B96P7XzMUv8hKXMhFAIMeNTg7qRQPmc4gNeQx5Gsw"/>
+        </form>
+       </div>
+      </section>
+      <section class="col-lg-1 col-xs-12">
+       <a class="esh-basketstatus" href="/Basket">
+        <div class="esh-basketstatus-image">
+         <img src="/images/cart.png">
+         </img>
+        </div>
+        <div class="esh-basketstatus-badge">
+         0
+        </div>
+       </a>
+      </section>
+     </article>
+    </div>
+   </header>
+   <section class="esh-catalog-hero">
+    <div class="container">
+     <img class="esh-catalog-title" src="/images/main_banner_text.png">
+     </img>
+    </div>
+   </section>
+   <div class="container">
+    <h1>
+     Thanks for your Order!
+    </h1>
+    <a href="/">
+     Continue Shopping...
+    </a>
+   </div>
+   <footer class="esh-app-footer footer">
+    <div class="container">
+     <article class="row">
+      <section class="col-sm-6">
+      </section>
+      <section class="col-sm-6">
+       <div class="esh-app-footer-text hidden-xs">
+        e-ShopOnWeb. All rights reserved
+       </div>
+      </section>
+     </article>
+    </div>
+   </footer>
+  </div>
+  <script src="/lib/jquery/jquery.js">
+  </script>
+  <script src="/lib/bootstrap/dist/js/bootstrap.js">
+  </script>
+  <script src="/js/site.js?v=Ynfdc1vuMNOWZfqTj4N3SPcebazoGXiIPgtfE-b2TO4">
+  </script>
+ </body>
+</html>
