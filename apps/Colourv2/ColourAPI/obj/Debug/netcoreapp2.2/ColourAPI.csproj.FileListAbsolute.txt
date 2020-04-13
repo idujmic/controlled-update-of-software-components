@@ -1,0 +1,16 @@
+/home/ivan/ostale_aplikacije/ColourAPI/bin/Debug/netcoreapp2.2/appsettings.Development.json
+/home/ivan/ostale_aplikacije/ColourAPI/bin/Debug/netcoreapp2.2/appsettings.json
+/home/ivan/ostale_aplikacije/ColourAPI/bin/Debug/netcoreapp2.2/Properties/launchSettings.json
+/home/ivan/ostale_aplikacije/ColourAPI/bin/Debug/netcoreapp2.2/ColourAPI.deps.json
+/home/ivan/ostale_aplikacije/ColourAPI/bin/Debug/netcoreapp2.2/ColourAPI.runtimeconfig.json
+/home/ivan/ostale_aplikacije/ColourAPI/bin/Debug/netcoreapp2.2/ColourAPI.runtimeconfig.dev.json
+/home/ivan/ostale_aplikacije/ColourAPI/bin/Debug/netcoreapp2.2/ColourAPI.dll
+/home/ivan/ostale_aplikacije/ColourAPI/bin/Debug/netcoreapp2.2/ColourAPI.pdb
+/home/ivan/ostale_aplikacije/ColourAPI/obj/Debug/netcoreapp2.2/ColourAPI.csprojAssemblyReference.cache
+/home/ivan/ostale_aplikacije/ColourAPI/obj/Debug/netcoreapp2.2/ColourAPI.RazorAssemblyInfo.cache
+/home/ivan/ostale_aplikacije/ColourAPI/obj/Debug/netcoreapp2.2/ColourAPI.RazorAssemblyInfo.cs
+/home/ivan/ostale_aplikacije/ColourAPI/obj/Debug/netcoreapp2.2/ColourAPI.AssemblyInfoInputs.cache
+/home/ivan/ostale_aplikacije/ColourAPI/obj/Debug/netcoreapp2.2/ColourAPI.AssemblyInfo.cs
+/home/ivan/ostale_aplikacije/ColourAPI/obj/Debug/netcoreapp2.2/ColourAPI.RazorTargetAssemblyInfo.cache
+/home/ivan/ostale_aplikacije/ColourAPI/obj/Debug/netcoreapp2.2/ColourAPI.dll
+/home/ivan/ostale_aplikacije/ColourAPI/obj/Debug/netcoreapp2.2/ColourAPI.pdb
