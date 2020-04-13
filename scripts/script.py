@@ -114,7 +114,6 @@ class Writer:
                 splitted_cookie = self.cookie[0].split(';')
                 self.cookie[0] = splitted_cookie[len(splitted_cookie)-1]
                 flow.request.headers['Cookie'] = self.cookie[0]
-                print("EVO PEPERMINTA " + self.cookie[0])
             if str(flow.request.method).lower() == 'get' and str(flow.request.path).lower() == '/manage/change-password':
                 self.pass_dict = scrape_basket_verification(flow.response.content)
                 print("Ovo je pass_dict")

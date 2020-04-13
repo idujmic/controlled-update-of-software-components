@@ -19,7 +19,7 @@ class Writer():
 		self.host = get_ip_adress()
 		print(self.host)
 		self.flows_dict = {}
-		self.cmp = FlowComparator([])
+		self.cmp = FlowComparator(["id"])
 	def response(self, flow: http.HTTPFlow) -> None:
 		self.flows_dict[flow.request.path].put(flow)
 	def request(self, flow:http.HTTPFlow) -> None:
@@ -45,7 +45,7 @@ def checker(argument):
         if v.qsize() == 2:
             a = v.get()
             b = v.get()
-            argument[0].cmp.colour_api_diff(a,b)
+            argument[0].cmp.diff_content(a,b)
 
 addons = [Writer()]
 checker(addons)

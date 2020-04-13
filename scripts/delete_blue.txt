@@ -1,0 +1,11 @@
+method = DELETE
+url = http://192.168.8.103:5000/api/Values/Blue
+headers = {
+	Host: http://192.168.8.103:5000
+	Accept: text/plain
+	Accept-Encoding: gzip, deflate
+	Connection: keep-alive
+}  
+payload = {
+	
+}
