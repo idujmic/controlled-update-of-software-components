@@ -120,5 +120,6 @@ def checker(argument):
 			a = v.get()
 			b = v.get()
 			argument[0].cmp.diff_content(a,b)
-addons = [Writer(["RequestVerificationToken", "Items"], 5000, ["RequestVerificationToken", "Items"])]
+#addons = [Writer(["RequestVerificationToken", "Items"], 5000, ["RequestVerificationToken", "Items"])]
+addons = [Writer(["id"], 9000, [])]
 checker(addons)
