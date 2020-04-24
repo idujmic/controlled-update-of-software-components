@@ -11,5 +11,5 @@ new_script.py is a mitmproxy script used for traffic manipulation. When we inter
 new_compare.py compares responses from instances of the application. Some differences can be legal, for example tokens that are generated. Legal differences are specified by the user. When comparing the responses, script uses the diff tool to get the differences. Then it goes through the response and checks if the differences are legal. 
 
 ## Tools
-> Docker
+> Docker  
 > mitmproxy
