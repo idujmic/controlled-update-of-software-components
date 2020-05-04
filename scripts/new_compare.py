@@ -67,8 +67,8 @@ class FlowComparator:
 		diff = dmp.patch_toText(patches)
 		file_one = open(self.path + "first_json_" + str(self.cnt) + ".json", "w")
 		file_two = open(self.path + "second_json_" + str(self.cnt) + ".json", "w")
-		file_one.write(str(first_content.request.headers["redoslijed"]) + "\n")
-		file_two.write(str(second_content.request.headers["redoslijed"]) + "\n")
+		file_one.write(str(first_content.request.headers["ordering_number"]) + "\n")
+		file_two.write(str(second_content.request.headers["ordering_number"]) + "\n")
 		file_one.write(str(first_content.request.path) + "\n")
 		file_two.write(str(second_content.request.path) + "\n")
 		file_one.write(str(first_soup.prettify()))
@@ -77,25 +77,43 @@ class FlowComparator:
 		file_two.close()
 		first_json_dict = json.loads(first_content.response.get_text())
 		second_json_dict = json.loads(second_content.response.get_text())
-		json_compare(first_json_dict, second_json_dict, self.path, self.cnt)
+		json_compare(first_json_dict, second_json_dict, self.path, first_content.request.path)
 		if path.exists(self.path + "json_diff"+ str(self.cnt)):
 			file = open(self.path + "json_diff" + str(self.cnt))
-			tokens = []
+			tokens_first = {}
+			tokens_second = {}
 			for line in file:
 				if line[0] == "-":
-					token = line[1:].split("=")[0]
-					tokens.append(token)
+					splited_line = line.rstrip()[1:].split("=")
+					token = splited_line[0]
+					value = splited_line[1]
+					if token in tokens_first:
+						tokens_first[token].append(value)
+					else:
+						tokens_first[token] = [value]
+				elif line[0] == "+":
+					splited_line = line.rstrip()[1:].split("=")
+					token = splited_line[0]
+					value = splited_line[1]
+					if token in tokens_second:
+						tokens_second[token].append(value)
+					else:
+						tokens_second[token] = [value]
 				else:
 					continue
 			legal = False
-			illegal_tokens = []
-			for token in tokens:
-				for diff in self.legal_diffs:
-					if diff in token:
-						legal = True
-				if not legal:
-					write_alarm_file(first_content, tokens, tokens, self.cnt, self.legal_diffs, self.path)
-				legal = False
+			illegal_diffs = []
+			if tokens_first != tokens_second:
+				for k,v in tokens_first.items():
+					for diff in self.legal_diffs:
+						if diff in k:
+							legal = True
+					if not legal:
+						illegal_diffs.append(k)
+					legal = False
+			if len(illegal_diffs) > 0:
+				write_alarm_file(first_content, tokens, illegal_diffs, self.cnt, self.legal_diffs, self.path)
+
 					
 
 			#file = open("odoo/test_v1/json_diff" + str(self.cnt), "w")
@@ -116,10 +134,11 @@ class FlowComparator:
 		file_two.close()
 		self.cnt +=1
 
-def json_compare(first_json_dict, second_json_dict, path, cnt):
+def json_compare(first_json_dict, second_json_dict, path, cnt, request_path):
 	diffs = []
 	if first_json_dict != second_json_dict:
 		file = open(path + "json_diff" + str(cnt), "w")
+		file.write(request_path+ "\n")
 		if first_json_dict.keys() == second_json_dict.keys():
 			file.write("JSON objekti imaju iste ključeve\n")
 		else:
