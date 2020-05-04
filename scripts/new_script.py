@@ -116,6 +116,24 @@ def checker(argument):
 			a = v.get()
 			b = v.get()
 			argument[0].cmp.diff_content(a,b)
-addons = [Writer(["csrf_token", "session_info"], 8070, ["csrf_token"], "localhost", "odoo/test_v3/")]
+def read_config_file(path):
+	config_file = open(path, "r")
+	legal_diffs = []
+	tokens_for_scraping = []
+	for line in config_file:
+		if line[0] == ":":
+			token = line[1:].rstrip()
+			legal_diffs.append(token)
+		elif line[0] == "+":
+			token = line[1:].rstrip()
+			tokens_for_scraping.append(token)
+		else:
+			continue
+	config_file.close()
+	return legal_diffs, tokens_for_scraping
+legal_diffs,tokens_for_scraping = read_config_file("odoo_config.txt")
+print(legal_diffs)
+print(tokens_for_scraping)
+addons = [Writer(legal_diffs, 8070, tokens_for_scraping, "localhost", "odoo/test_v4/")]
 #addons = [Writer(["id"], 9000, [])]
 checker(addons)
