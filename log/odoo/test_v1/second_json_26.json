@@ -1,0 +1,5 @@
+{"result": [{"tooltip_planner": "
+<p>
+ Plan your sales strategy: objectives, leads, KPIs, and much more!\n            \n
+</p>
+", "write_date": "2020-04-23 10:59:07", "name": "Sales strategy planner", "active": true, "planner_application": "planner_crm", "write_uid": [1, "Administrator"], "create_uid": [1, "Administrator"], "create_date": "2020-04-23 10:59:07", "display_name": "Sales strategy planner", "id": 1, "data": false, "menu_id": [109, "CRM"], "progress": 0, "view_id": [362, "crm_planner"], "__last_update": "2020-04-23 10:59:07"}], "id": 847775549, "jsonrpc": "2.0"}

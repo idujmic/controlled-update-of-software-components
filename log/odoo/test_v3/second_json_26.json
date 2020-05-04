@@ -1,0 +1,6 @@
+/web/dataset/call_kw/web.planner/search_read
+{"jsonrpc": "2.0", "id": 460907865, "result": [{"create_uid": [1, "Administrator"], "menu_id": [109, "CRM"], "create_date": "2020-05-01 14:50:42", "planner_application": "planner_crm", "name": "Sales strategy planner", "write_date": "2020-05-01 14:50:42", "data": false, "view_id": [362, "crm_planner"], "tooltip_planner": "
+<p>
+ Plan your sales strategy: objectives, leads, KPIs, and much more!\n            \n
+</p>
+", "display_name": "Sales strategy planner", "write_uid": [1, "Administrator"], "progress": 0, "active": true, "id": 1, "__last_update": "2020-05-01 14:50:42"}]}

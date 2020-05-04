@@ -15,21 +15,19 @@ from new_compare import *
 import urllib.parse
 
 class Writer:
-	def __init__(self, legal_diffs, port, tokens_for_scraping):
-		self.cmp = FlowComparator(legal_diffs)
+	def __init__(self, legal_diffs, port, tokens_for_scraping, host, path):
+		self.cmp = FlowComparator(legal_diffs, path)
 		self.token_dict = {}
 		self.cookie = ""
 		self.flows_dict = {}
-		self.host = get_ip_address()
+		self.host = host
 		print(self.host)
 		self.port = port
 		self.tokens_for_scraping = tokens_for_scraping
 	def response(self, flow: http.HTTPFlow) -> None:
 		if "png" not in str(flow.request.path) and "avg" not in str(flow.request.path) and "images" not in str(flow.request.path):
 			if str(self.host) == str(flow.request.host):
-				print("Dodajem "+ str(flow.request.path))
 				self.flows_dict[flow.request.path].put(flow)
-				print(self.flows_dict)
 		if flow.request.port == self.port:
 			if "Set-Cookie" in flow.response.headers:
 				splitted_cookie = flow.response.headers["Set-Cookie"].split(";")
@@ -37,9 +35,10 @@ class Writer:
 			if flow.request.method.lower() == "get":
 				if "Content-Type" in flow.response.headers:
 					if "html" in flow.response.headers["Content-Type"]:
-						self.token_dict = scrape_response_for_tokens(flow.response.content, self.tokens_for_scraping)
+						token_dict, has_token = scrape_response_for_tokens(flow.response.content, self.tokens_for_scraping)
+						if has_token:
+							self.token_dict = token_dict
 			if "logout" in flow.request.path.lower() and flow.request.method.lower() == "post":
-				print("Praznim cookie")
 				self.cookie = ""
 	def request(self, flow: http.HTTPFlow) -> None:
 		if flow.request.is_replay:
@@ -51,21 +50,19 @@ class Writer:
 		if flow.request.method.lower() == 'post':
 			request_body = flow.request.get_text()
 			if len(request_body) > 0:
-				body_dict = split_body(request_body)
-				print(body_dict)
-				print(self.token_dict)
-				for k1,v1 in body_dict.items():
-					for k2,v2 in self.token_dict.items():
-						k1_compared = k1
-						if "%" in k1:
-							k1_compared = urllib.parse.unquote(k1)
-							print(k1_compared)
-						if k2 in k1_compared:
-								body_dict[k1] = v2
-				print(body_dict)
-				body = build_body(body_dict)
-				body = gzip.compress(bytes(body, 'utf-8'))
-				flow_copy.request.content = gzip.decompress(body)
+				if "Content-Type" in flow.request.headers:
+					if "json" not in flow.request.headers["Content-Type"]:
+						body_dict = split_body(request_body)
+						for k1,v1 in body_dict.items():
+							for k2,v2 in self.token_dict.items():
+								k1_compared = k1
+								if "%" in k1:
+									k1_compared = urllib.parse.unquote(k1)
+								if k2 in k1_compared:
+										body_dict[k1] = v2
+						body = build_body(body_dict)
+						body = gzip.compress(bytes(body, 'utf-8'))
+						flow_copy.request.content = gzip.decompress(body)
 		if 'Cookie' in flow.request.headers:
 			flow_copy.request.headers["Cookie"] = self.cookie
 		if "view" in ctx.master.addons:
@@ -87,7 +84,7 @@ def scrape_response_for_tokens(response, tokens):
 				for token in tokens:
 					if token in v:
 						token_dict[v] = t.attrs["value"]
-	return token_dict			
+	return token_dict, bool(token_dict)				
 def split_body(body):
 	body_dictionary = {}
 	first_split = body.split("&")
@@ -111,15 +108,14 @@ def build_body(body_dictionary):
 	body += temp[size-1]
 	return body
 def checker(argument):
-	print("unutra sam")
 	print(argument)
-	threading.Timer(10.0, checker, [argument]).start()
+	threading.Timer(45.0, checker, [argument]).start()
 	for k,v in argument[0].flows_dict.items():
 		if v.qsize() % 2 == 0  and v.qsize() > 0:
-			print("Usporedujem " + str(k))
+			#print("Usporedujem " + str(k))
 			a = v.get()
 			b = v.get()
 			argument[0].cmp.diff_content(a,b)
-#addons = [Writer(["RequestVerificationToken", "Items"], 5000, ["RequestVerificationToken", "Items"])]
-addons = [Writer(["id"], 9000, [])]
+addons = [Writer(["csrf_token", "session_info"], 8070, ["csrf_token"], "localhost", "odoo/test_v3/")]
+#addons = [Writer(["id"], 9000, [])]
 checker(addons)

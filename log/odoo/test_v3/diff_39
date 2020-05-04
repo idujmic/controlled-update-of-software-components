@@ -1,0 +1,38 @@
+/web
+@@ -429,48 +429,48 @@
+ n: %22
+-e3abb919d6ca6065e
++5777ddb
+ 05
+-4
+ 27
+-6e5c5d585d72896185
++f53919e5c918e338275ecb045fabe
+ o%22,%0A
+@@ -567,285 +567,211 @@
+ = %7B%22
+-currencies%22: %7B%221%22: %7B%22position%22: %22after%22, %22symbol%22: %22%5Cu20ac%22, %22digits%22: %5B69, 2%5D%7D, %223%22: %7B%22position%22: %22before%22, %22symbol%22: %22$%22, %22digits%22: %5B69, 2%5D%7D%7D, %22session_id%22: %2226e53a5ba201f046e6288971a1e1ae1dc761ed27%22, %22is_superuser%22: true, %22user_companies%22: false, %22uid%22: 1, %22is_system%22: true
++partner_id%22: 3, %22web_tours%22: %5B%5D, %22is_system%22: true, %22company_id%22: 1, %22is_superuser%22: true, %22uid%22: 1, %22session_id%22: %22a5b685b66d71e5c43d6a6180df60dac91a9c4cbf%22, %22username%22: %22admin%22, %22name%22: %22Administrator%22
+ , %22w
+@@ -828,95 +828,176 @@
+ %22, %22
+-username%22: %22admin%22, %22server_version%22: %2211.0-20200417%22, %22company_id%22: 1, %22partner_id%22: 3
++currencies%22: %7B%221%22: %7B%22position%22: %22after%22, %22digits%22: %5B69, 2%5D, %22symbol%22: %22%5Cu20ac%22%7D, %223%22: %7B%22position%22: %22before%22, %22digits%22: %5B69, 2%5D, %22symbol%22: %22$%22%7D%7D, %22user_companies%22: false
+ , %22u
+@@ -1011,16 +1011,26 @@
+ text%22: %7B
++%22uid%22: 1, 
+ %22lang%22: 
+@@ -1037,26 +1037,16 @@
+ %22en_US%22,
+- %22uid%22: 1,
+  %22tz%22: %22
+@@ -1065,37 +1065,47 @@
+ els%22%7D, %22
+-name%22: %22Administrator
++server_version%22: %2211.0-20200417
+ %22, %22serv
+@@ -1148,33 +1148,16 @@
+ , 0, %22%22%5D
+-, %22web_tours%22: %5B%5D
+ %7D;%0A  %3C/s

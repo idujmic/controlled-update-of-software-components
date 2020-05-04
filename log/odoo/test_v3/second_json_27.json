@@ -1,0 +1,2 @@
+/web/dataset/call_kw/res.users/activity_user_count
+{"jsonrpc": "2.0", "id": 631022994, "result": [{"today_count": 2, "model": "crm.lead", "planned_count": 8, "overdue_count": 4, "icon": "/crm/static/description/icon.png", "name": "Lead/Opportunity", "total_count": 6}]}

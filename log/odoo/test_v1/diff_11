@@ -1,0 +1,46 @@
+/web
+@@ -415,48 +415,48 @@
+ n: %22
+-0da1bad88e3bfd3cad1a67cf5d9244e6e0a75915
++1d2a7d06c2e5a4b45fb5281ff335163737cf4c07
+ o%22,%0A
+@@ -552,182 +552,8 @@
+  = %7B
+-%22session_id%22: %22b47e55fbacde78bed14add2f6d88e52b6fdbcb7f%22, %22is_superuser%22: true, %22is_system%22: true, %22partner_id%22: 3, %22web.base.url%22: %22http://localhost:8069%22, %22web_tours%22: %5B%5D, 
+ %22ser
+@@ -605,87 +605,55 @@
+ , %22u
+-ser_companies%22: false, %22u
++id%22: 1, %22partner_
+ id%22: 
+-1, %22db%22: %22odoo%22, %22server_version%22: %2211.0-20200417
++3, %22name%22: %22Administrator
+ %22, %22
+@@ -672,35 +672,16 @@
+  %7B%221%22: %7B
+-%22digits%22: %5B69, 2%5D, 
+ %22positio
+@@ -715,17 +715,10 @@
+ 0ac%22
+-%7D
+ , 
+-%223%22: %7B
+ %22dig
+@@ -730,18 +730,25 @@
+  %5B69, 2%5D
++%7D
+ , 
++%223%22: %7B
+ %22positio
+@@ -778,102 +778,300 @@
+  %22$%22
+-%7D%7D, %22username%22: %22admin%22, %22name%22: %22Administrator%22, %22user_context%22: %7B%22lang%22: %22en_US%22, %22uid%22: 1, 
++, %22digits%22: %5B69, 2%5D%7D%7D, %22db%22: %22odoo%22, %22company_id%22: 1, %22session_id%22: %22a4ca021b810a7e3ef4170907211f5b8bf36d5972%22, %22server_version%22: %2211.0-20200417%22, %22user_companies%22: false, %22is_system%22: true, %22is_superuser%22: true, %22username%22: %22admin%22, %22web.base.url%22: %22http://localhost:8069%22, %22user_context%22: %7B
+ %22tz%22
+@@ -1093,26 +1093,53 @@
+ els%22
+-%7D
+ , %22
+-company_id%22: 1
++uid%22: 1, %22lang%22: %22en_US%22%7D, %22web_tours%22: %5B%5D
+ %7D;%0A 

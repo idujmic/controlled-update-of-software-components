@@ -1,0 +1,47 @@
+/web/action/load
+{"result": {"usage": false, "__last_update": "2020-04-28 12:01:55", "src_model": false, "binding_type": "action", "search_view_id": [82, "ir.module.module.list.select"], "view_ids": [], "context": "{'search_default_app':1}", "auto_search": true, "binding_model_id": false, "domain": false, "filter": false, "view_id": false, "limit": 80, "search_view": "{'fields': {'category_id': {'searchable': True, 'string': 'Category', 'company_dependent': False, 'readonly': True, 'sortable': True, 'required': False, 'store': True, 'manual': False, 'change_default': False, 'depends': (), 'relation': 'ir.module.category', 'context': {}, 'type': 'many2one', 'domain': [], 'views': {}}, 'name': {'searchable': True, 'string': 'Technical Name', 'company_dependent': False, 'readonly': True, 'sortable': True, 'required': True, 'manual': False, 'change_default': False, 'depends': (), 'store': True, 'type': 'char', 'translate': False, 'views': {}}}, 'type': 'search', 'name': 'ir.module.module.list.select', 'view_id': 82, 'field_parent': False, 'arch': '
+<search modules\"="" string='\"Search'>
+ \\n
+ <field &quot;required&quot;:="" (\\'name\\',="" (\\'shortdesc\\',="" (\\'summary\\',="" \\'ilike\\',="" \\'|\\',="" filter_domain="\&quot;[\\'|\\'," modifiers='\"{"readonly":' name='\"name\"' self),="" self)]\"="" string='\"Module\"' true,="" true}\"="">
+ </field>
+ \\n
+ <filter 1)]\"="" \\'="\\'," domain="\&quot;[(\\'application\\'," name='\"app\"' string='\"Apps\"'>
+ </filter>
+ \\n
+ <filter 0)]\"="" \\'="\\'," domain="\&quot;[(\\'application\\'," name='\"extra\"' string='\"Extra\"'>
+ </filter>
+ \\n
+ <separator>
+ </separator>
+ \\n
+ <filter [\\'installed\\',="" \\'in\\',="" \\'to="" domain="\&quot;[(\\'state\\'," name='\"installed\"' remove\\'])]\"="" string='\"Installed\"' upgrade\\',="">
+ </filter>
+ \\n
+ <filter [\\'uninstalled\\',="" \\'in\\',="" \\'to="" \\'uninstallable\\',="" domain="\&quot;[(\\'state\\'," install\\'])]\"="" installed\"="" string='\"Not'>
+ </filter>
+ \\n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"category_id\"' true}\"="">
+ </field>
+ \\n
+ <group by\"="" expand='\"0\"' string='\"Group'>
+  \\n
+  <filter context="\&quot;{\\'group_by\\':\\'author\\'}\&quot;/" domain='\"[]\"' string='\"Author\"'>
+   \\n
+   <filter context="\&quot;{\\'group_by\\':\\'category_id\\'}\&quot;/" domain='\"[]\"' string='\"Category\"'>
+    \\n
+   </filter>
+  </filter>
+ </group>
+ \\n
+</search>
+', 'model': 'ir.module.module', 'base_model': 'ir.module.module'}", "id": 31, "res_model": "ir.module.module", "write_date": "2020-04-28 12:01:55", "groups_id": [], "name": "Apps", "display_name": "Apps", "help": "
+<p>
+ <b>
+  No module found!
+ </b>
+</p>
+\n
+<p>
+ You should try other search criteria.
+</p>
+\n            ", "write_uid": [1, "Administrator"], "multi": false, "res_id": 0, "create_date": "2020-04-28 12:01:55", "flags": {}, "type": "ir.actions.act_window", "xml_id": "base.open_module_tree", "create_uid": [1, "Administrator"], "target": "current", "views": [[false, "kanban"], [false, "list"], [false, "form"]], "view_mode": "kanban,list,form"}, "jsonrpc": "2.0", "id": 768811194}

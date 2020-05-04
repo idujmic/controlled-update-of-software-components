@@ -1,0 +1,309 @@
+/web/dataset/call_kw/ir.module.module/load_views
+{"result": {"fields_views": {"form": {"base_model": "ir.module.module", "arch": "
+<form create='\"0\"' edit='\"0\"' string='\"Module\"'>
+ \n
+ <link href='\"/base/static/src/css/description.css\"/' rel='\"stylesheet\"'/>
+ \n
+ <sheet>
+  \n
+  <field class='\"oe_avatar\"' modifiers='\"{"readonly":' name='\"icon_image\"' true}\"="" widget='\"image\"'>
+  </field>
+  \n
+  <div class='\"oe_title\"'>
+   \n
+   <h1>
+    <field modifiers='\"{"readonly":' name='\"shortdesc\"' name\"="" placeholder='\"Module' true}\"="">
+    </field>
+   </h1>
+   \n
+   <h3 class='\"oe_fade\"'>
+    \n                            By
+    <field class='\"oe_inline\"' modifiers='\"{"readonly":' name='\"author\"' name\"="" placeholder='\"Author' true}\"="">
+    </field>
+    \n
+   </h3>
+   \n
+   <div>
+    \n
+    <button &quot;not="" [&quot;uninstalled&quot;]]]}\"="" [[&quot;state&quot;,="" btn-primary\"="" class='\"btn' in&quot;,="" modifiers='\"{"invisible":' name='\"button_immediate_install\"' states='\"uninstalled\"' string='\"Install\"' type='\"object\"'>
+    </button>
+    \n
+    <button &quot;not="" [&quot;installed&quot;]]]}\"="" [[&quot;state&quot;,="" btn-primary\"="" class='\"btn' in&quot;,="" modifiers='\"{"invisible":' name='\"button_immediate_upgrade\"' states='\"installed\"' string='\"Upgrade\"' type='\"object\"'>
+    </button>
+    \n
+    <button &quot;not="" [&quot;installed&quot;]]]}\"="" [[&quot;state&quot;,="" btn-default\"="" class='\"btn' in&quot;,="" modifiers='\"{"invisible":' name='\"button_uninstall_wizard\"' states='\"installed\"' string='\"Uninstall\"' type='\"object\"'>
+    </button>
+    \n
+    <button &quot;not="" [&quot;to="" [[&quot;state&quot;,="" btn-default\"="" class='\"btn' in&quot;,="" modifiers='\"{"invisible":' name='\"button_uninstall_cancel\"' remove&quot;]]]}\"="" remove\"="" states='\"to' string='\"Cancel' type='\"object\"' uninstall\"="">
+    </button>
+    \n
+    <button &quot;not="" [&quot;to="" [[&quot;state&quot;,="" btn-default\"="" class='\"btn' in&quot;,="" modifiers='\"{"invisible":' name='\"button_upgrade_cancel\"' states='\"to' string='\"Cancel' type='\"object\"' upgrade&quot;]]]}\"="" upgrade\"="">
+    </button>
+    \n
+    <button &quot;not="" [&quot;to="" [[&quot;state&quot;,="" btn-default\"="" class='\"btn' in&quot;,="" install&quot;]]]}\"="" install\"="" modifiers='\"{"invisible":' name='\"button_install_cancel\"' states='\"to' string='\"Cancel' type='\"object\"'>
+    </button>
+    \n
+   </div>
+   \n
+  </div>
+  \n
+  <div class='\"oe_clear\"/'>
+   \n
+   <notebook invisible='\"1\"' modifiers='\"{"invisible":' true}\"="">
+    \n
+    <page string='\"Information\"'>
+     \n
+     <group>
+      \n
+      <group>
+       \n
+       <field &quot;='",' &quot;readonly&quot;:="" [[&quot;website&quot;,="" attrs="\&quot;{'invisible':[('website','=',False)]}\&quot;" false]],="" modifiers='\"{"invisible":' name='\"website\"' true}\"="" widget='\"url\"'>
+       </field>
+       \n
+       <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"category_id\"' true}\"="" widget='\"selection\"'>
+       </field>
+       \n
+       <field modifiers='\"{"readonly":' name='\"summary\"' true}\"="">
+       </field>
+       \n
+      </group>
+      \n
+      <group>
+       \n
+       <field &quot;required&quot;:="" modifiers='\"{"readonly":' name='\"name\"' on_change='\"1\"' true,="" true}\"="">
+       </field>
+       \n
+       <field modifiers='\"{"readonly":' name='\"license\"' true}\"="">
+       </field>
+       \n
+       <field modifiers='\"{"readonly":' name='\"installed_version\"' true}\"="">
+       </field>
+       \n
+      </group>
+      \n
+     </group>
+     \n
+    </page>
+    \n
+    <page data\"="" string='\"Technical'>
+     \n
+     <group col='\"4\"'>
+      \n
+      <field modifiers='\"{"readonly":' name='\"demo\"' true}\"="">
+      </field>
+      \n
+      <field modifiers='\"{"readonly":' name='\"application\"' true}\"="">
+      </field>
+      \n
+      <field modifiers='\"{"readonly":' name='\"state\"' on_change='\"1\"' true}\"="">
+      </field>
+      \n
+     </group>
+     \n
+     <group &quot;!='",' &quot;installed&quot;]]}\"="" [[&quot;state&quot;,="" attrs="\&quot;{'invisible':[('state','!=','installed')]}\&quot;" modifiers='\"{"invisible":' string='\"Created' views\"="">
+     </group>
+     \n
+     <p &quot;!='",' &quot;installed&quot;]]}\"="" &quot;not="" [&quot;state&quot;,="" [&quot;views_by_module&quot;,="" [&quot;|&quot;,="" ['|',('views_by_module','not="" [null,="" attrs="\&quot;{'invisible':" class='\"oe_grey\"' false]],="" in&quot;,="" in',[none,false]),('state','!="," installed')]}\"="" modifiers='\"{"invisible":'>
+      -This module does not create views.
+     </p>
+     \n
+     <field modifiers='\"{"readonly":' name='\"views_by_module\"' true}\"="">
+     </field>
+     \n
+     <group string='\"Dependencies\"/'>
+      \n
+      <p &quot;not="" [('dependencies_id','not="" [[&quot;dependencies_id&quot;,="" [null,="" attrs="\&quot;{'invisible':" class='\"oe_grey\"' false]]]}\"="" in&quot;,="" in',[none,false])]}\"="" modifiers='\"{"invisible":'>
+       -This module does not depends on any other module.
+      </p>
+      \n
+      <field modifiers='\"{"readonly":' name='\"dependencies_id\"' true}\"="">
+       \n
+      </field>
+      \n
+      <group string='\"Exclusions\"/'>
+       \n
+       <p &quot;not="" [('exclusion_ids','not="" [[&quot;exclusion_ids&quot;,="" [null,="" attrs="\&quot;{'invisible':" class='\"oe_grey\"' false]]]}\"="" in&quot;,="" in',[none,false])]}\"="" modifiers='\"{"invisible":'>
+        -This module does not exclude any other module.
+       </p>
+       \n
+       <field modifiers='\"{"readonly":' name='\"exclusion_ids\"' true}\"="">
+        \n
+       </field>
+       \n
+      </group>
+     </group>
+    </page>
+    \n
+    <page &quot;!='",' &quot;installed&quot;]]}\"="" [[&quot;state&quot;,="" attrs="\&quot;{'invisible':[('state','!=','installed')]}\&quot;" features\"="" modifiers='\"{"invisible":' string='\"Installed'>
+     \n
+     <group menus\"="" string='\"Created'>
+     </group>
+     \n
+     <p &quot;not="" [('menus_by_module','not="" [[&quot;menus_by_module&quot;,="" [null,="" attrs="\&quot;{'invisible':" class='\"oe_grey\"' false]]]}\"="" in&quot;,="" in',[none,false])]}\"="" modifiers='\"{"invisible":'>
+      -This module does not create menu.
+     </p>
+     \n
+     <field modifiers='\"{"readonly":' name='\"menus_by_module\"' true}\"="">
+     </field>
+     \n
+     <group reports\"="" string='\"Defined'>
+     </group>
+     \n
+     <p &quot;not="" [('reports_by_module','not="" [[&quot;reports_by_module&quot;,="" [null,="" attrs="\&quot;{'invisible':" class='\"oe_grey\"' false]]]}\"="" in&quot;,="" in',[none,false])]}\"="" modifiers='\"{"invisible":'>
+      -This module does not create report.
+     </p>
+     \n
+     <field modifiers='\"{"readonly":' name='\"reports_by_module\"' true}\"="">
+     </field>
+     \n
+    </page>
+    \n
+   </notebook>
+   \n
+   <field class='\"oe_styling_v8\"' modifiers='\"{"readonly":' name='\"description_html\"' true}\"="">
+   </field>
+   \n
+  </div>
+ </sheet>
+ \n
+</form>
+", "name": "ir.module.module.form", "type": "form", "model": "ir.module.module", "view_id": 83, "toolbar": {"action": []}, "fields": {"demo": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "boolean", "readonly": true, "depends": [], "string": "Demo Data", "views": {}}, "license": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "selection", "readonly": true, "depends": [], "string": "License", "views": {}, "selection": [["GPL-2", "GPL Version 2"], ["GPL-2 or any later version", "GPL-2 or later version"], ["GPL-3", "GPL Version 3"], ["GPL-3 or any later version", "GPL-3 or later version"], ["AGPL-3", "Affero GPL-3"], ["LGPL-3", "LGPL Version 3"], ["Other OSI approved licence", "Other OSI Approved Licence"], ["OEEL-1", "Odoo Enterprise Edition License v1.0"], ["OPL-1", "Odoo Proprietary License v1.0"], ["Other proprietary", "Other Proprietary"]]}, "exclusion_ids": {"domain": [], "manual": false, "searchable": true, "required": false, "relation": "ir.module.module.exclusion", "relation_field": "module_id", "change_default": false, "store": true, "sortable": false, "company_dependent": false, "type": "one2many", "readonly": true, "context": {}, "depends": [], "string": "Exclusions", "views": {"tree": {"arch": "
+<tree string='\"Exclusions\"'>
+ \n
+ <field modifiers='\"{}\"/' name='\"name\"' on_change='\"1\"'>
+  \n
+  <field modifiers='\"{"readonly":' name='\"state\"' true}\"="">
+  </field>
+  \n
+ </field>
+</tree>
+\n                            ", "fields": {"name": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": false, "depends": [], "string": "Name", "views": {}}, "state": {"manual": false, "required": false, "searchable": false, "change_default": false, "store": false, "sortable": false, "company_dependent": false, "type": "selection", "readonly": true, "depends": ["exclusion_id.state"], "string": "Status", "views": {}, "selection": [["uninstallable", "Uninstallable"], ["uninstalled", "Not Installed"], ["installed", "Installed"], ["to upgrade", "To be upgraded"], ["to remove", "To be removed"], ["to install", "To be installed"], ["unknown", "Unknown"]]}}}}}, "icon_image": {"manual": false, "required": false, "attachment": false, "searchable": false, "change_default": false, "store": false, "sortable": false, "company_dependent": false, "type": "binary", "readonly": true, "depends": ["icon"], "string": "Icon", "views": {}}, "description_html": {"translate": false, "sanitize_style": false, "manual": false, "searchable": false, "sanitize_tags": true, "required": false, "sanitize_attributes": true, "change_default": false, "store": false, "string": "Description HTML", "sanitize": true, "sortable": false, "company_dependent": false, "type": "html", "readonly": true, "depends": ["name", "description"], "strip_style": false, "strip_classes": false, "views": {}}, "installed_version": {"manual": false, "translate": false, "required": false, "searchable": false, "change_default": false, "store": false, "sortable": false, "company_dependent": false, "type": "char", "readonly": true, "depends": ["name"], "string": "Latest Version", "views": {}}, "state": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "selection", "readonly": true, "depends": [], "string": "Status", "views": {}, "selection": [["uninstallable", "Uninstallable"], ["uninstalled", "Not Installed"], ["installed", "Installed"], ["to upgrade", "To be upgraded"], ["to remove", "To be removed"], ["to install", "To be installed"]]}, "views_by_module": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "text", "readonly": true, "depends": ["name", "state"], "string": "Views", "views": {}}, "shortdesc": {"manual": false, "translate": true, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Module Name", "views": {}}, "dependencies_id": {"domain": [], "manual": false, "searchable": true, "required": false, "relation": "ir.module.module.dependency", "relation_field": "module_id", "change_default": false, "store": true, "sortable": false, "company_dependent": false, "type": "one2many", "readonly": true, "context": {}, "depends": [], "string": "Dependencies", "views": {"tree": {"arch": "
+<tree string='\"Dependencies\"'>
+ \n
+ <field modifiers='\"{}\"/' name='\"name\"' on_change='\"1\"'>
+  \n
+  <field modifiers='\"{"readonly":' name='\"state\"' true}\"="">
+  </field>
+  \n
+ </field>
+</tree>
+\n                            ", "fields": {"name": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": false, "depends": [], "string": "Name", "views": {}}, "state": {"manual": false, "required": false, "searchable": false, "change_default": false, "store": false, "sortable": false, "company_dependent": false, "type": "selection", "readonly": true, "depends": ["depend_id.state"], "string": "Status", "views": {}, "selection": [["uninstallable", "Uninstallable"], ["uninstalled", "Not Installed"], ["installed", "Installed"], ["to upgrade", "To be upgraded"], ["to remove", "To be removed"], ["to install", "To be installed"], ["unknown", "Unknown"]]}}}}}, "reports_by_module": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "text", "readonly": true, "depends": ["name", "state"], "string": "Reports", "views": {}}, "application": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "boolean", "readonly": true, "depends": [], "string": "Application", "views": {}}, "name": {"manual": false, "translate": false, "required": true, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Technical Name", "views": {}}, "category_id": {"domain": [], "searchable": true, "required": false, "relation": "ir.module.category", "manual": false, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "many2one", "readonly": true, "context": {}, "depends": [], "string": "Category", "views": {}}, "summary": {"manual": false, "translate": true, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Summary", "views": {}}, "menus_by_module": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "text", "readonly": true, "depends": ["name", "state"], "string": "Menus", "views": {}}, "author": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Author", "views": {}}, "website": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Website", "views": {}}}, "field_parent": false}, "search": {"base_model": "ir.module.module", "arch": "
+<search modules\"="" string='\"Search'>
+ \n
+ <field &quot;required&quot;:="" 'ilike',="" '|',="" ('name',="" ('shortdesc',="" ('summary',="" filter_domain="\&quot;['|'," modifiers='\"{"readonly":' name='\"name\"' self),="" self)]\"="" string='\"Module\"' true,="" true}\"="">
+ </field>
+ \n
+ <filter '=', 0)]\"/&gt;\n                    &lt;separator/&gt;\n                    &lt;filter name=\"installed\" string=\"Installed\" domain=\"[(' 'in',="" 'to="" ['installed',="" application',="" domain="\&quot;[('application'," name='\"app\"' remove'])]\"="" state',="" string='\"Apps\"' upgrade',="">
+ </filter>
+ \n
+ <filter 'in',="" 'to="" 'uninstallable',="" ['uninstalled',="" domain="\&quot;[('state'," install'])]\"="" installed\"="" string='\"Not'>
+ </filter>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"category_id\"' true}\"="">
+ </field>
+ \n
+ <group by\"="" expand='\"0\"' string='\"Group'>
+  \n
+  <filter context="\&quot;{'group_by':'author'}\&quot;/" domain='\"[]\"' string='\"Author\"'>
+   \n
+   <filter context="\&quot;{'group_by':'category_id'}\&quot;/" domain='\"[]\"' string='\"Category\"'>
+    \n
+   </filter>
+  </filter>
+ </group>
+ \n
+</search>
+", "name": "ir.module.module.list.select", "type": "search", "model": "ir.module.module", "view_id": 82, "fields": {"name": {"manual": false, "translate": false, "required": true, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Technical Name", "views": {}}, "category_id": {"domain": [], "searchable": true, "required": false, "relation": "ir.module.category", "manual": false, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "many2one", "readonly": true, "context": {}, "depends": [], "string": "Category", "views": {}}}, "field_parent": false}, "list": {"base_model": "ir.module.module", "arch": "
+<tree \"="" create='\"false\"' decoration-danger="\&quot;state=='uninstalled'\&quot;" decoration-info="\&quot;state=='to" decoration-muted="\&quot;state=='uninstallable'\&quot;" or="" state="to install" string='\"Apps\"' upgrade'="">
+ \n
+ <field modifiers='\"{"readonly":' name='\"shortdesc\"' true}\"="">
+ </field>
+ \n
+ <field &quot;column_invisible&quot;:="" &quot;readonly&quot;:="" &quot;required&quot;:="" invisible='\"1\"' modifiers='\"{"invisible":' name='\"name\"' on_change='\"1\"' true,="" true}\"="">
+ </field>
+ \n
+ <field modifiers='\"{"readonly":' name='\"author\"' true}\"="">
+ </field>
+ \n
+ <field modifiers='\"{"readonly":' name='\"installed_version\"' true}\"="">
+ </field>
+ \n
+ <field modifiers='\"{"readonly":' name='\"state\"' true}\"="">
+ </field>
+ \n
+ <field &quot;readonly&quot;:="" can_create='\"true\"' can_write='\"true\"' invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"category_id\"' true,="" true}\"="">
+ </field>
+ \n
+</tree>
+", "name": "ir.module.module.tree", "type": "tree", "model": "ir.module.module", "view_id": 84, "toolbar": {"print": [{"write_date": "2020-04-28 12:00:33", "attachment": false, "model": "ir.module.module", "paperformat_id": false, "binding_type": "report", "groups_id": [], "xml_id": "base.ir_module_reference_print", "write_uid": [1, "Administrator"], "report_name": "base.report_irmodulereference", "report_file": "base.report_irmodulereference", "binding_model_id": [58, "Module"], "name": "Technical guide", "attachment_use": false, "id": 34, "create_date": "2020-04-28 12:00:33", "print_report_name": false, "__last_update": "2020-04-28 12:00:33", "string": "Technical guide", "type": "ir.actions.report", "display_name": "Technical guide", "create_uid": [1, "Administrator"], "report_type": "qweb-pdf", "help": false, "multi": false}], "relate": [], "action": [{"write_date": "2020-04-28 12:00:33", "sequence": 5, "binding_type": "action", "state": "code", "crud_model_id": false, "display_name": "Base: Module Immediate Install", "xml_id": "base.action_server_module_immediate_install", "write_uid": [1, "Administrator"], "link_field_id": false, "binding_model_id": [58, "Module"], "model_id": [58, "Module"], "name": "Base: Module Immediate Install", "id": 42, "usage": "ir_actions_server", "fields_lines": [], "create_date": "2020-04-28 12:00:33", "code": "records.button_immediate_install()", "__last_update": "2020-04-28 12:00:33", "string": "Base: Module Immediate Install", "type": "ir.actions.server", "model_name": "ir.module.module", "child_ids": [], "create_uid": [1, "Administrator"], "crud_model_name": false, "help": false}]}, "fields": {"installed_version": {"manual": false, "translate": false, "required": false, "searchable": false, "change_default": false, "store": false, "sortable": false, "company_dependent": false, "type": "char", "readonly": true, "depends": ["name"], "string": "Latest Version", "views": {}}, "state": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "selection", "readonly": true, "depends": [], "string": "Status", "views": {}, "selection": [["uninstallable", "Uninstallable"], ["uninstalled", "Not Installed"], ["installed", "Installed"], ["to upgrade", "To be upgraded"], ["to remove", "To be removed"], ["to install", "To be installed"]]}, "shortdesc": {"manual": false, "translate": true, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Module Name", "views": {}}, "name": {"manual": false, "translate": false, "required": true, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Technical Name", "views": {}}, "category_id": {"domain": [], "searchable": true, "required": false, "relation": "ir.module.category", "manual": false, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "many2one", "readonly": true, "context": {}, "depends": [], "string": "Category", "views": {}}, "author": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Author", "views": {}}}, "field_parent": false}, "kanban": {"base_model": "ir.module.module", "arch": "
+<kanban create='\"false\"'>
+ \n
+ <field modifiers='\"{}\"/' name='\"icon\"'>
+  \n
+  <field &quot;required&quot;:="" modifiers='\"{"readonly":' name='\"name\"' true,="" true}\"="">
+  </field>
+  \n
+  <field modifiers='\"{"readonly":' name='\"state\"' true}\"="">
+  </field>
+  \n
+  <field modifiers='\"{"readonly":' name='\"summary\"' true}\"="">
+  </field>
+  \n
+  <templates>
+   \n
+   <t t-name='\"kanban-box\"'>
+    \n
+    <div class='\"oe_module_vignette' oe_kanban_global_click\"="">
+     \n
+     <t =="installed" \"="" t-set='\"installed\"' t-value='\"record.state.raw_value'>
+     </t>
+     \n
+     <img class='\"oe_module_icon\"/' t-attf-src='\"#{record.icon.value}\"'/>
+     \n
+     <div class='\"oe_module_desc\"' t-att-title='\"record.shortdesc.value\"'>
+      \n
+      <h4 class='\"o_kanban_record_title\"'>
+       <field modifiers='\"{"readonly":' name='\"shortdesc\"' true}\"="">
+       </field>
+      </h4>
+      \n
+      <p class='\"oe_module_name\"'>
+       \n
+       <t t-if='\"record.summary.raw_value\"'>
+        <field modifiers='\"{"readonly":' name='\"summary\"' true}\"="">
+        </field>
+        <br/>
+       </t>
+       \n
+      </p>
+      \n
+      <div class='\"oe_module_action\"'>
+       \n
+       <code invisible='\"1\"' modifiers='\"{"invisible":' true}\"="">
+        <small>
+         <field &quot;required&quot;:="" modifiers='\"{"readonly":' name='\"name\"' true,="" true}\"="">
+         </field>
+        </small>
+       </code>
+       \n
+       <button &quot;not="" [&quot;uninstalled&quot;]]]}\"="" [[&quot;state&quot;,="" btn-primary="" btn-sm\"="" class='\"btn' in&quot;,="" modifiers='\"{"invisible":' name='\"button_immediate_install\"' pull-right="" states='\"uninstalled\"' type='\"object\"'>
+        Install
+       </button>
+       \n
+       <span class='\"pull-right' mr8\"="" t-if='\"installed\"' text-muted="">
+        Installed
+       </span>
+       \n
+      </div>
+      \n
+     </div>
+     \n
+    </div>
+    \n
+   </t>
+   \n
+  </templates>
+  \n
+ </field>
+</kanban>
+", "name": "Apps Kanban", "type": "kanban", "model": "ir.module.module", "view_id": 85, "toolbar": {"print": [{"write_date": "2020-04-28 12:00:33", "attachment": false, "model": "ir.module.module", "paperformat_id": false, "binding_type": "report", "groups_id": [], "xml_id": "base.ir_module_reference_print", "write_uid": [1, "Administrator"], "report_name": "base.report_irmodulereference", "report_file": "base.report_irmodulereference", "binding_model_id": [58, "Module"], "name": "Technical guide", "attachment_use": false, "id": 34, "create_date": "2020-04-28 12:00:33", "print_report_name": false, "__last_update": "2020-04-28 12:00:33", "string": "Technical guide", "type": "ir.actions.report", "display_name": "Technical guide", "create_uid": [1, "Administrator"], "report_type": "qweb-pdf", "help": false, "multi": false}], "relate": [], "action": [{"write_date": "2020-04-28 12:00:33", "sequence": 5, "binding_type": "action", "state": "code", "crud_model_id": false, "display_name": "Base: Module Immediate Install", "xml_id": "base.action_server_module_immediate_install", "write_uid": [1, "Administrator"], "link_field_id": false, "binding_model_id": [58, "Module"], "model_id": [58, "Module"], "name": "Base: Module Immediate Install", "id": 42, "usage": "ir_actions_server", "fields_lines": [], "create_date": "2020-04-28 12:00:33", "code": "records.button_immediate_install()", "__last_update": "2020-04-28 12:00:33", "string": "Base: Module Immediate Install", "type": "ir.actions.server", "model_name": "ir.module.module", "child_ids": [], "create_uid": [1, "Administrator"], "crud_model_name": false, "help": false}]}, "fields": {"icon": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": false, "depends": [], "string": "Icon URL", "views": {}}, "state": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "selection", "readonly": true, "depends": [], "string": "Status", "views": {}, "selection": [["uninstallable", "Uninstallable"], ["uninstalled", "Not Installed"], ["installed", "Installed"], ["to upgrade", "To be upgraded"], ["to remove", "To be removed"], ["to install", "To be installed"]]}, "shortdesc": {"manual": false, "translate": true, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Module Name", "views": {}}, "name": {"manual": false, "translate": false, "required": true, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Technical Name", "views": {}}, "summary": {"manual": false, "translate": true, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Summary", "views": {}}}, "field_parent": false}}, "fields": {"write_date": {"store": true, "manual": false, "company_dependent": false, "type": "datetime", "readonly": false, "searchable": true, "required": false, "depends": [], "sortable": true, "change_default": false, "string": "Last Updated on"}, "maintainer": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Maintainer"}, "demo": {"store": true, "manual": false, "company_dependent": false, "type": "boolean", "readonly": true, "searchable": true, "required": false, "depends": [], "sortable": true, "change_default": false, "string": "Demo Data"}, "license": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "selection", "readonly": true, "depends": [], "string": "License", "selection": [["GPL-2", "GPL Version 2"], ["GPL-2 or any later version", "GPL-2 or later version"], ["GPL-3", "GPL Version 3"], ["GPL-3 or any later version", "GPL-3 or later version"], ["AGPL-3", "Affero GPL-3"], ["LGPL-3", "LGPL Version 3"], ["Other OSI approved licence", "Other OSI Approved Licence"], ["OEEL-1", "Odoo Enterprise Edition License v1.0"], ["OPL-1", "Odoo Proprietary License v1.0"], ["Other proprietary", "Other Proprietary"]]}, "exclusion_ids": {"domain": [], "manual": false, "searchable": true, "required": false, "relation": "ir.module.module.exclusion", "relation_field": "module_id", "change_default": false, "store": true, "sortable": false, "company_dependent": false, "type": "one2many", "readonly": true, "context": {}, "depends": [], "string": "Exclusions"}, "icon": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": false, "depends": [], "string": "Icon URL"}, "icon_image": {"manual": false, "required": false, "attachment": false, "searchable": false, "change_default": false, "store": false, "sortable": false, "company_dependent": false, "type": "binary", "readonly": true, "depends": ["icon"], "string": "Icon"}, "description_html": {"translate": false, "sanitize_style": false, "manual": false, "searchable": false, "sanitize_tags": true, "required": false, "sanitize_attributes": true, "change_default": false, "store": false, "string": "Description HTML", "sanitize": true, "sortable": false, "company_dependent": false, "type": "html", "readonly": true, "depends": ["name", "description"], "strip_style": false, "strip_classes": false}, "installed_version": {"manual": false, "translate": false, "required": false, "searchable": false, "change_default": false, "store": false, "sortable": false, "company_dependent": false, "type": "char", "readonly": true, "depends": ["name"], "string": "Latest Version"}, "state": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "selection", "readonly": true, "depends": [], "string": "Status", "selection": [["uninstallable", "Uninstallable"], ["uninstalled", "Not Installed"], ["installed", "Installed"], ["to upgrade", "To be upgraded"], ["to remove", "To be removed"], ["to install", "To be installed"]]}, "__last_update": {"store": false, "manual": false, "company_dependent": false, "type": "datetime", "readonly": true, "searchable": false, "required": false, "depends": ["create_date", "write_date"], "sortable": false, "change_default": false, "string": "Last Modified on"}, "auto_install": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "boolean", "readonly": false, "depends": [], "string": "Automatic Installation", "help": "An auto-installable module is automatically installed by the system when all its dependencies are satisfied. If the module has no dependency, it is always installed."}, "url": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "URL"}, "views_by_module": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "text", "readonly": true, "depends": ["name", "state"], "string": "Views"}, "shortdesc": {"manual": false, "translate": true, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Module Name"}, "write_uid": {"domain": [], "searchable": true, "required": false, "relation": "res.users", "manual": false, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "many2one", "readonly": false, "context": {}, "depends": [], "string": "Last Updated by"}, "create_date": {"store": true, "manual": false, "company_dependent": false, "type": "datetime", "readonly": false, "searchable": true, "required": false, "depends": [], "sortable": true, "change_default": false, "string": "Created on"}, "dependencies_id": {"domain": [], "manual": false, "searchable": true, "required": false, "relation": "ir.module.module.dependency", "relation_field": "module_id", "change_default": false, "store": true, "sortable": false, "company_dependent": false, "type": "one2many", "readonly": true, "context": {}, "depends": [], "string": "Dependencies"}, "contributors": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "text", "readonly": true, "depends": [], "string": "Contributors"}, "reports_by_module": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "text", "readonly": true, "depends": ["name", "state"], "string": "Reports"}, "latest_version": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Installed Version"}, "application": {"store": true, "manual": false, "company_dependent": false, "type": "boolean", "readonly": true, "searchable": true, "required": false, "depends": [], "sortable": true, "change_default": false, "string": "Application"}, "name": {"manual": false, "translate": false, "required": true, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Technical Name"}, "category_id": {"domain": [], "searchable": true, "required": false, "relation": "ir.module.category", "manual": false, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "many2one", "readonly": true, "context": {}, "depends": [], "string": "Category"}, "id": {"store": true, "manual": false, "company_dependent": false, "type": "integer", "readonly": true, "searchable": true, "required": false, "depends": [], "sortable": true, "change_default": false, "string": "ID"}, "published_version": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Published Version"}, "summary": {"manual": false, "translate": true, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Summary"}, "menus_by_module": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "text", "readonly": true, "depends": ["name", "state"], "string": "Menus"}, "author": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Author"}, "sequence": {"manual": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "integer", "group_operator": "sum", "depends": [], "string": "Sequence", "readonly": false}, "website": {"manual": false, "translate": false, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "char", "readonly": true, "depends": [], "string": "Website"}, "description": {"manual": false, "translate": true, "required": false, "searchable": true, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "text", "readonly": true, "depends": [], "string": "Description"}, "create_uid": {"domain": [], "searchable": true, "required": false, "relation": "res.users", "manual": false, "change_default": false, "store": true, "sortable": true, "company_dependent": false, "type": "many2one", "readonly": false, "context": {}, "depends": [], "string": "Created by"}, "display_name": {"manual": false, "translate": false, "required": false, "searchable": false, "change_default": false, "store": false, "sortable": false, "company_dependent": false, "type": "char", "readonly": true, "depends": ["shortdesc"], "string": "Display Name"}}, "filters": []}, "id": 777565562, "jsonrpc": "2.0"}

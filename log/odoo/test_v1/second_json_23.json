@@ -1,0 +1,67 @@
+{"result": {"commands": [{"name": "help", "help": "Show an helper message"}, {"name": "leave", "help": "Leave this channel"}, {"name": "who", "help": "List users in the current channel", "channel_types": ["channel", "chat"]}], "shortcodes": [{"id": 1, "unicode_source": "\ud83d\ude42", "description": "Smile", "source": ":)", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude42" src="/mail/static/src/img/smiley/smile.png"/>
+"}, {"id": 2, "unicode_source": "\ud83d\ude00", "description": "Smile with open mouth", "source": ":D", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude00" src="/mail/static/src/img/smiley/smile_open_mouth.png"/>
+"}, {"id": 3, "unicode_source": "\ud83d\ude0a", "description": "Smile with with smiling eyes", "source": "^^", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude0a" src="/mail/static/src/img/smiley/normal_smile.png"/>
+"}, {"id": 4, "unicode_source": "\ud83d\ude06", "description": "Laugh", "source": "xD", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude06" src="/mail/static/src/img/smiley/laugh.png"/>
+"}, {"id": 5, "unicode_source": "\ud83d\ude02", "description": "Tears of joy", "source": ":joy", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude02" src="/mail/static/src/img/smiley/tears_of_joy.png"/>
+"}, {"id": 6, "unicode_source": "\ud83d\ude09", "description": "Wink", "source": ";)", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude09" src="/mail/static/src/img/smiley/wink.png"/>
+"}, {"id": 7, "unicode_source": "\ud83d\ude0e", "description": "Face with sunglass", "source": "B)", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude0e" src="/mail/static/src/img/smiley/sunglass.png"/>
+"}, {"id": 8, "unicode_source": "\ud83d\ude1c", "description": "Stuck Out Tongue Winking Eye", "source": ";p", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude1c" src="/mail/static/src/img/smiley/stuck_out_tongue.png"/>
+"}, {"id": 9, "unicode_source": "\ud83d\ude0b", "description": "Cheeky", "source": ":p", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude0b" src="/mail/static/src/img/smiley/yum.png"/>
+"}, {"id": 10, "unicode_source": "\ud83d\ude33", "description": "Flushed face", "source": "o_o", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude33" src="/mail/static/src/img/smiley/flushed.png"/>
+"}, {"id": 11, "unicode_source": "\ud83d\ude10", "description": "Speechless/Neutral face", "source": ":|", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude10" src="/mail/static/src/img/smiley/neutral.png"/>
+"}, {"id": 12, "unicode_source": "\ud83d\ude15", "description": "Confused", "source": ":/", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude15" src="/mail/static/src/img/smiley/confused.png"/>
+"}, {"id": 13, "unicode_source": "\ud83d\ude1e", "description": "Sad", "source": ":(", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude1e" src="/mail/static/src/img/smiley/sad.png"/>
+"}, {"id": 14, "unicode_source": "\ud83d\ude31", "description": "Scream", "source": ":@", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude31" src="/mail/static/src/img/smiley/scream.png"/>
+"}, {"id": 15, "unicode_source": "\ud83d\ude2e", "description": "Open Mouth", "source": ":O", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude2e" src="/mail/static/src/img/smiley/open_mouth.png"/>
+"}, {"id": 16, "unicode_source": "\ud83d\ude20", "description": "Angry", "source": "3:(", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude20" src="/mail/static/src/img/smiley/angry.png"/>
+"}, {"id": 17, "unicode_source": "\ud83d\ude08", "description": "Face with evil", "source": "3:)", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude08" src="/mail/static/src/img/smiley/evil.png"/>
+"}, {"id": 18, "unicode_source": "\ud83d\ude48", "description": "No see", "source": ":no_see", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude48" src="/mail/static/src/img/smiley/monkey_eye.png"/>
+"}, {"id": 19, "unicode_source": "\ud83d\ude49", "description": "No hear", "source": ":no_hear", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude49" src="/mail/static/src/img/smiley/monkey_hear.png"/>
+"}, {"id": 20, "unicode_source": "\ud83d\ude4a", "description": "No speak", "source": ":no_speak", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude4a" src="/mail/static/src/img/smiley/monkey_speak.png"/>
+"}, {"id": 21, "unicode_source": "\ud83d\udc1e", "description": "Bug", "source": ":bug", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\udc1e" src="/mail/static/src/img/smiley/bug.png"/>
+"}, {"id": 22, "unicode_source": "\ud83d\ude38", "description": "Kitten", "source": ":kitten", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\ude38" src="/mail/static/src/img/smiley/cat.png"/>
+"}, {"id": 23, "unicode_source": "\u2764", "description": "Heart", "source": "&lt;3", "shortcode_type": "image", "substitution": "
+<img alt="\u2764" src="/mail/static/src/img/smiley/heart.png"/>
+"}, {"id": 24, "unicode_source": "\ud83d\udc4d", "description": "Thumbs Up", "source": ":+1", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\udc4d" src="/mail/static/src/img/smiley/thumbsup.png"/>
+"}, {"id": 25, "unicode_source": "\ud83d\udc4e", "description": "Thumbs Down", "source": ":-1", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\udc4e" src="/mail/static/src/img/smiley/thumbsdown.png"/>
+"}, {"id": 26, "unicode_source": "\ud83d\udca9", "description": "Poop", "source": ":poop", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\udca9" src="/mail/static/src/img/smiley/poop.png"/>
+"}, {"id": 27, "unicode_source": "\ud83d\udc7b", "description": "Ghost", "source": ":ghost", "shortcode_type": "image", "substitution": "
+<img alt="\ud83d\udc7b" src="/mail/static/src/img/smiley/ghost.png"/>
+"}, {"id": 28, "unicode_source": "\ud83c\udf6a", "description": "Cookie", "source": ":cookie", "shortcode_type": "image", "substitution": "
+<img alt="\ud83c\udf6a" src="/mail/static/src/img/smiley/cookie.png"/>
+"}, {"id": 29, "unicode_source": "\ud83c\udf7a", "description": "Beer", "source": ":beer", "shortcode_type": "image", "substitution": "
+<img alt="\ud83c\udf7a" src="/mail/static/src/img/smiley/beer.png"/>
+"}, {"id": 30, "unicode_source": "\u2615", "description": "Coffee", "source": ":coffee", "shortcode_type": "image", "substitution": "
+<img alt="\u2615" src="/mail/static/src/img/smiley/coffee.png"/>
+"}, {"id": 31, "unicode_source": "\ud83c\udf82", "description": "Cake", "source": ":cake", "shortcode_type": "image", "substitution": "
+<img alt="\ud83c\udf82" src="/mail/static/src/img/smiley/cake.png"/>
+"}, {"id": 32, "unicode_source": "\ud83c\udf89", "description": "Party", "source": ":party", "shortcode_type": "image", "substitution": "
+<img alt="\ud83c\udf89" src="/mail/static/src/img/smiley/party.png"/>
+"}, {"id": 33, "unicode_source": "\ud83c\udfc6", "description": "Trophy", "source": ":trophy", "shortcode_type": "image", "substitution": "
+<img alt="\ud83c\udfc6" src="/mail/static/src/img/smiley/trophy.png"/>
+"}], "needaction_inbox_counter": 21, "mention_partner_suggestions": [], "menu_id": 98, "channel_slots": {"channel_private_group": [], "channel_direct_message": [], "channel_channel": [{"public": "groups", "name": "general", "id": 1, "message_unread_counter": 0, "mass_mailing": false, "message_needaction_counter": 0, "channel_type": "channel", "state": "open", "uuid": "0310debc-27ce-4262-9560-401bdf048e11", "is_minimized": false, "group_based_subscription": true, "seen_message_id": false}]}, "starred_counter": 0}, "id": 193858343, "jsonrpc": "2.0"}

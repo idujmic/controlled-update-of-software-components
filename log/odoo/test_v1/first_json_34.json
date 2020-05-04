@@ -1,0 +1,322 @@
+{"id": 78409004, "result": [{"model": "crm.lead", "res_id": 18, "author_id": [6, "YourCompany, Demo User"], "record_name": "Trainee's training plan in your Organization", "message_type": "comment", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": false, "date": "2020-04-24 13:28:15", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 99, 
+  "body": "
+<p>
+ It seems very interesting. As you say, first of all we will have to define precisely what the training will be about, and your precise needs.
+</p>
+", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "\"Administrator\"
+<admin@yourcompany.example.com>
+ ", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 18, "author_id": [11, "Delta PC"], "record_name": "Trainee's training plan in your Organization", "message_type": "email", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Inquiry", "date": "2020-04-24 13:28:14", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 98, "body": "
+ <p>
+  Hello!
+  <br/>
+  \n            I am Leland Martinez, from the Delta PC. Maybe you remember, we talked a bit last month at this international conference.
+  <br/>
+  \n            We would like to attend a training, but we are not quite sure about what we can ask. Maybe we should meet and talk about that?
+  <br/>
+  \n            Best regards,
+ </p>
+ ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "\"Administrator\"
+ <admin@yourcompany.example.com>
+  ", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 17, "author_id": [6, "YourCompany, Demo User"], "record_name": "Pricing Information of Services", "message_type": "comment", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Catalog to send", "date": "2020-04-24 13:28:14", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 94, "body": "
+  <p>
+   They just want pricing information about our services. I think sending our catalog should be sufficient.
+  </p>
+  ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "\"Administrator\"
+  <admin@yourcompany.example.com>
+   ", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 15, "author_id": [6, "YourCompany, Demo User"], "record_name": "Plan to buy RedHat servers", "message_type": "email", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Re: Plan to buy RedHat servers", "date": "2020-04-24 13:28:14", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 88, "body": "
+   <p>
+    Hello
+   </p>
+   \n
+   <p>
+    After our discussion with our technical experts, here is the offer of YourCompany. We believe it will meet every requirement you had in mind. Please feel free to contact me for any detail or technical detail that is not clear enough for you.
+   </p>
+   \n
+   <p>
+    Notice that as agreed on phone, we offer you a
+    <b>
+     10% discount on the hardware
+    </b>
+    !
+   </p>
+   \n
+   <p>
+    Best regards,
+   </p>
+   ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "\"Administrator\"
+   <admin@yourcompany.example.com>
+    ", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 15, "author_id": [0, "virginie@agrolait.fr"], "record_name": "Plan to buy RedHat servers", "message_type": "email", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Re: Plan to buy RedHat servers", "date": "2020-04-24 13:28:14", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 87, "body": "
+    <p>
+     Thanks for the information!
+     <br/>
+     I asked a precise specification to our technical expert. Here is what we precisely need:
+    </p>
+    \n
+    <ul>
+     \n
+     <li>
+      weekly backups, every Monday
+     </li>
+     \n
+     <li>
+      backup time is not a blocking point for us, as we are closed all Monday, leaving time enough to perform the backup
+     </li>
+     \n
+     <li>
+      reliability is very important; we need redundant servers and rollback capacity
+     </li>
+     \n
+     <li>
+      a total capacity of about 2 TB
+     </li>
+     \n
+    </ul>
+    \n
+    <p>
+     Best regards,
+    </p>
+    ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "virginie@agrolait.fr", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 15, "author_id": [6, "YourCompany, Demo User"], "record_name": "Plan to buy RedHat servers", "message_type": "comment", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Re: Plan to buy RedHat servers", "date": "2020-04-24 13:28:14", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 86, "body": "
+    <p>
+     Dear customer,
+     <br/>
+     \n            Thanks for showing interest in our products! As requested, I send to you our products catalog.
+     <br/>
+     \n            To be able to finely tune the solution, we would like to know precise needs. This way we wil be able to help you choosing the right infrastructure according to your requirements.
+     <br/>
+     \n            Best regards,
+    </p>
+    ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "\"Administrator\"
+    <admin@yourcompany.example.com>
+     ", "attachment_ids": [{"id": 372, "mimetype": "application/msword", "name": "YourCompany2012.doc", "filename": "YourCompany2012.doc"}], "partner_ids": []}, {"model": "crm.lead", "res_id": 15, "author_id": [0, "virginie@agrolait.fr"], "record_name": "Plan to buy RedHat servers", "message_type": "email", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Plan to buy RedHat servers", "date": "2020-04-24 13:28:14", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 85, "body": "\n
+     <p>
+      Hello,
+     </p>
+     \n
+     <p>
+      I am interested in your company's products and I plan to buy a new laptop having latest technologies as well as an affordable price.
+     </p>
+     \n
+     <p>
+      Could you please send me the product catalog?
+     </p>
+     ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "virginie@agrolait.fr", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 10, "author_id": [0, "jga@solar.example.com"], "record_name": "Information about laptop", "message_type": "email", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Inquiry", "date": "2020-04-24 13:28:13", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 76, "body": "
+     <p>
+      Hi,
+      <br/>
+      \nI would like to know more about specification and cost of laptops of your company.
+      <br/>
+      \nThanks,
+      <br/>
+      \nAndrew
+     </p>
+     ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "jga@solar.example.com", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 8, "author_id": [0, "logan_expert@gmail.example.com"], "record_name": "Product Catalog", "message_type": "email", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Inquiry", "date": "2020-04-24 13:28:13", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 70, "body": "
+     <p>
+      Hi,
+      <br/>
+      \nCould you send me your product catalogue please ?
+      <br/>
+      \nRegards,
+      <br/>
+      \nDavid Logan
+      <br/>
+      \nESM Expert
+      <br/>
+     </p>
+     ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "logan_expert@gmail.example.com", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 5, "author_id": [0, "helle@stonageit.example.com"], "record_name": "Need a Quotation for Computers with Accessories", "message_type": "email", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Inquiry", "date": "2020-04-24 13:28:13", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 66, "body": "
+     <p>
+      Hi,
+      <br/>
+      \nCan you send me a quotation for 20 computers with speakers?
+      <br/>
+      \nRegards,
+      <br/>
+      \nCarrie Helle,
+      <br/>
+      \nPurchase Manager
+      <br/>
+      \nStonage IT,
+      <br/>
+      \nPhiladelphia
+      <br/>
+      \nContact: +1 813 494 5005
+     </p>
+     ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "helle@stonageit.example.com", "attachment_ids": [], "partner_ids": []}, {"model": "crm.lead", "res_id": 1, "author_id": [0, "jdunagan@leclub.example.com"], "record_name": "Plan to Attend a Training", "message_type": "email", "channel_ids": [], "is_note": false, "tracking_value_ids": [], "subtype_id": [1, "Discussions"], "subject": "Inquiry", "date": "2020-04-24 13:28:12", "starred_partner_ids": [], "module_icon": "/crm/static/description/icon.png", "customer_email_data": [], "id": 56, "body": "
+     <p>
+      Hello,
+      <br/>
+      \n            I am Jacques from Le Club SARL. I am interested to attend a training organized in your company.
+      <br/>
+      \n            Can you send me the details ?
+     </p>
+     ", "customer_email_status": "sent", "subtype_description": false, "needaction_partner_ids": [3], "email_from": "jdunagan@leclub.example.com", "attachment_ids": [], "partner_ids": []}, {"id": 17, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": "FWD: Meeting with Demo ", "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+     <p>
+      Hello Administrator,
+     </p>
+     <p>
+      A small email to inform you that we will have a meeting with Mr Demo next Tuesday. Everything is under control!
+      <br/>
+      Regards,
+     </p>
+     ", "customer_email_data": [], "attachment_ids": [], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [8, "ASUSTeK"], "date": "2020-04-24 13:26:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+     <admin@yourcompany.example.com>
+      ", "partner_ids": [[3, "YourCompany, Administrator"]]}, {"id": 16, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": "RE: Feedback about our On Site Assistance", "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+      <p>
+       Hello Administrator,
+      </p>
+      <p>
+       Glad to hear from you! Everything is perfect, thanks for asking. Concerning the order of 2 IP phones, I ordered them for new employees. We are satisfied with the products of
+       <i>
+        YourCompany
+       </i>
+       , and we plan to fit out each new employee with one of your phone this year.
+       <br/>
+       Regards,
+      </p>
+      ", "customer_email_data": [], "attachment_ids": [], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [9, "Agrolait"], "date": "2020-04-24 13:22:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+      <admin@yourcompany.example.com>
+       ", "partner_ids": [[3, "YourCompany, Administrator"]]}, {"id": 15, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": "RE: Information meeting", "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+       <p>
+        Ok! See you tomorrow.
+       </p>
+       ", "customer_email_data": [], "attachment_ids": [], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [10, "China Export"], "date": "2020-04-24 13:17:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+       <admin@yourcompany.example.com>
+        ", "partner_ids": [[3, "YourCompany, Administrator"]]}, {"id": 11, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": false, "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+        <p>
+         Contact Chris: +1 (650) 691-3277.
+        </p>
+        ", "customer_email_data": [], "attachment_ids": [], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [6, "YourCompany, Demo User"], "date": "2020-04-24 12:27:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+        <admin@yourcompany.example.com>
+         ", "partner_ids": [[3, "YourCompany, Administrator"]]}, {"id": 10, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": false, "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+         <p>
+          Thank you!
+          <br/>
+          Could you send me the updated pricelists as negotiated at the beginning of this year?
+         </p>
+         \n
+         <p>
+          Sincerely,
+         </p>
+         ", "customer_email_data": [], "attachment_ids": [], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [6, "YourCompany, Demo User"], "date": "2020-04-24 11:57:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+         <admin@yourcompany.example.com>
+          ", "partner_ids": [[3, "YourCompany, Administrator"], [6, "YourCompany, Demo User"]]}, {"id": 9, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": false, "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+          <p>
+           Hello,
+          </p>
+          <p>
+           I have a friend working at Epic Technologies. He told me they plan to upgrade their backup servers within the next 3 months.
+          </p>
+          <p>
+           I think that someone should contact them and check if there is an opportunity.
+          </p>
+          ", "customer_email_data": [], "attachment_ids": [], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [6, "YourCompany, Demo User"], "date": "2020-04-24 10:27:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+          <admin@yourcompany.example.com>
+           ", "partner_ids": [[3, "YourCompany, Administrator"]]}, {"id": 8, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": false, "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+           <p>
+            I just found a more recent draft of the spec. Jon did some cleaning in the specifications. Could you merge the two documents to have an updated one?
+           </p>
+           <p>
+            When it's done, put it on the internal document management system.
+           </p>
+           <p>
+            Thanks,
+           </p>
+           ", "customer_email_data": [], "attachment_ids": [{"id": 356, "mimetype": "application/msword", "name": "RedHat_spec_draft_v3.doc", "filename": "RedHat_spec_draft_v3.doc"}], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [6, "YourCompany, Demo User"], "date": "2020-04-24 10:27:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+           <admin@yourcompany.example.com>
+            ", "partner_ids": [[3, "YourCompany, Administrator"]]}, {"id": 7, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": false, "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+            <p>
+             Sure, here it is. Have a nice day!
+            </p>
+            \n
+            <p data-o-mail-quote='\"1\"'>
+            </p>
+            <p data-o-mail-quote='\"1\"'>
+             Hello Demo,
+            </p>
+            \n
+            <p data-o-mail-quote='\"1\"'>
+             -- Original mail stripped --
+            </p>
+            ", "customer_email_data": [], "attachment_ids": [{"id": 355, "mimetype": "application/msword", "name": "RedHat_spec.doc", "filename": "RedHat_spec.doc"}], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [6, "YourCompany, Demo User"], "date": "2020-04-24 10:27:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+            <admin@yourcompany.example.com>
+             ", "partner_ids": [[3, "YourCompany, Administrator"]]}, {"id": 5, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": "Information meeting", "record_name": false, "message_type": "comment", "channel_ids": [], "body": "
+             <p>
+              Hello,
+             </p>
+             <p>
+              Epic Technologies is a small company specialized in software managing huge volume of data. Having an efficient and reliable backup system is very important for us, and critical for our customers. I eared you have some interesting solutions to manage our backups. Could we meet each other as soon as possible to discuss our need? Here is a first list of requirements:
+             </p>
+             \n
+             <ul>
+              \n
+              <li>
+               about 25 backup servers, running on Redhat Linux
+              </li>
+              \n
+              <li>
+               minimum 200Gb of storage per server
+              </li>
+              \n
+              <li>
+               setup a VPN between all our servers in New York and Chicago
+              </li>
+              \n
+             </ul>
+             \n
+             <p>
+              Thanks,
+             </p>
+             \n            ", "customer_email_data": [], "attachment_ids": [], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [10, "China Export"], "date": "2020-04-23 13:27:00", "starred_partner_ids": [], "is_note": false, "email_from": "\"Administrator\"
+             <admin@yourcompany.example.com>
+              ", "partner_ids": [[3, "YourCompany, Administrator"]]}, {"id": 2, "model": false, "customer_email_status": "sent", "res_id": 0, "subject": "Plan to install backup servers", "record_name": false, "message_type": "email", "channel_ids": [], "body": "
+              <p>
+               Hello,
+              </p>
+              \n
+              <p>
+               We need to deploy new backup servers, with the following requirements:
+              </p>
+              \n
+              <ul>
+               \n
+               <li>
+                daily incremental backups, with an history of 15 days,
+               </li>
+               \n
+               <li>
+                45 servers should be backuped between 1am and 3am when our offices are closed,
+               </li>
+               \n
+               <li>
+                two redundant servers,
+               </li>
+               \n
+               <li>
+                total capacity of 200Gb.
+               </li>
+               \n
+              </ul>
+              \n
+              <p>
+               \n    Do you have a simple solution with servers running on Redhat Linux?\n
+              </p>
+              \n
+              <p>
+               Best regards,
+              </p>
+              \n
+              <pre><span data-o-mail-quote='\"1\"'>--\nVirginie Agrolait\nvirginie@agrolait.fr</span></pre>
+              ", "customer_email_data": [], "attachment_ids": [], "subtype_description": false, "needaction_partner_ids": [3], "subtype_id": [1, "Discussions"], "tracking_value_ids": [], "author_id": [0, "virginie@agrolait.fr"], "date": "2020-04-22 13:27:00", "starred_partner_ids": [], "is_note": false, "email_from": "virginie@agrolait.fr", "partner_ids": [[3, "YourCompany, Administrator"], [6, "YourCompany, Demo User"]]}], "jsonrpc": "2.0"}
+             </admin@yourcompany.example.com>
+            </admin@yourcompany.example.com>
+           </admin@yourcompany.example.com>
+          </admin@yourcompany.example.com>
+         </admin@yourcompany.example.com>
+        </admin@yourcompany.example.com>
+       </admin@yourcompany.example.com>
+      </admin@yourcompany.example.com>
+     </admin@yourcompany.example.com>
+    </admin@yourcompany.example.com>
+   </admin@yourcompany.example.com>
+  </admin@yourcompany.example.com>
+ </admin@yourcompany.example.com>
+</admin@yourcompany.example.com>

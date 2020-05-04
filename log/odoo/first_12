@@ -1,0 +1,394 @@
+/web
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+  <title>
+   Odoo
+  </title>
+  <link href="/web/static/src/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <script type="text/javascript">
+   var odoo = {
+                        csrf_token: "8e5b010ced5572a4c77326a070b0ed717f0b2d59o",
+                    };
+  </script>
+  <script type="text/javascript">
+   odoo.session_info = {"username": "admin", "server_version_info": [11, 0, 0, "final", 0, ""], "db": "odoo", "server_version": "11.0-20200417", "name": "Administrator", "user_context": {"lang": "en_US", "tz": "Europe/Brussels", "uid": 1}, "partner_id": 3, "uid": 1, "session_id": "e45d9903fdccdee09ffd25d64967913dc6b4e707", "company_id": 1, "web_tours": [], "is_system": true, "is_superuser": true, "currencies": {"1": {"symbol": "\u20ac", "digits": [69, 2], "position": "after"}, "3": {"symbol": "$", "digits": [69, 2], "position": "before"}}, "user_companies": false, "web.base.url": "http://localhost:8069"};
+  </script>
+  <link href="/web/content/339-bfcd015/web.assets_common.0.css" rel="stylesheet" type="text/css"/>
+  <link href="/web/content/373-556a7f2/web.assets_backend.0.css" rel="stylesheet" type="text/css"/>
+  <link href="/web/content/374-556a7f2/web.assets_backend.1.css" rel="stylesheet" type="text/css"/>
+  <link href="/web/content/345-fa78786/web_editor.summernote.0.css" rel="stylesheet" type="text/css"/>
+  <link href="/web/content/346-1726953/web_editor.assets_editor.0.css" rel="stylesheet" type="text/css"/>
+  <script src="/web/content/341-bfcd015/web.assets_common.js" type="text/javascript">
+  </script>
+  <script src="/web/content/375-556a7f2/web.assets_backend.js" type="text/javascript">
+  </script>
+  <script src="/web/content/348-fa78786/web_editor.summernote.js" type="text/javascript">
+  </script>
+  <script src="/web/content/349-1726953/web_editor.assets_editor.js" type="text/javascript">
+  </script>
+  <!--[if lt IE 10]>
+                        <body class="ie9">
+                    <![endif]-->
+  <script type="text/javascript">
+   odoo.define('web.web_client', function (require) {
+                        var WebClient = require('web.WebClient');
+                        var web_client = new WebClient();
+                        $(function() {
+                            web_client.setElement($(document.body));
+                            web_client.start();
+                        });
+                        return web_client;
+                    });
+  </script>
+ </head>
+ <body class="o_web_client">
+  <nav class="navbar navbar-inverse" id="oe_main_menu_navbar">
+   <div class="navbar-header">
+    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+     <span class="icon-bar">
+     </span>
+     <span class="icon-bar">
+     </span>
+     <span class="icon-bar">
+     </span>
+    </button>
+   </div>
+   <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left oe_application_menu_placeholder" style="display: none;">
+     <li>
+      <a class="oe_menu_leaf" data-action-id="98" data-action-model="ir.actions.client" data-menu="98" data-menu-xmlid="mail.mail_channel_menu_root_chat" href="/web#menu_id=98&amp;action=98">
+       <span class="oe_menu_text">
+        Discuss
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="oe_menu_leaf" data-action-id="109" data-action-model="ir.actions.act_window" data-menu="103" data-menu-xmlid="calendar.mail_menu_calendar" href="/web#menu_id=103&amp;action=109">
+       <span class="oe_menu_text">
+        Calendar
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="oe_menu_toggler" data-menu="68" data-menu-xmlid="contacts.menu_contacts" href="/web#menu_id=68&amp;action=">
+       <span class="oe_menu_text">
+        Contacts
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="oe_menu_toggler" data-action-id="137" data-action-model="ir.actions.server" data-menu="109" data-menu-xmlid="crm.crm_menu_root" href="/web#menu_id=109&amp;action=137">
+       <span class="oe_menu_text">
+        CRM
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="oe_menu_toggler" data-menu="5" data-menu-xmlid="base.menu_management" href="/web#menu_id=5&amp;action=">
+       <span class="oe_menu_text">
+        Apps
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="oe_menu_toggler" data-menu="4" data-menu-xmlid="base.menu_administration" href="/web#menu_id=4&amp;action=">
+       <span class="oe_menu_text">
+        Settings
+       </span>
+      </a>
+     </li>
+     <li class="dropdown" id="menu_more_container" style="display: none;">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+       More
+       <b class="caret">
+       </b>
+      </a>
+      <ul class="dropdown-menu" id="menu_more">
+      </ul>
+     </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right oe_user_menu_placeholder" style="display: none;">
+    </ul>
+    <ul class="nav navbar-nav navbar-right oe_systray" style="display: none;">
+    </ul>
+   </div>
+  </nav>
+  <div class="o_main">
+   <div class="o_sub_menu">
+    <a class="o_sub_menu_logo" href="/web">
+     <span class="oe_logo_edit">
+      Edit Company data
+     </span>
+     <img src="/web/binary/company_logo"/>
+    </a>
+    <div class="o_sub_menu_content">
+     <div class="oe_secondary_menu" data-menu-parent="98" style="display: none">
+     </div>
+     <div class="oe_secondary_menu" data-menu-parent="103" style="display: none">
+     </div>
+     <div class="oe_secondary_menu" data-menu-parent="68" style="display: none">
+      <div class="oe_secondary_menu_section" data-menu-xmlid="contacts.res_partner_menu_contacts">
+       <a class="oe_menu_leaf" data-action-id="77" data-action-model="ir.actions.act_window" data-menu="69" data-menu-xmlid="contacts.res_partner_menu_contacts" href="/web#menu_id=69&amp;action=77">
+        <span class="oe_menu_text">
+         Contacts
+        </span>
+       </a>
+      </div>
+      <div class="oe_secondary_menu_section" data-menu-xmlid="contacts.res_partner_menu_config">
+       Configuration
+      </div>
+      <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+       <li>
+        <a class="oe_menu_leaf" data-action-id="53" data-action-model="ir.actions.act_window" data-menu="71" data-menu-xmlid="contacts.menu_partner_category_form" href="/web#menu_id=71&amp;action=53">
+         <span class="oe_menu_text">
+          Contact Tags
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_leaf" data-action-id="47" data-action-model="ir.actions.act_window" data-menu="72" data-menu-xmlid="contacts.menu_partner_title_contact" href="/web#menu_id=72&amp;action=47">
+         <span class="oe_menu_text">
+          Contact Titles
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_leaf" data-action-id="54" data-action-model="ir.actions.act_window" data-menu="73" data-menu-xmlid="contacts.res_partner_industry_menu" href="/web#menu_id=73&amp;action=54">
+         <span class="oe_menu_text">
+          Sectors of Activity
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_toggler" data-menu="74" data-menu-xmlid="contacts.menu_localisation" href="/web#menu_id=74&amp;action=">
+         <span class="oe_menu_text">
+          Localization
+         </span>
+        </a>
+        <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+         <li>
+          <a class="oe_menu_leaf" data-action-id="57" data-action-model="ir.actions.act_window" data-menu="75" data-menu-xmlid="contacts.menu_country_partner" href="/web#menu_id=75&amp;action=57">
+           <span class="oe_menu_text">
+            Countries
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="oe_menu_leaf" data-action-id="59" data-action-model="ir.actions.act_window" data-menu="77" data-menu-xmlid="contacts.menu_country_state_partner" href="/web#menu_id=77&amp;action=59">
+           <span class="oe_menu_text">
+            Fed. States
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="oe_menu_leaf" data-action-id="58" data-action-model="ir.actions.act_window" data-menu="76" data-menu-xmlid="contacts.menu_country_group" href="/web#menu_id=76&amp;action=58">
+           <span class="oe_menu_text">
+            Country Group
+           </span>
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="oe_menu_toggler" data-menu="78" data-menu-xmlid="contacts.menu_config_bank_accounts" href="/web#menu_id=78&amp;action=">
+         <span class="oe_menu_text">
+          Bank Accounts
+         </span>
+        </a>
+        <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+         <li>
+          <a class="oe_menu_leaf" data-action-id="55" data-action-model="ir.actions.act_window" data-menu="79" data-menu-xmlid="contacts.menu_action_res_bank_form" href="/web#menu_id=79&amp;action=55">
+           <span class="oe_menu_text">
+            Banks
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="oe_menu_leaf" data-action-id="56" data-action-model="ir.actions.act_window" data-menu="80" data-menu-xmlid="contacts.menu_action_res_partner_bank_form" href="/web#menu_id=80&amp;action=56">
+           <span class="oe_menu_text">
+            Bank Accounts
+           </span>
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="oe_secondary_menu" data-menu-parent="109" style="display: none">
+      <div class="oe_secondary_menu_section" data-menu-xmlid="crm.crm_menu_pipeline">
+       Pipeline
+      </div>
+      <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+       <li>
+        <a class="oe_menu_leaf" data-action-id="137" data-action-model="ir.actions.server" data-menu="122" data-menu-xmlid="crm.menu_crm_opportunities" href="/web#menu_id=122&amp;action=137">
+         <span class="oe_menu_text">
+          Pipeline
+         </span>
+        </a>
+       </li>
+      </ul>
+      <div class="oe_secondary_menu_section" data-menu-xmlid="crm.res_partner_menu_crm">
+       <a class="oe_menu_leaf" data-action-id="48" data-action-model="ir.actions.act_window" data-menu="120" data-menu-xmlid="crm.res_partner_menu_crm" href="/web#menu_id=120&amp;action=48">
+        <span class="oe_menu_text">
+         Customers
+        </span>
+       </a>
+      </div>
+      <div class="oe_secondary_menu_section" data-menu-xmlid="crm.crm_menu_report">
+       Reporting
+      </div>
+      <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+       <li>
+        <a class="oe_menu_leaf" data-action-id="146" data-action-model="ir.actions.act_window" data-menu="127" data-menu-xmlid="crm.crm_opportunity_report_menu" href="/web#menu_id=127&amp;action=146">
+         <span class="oe_menu_text">
+          Pipeline
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_leaf" data-action-id="144" data-action-model="ir.actions.act_window" data-menu="126" data-menu-xmlid="crm.crm_activity_report_menu" href="/web#menu_id=126&amp;action=144">
+         <span class="oe_menu_text">
+          Activities
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_leaf" data-action-id="114" data-action-model="ir.actions.act_window" data-menu="117" data-menu-xmlid="crm.sales_team_menu_report_crm" href="/web#menu_id=117&amp;action=114">
+         <span class="oe_menu_text">
+          Sales Channels
+         </span>
+        </a>
+       </li>
+      </ul>
+      <div class="oe_secondary_menu_section" data-menu-xmlid="crm.crm_menu_config">
+       Configuration
+      </div>
+      <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+       <li>
+        <a class="oe_menu_leaf" data-action-id="127" data-action-model="ir.actions.act_window" data-menu="113" data-menu-xmlid="crm.crm_config_settings_menu" href="/web#menu_id=113&amp;action=127">
+         <span class="oe_menu_text">
+          Settings
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_leaf" data-action-id="115" data-action-model="ir.actions.act_window" data-menu="115" data-menu-xmlid="crm.crm_team_config" href="/web#menu_id=115&amp;action=115">
+         <span class="oe_menu_text">
+          Sales Channels
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_leaf" data-action-id="116" data-action-model="ir.actions.act_window" data-menu="116" data-menu-xmlid="crm.crm_team_menu_config_activity_types" href="/web#menu_id=116&amp;action=116">
+         <span class="oe_menu_text">
+          Activity Types
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_toggler" data-menu="111" data-menu-xmlid="crm.menu_crm_config_lead" href="/web#menu_id=111&amp;action=">
+         <span class="oe_menu_text">
+          Leads &amp; Opportunities
+         </span>
+        </a>
+        <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+         <li>
+          <a class="oe_menu_leaf" data-action-id="140" data-action-model="ir.actions.act_window" data-menu="123" data-menu-xmlid="crm.menu_crm_lead_categ" href="/web#menu_id=123&amp;action=140">
+           <span class="oe_menu_text">
+            Lead Tags
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="oe_menu_leaf" data-action-id="141" data-action-model="ir.actions.act_window" data-menu="124" data-menu-xmlid="crm.menu_crm_lost_reason" href="/web#menu_id=124&amp;action=141">
+           <span class="oe_menu_text">
+            Lost Reasons
+           </span>
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="oe_secondary_menu" data-menu-parent="5" style="display: none">
+      <div class="oe_secondary_menu_section" data-menu-xmlid="base.menu_module_tree">
+       <a class="oe_menu_leaf" data-action-id="31" data-action-model="ir.actions.act_window" data-menu="45" data-menu-xmlid="base.menu_module_tree" href="/web#menu_id=45&amp;action=31">
+        <span class="oe_menu_text">
+         Apps
+        </span>
+       </a>
+      </div>
+     </div>
+     <div class="oe_secondary_menu" data-menu-parent="4" style="display: none">
+      <div class="oe_secondary_menu_section" data-menu-xmlid="web_settings_dashboard.web_dashboard_menu">
+       <a class="oe_menu_leaf" data-action-id="76" data-action-model="ir.actions.client" data-menu="67" data-menu-xmlid="web_settings_dashboard.web_dashboard_menu" href="/web#menu_id=67&amp;action=76">
+        <span class="oe_menu_text">
+         Dashboard
+        </span>
+       </a>
+      </div>
+      <div class="oe_secondary_menu_section" data-menu-xmlid="base.menu_users">
+       Users &amp; Companies
+      </div>
+      <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+       <li>
+        <a class="oe_menu_leaf" data-action-id="65" data-action-model="ir.actions.act_window" data-menu="58" data-menu-xmlid="base.menu_action_res_users" href="/web#menu_id=58&amp;action=65">
+         <span class="oe_menu_text">
+          Users
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_leaf" data-action-id="44" data-action-model="ir.actions.act_window" data-menu="54" data-menu-xmlid="base.menu_action_res_company_form" href="/web#menu_id=54&amp;action=44">
+         <span class="oe_menu_text">
+          Companies
+         </span>
+        </a>
+       </li>
+      </ul>
+      <div class="oe_secondary_menu_section" data-menu-xmlid="base.menu_translation">
+       Translations
+      </div>
+      <ul class="oe_secondary_submenu nav nav-pills nav-stacked">
+       <li>
+        <a class="oe_menu_leaf" data-action-id="46" data-action-model="ir.actions.act_window" data-menu="56" data-menu-xmlid="base.menu_res_lang_act_window" href="/web#menu_id=56&amp;action=46">
+         <span class="oe_menu_text">
+          Languages
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="oe_menu_leaf" data-action-id="36" data-action-model="ir.actions.act_window" data-menu="49" data-menu-xmlid="base.menu_view_base_language_install" href="/web#menu_id=49&amp;action=36">
+         <span class="oe_menu_text">
+          Load a Translation
+         </span>
+        </a>
+       </li>
+      </ul>
+      <div class="oe_secondary_menu_section" data-menu-xmlid="base_setup.menu_config">
+       <a class="oe_menu_leaf" data-action-id="88" data-action-model="ir.actions.act_window" data-menu="90" data-menu-xmlid="base_setup.menu_config" href="/web#menu_id=90&amp;action=88">
+        <span class="oe_menu_text">
+         General Settings
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="o_sub_menu_footer">
+     Powered by
+     <a href="http://www.odoo.com" target="_blank">
+      <span>
+       Odoo
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="o_main_content">
+   </div>
+  </div>
+ </body>
+</html>

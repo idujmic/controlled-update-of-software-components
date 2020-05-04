@@ -1,0 +1,73 @@
+/web
+@@ -415,48 +415,48 @@
+ n: %22
+-c7f82f0dd1319c1caf206f02f7e026c12ecba841
++682a08575575bcbdece826ad8c4909dc305b2e5f
+ o%22,%0A
+@@ -553,158 +553,30 @@
+ = %7B%22
+-session_id%22: %22c88962e7b1e5ab06041d84ae3546a95f2f40bbf1%22, %22user_context%22: %7B%22tz%22: %22Europe/Brussels%22, %22lang%22: %22en_US%22, %22uid%22: 1%7D, %22name%22: %22Administrator%22
++user_companies%22: false
+ , %22u
+@@ -615,35 +615,16 @@
+  %7B%221%22: %7B
+-%22digits%22: %5B69, 2%5D, 
+ %22positio
+@@ -635,16 +635,35 @@
+ %22after%22,
++ %22digits%22: %5B69, 2%5D,
+  %22symbol
+@@ -687,80 +687,306 @@
+ : %7B%22
+-digits%22: %5B69, 2%5D, %22position%22: %22before%22, %22symbol%22: %22$%22%7D%7D, %22company_id%22: 1
++position%22: %22before%22, %22digits%22: %5B69, 2%5D, %22symbol%22: %22$%22%7D%7D, %22name%22: %22Administrator%22, %22uid%22: 1, %22session_id%22: %2203610d7d3bfa531c06618a242f29b5157147346e%22, %22web.base.url%22: %22http://localhost:8069%22, %22user_context%22: %7B%22lang%22: %22en_US%22, %22tz%22: %22Europe/Brussels%22, %22uid%22: 1%7D, %22is_superuser%22: true, %22web_tours%22: %5B%5D
+ , %22s
+@@ -1019,28 +1019,39 @@
+ 0417%22, %22
+-is_superuser
++db%22: %22odoo%22, %22is_system
+ %22: true,
+@@ -1105,66 +1105,8 @@
+ %22%22%5D,
+- %22web_tours%22: %5B%5D, %22web.base.url%22: %22http://localhost:8069%22,
+  %22pa
+@@ -1124,73 +1124,22 @@
+ 3, %22
+-user_
+ compan
+-ies%22: false, %22uid%22: 1, %22is_system%22: true, %22db%22: %22odoo%22
++y_id%22: 1
+ %7D;%0A 
+@@ -1280,18 +1280,18 @@
+ nt/3
+-43-9505
++73-556a7
+ f2
+-b
+ /web
+@@ -1380,18 +1380,18 @@
+ nt/3
+-44-9505
++74-556a7
+ f2
+-b
+ /web
+@@ -1788,18 +1788,18 @@
+ nt/3
+-47-9505
++75-556a7
+ f2
+-b
+ /web
+@@ -3161,32 +3161,1118 @@
+ ne;%22%3E%0A     %3Cli%3E%0A
++      %3Ca class=%22oe_menu_leaf%22 data-action-id=%2298%22 data-action-model=%22ir.actions.client%22 data-menu=%2298%22 data-menu-xmlid=%22mail.mail_channel_menu_root_chat%22 href=%22/web#menu_id=98&amp;action=98%22%3E%0A       %3Cspan class=%22oe_menu_text%22%3E%0A        Discuss%0A       %3C/span%3E%0A      %3C/a%3E%0A     %3C/li%3E%0A     %3Cli%3E%0A      %3Ca class=%22oe_menu_leaf%22 data-action-id=%22109%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22103%22 data-menu-xmlid=%22calendar.mail_menu_calendar%22 href=%22/web#menu_id=103&amp;action=109%22%3E%0A       %3Cspan class=%22oe_menu_text%22%3E%0A        Calendar%0A       %3C/span%3E%0A      %3C/a%3E%0A     %3C/li%3E%0A     %3Cli%3E%0A      %3Ca class=%22oe_menu_toggler%22 data-menu=%2268%22 data-menu-xmlid=%22contacts.menu_contacts%22 href=%22/web#menu_id=68&amp;action=%22%3E%0A       %3Cspan class=%22oe_menu_text%22%3E%0A        Contacts%0A       %3C/span%3E%0A      %3C/a%3E%0A     %3C/li%3E%0A     %3Cli%3E%0A      %3Ca class=%22oe_menu_toggler%22 data-action-id=%22137%22 data-action-model=%22ir.actions.server%22 data-menu=%22109%22 data-menu-xmlid=%22crm.crm_menu_root%22 href=%22/web#menu_id=109&amp;action=137%22%3E%0A       %3Cspan class=%22oe_menu_text%22%3E%0A        CRM%0A       %3C/span%3E%0A      %3C/a%3E%0A     %3C/li%3E%0A     %3Cli%3E%0A
+       %3Ca class=%22
+@@ -5428,24 +5428,8378 @@
+ u_content%22%3E%0A
++     %3Cdiv class=%22oe_secondary_menu%22 data-menu-parent=%2298%22 style=%22display: none%22%3E%0A     %3C/div%3E%0A     %3Cdiv class=%22oe_secondary_menu%22 data-menu-parent=%22103%22 style=%22display: none%22%3E%0A     %3C/div%3E%0A     %3Cdiv class=%22oe_secondary_menu%22 data-menu-parent=%2268%22 style=%22display: none%22%3E%0A      %3Cdiv class=%22oe_secondary_menu_section%22 data-menu-xmlid=%22contacts.res_partner_menu_contacts%22%3E%0A       %3Ca class=%22oe_menu_leaf%22 data-action-id=%2277%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2269%22 data-menu-xmlid=%22contacts.res_partner_menu_contacts%22 href=%22/web#menu_id=69&amp;action=77%22%3E%0A        %3Cspan class=%22oe_menu_text%22%3E%0A         Contacts%0A        %3C/span%3E%0A       %3C/a%3E%0A      %3C/div%3E%0A      %3Cdiv class=%22oe_secondary_menu_section%22 data-menu-xmlid=%22contacts.res_partner_menu_config%22%3E%0A       Configuration%0A      %3C/div%3E%0A      %3Cul class=%22oe_secondary_submenu nav nav-pills nav-stacked%22%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%2253%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2271%22 data-menu-xmlid=%22contacts.menu_partner_category_form%22 href=%22/web#menu_id=71&amp;action=53%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Contact Tags%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%2247%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2272%22 data-menu-xmlid=%22contacts.menu_partner_title_contact%22 href=%22/web#menu_id=72&amp;action=47%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Contact Titles%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%2254%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2273%22 data-menu-xmlid=%22contacts.res_partner_industry_menu%22 href=%22/web#menu_id=73&amp;action=54%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Sectors of Activity%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_toggler%22 data-menu=%2274%22 data-menu-xmlid=%22contacts.menu_localisation%22 href=%22/web#menu_id=74&amp;action=%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Localization%0A         %3C/span%3E%0A        %3C/a%3E%0A        %3Cul class=%22oe_secondary_submenu nav nav-pills nav-stacked%22%3E%0A         %3Cli%3E%0A          %3Ca class=%22oe_menu_leaf%22 data-action-id=%2257%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2275%22 data-menu-xmlid=%22contacts.menu_country_partner%22 href=%22/web#menu_id=75&amp;action=57%22%3E%0A           %3Cspan class=%22oe_menu_text%22%3E%0A            Countries%0A           %3C/span%3E%0A          %3C/a%3E%0A         %3C/li%3E%0A         %3Cli%3E%0A          %3Ca class=%22oe_menu_leaf%22 data-action-id=%2259%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2277%22 data-menu-xmlid=%22contacts.menu_country_state_partner%22 href=%22/web#menu_id=77&amp;action=59%22%3E%0A           %3Cspan class=%22oe_menu_text%22%3E%0A            Fed. States%0A           %3C/span%3E%0A          %3C/a%3E%0A         %3C/li%3E%0A         %3Cli%3E%0A          %3Ca class=%22oe_menu_leaf%22 data-action-id=%2258%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2276%22 data-menu-xmlid=%22contacts.menu_country_group%22 href=%22/web#menu_id=76&amp;action=58%22%3E%0A           %3Cspan class=%22oe_menu_text%22%3E%0A            Country Group%0A           %3C/span%3E%0A          %3C/a%3E%0A         %3C/li%3E%0A        %3C/ul%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_toggler%22 data-menu=%2278%22 data-menu-xmlid=%22contacts.menu_config_bank_accounts%22 href=%22/web#menu_id=78&amp;action=%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Bank Accounts%0A         %3C/span%3E%0A        %3C/a%3E%0A        %3Cul class=%22oe_secondary_submenu nav nav-pills nav-stacked%22%3E%0A         %3Cli%3E%0A          %3Ca class=%22oe_menu_leaf%22 data-action-id=%2255%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2279%22 data-menu-xmlid=%22contacts.menu_action_res_bank_form%22 href=%22/web#menu_id=79&amp;action=55%22%3E%0A           %3Cspan class=%22oe_menu_text%22%3E%0A            Banks%0A           %3C/span%3E%0A          %3C/a%3E%0A         %3C/li%3E%0A         %3Cli%3E%0A          %3Ca class=%22oe_menu_leaf%22 data-action-id=%2256%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2280%22 data-menu-xmlid=%22contacts.menu_action_res_partner_bank_form%22 href=%22/web#menu_id=80&amp;action=56%22%3E%0A           %3Cspan class=%22oe_menu_text%22%3E%0A            Bank Accounts%0A           %3C/span%3E%0A          %3C/a%3E%0A         %3C/li%3E%0A        %3C/ul%3E%0A       %3C/li%3E%0A      %3C/ul%3E%0A     %3C/div%3E%0A     %3Cdiv class=%22oe_secondary_menu%22 data-menu-parent=%22109%22 style=%22display: none%22%3E%0A      %3Cdiv class=%22oe_secondary_menu_section%22 data-menu-xmlid=%22crm.crm_menu_pipeline%22%3E%0A       Pipeline%0A      %3C/div%3E%0A      %3Cul class=%22oe_secondary_submenu nav nav-pills nav-stacked%22%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%22137%22 data-action-model=%22ir.actions.server%22 data-menu=%22122%22 data-menu-xmlid=%22crm.menu_crm_opportunities%22 href=%22/web#menu_id=122&amp;action=137%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Pipeline%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A      %3C/ul%3E%0A      %3Cdiv class=%22oe_secondary_menu_section%22 data-menu-xmlid=%22crm.res_partner_menu_crm%22%3E%0A       %3Ca class=%22oe_menu_leaf%22 data-action-id=%2248%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22120%22 data-menu-xmlid=%22crm.res_partner_menu_crm%22 href=%22/web#menu_id=120&amp;action=48%22%3E%0A        %3Cspan class=%22oe_menu_text%22%3E%0A         Customers%0A        %3C/span%3E%0A       %3C/a%3E%0A      %3C/div%3E%0A      %3Cdiv class=%22oe_secondary_menu_section%22 data-menu-xmlid=%22crm.crm_menu_report%22%3E%0A       Reporting%0A      %3C/div%3E%0A      %3Cul class=%22oe_secondary_submenu nav nav-pills nav-stacked%22%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%22146%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22127%22 data-menu-xmlid=%22crm.crm_opportunity_report_menu%22 href=%22/web#menu_id=127&amp;action=146%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Pipeline%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%22144%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22126%22 data-menu-xmlid=%22crm.crm_activity_report_menu%22 href=%22/web#menu_id=126&amp;action=144%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Activities%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%22114%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22117%22 data-menu-xmlid=%22crm.sales_team_menu_report_crm%22 href=%22/web#menu_id=117&amp;action=114%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Sales Channels%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A      %3C/ul%3E%0A      %3Cdiv class=%22oe_secondary_menu_section%22 data-menu-xmlid=%22crm.crm_menu_config%22%3E%0A       Configuration%0A      %3C/div%3E%0A      %3Cul class=%22oe_secondary_submenu nav nav-pills nav-stacked%22%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%22127%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22113%22 data-menu-xmlid=%22crm.crm_config_settings_menu%22 href=%22/web#menu_id=113&amp;action=127%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Settings%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%22115%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22115%22 data-menu-xmlid=%22crm.crm_team_config%22 href=%22/web#menu_id=115&amp;action=115%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Sales Channels%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_leaf%22 data-action-id=%22116%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22116%22 data-menu-xmlid=%22crm.crm_team_menu_config_activity_types%22 href=%22/web#menu_id=116&amp;action=116%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Activity Types%0A         %3C/span%3E%0A        %3C/a%3E%0A       %3C/li%3E%0A       %3Cli%3E%0A        %3Ca class=%22oe_menu_toggler%22 data-menu=%22111%22 data-menu-xmlid=%22crm.menu_crm_config_lead%22 href=%22/web#menu_id=111&amp;action=%22%3E%0A         %3Cspan class=%22oe_menu_text%22%3E%0A          Leads &amp; Opportunities%0A         %3C/span%3E%0A        %3C/a%3E%0A        %3Cul class=%22oe_secondary_submenu nav nav-pills nav-stacked%22%3E%0A         %3Cli%3E%0A          %3Ca class=%22oe_menu_leaf%22 data-action-id=%22140%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22123%22 data-menu-xmlid=%22crm.menu_crm_lead_categ%22 href=%22/web#menu_id=123&amp;action=140%22%3E%0A           %3Cspan class=%22oe_menu_text%22%3E%0A            Lead Tags%0A           %3C/span%3E%0A          %3C/a%3E%0A         %3C/li%3E%0A         %3Cli%3E%0A          %3Ca class=%22oe_menu_leaf%22 data-action-id=%22141%22 data-action-model=%22ir.actions.act_window%22 data-menu=%22124%22 data-menu-xmlid=%22crm.menu_crm_lost_reason%22 href=%22/web#menu_id=124&amp;action=141%22%3E%0A           %3Cspan class=%22oe_menu_text%22%3E%0A            Lost Reasons%0A           %3C/span%3E%0A          %3C/a%3E%0A         %3C/li%3E%0A        %3C/ul%3E%0A       %3C/li%3E%0A      %3C/ul%3E%0A     %3C/div%3E%0A
+      %3Cdiv cl
+@@ -16355,32 +16355,409 @@
+ li%3E%0A      %3C/ul%3E%0A
++      %3Cdiv class=%22oe_secondary_menu_section%22 data-menu-xmlid=%22base_setup.menu_config%22%3E%0A       %3Ca class=%22oe_menu_leaf%22 data-action-id=%2288%22 data-action-model=%22ir.actions.act_window%22 data-menu=%2290%22 data-menu-xmlid=%22base_setup.menu_config%22 href=%22/web#menu_id=90&amp;action=88%22%3E%0A        %3Cspan class=%22oe_menu_text%22%3E%0A         General Settings%0A        %3C/span%3E%0A       %3C/a%3E%0A      %3C/div%3E%0A
+      %3C/div%3E%0A    

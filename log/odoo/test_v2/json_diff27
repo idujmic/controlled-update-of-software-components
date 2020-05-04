@@ -1,0 +1,41 @@
+JSON objekti imaju iste ključeve
+- arch = <tree decoration-info="state=='to upgrade' or state=='to install'" decoration-danger="state=='uninstalled'" decoration-muted="state=='uninstallable'" create="false" string="Apps">
+                    <field name="shortdesc" modifiers="{&quot;readonly&quot;: true}"/>
+                    <field name="name" on_change="1" invisible="1" modifiers="{&quot;invisible&quot;: true, &quot;column_invisible&quot;: true, &quot;readonly&quot;: true, &quot;required&quot;: true}"/>
+                    <field name="author" modifiers="{&quot;readonly&quot;: true}"/>
+                    <field name="installed_version" modifiers="{&quot;readonly&quot;: true}"/>
+                    <field name="state" modifiers="{&quot;readonly&quot;: true}"/>
+                    <field name="category_id" invisible="1" can_create="true" can_write="true" modifiers="{&quot;column_invisible&quot;: true, &quot;readonly&quot;: true}"/>
+                </tree>
+ + arch = <tree decoration-info="state=='to upgrade' or state=='to install'" decoration-danger="state=='uninstalled'" decoration-muted="state=='uninstallable'" create="false" string="Apps">
+                    <field name="shortdesc" modifiers="{&quot;readonly&quot;: true}"/>
+                    <field name="name" on_change="1" invisible="1" modifiers="{&quot;invisible&quot;: true, &quot;readonly&quot;: true, &quot;required&quot;: true, &quot;column_invisible&quot;: true}"/>
+                    <field name="author" modifiers="{&quot;readonly&quot;: true}"/>
+                    <field name="installed_version" modifiers="{&quot;readonly&quot;: true}"/>
+                    <field name="state" modifiers="{&quot;readonly&quot;: true}"/>
+                    <field name="category_id" invisible="1" can_create="true" can_write="true" modifiers="{&quot;readonly&quot;: true, &quot;column_invisible&quot;: true}"/>
+                </tree>
+- write_date = 2020-04-28 12:00:33
+ + write_date = 2020-04-28 12:01:55
+- create_date = 2020-04-28 12:00:33
+ + create_date = 2020-04-28 12:01:55
+- __last_update = 2020-04-28 12:00:33
+ + __last_update = 2020-04-28 12:01:55
+- write_date = 2020-04-28 12:00:33
+ + write_date = 2020-04-28 12:01:55
+- create_date = 2020-04-28 12:00:33
+ + create_date = 2020-04-28 12:01:55
+- __last_update = 2020-04-28 12:00:33
+ + __last_update = 2020-04-28 12:01:55
+- write_date = 2020-04-28 12:00:33
+ + write_date = 2020-04-28 12:01:55
+- create_date = 2020-04-28 12:00:33
+ + create_date = 2020-04-28 12:01:55
+- __last_update = 2020-04-28 12:00:33
+ + __last_update = 2020-04-28 12:01:55
+- write_date = 2020-04-28 12:00:33
+ + write_date = 2020-04-28 12:01:55
+- create_date = 2020-04-28 12:00:33
+ + create_date = 2020-04-28 12:01:55
+- __last_update = 2020-04-28 12:00:33
+ + __last_update = 2020-04-28 12:01:55

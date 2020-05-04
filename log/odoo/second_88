@@ -1,0 +1,11 @@
+/web/login
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>
+ 400 Bad Request
+</title>
+<h1>
+ Bad Request
+</h1>
+<p>
+ Session expired (invalid CSRF token)
+</p>

@@ -1,0 +1,1 @@
+{"id": 790930901, "jsonrpc": "2.0", "result": {"lang_parameters": {"direction": "ltr", "date_format": "%m/%d/%Y", "name": "English", "id": 1, "grouping": "[3,0]", "decimal_point": ".", "thousands_sep": ",", "time_format": "%H:%M:%S"}, "multi_lang": false, "modules": {}}}

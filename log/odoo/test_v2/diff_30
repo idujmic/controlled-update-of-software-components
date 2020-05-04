@@ -1,0 +1,40 @@
+/web
+@@ -415,48 +415,48 @@
+ n: %22
+-682a08575575bcbdece826ad8c4909dc305b2e5f
++c7f82f0dd1319c1caf206f02f7e026c12ecba841
+ o%22,%0A
+@@ -553,30 +553,158 @@
+ = %7B%22
+-user_companies%22: false
++session_id%22: %22c88962e7b1e5ab06041d84ae3546a95f2f40bbf1%22, %22user_context%22: %7B%22tz%22: %22Europe/Brussels%22, %22lang%22: %22en_US%22, %22uid%22: 1%7D, %22name%22: %22Administrator%22
+ , %22u
+@@ -739,24 +739,43 @@
+ es%22: %7B%221%22: %7B
++%22digits%22: %5B69, 2%5D, 
+ %22position%22: 
+@@ -782,35 +782,16 @@
+ %22after%22,
+- %22digits%22: %5B69, 2%5D,
+  %22symbol
+@@ -815,306 +815,80 @@
+ : %7B%22
+-position%22: %22before%22, %22digits%22: %5B69, 2%5D, %22symbol%22: %22$%22%7D%7D, %22name%22: %22Administrator%22, %22uid%22: 1, %22session_id%22: %2203610d7d3bfa531c06618a242f29b5157147346e%22, %22web.base.url%22: %22http://localhost:8069%22, %22user_context%22: %7B%22lang%22: %22en_US%22, %22tz%22: %22Europe/Brussels%22, %22uid%22: 1%7D, %22is_superuser%22: true, %22web_tours%22: %5B%5D
++digits%22: %5B69, 2%5D, %22position%22: %22before%22, %22symbol%22: %22$%22%7D%7D, %22company_id%22: 1
+ , %22s
+@@ -925,31 +925,20 @@
+ %22, %22
+-db%22: %22odoo%22, %22is_system
++is_superuser
+ %22: t
+@@ -992,16 +992,74 @@
+  0, %22%22%5D,
++ %22web_tours%22: %5B%5D, %22web.base.url%22: %22http://localhost:8069%22,
+  %22partne
+@@ -1069,30 +1069,81 @@
+ d%22: 3, %22
++user_
+ compan
+-y_id%22: 1
++ies%22: false, %22uid%22: 1, %22is_system%22: true, %22db%22: %22odoo%22
+ %7D;%0A  %3C/s

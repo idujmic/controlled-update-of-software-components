@@ -1,0 +1,3 @@
+JSON objekti imaju iste ključeve
+- result = [{'model': 'crm.lead', 'planned_count': 0, 'today_count': 2, 'total_count': 14, 'overdue_count': 12, 'name': 'Lead/Opportunity', 'icon': '/crm/static/description/icon.png'}]
+ + result = [{'overdue_count': 14, 'model': 'crm.lead', 'name': 'Lead/Opportunity', 'planned_count': 0, 'today_count': 0, 'icon': '/crm/static/description/icon.png', 'total_count': 14}]

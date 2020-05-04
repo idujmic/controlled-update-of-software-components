@@ -1,0 +1,47 @@
+/web/action/load
+{"result": {"write_date": "2020-04-28 12:00:33", "domain": false, "view_id": false, "auto_search": true, "limit": 80, "target": "current", "binding_type": "action", "write_uid": [1, "Administrator"], "groups_id": [], "display_name": "Apps", "xml_id": "base.open_module_tree", "res_model": "ir.module.module", "search_view": "{'base_model': 'ir.module.module', 'arch': '
+<search modules\"="" string='\"Search'>
+ \\n
+ <field &quot;required&quot;:="" (\\'name\\',="" (\\'shortdesc\\',="" (\\'summary\\',="" \\'ilike\\',="" \\'|\\',="" filter_domain="\&quot;[\\'|\\'," modifiers='\"{"readonly":' name='\"name\"' self),="" self)]\"="" string='\"Module\"' true,="" true}\"="">
+ </field>
+ \\n
+ <filter 1)]\"="" \\'="\\'," domain="\&quot;[(\\'application\\'," name='\"app\"' string='\"Apps\"'>
+ </filter>
+ \\n
+ <filter 0)]\"="" \\'="\\'," domain="\&quot;[(\\'application\\'," name='\"extra\"' string='\"Extra\"'>
+ </filter>
+ \\n
+ <separator>
+ </separator>
+ \\n
+ <filter [\\'installed\\',="" \\'in\\',="" \\'to="" domain="\&quot;[(\\'state\\'," name='\"installed\"' remove\\'])]\"="" string='\"Installed\"' upgrade\\',="">
+ </filter>
+ \\n
+ <filter [\\'uninstalled\\',="" \\'in\\',="" \\'to="" \\'uninstallable\\',="" domain="\&quot;[(\\'state\\'," install\\'])]\"="" installed\"="" string='\"Not'>
+ </filter>
+ \\n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"category_id\"' true}\"="">
+ </field>
+ \\n
+ <group by\"="" expand='\"0\"' string='\"Group'>
+  \\n
+  <filter context="\&quot;{\\'group_by\\':\\'author\\'}\&quot;/" domain='\"[]\"' string='\"Author\"'>
+   \\n
+   <filter context="\&quot;{\\'group_by\\':\\'category_id\\'}\&quot;/" domain='\"[]\"' string='\"Category\"'>
+    \\n
+   </filter>
+  </filter>
+ </group>
+ \\n
+</search>
+', 'name': 'ir.module.module.list.select', 'type': 'search', 'model': 'ir.module.module', 'view_id': 82, 'fields': {'name': {'manual': False, 'translate': False, 'required': True, 'searchable': True, 'change_default': False, 'store': True, 'sortable': True, 'company_dependent': False, 'type': 'char', 'readonly': True, 'depends': (), 'string': 'Technical Name', 'views': {}}, 'category_id': {'domain': [], 'searchable': True, 'required': False, 'relation': 'ir.module.category', 'manual': False, 'change_default': False, 'store': True, 'sortable': True, 'company_dependent': False, 'type': 'many2one', 'readonly': True, 'context': {}, 'depends': (), 'string': 'Category', 'views': {}}}, 'field_parent': False}", "binding_model_id": false, "views": [[false, "kanban"], [false, "list"], [false, "form"]], "res_id": 0, "search_view_id": [82, "ir.module.module.list.select"], "name": "Apps", "id": 31, "usage": false, "create_date": "2020-04-28 12:00:33", "src_model": false, "__last_update": "2020-04-28 12:00:33", "view_ids": [], "flags": {}, "type": "ir.actions.act_window", "filter": false, "context": "{'search_default_app':1}", "create_uid": [1, "Administrator"], "view_mode": "kanban,list,form", "help": "
+<p>
+ <b>
+  No module found!
+ </b>
+</p>
+\n
+<p>
+ You should try other search criteria.
+</p>
+\n            ", "multi": false}, "id": 768811194, "jsonrpc": "2.0"}

@@ -1,0 +1,2 @@
+/web/webclient/translations
+{"jsonrpc": "2.0", "id": 109656642, "result": {"multi_lang": false, "lang_parameters": {"decimal_point": ".", "date_format": "%m/%d/%Y", "direction": "ltr", "thousands_sep": ",", "time_format": "%H:%M:%S", "id": 1, "name": "English", "grouping": "[3,0]"}, "modules": {}}}

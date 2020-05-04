@@ -1,0 +1,53 @@
+/web
+@@ -415,48 +415,48 @@
+ n: %22
+-0b6607b6ad1b1116251c212af529d683ae8b2488
++a6018f5bb1e558f3759f257d4463d655712daccc
+ o%22,%0A
+@@ -553,39 +553,131 @@
+ = %7B%22
+-partner_id%22: 3, %22company_id%22: 1
++is_superuser%22: true, %22username%22: %22admin%22, %22session_id%22: %22f6881b944632679372da53c7750046302d468512%22, %22name%22: %22Administrator%22
+ , %22c
+@@ -699,28 +699,8 @@
+ %22: %7B
+-%22symbol%22: %22%5Cu20ac%22, 
+ %22dig
+@@ -737,17 +737,10 @@
+ ter%22
+-%7D
+ , 
+-%223%22: %7B
+ %22sym
+@@ -750,12 +750,24 @@
+ %22: %22
+-$%22, 
++%5Cu20ac%22%7D, %223%22: %7B
+ %22dig
+@@ -805,179 +805,134 @@
+ ore%22
+-%7D%7D
+ , %22s
+-ession_id%22: %22ab355ba385427e0c13921972e1dc865a903c9401%22, %22server_version_info%22: %5B11, 0, 0, %22final%22, 0, %22%22%5D, %22name%22: %22Administrator%22, %22server_version%22: %2211.0-20200417%22
++ymbol%22: %22$%22%7D%7D, %22server_version_info%22: %5B11, 0, 0, %22final%22, 0, %22%22%5D, %22web.base.url%22: %22http://localhost:8069%22, %22partner_id%22: 3
+ , %22i
+@@ -953,19 +953,15 @@
+ e, %22
+-db%22: %22odoo%22
++uid%22: 1
+ , %22u
+@@ -980,22 +980,15 @@
+ : %7B%22
+-lang%22: %22en_US%22
++uid%22: 1
+ , %22t
+@@ -1015,152 +1015,131 @@
+ %22, %22
+-uid%22: 1%7D, %22is_superuser%22: true, %22web.base.url%22: %22http://localhost:8069%22, %22user_companies%22: false
++lang%22: %22en_US%22%7D, %22web_tours%22: %5B%5D, %22company_id%22: 1
+ , %22
+-u
+ ser
+-name%22: %22admin%22, %22web_tours%22: %5B%5D, %22uid%22: 1
++ver_version%22: %2211.0-20200417%22, %22db%22: %22odoo%22, %22user_companies%22: false
+ %7D;%0A 
