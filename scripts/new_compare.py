@@ -67,6 +67,8 @@ class FlowComparator:
 		diff = dmp.patch_toText(patches)
 		file_one = open(self.path + "first_json_" + str(self.cnt) + ".json", "w")
 		file_two = open(self.path + "second_json_" + str(self.cnt) + ".json", "w")
+		file_one.write(str(first_content.request.headers["redoslijed"]) + "\n")
+		file_two.write(str(second_content.request.headers["redoslijed"]) + "\n")
 		file_one.write(str(first_content.request.path) + "\n")
 		file_two.write(str(second_content.request.path) + "\n")
 		file_one.write(str(first_soup.prettify()))
@@ -76,7 +78,7 @@ class FlowComparator:
 		first_json_dict = json.loads(first_content.response.get_text())
 		second_json_dict = json.loads(second_content.response.get_text())
 		json_compare(first_json_dict, second_json_dict, self.path, self.cnt)
-		if path.exists(self.path + "json_diff" + str(self.cnt)):
+		if path.exists(self.path + "json_diff"+ str(self.cnt)):
 			file = open(self.path + "json_diff" + str(self.cnt))
 			tokens = []
 			for line in file:
@@ -91,8 +93,9 @@ class FlowComparator:
 				for diff in self.legal_diffs:
 					if diff in token:
 						legal = True
-			if not legal:
-				write_alarm_file(first_content, tokens, tokns, self.cnt, self.legal_diffs, self.path)
+				if not legal:
+					write_alarm_file(first_content, tokens, tokens, self.cnt, self.legal_diffs, self.path)
+				legal = False
 					
 
 			#file = open("odoo/test_v1/json_diff" + str(self.cnt), "w")

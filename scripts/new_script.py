@@ -24,6 +24,8 @@ class Writer:
 		print(self.host)
 		self.port = port
 		self.tokens_for_scraping = tokens_for_scraping
+		self.waiting_dictionary = {}
+		self.repeating_path_requests_dictionary = {}
 	def response(self, flow: http.HTTPFlow) -> None:
 		if "png" not in str(flow.request.path) and "avg" not in str(flow.request.path) and "images" not in str(flow.request.path):
 			if str(self.host) == str(flow.request.host):
@@ -69,8 +71,17 @@ class Writer:
 			ctx.master.commands.call("view.flows.add", [flow_copy])
 		if ".png" not in str(flow.request.path) and ".avg" not in str(flow.request.path) and "images" not in str(flow.request.path):
 			if not flow.request.path in self.flows_dict:
+				self.repeating_path_requests_dictionary[flow.request.path] = 1
+				flow.request.headers["redoslijed"] = "prvi-" + str(self.repeating_path_requests_dictionary[flow.request.path])
+				flow_copy.request.headers["redoslijed"] = "drugi-" + str(self.repeating_path_requests_dictionary[flow.request.path])
+				self.repeating_path_requests_dictionary[flow.request.path] += 1
 				q = queue.Queue()
-				self.flows_dict[str(flow.request.path)] = q
+				self.flows_dict[flow.request.path] = q
+			else:
+				flow.request.headers["redoslijed"] = "prvi-" + str(self.repeating_path_requests_dictionary[flow.request.path])
+				flow_copy.request.headers["redoslijed"] = "drugi-" + str(self.repeating_path_requests_dictionary[flow.request.path])
+				self.repeating_path_requests_dictionary[flow.request.path] += 1
+
 		ctx.master.commands.call("replay.client", [flow_copy])
 def scrape_response_for_tokens(response, tokens):
 	soup = BeautifulSoup(response, "html.parser")
@@ -110,12 +121,83 @@ def build_body(body_dictionary):
 def checker(argument):
 	print(argument)
 	threading.Timer(45.0, checker, [argument]).start()
+	flag = False
 	for k,v in argument[0].flows_dict.items():
 		if v.qsize() % 2 == 0  and v.qsize() > 0:
 			#print("Usporedujem " + str(k))
 			a = v.get()
 			b = v.get()
-			argument[0].cmp.diff_content(a,b)
+			if ("drugi" in a.request.headers["redoslijed"] and "drugi" in b.request.headers["redoslijed"]) or ("prvi" in a.request.headers["redoslijed"] and "prvi" in b.request.headers["redoslijed"]):
+				if a.request.path in argument[0].waiting_dictionary:
+					if argument[0].waiting_dictionary[a.request.path].qsize() > 0:
+						c = argument[0].waiting_dictionary[a.request.path].get()
+						d = argument[0].waiting_dictionary[a.request.path].get()
+						sorted_flows = get_coresponding(a,b,c,d)
+						argument[0].cmp.diff_content(sorted_flows[0], sorted_flows[1])
+						argument[0].cmp.diff_content(sorted_flows[2], sorted_flows[3])
+					else:
+						argument[0].waiting_dictionary[a.request.path].put(a)
+						argument[0].waiting_dictionary[a.request.path].put(b)
+				else:
+					q = queue.Queue()
+					q.put(a)
+					q.put(b)
+					argument[0].waiting_dictionary[a.request.path] = q
+			else:
+				argument[0].cmp.diff_content(a,b)
+			if v.qsize() % 2 == 0 and v.qsize() >0:
+				flag = True
+			while flag:
+				a = v.get()
+				b = v.get()
+				if ("drugi" in a.request.headers["redoslijed"] and "drugi" in b.request.headers["redoslijed"]) or ("prvi" in a.request.headers["redoslijed"] and "prvi" in b.request.headers["redoslijed"]):
+					if a.request.path in argument[0].waiting_dictionary:
+						if argument[0].waiting_dictionary[a.request.path].qsize() > 0:
+							c = argument[0].waiting_dictionary[a.request.path].get()
+							d = argument[0].waiting_dictionary[a.request.path].get()
+							sorted_flows = get_coresponding(a,b,c,d)
+							argument[0].cmp.diff_content(sorted_flows[0], sorted_flows[1])
+							argument[0].cmp.diff_content(sorted_flows[2], sorted_flows[3])
+						else:
+							argument[0].waiting_dictionary[a.request.path].put(a)
+							argument[0].waiting_dictionary[a.request.path].put(b)
+					else:
+						q = queue.Queue()
+						q.put(a)
+						q.put(b)
+						argument[0].waiting_dictionary[a.request.path] = q
+				else:
+					argument[0].cmp.diff_content(a,b)			
+				if v.qsize() % 2 != 0 or v.qsize() == 0:
+					flag = False
+def get_coresponding(a,b,c,d):
+	sorted_flows = []
+	print(a.request.path)
+	print("a : " + str(a.request.headers["redoslijed"]))
+	print("b : " + str(b.request.headers["redoslijed"]))
+	print("c : " + str(c.request.headers["redoslijed"]))
+	print("d : " + str(d.request.headers["redoslijed"]))
+	a_num = a.request.headers["redoslijed"].split("-")[1]
+	b_num = b.request.headers["redoslijed"].split("-")[1]
+	c_num = c.request.headers["redoslijed"].split("-")[1]
+	d_num = d.request.headers["redoslijed"].split("-")[1]
+	if a_num == c_num:
+		sorted_flows.append(a)
+		sorted_flows.append(c)
+		print("Spajam a sa c")
+	else:
+		sorted_flows.append(a)
+		sorted_flows.append(d)
+		print("Spajam a sa d")
+	if b_num == c_num:
+		sorted_flows.append(b)
+		sorted_flows.append(c)
+		print("Spajam b sa c")
+	else:
+		print("Spajam b sa d")
+		sorted_flows.append(b)
+		sorted_flows.append(d)
+	return sorted_flows
 def read_config_file(path):
 	config_file = open(path, "r")
 	legal_diffs = []
@@ -134,6 +216,6 @@ def read_config_file(path):
 legal_diffs,tokens_for_scraping = read_config_file("odoo_config.txt")
 print(legal_diffs)
 print(tokens_for_scraping)
-addons = [Writer(legal_diffs, 8070, tokens_for_scraping, "localhost", "odoo/test_v4/")]
+addons = [Writer(legal_diffs, 8070, tokens_for_scraping, "localhost", "odoo/test_v5/")]
 #addons = [Writer(["id"], 9000, [])]
 checker(addons)
