@@ -4,6 +4,8 @@ import sys
 import json
 import urllib.parse
 import ast
+import os.path
+from os import path
 class FlowComparator:
 	def __init__(self, legal_diffs, path):
 		self.cnt = 0
@@ -74,6 +76,24 @@ class FlowComparator:
 		first_json_dict = json.loads(first_content.response.get_text())
 		second_json_dict = json.loads(second_content.response.get_text())
 		json_compare(first_json_dict, second_json_dict, self.path, self.cnt)
+		if path.exists(self.path + "json_diff" + str(self.cnt)):
+			file = open(self.path + "json_diff" + str(self.cnt))
+			tokens = []
+			for line in file:
+				if line[0] == "-":
+					token = line[1:].split("=")[0]
+					tokens.append(token)
+				else:
+					continue
+			legal = False
+			illegal_tokens = []
+			for token in tokens:
+				for diff in self.legal_diffs:
+					if diff in token:
+						legal = True
+			if not legal:
+				write_alarm_file(first_content, tokens, tokns, self.cnt, self.legal_diffs, self.path)
+					
 
 			#file = open("odoo/test_v1/json_diff" + str(self.cnt), "w")
 			#file.write(first_content.request.path + "\n")
@@ -92,7 +112,9 @@ class FlowComparator:
 		file_one.close()
 		file_two.close()
 		self.cnt +=1
+
 def json_compare(first_json_dict, second_json_dict, path, cnt):
+	diffs = []
 	if first_json_dict != second_json_dict:
 		file = open(path + "json_diff" + str(cnt), "w")
 		if first_json_dict.keys() == second_json_dict.keys():
@@ -116,7 +138,7 @@ def iterate_dict(first_dict, second_dict, file, cnt):
 								for value1, value2 in zip(v1,v2):
 									iterate_dict(value1, value2, file, cnt)
 					else:
-						file.write("- "  + str(k1) + " = " + str(v1) + "\n + " + str(k2) + " = " + str(v2) + "\n")
+						file.write("-"  + str(k1) + "=" + str(v1) + "\n+" + str(k2) + "=" + str(v2) + "\n")
 def check_json_alarm(json_dict, token, legal_diffs, diff, cnt, flow):
 	flag = False
 	if isinstance(json_dict, dict):
@@ -186,7 +208,7 @@ def check_tags_for_token(tag_set, token):
 	return False
 def write_alarm_file(flow, diff, token, cnt, legal_diffs, path):
 	f_alarm = open(path + "alarm" + str(cnt), "w")
-	f_alarm.write("Token: " + token + " nije pronađen na adresi " + flow.request.path + "\n")
+	f_alarm.write("Token: " + str(token) + " nije pronađen na adresi " + flow.request.path + "\n")
 	f_alarm.write("Izlaz diffa: " + "\n" + str(diff) + "\n")
 	f_alarm.write("Legitimne razlike koje su uzete u obzir: " + str(legal_diffs) + "\n")
 	f_alarm.write("Proučite izlaz diffa, možda postoji još razlika koje treba navesti!")
