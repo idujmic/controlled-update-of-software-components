@@ -1,0 +1,60 @@
+2
+/web/dataset/call_button
+{"jsonrpc": "2.0", "result": {"help": "
+<p class='\"oe_view_nocontent_create\"'>
+ \n            Click to schedule a new meeting.\n
+</p>
+<p>
+ \n            The calendar is shared between employees and fully integrated with\n            other applications such as the employee leaves or the business\n            opportunities.\n
+</p>
+\n        ", "multi": false, "create_uid": [1, "Administrator"], "views": [[314, "calendar"], [311, "list"], [312, "form"]], "__last_update": "2020-05-01 14:51:54", "name": "Meetings", "limit": 80, "domain": false, "create_date": "2020-05-01 14:51:54", "search_view": "{'arch': '
+<search meetings\"="" string='\"Search'>
+ \\n
+ <field &quot;in&quot;,="" &quot;required&quot;:="" [&quot;done&quot;]]],="" [[&quot;state&quot;,="" filter_domain="\&quot;[(\\'name\\',\\'ilike\\',self)]\&quot;" modifiers='\"{"readonly":' name='\"name\"' string='\"Meeting\"' true}\"="">
+ </field>
+ \\n
+ <field &quot;in&quot;,="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"partner_ids\"'>
+ </field>
+ \\n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"categ_ids\"'>
+  \\n
+  <field &quot;in&quot;,="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"user_id\"'>
+  </field>
+  \\n
+  <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"opportunity_id\"'>
+   \\n            \\n
+   <field &quot;in&quot;,="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" modifiers='\"{"readonly":' name='\"show_as\"'>
+   </field>
+   \\n
+   <field &quot;in&quot;,="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" modifiers='\"{"readonly":' name='\"privacy\"' string='\"Privacy\"'>
+   </field>
+   \\n
+   <filter domain="\&quot;[(\\'user_id\\',\\'=\\',uid)]\&quot;" events\"="" help='\"My' string='\"My'>
+   </filter>
+   \\n
+   <filter 1}\"="" context='\"{"mymeetings":' help='\"My' meetings\"="" name='\"mymeetings\"' string='\"My'>
+   </filter>
+   \\n
+   <filter domain="\&quot;[(\\'message_needaction\\',\\'=\\',True)]\&quot;/" messages\"="" name='\"message_needaction\"' string='\"Unread'>
+    \\n
+    <separator>
+    </separator>
+    \\n
+    <group by\"="" expand='\"0\"' string='\"Group'>
+     \\n
+     <filter context="\&quot;{\\'group_by\\':\\'user_id\\'}\&quot;/" domain='\"[]\"' string='\"Responsible\"'>
+      \\n
+      <filter context="\&quot;{\\'group_by\\':\\'show_as\\'}\&quot;/" domain='\"[]\"' string='\"Availability\"'>
+       \\n
+       <filter context="\&quot;{\\'group_by\\':\\'privacy\\'}\&quot;/" domain='\"[]\"' string='\"Privacy\"'>
+        \\n
+       </filter>
+      </filter>
+     </filter>
+    </group>
+    \\n
+   </filter>
+  </field>
+ </field>
+</search>
+', 'view_id': 315, 'type': 'search', 'base_model': 'calendar.event', 'field_parent': False, 'model': 'calendar.event', 'name': 'calendar.event.search', 'fields': {'name': {'views': {}, 'states': {'done': [('readonly', True)]}, 'type': 'char', 'readonly': False, 'translate': False, 'required': True, 'depends': (), 'change_default': False, 'manual': False, 'store': True, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Meeting Subject'}, 'partner_ids': {'views': {}, 'relation': 'res.partner', 'type': 'many2many', 'readonly': False, 'required': False, 'states': {'done': [('readonly', True)]}, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': False, 'string': 'Attendees', 'store': True}, 'categ_ids': {'views': {}, 'relation': 'calendar.event.type', 'type': 'many2many', 'readonly': False, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': False, 'string': 'Tags', 'store': True}, 'user_id': {'views': {}, 'relation': 'res.users', 'type': 'many2one', 'readonly': False, 'required': False, 'states': {'done': [('readonly', True)]}, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Responsible', 'store': True}, 'privacy': {'views': {}, 'states': {'done': [('readonly', True)]}, 'type': 'selection', 'readonly': False, 'required': False, 'depends': (), 'change_default': False, 'manual': False, 'store': True, 'company_dependent': False, 'searchable': True, 'selection': [('public', 'Everyone'), ('private', 'Only me'), ('confidential', 'Only internal users')], 'sortable': True, 'string': 'Privacy'}, 'show_as': {'views': {}, 'states': {'done': [('readonly', True)]}, 'type': 'selection', 'readonly': False, 'required': False, 'depends': (), 'change_default': False, 'manual': False, 'store': True, 'company_dependent': False, 'searchable': True, 'selection': [('free', 'Free'), ('busy', 'Busy')], 'sortable': True, 'string': 'Show Time as'}, 'opportunity_id': {'views': {}, 'relation': 'crm.lead', 'type': 'many2one', 'readonly': False, 'required': False, 'depends': (), 'domain': \"[('type', '=', 'opportunity')]\", 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Opportunity', 'store': True}}}", "context": {"default_opportunity_id": 30, "default_name": "odoo dodo", "default_partner_ids": [3, 24], "default_partner_id": 24, "default_team_id": 1}, "src_model": false, "flags": {}, "xml_id": "calendar.action_calendar_event", "target": "current", "auto_search": true, "view_mode": "calendar,list,form", "view_id": [314, "calendar.event.calendar"], "type": "ir.actions.act_window", "filter": false, "id": 109, "search_view_id": [315, "calendar.event.search"], "usage": false, "write_uid": [1, "Administrator"], "view_ids": [18, 19, 20], "res_model": "calendar.event", "binding_model_id": false, "groups_id": [], "write_date": "2020-05-01 14:51:54", "binding_type": "action", "display_name": "Meetings", "res_id": 0}, "id": 577755549}

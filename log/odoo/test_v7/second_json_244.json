@@ -1,0 +1,3 @@
+3
+/web/dataset/call_kw/res.company/onchange
+{"id": 910821180, "jsonrpc": "2.0", "result": {"value": {"country_id": [183, "Portugal"]}, "domain": {"state_id": [["country_id", "=", 183]]}}}

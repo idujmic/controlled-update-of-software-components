@@ -1,0 +1,3 @@
+3
+/web/webclient/translations
+{"id": 103857598, "jsonrpc": "2.0", "result": {"modules": {}, "lang_parameters": {"grouping": "[3,0]", "date_format": "%m/%d/%Y", "time_format": "%H:%M:%S", "id": 1, "name": "English", "direction": "ltr", "thousands_sep": ",", "decimal_point": "."}, "multi_lang": false}}

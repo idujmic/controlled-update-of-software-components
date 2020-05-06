@@ -1,0 +1,3 @@
+7
+/web/dataset/search_read
+{"jsonrpc": "2.0", "result": {"length": 1, "records": [{"company_currency": [1, "EUR"], "activity_summary": "Meeting to go over pricing information.", "priority": "1", "color": 0, "tag_ids": [1], "id": 13, "partner_id": false, "activity_state": "overdue", "name": "Plan to buy 60 keyboards and mouses", "planned_revenue": 40000.0, "kanban_state": "grey", "user_id": [1, "Administrator"], "message_needaction_counter": 0, "partner_address_email": false, "date_deadline": "2020-05-15", "user_email": "admin@yourcompany.example.com", "active": true, "activity_ids": [1], "activity_date_deadline": false, "stage_id": [4, "Won"]}]}, "id": 46389118}

@@ -1,0 +1,3 @@
+6
+/web/dataset/call_kw/crm.lead/read_progress_bar
+{"jsonrpc": "2.0", "result": {"Won": {"overdue": 3, "planned": 0, "today": 0}, "Qualified": {"overdue": 4, "planned": 0, "today": 0}, "Proposition": {"overdue": 6, "planned": 0, "today": 0}, "New": {"overdue": 1, "planned": 0, "today": 0}}, "id": 69908131}

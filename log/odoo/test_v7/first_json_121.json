@@ -1,0 +1,3 @@
+7
+/web/dataset/call_kw/crm.lead/read
+{"jsonrpc": "2.0", "result": [{"city": "Wavre", "state_id": false, "priority": "1", "phone": false, "id": 30, "website": false, "partner_name": "Agrolait", "email_from": "michel.fletcher@agrolait.example.com", "name": "odoo dodo", "planned_revenue": 1000.0, "zip": "1300", "street2": false, "street": "69 rue de Namur", "title": false, "function": "Analyst", "mobile": false, "partner_id": [24, "Agrolait, Michel Fletcher"], "country_id": [20, "Belgium"], "company_currency": [1, "EUR"], "contact_name": "Michel Fletcher", "display_name": "odoo dodo"}], "id": 865038007}

@@ -1,0 +1,3 @@
+2
+/web/dataset/call_kw/calendar.contacts/search_read
+{"jsonrpc": "2.0", "result": [{"partner_id": [8, "ASUSTeK"], "id": 1}, {"partner_id": [6, "YourCompany, Demo User"], "id": 2}, {"partner_id": [19, "Agrolait, Edward Foster"], "id": 3}], "id": 927660066}

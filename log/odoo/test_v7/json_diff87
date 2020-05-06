@@ -1,0 +1,20 @@
+/web/dataset/call_kw/mail.message/message_format
+JSON objekti imaju iste ključeve
+-date=2020-05-01 14:52:13
++date=2020-05-01 14:50:49
+-new_value=Europe
++new_value=4500.0
+-changed_field=Sales Channel
++changed_field=Expected Revenue
+-old_value=
++old_value=0.0
+-field_type=many2one
++field_type=float
+-new_value=4500.0
++new_value=Europe
+-changed_field=Expected Revenue
++changed_field=Sales Channel
+-old_value=0.0
++old_value=
+-field_type=float
++field_type=many2one

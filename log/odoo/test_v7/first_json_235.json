@@ -1,0 +1,3 @@
+3
+/web/dataset/call_kw/res.company/read
+{"jsonrpc": "2.0", "result": [{"country_id": [233, "United States"], "sequence": 0, "__last_update": "2020-05-01 14:51:34", "zip": "18540", "name": "YourCompany", "street": "1725 Slough Ave.", "state_id": [47, "Pennsylvania"], "logo": "14.95 Kb", "report_footer": false, "email": "info@yourcompany.example.com", "report_header": false, "city": "Scranton", "phone": "+1 555 123 8069", "currency_id": [1, "EUR"], "partner_id": [1, "YourCompany"], "vat": false, "id": 1, "street2": false, "website": "http://www.example.com", "parent_id": false, "company_registry": false, "display_name": "YourCompany"}], "id": 759035442}

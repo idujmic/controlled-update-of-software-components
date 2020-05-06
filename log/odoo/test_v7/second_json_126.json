@@ -1,0 +1,3 @@
+9
+/web/dataset/search_read
+{"id": 682833859, "jsonrpc": "2.0", "result": {"length": 1, "records": [{"partner_address_email": "michel.fletcher@agrolait.example.com", "message_needaction_counter": 0, "planned_revenue": 1000.0, "stage_id": [1, "New"], "company_currency": [1, "EUR"], "priority": "1", "tag_ids": [], "date_deadline": false, "activity_state": false, "kanban_state": "grey", "user_email": "admin@yourcompany.example.com", "id": 30, "activity_date_deadline": false, "activity_ids": [], "partner_id": [24, "Agrolait, Michel Fletcher"], "user_id": [1, "Administrator"], "active": true, "color": 0, "activity_summary": false, "name": "odoo dodo"}]}}

@@ -1,0 +1,6 @@
+7
+/web/dataset/call_kw/mail.message/message_format
+{"jsonrpc": "2.0", "result": [{"record_name": "Need to customize the solution", "author_id": [3, "YourCompany, Administrator"], "subtype_description": "Stage changed", "starred_partner_ids": [], "is_note": false, "customer_email_status": "sent", "message_type": "notification", "partner_ids": [], "customer_email_data": [], "body": "", "date": "2020-05-01 14:52:13", "subtype_id": [6, "Stage Changed"], "id": 111, "channel_ids": [], "model": "crm.lead", "tracking_value_ids": [{"new_value": "Europe", "changed_field": "Sales Channel", "old_value": "", "field_type": "many2one", "id": 143}, {"new_value": 4500.0, "changed_field": "Expected Revenue", "old_value": 0.0, "field_type": "float", "id": 144}, {"new_value": "Proposition", "changed_field": "Stage", "old_value": "", "field_type": "many2one", "id": 145}, {"new_value": "Administrator", "changed_field": "Salesperson", "old_value": "", "field_type": "many2one", "id": 146}], "needaction_partner_ids": [], "res_id": 25, "email_from": "\"Administrator\"
+<admin@yourcompany.example.com>
+ ", "subject": false, "module_icon": "/crm/static/description/icon.png", "attachment_ids": []}], "id": 441272318}
+</admin@yourcompany.example.com>

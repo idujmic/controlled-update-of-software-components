@@ -1,0 +1,12 @@
+13
+/web/action/load
+{"jsonrpc": "2.0", "result": {"help": "
+<p>
+ Create and manage the companies that will be managed by Odoo from here. Shops or subsidiaries can be created and maintained from here.
+</p>
+", "multi": false, "create_uid": [1, "Administrator"], "views": [[false, "list"], [false, "kanban"], [false, "form"]], "__last_update": "2020-05-01 14:48:10", "name": "Companies", "limit": 80, "domain": false, "create_date": "2020-05-01 14:48:10", "search_view": "{'arch': '
+<search string='\"Companies\"'>
+ <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+ </field>
+</search>
+', 'type': 'search', 'field_parent': False, 'model': 'res.company', 'name': 'default', 'fields': {'name': {'views': {}, 'type': 'char', 'readonly': False, 'translate': False, 'required': True, 'related': ('partner_id', 'name'), 'depends': ('partner_id.name',), 'change_default': False, 'manual': False, 'store': True, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Company Name'}}}", "context": "{}", "src_model": false, "flags": {}, "xml_id": "base.action_res_company_form", "target": "current", "auto_search": true, "view_mode": "list,kanban,form", "view_id": false, "type": "ir.actions.act_window", "filter": false, "id": 44, "search_view_id": false, "usage": false, "write_uid": [1, "Administrator"], "view_ids": [], "res_model": "res.company", "binding_model_id": false, "groups_id": [], "write_date": "2020-05-01 14:48:10", "binding_type": "action", "display_name": "Companies", "res_id": 0}, "id": 840267907}

@@ -1,0 +1,6 @@
+5
+/web/dataset/call_kw/mail.message/message_format
+{"id": 621530655, "jsonrpc": "2.0", "result": [{"starred_partner_ids": [], "channel_ids": [], "model": "crm.lead", "customer_email_data": [], "partner_ids": [], "subtype_id": [6, "Stage Changed"], "attachment_ids": [], "body": "", "customer_email_status": "sent", "author_id": [3, "YourCompany, Administrator"], "id": 103, "needaction_partner_ids": [], "date": "2020-05-01 14:50:49", "email_from": "\"Administrator\"
+<admin@yourcompany.example.com>
+ ", "message_type": "notification", "is_note": false, "subject": false, "tracking_value_ids": [{"id": 118, "field_type": "many2one", "new_value": "Delta PC", "changed_field": "Customer", "old_value": ""}, {"id": 119, "field_type": "float", "new_value": 9000.0, "changed_field": "Expected Revenue", "old_value": 0.0}, {"id": 120, "field_type": "many2one", "new_value": "Europe", "changed_field": "Sales Channel", "old_value": ""}, {"id": 121, "field_type": "many2one", "new_value": "Proposition", "changed_field": "Stage", "old_value": ""}, {"id": 122, "field_type": "many2one", "new_value": "Administrator", "changed_field": "Salesperson", "old_value": ""}], "res_id": 21, "module_icon": "/crm/static/description/icon.png", "subtype_description": "Stage changed", "record_name": "\u201cResource Planning\u201d project develpment"}]}
+</admin@yourcompany.example.com>

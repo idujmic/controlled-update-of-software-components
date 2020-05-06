@@ -1,0 +1,527 @@
+3
+/web/dataset/call_kw/crm.lead/load_views
+{"id": 761446464, "jsonrpc": "2.0", "result": {"fields_views": {"graph": {"arch": "
+<graph string='\"Opportunities\"' type='\"bar\"'>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"stage_id\"' on_change='\"1\"' type='\"row\"'>
+  \n
+  <field modifiers='\"{}\"/' name='\"planned_revenue\"' type='\"measure\"'>
+   \n
+  </field>
+ </field>
+</graph>
+", "fields": {"stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "planned_revenue": {"group_operator": "sum", "required": false, "string": "Expected Revenue", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "float"}}, "view_id": 345, "model": "crm.lead", "toolbar": {"action": [{"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 132, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nif record:\n    action_values = env.ref('crm.crm_lead_lost_action').read()[0]\n    action_values.update({'context': env.context})\n    action = action_values\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark as lost", "display_name": "Mark as lost", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_as_lost", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark as lost", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 133, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.filtered(lambda a: a.state == 'overdue').action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark Late Activities as Done", "display_name": "Mark Late Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_late_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark Late Activities as Done", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 134, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark All Activities as Done", "display_name": "Mark All Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark All Activities as Done", "write_date": "2020-05-01 14:50:42"}], "relate": [], "print": []}, "name": "crm.lead.graph.lead", "field_parent": false, "base_model": "crm.lead", "type": "graph"}, "pivot": {"arch": "
+<pivot display_quantity='\"true\"' string='\"Opportunities\"'>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"stage_id\"' on_change='\"1\"' type='\"row\"'>
+  \n
+  <field modifiers='\"{}\"/' name='\"planned_revenue\"' type='\"measure\"'>
+   \n
+  </field>
+ </field>
+</pivot>
+", "fields": {"stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "planned_revenue": {"group_operator": "sum", "required": false, "string": "Expected Revenue", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "float"}}, "view_id": 344, "model": "crm.lead", "toolbar": {"action": [{"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 132, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nif record:\n    action_values = env.ref('crm.crm_lead_lost_action').read()[0]\n    action_values.update({'context': env.context})\n    action = action_values\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark as lost", "display_name": "Mark as lost", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_as_lost", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark as lost", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 133, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.filtered(lambda a: a.state == 'overdue').action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark Late Activities as Done", "display_name": "Mark Late Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_late_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark Late Activities as Done", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 134, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark All Activities as Done", "display_name": "Mark All Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark All Activities as Done", "write_date": "2020-05-01 14:50:42"}], "relate": [], "print": []}, "name": "crm.lead.pivot.lead", "field_parent": false, "base_model": "crm.lead", "type": "pivot"}, "calendar": {"arch": "
+<calendar color='\"user_id\"' date_start='\"activity_date_deadline\"' generation\"="" string='\"Leads'>
+ \n
+ <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+ </field>
+ \n
+ <field modifiers='\"{}\"/' name='\"partner_name\"'>
+  \n
+ </field>
+</calendar>
+", "fields": {"partner_name": {"help": "The name of the future partner company that will be created while converting the lead into opportunity", "required": false, "string": "Customer Name", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "user_id": {"required": false, "string": "Salesperson", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "activity_date_deadline": {"required": false, "string": "Next Activity Deadline", "depends": ["activity_ids.date_deadline"], "related": ["activity_ids", "date_deadline"], "change_default": false, "sortable": true, "readonly": true, "store": true, "manual": false, "searchable": true, "groups": "base.group_user", "company_dependent": false, "type": "date"}, "name": {"required": true, "string": "Opportunity", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}}, "view_id": 348, "model": "crm.lead", "toolbar": {"action": [{"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 132, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nif record:\n    action_values = env.ref('crm.crm_lead_lost_action').read()[0]\n    action_values.update({'context': env.context})\n    action = action_values\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark as lost", "display_name": "Mark as lost", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_as_lost", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark as lost", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 133, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.filtered(lambda a: a.state == 'overdue').action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark Late Activities as Done", "display_name": "Mark Late Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_late_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark Late Activities as Done", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 134, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark All Activities as Done", "display_name": "Mark All Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark All Activities as Done", "write_date": "2020-05-01 14:50:42"}], "relate": [], "print": []}, "name": "crm.lead.calendar.lead", "field_parent": false, "base_model": "crm.lead", "type": "calendar"}, "list": {"arch": "
+<tree &lt;="" (activity_date_deadline="" =='100\"' and="" current_date)\"="" decoration-bf='\"message_needaction==True\"' decoration-danger='\"activity_date_deadline' decoration-muted='\"probability' string='\"Opportunities\"'>
+ \n
+ <field invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"date_deadline\"' true}\"="">
+ </field>
+ \n
+ <field modifiers='\"{"readonly":' name='\"create_date\"' true}\"="">
+ </field>
+ \n
+ <field modifiers='\"{"required":' name='\"name\"' string='\"Opportunity\"' true}\"="">
+ </field>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"partner_id\"' on_change='\"1\"' string='\"Customer\"'>
+  \n
+  <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"country_id\"'>
+   \n
+   <field modifiers='\"{"readonly":' name='\"activity_date_deadline\"' true}\"="">
+   </field>
+   \n
+   <field modifiers='\"{}\"/' name='\"activity_summary\"'>
+    \n
+    <field can_create='\"true\"' can_write='\"true\"' invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"medium_id\"' true}\"="">
+    </field>
+    \n
+    <field can_create='\"true\"' can_write='\"true\"' invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"campaign_id\"' true}\"="">
+    </field>
+    \n
+    <field can_create='\"true\"' can_write='\"true\"' invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"source_id\"' true}\"="">
+    </field>
+    \n
+    <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"stage_id\"' on_change='\"1\"'>
+     \n
+     <field modifiers='\"{}\"/' name='\"planned_revenue\"' revenues\"="" sum='\"Expected'>
+      \n
+      <field avg='\"Avg.' modifiers='\"{}\"/' name='\"probability\"' of="" probability\"="">
+       \n
+       <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"team_id\"'>
+        \n
+        <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"user_id\"' on_change='\"1\"'>
+         \n
+         <field invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"referred\"' true}\"="">
+         </field>
+         \n
+         <field invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"priority\"' true}\"="">
+         </field>
+         \n
+         <field &quot;readonly&quot;:="" invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"message_needaction\"' true,="" true}\"="">
+         </field>
+         \n
+         <field invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"probability\"' true}\"="">
+         </field>
+         \n
+         <field &quot;readonly&quot;:="" invisible='\"1\"' modifiers='\"{"column_invisible":' name='\"write_date\"' true,="" true}\"="">
+         </field>
+         \n
+        </field>
+       </field>
+      </field>
+     </field>
+    </field>
+   </field>
+  </field>
+ </field>
+</tree>
+", "fields": {"medium_id": {"help": "This is the method of delivery, e.g. Postcard, Email, or Banner Ad", "required": false, "string": "Medium", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "utm.medium", "domain": [], "type": "many2one"}, "priority": {"required": false, "string": "Priority", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "selection": [["0", "Normal"], ["1", "Low"], ["2", "High"], ["3", "Very High"]], "sortable": true, "type": "selection"}, "source_id": {"help": "This is the source of the link, e.g. Search Engine, another domain, or name of email list", "required": false, "string": "Source", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "utm.source", "domain": [], "type": "many2one"}, "partner_id": {"help": "Linked partner (optional). Usually created when converting the lead.", "required": false, "string": "Customer", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "user_id": {"required": false, "string": "Salesperson", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "create_date": {"required": false, "string": "Create Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}, "probability": {"group_operator": "avg", "required": false, "string": "Probability", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "float"}, "activity_summary": {"required": false, "string": "Next Activity Summary", "depends": ["activity_ids.summary"], "related": ["activity_ids", "summary"], "change_default": false, "sortable": false, "readonly": false, "store": false, "manual": false, "searchable": true, "groups": "base.group_user", "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "write_date": {"required": false, "string": "Update Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}, "country_id": {"required": false, "string": "Country", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.country", "domain": [], "type": "many2one"}, "referred": {"required": false, "string": "Referred By", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "message_needaction": {"help": "If checked, new messages require your attention.", "required": false, "string": "Action Needed", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": false, "type": "boolean"}, "campaign_id": {"help": "This is a name that helps you keep track of your different campaign efforts, e.g. Fall_Drive, Christmas_Special", "required": false, "string": "Campaign", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "utm.campaign", "domain": [], "type": "many2one"}, "date_deadline": {"help": "Estimate of the date on which the opportunity will be won.", "required": false, "string": "Expected Closing", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "date"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "team_id": {"help": "When sending mails, the default email address is taken from the sales channel.", "required": false, "string": "Sales Channel", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.team", "domain": [], "type": "many2one"}, "planned_revenue": {"group_operator": "sum", "required": false, "string": "Expected Revenue", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "float"}, "activity_date_deadline": {"required": false, "string": "Next Activity Deadline", "depends": ["activity_ids.date_deadline"], "related": ["activity_ids", "date_deadline"], "change_default": false, "sortable": true, "readonly": true, "store": true, "manual": false, "searchable": true, "groups": "base.group_user", "views": {}, "company_dependent": false, "type": "date"}, "name": {"required": true, "string": "Opportunity", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}}, "view_id": 353, "model": "crm.lead", "toolbar": {"action": [{"help": false, "src_model": "crm.lead", "view_ids": [], "groups_id": [12], "search_view_id": false, "__last_update": "2020-05-01 14:50:42", "write_uid": [1, "Administrator"], "view_mode": "form", "id": 124, "view_type": "form", "binding_type": "action", "views": [[334, "form"]], "context": "{'mass_convert': True}", "res_id": 0, "type": "ir.actions.act_window", "string": "Convert to opportunities", "display_name": "Convert to opportunities", "view_id": [334, "crm.lead2opportunity.partner.mass.form"], "create_date": "2020-05-01 14:50:42", "binding_model_id": [157, "Lead/Opportunity"], "res_model": "crm.lead2opportunity.partner.mass", "xml_id": "crm.action_crm_send_mass_convert", "search_view": "{'arch': '
+<search lead="" opportunity="" partner\"="" string='\"Mass' to="">
+ <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+ </field>
+</search>
+', 'fields': {'name': {'required': True, 'string': 'Conversion Action', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'searchable': True, 'readonly': False, 'views': {}, 'selection': [('convert', 'Convert to opportunity'), ('merge', 'Merge with existing opportunities')], 'sortable': True, 'type': 'selection'}}, 'model': 'crm.lead2opportunity.partner.mass', 'name': 'default', 'field_parent': False, 'type': 'search'}", "auto_search": true, "filter": false, "usage": false, "domain": "[]", "limit": 0, "multi": true, "write_date": "2020-05-01 14:50:42", "create_uid": [1, "Administrator"], "name": "Convert to opportunities", "target": "new"}, {"help": false, "src_model": "crm.lead", "view_ids": [], "groups_id": [12], "search_view_id": false, "__last_update": "2020-05-01 14:50:42", "write_uid": [1, "Administrator"], "view_mode": "form", "id": 126, "view_type": "form", "binding_type": "action", "views": [[false, "form"]], "context": "{}", "res_id": 0, "type": "ir.actions.act_window", "string": "Merge leads/opportunities", "display_name": "Merge leads/opportunities", "view_id": false, "create_date": "2020-05-01 14:50:42", "binding_model_id": [157, "Lead/Opportunity"], "res_model": "crm.merge.opportunity", "xml_id": "crm.action_merge_opportunities", "search_view": "{'arch': '
+<search opportunities\"="" string='\"Merge'>
+ <field modifiers='\"{"readonly":' name='\"id\"' true}\"="">
+ </field>
+</search>
+', 'fields': {'id': {'required': False, 'string': 'ID', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'searchable': True, 'readonly': True, 'views': {}, 'sortable': True, 'type': 'integer'}}, 'model': 'crm.merge.opportunity', 'name': 'default', 'field_parent': False, 'type': 'search'}", "auto_search": true, "filter": false, "usage": false, "domain": "[]", "limit": 0, "multi": true, "write_date": "2020-05-01 14:50:42", "create_uid": [1, "Administrator"], "name": "Merge leads/opportunities", "target": "new"}, {"help": false, "src_model": "crm.lead", "view_ids": [], "groups_id": [12], "search_view_id": false, "__last_update": "2020-05-01 14:50:42", "write_uid": [1, "Administrator"], "view_mode": "form", "id": 131, "view_type": "form", "binding_type": "action", "views": [[false, "form"]], "context": "{'default_template_id': 9, 'default_email_to': \"{($object.email or '')|safe}\", 'default_use_template': True, 'default_composition_mode': 'mass_mail'}", "res_id": 0, "type": "ir.actions.act_window", "string": "Lead/Opportunity Mass Mail", "display_name": "Lead/Opportunity Mass Mail", "view_id": false, "create_date": "2020-05-01 14:50:42", "binding_model_id": [157, "Lead/Opportunity"], "res_model": "mail.compose.message", "xml_id": "crm.action_lead_mass_mail", "search_view": "{'arch': '
+<search composition="" string='\"Email' wizard\"="">
+ <field modifiers='\"{}\"/' name='\"record_name\"'>
+ </field>
+</search>
+', 'fields': {'record_name': {'help': 'Name get of the related document.', 'required': False, 'string': 'Message Record Name', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'searchable': True, 'readonly': False, 'views': {}, 'sortable': True, 'translate': False, 'type': 'char'}}, 'model': 'mail.compose.message', 'name': 'default', 'field_parent': False, 'type': 'search'}", "auto_search": true, "filter": false, "usage": false, "domain": "[]", "limit": 0, "multi": true, "write_date": "2020-05-01 14:50:42", "create_uid": [1, "Administrator"], "name": "Lead/Opportunity Mass Mail", "target": "new"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 132, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nif record:\n    action_values = env.ref('crm.crm_lead_lost_action').read()[0]\n    action_values.update({'context': env.context})\n    action = action_values\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark as lost", "display_name": "Mark as lost", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_as_lost", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark as lost", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 133, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.filtered(lambda a: a.state == 'overdue').action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark Late Activities as Done", "display_name": "Mark Late Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_late_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark Late Activities as Done", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 134, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark All Activities as Done", "display_name": "Mark All Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark All Activities as Done", "write_date": "2020-05-01 14:50:42"}], "relate": [], "print": []}, "name": "crm.lead.tree.opportunity", "field_parent": false, "base_model": "crm.lead", "type": "tree"}, "search": {"arch": "
+<search opportunities\"="" string='\"Search'>
+ \n
+ <field 'ilike',="" filter_domain="\&quot;['|','|','|',('partner_id','ilike',self),('partner_name','ilike',self),('email_from','ilike',self),('name'," modifiers='\"{"required":' name='\"name\"' self)]\"="" string='\"Opportunity\"' true}\"="">
+ </field>
+ \n
+ <field 'ilike',="" can_create='\"true\"' can_write='\"true\"' filter_domain="\&quot;[('tag_ids'," modifiers='\"{}\"/' name='\"tag_ids\"' self)]\"="" string='\"Tag\"'>
+  \n
+  <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"team_id\"'>
+   \n
+   <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"user_id\"' on_change='\"1\"'>
+    \n
+    <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"partner_id\"' on_change='\"1\"' operator='\"child_of\"' string='\"Customer\"'>
+     \n
+     <field can_create='\"true\"' can_write='\"true\"' domain='\"[]\"' modifiers='\"{}\"/' name='\"stage_id\"' on_change='\"1\"'>
+      \n
+      <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"activity_type_id\"'>
+       \n
+       <field modifiers='\"{}\"/' name='\"activity_summary\"'>
+        \n
+        <field modifiers='\"{}\"/' name='\"probability\"'>
+         \n
+         <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"lost_reason\"'>
+          \n
+          <separator>
+          </separator>
+          \n
+          <filter domain="\&quot;[('message_needaction','=',True)]\&quot;/" messages\"="" name='\"message_needaction\"' string='\"Unread'>
+           \n
+           <separator>
+           </separator>
+           \n
+           <filter '=", " '&lt;',="" ('type',="" 100),="" domain="\&quot;[('user_id'," help='\"Open' name='\"assigned_to_me\"' opportunities\"="" opportunity')]\"="" pipeline\"="" probability',="" string='\"My' user_id','=', False)]\" help=\"No salesperson\"/&gt;\n                    &lt;filter string=\"Open Opportunities\" name=\"open_opportunities\" domain=\"[('>
+           </filter>
+           \n
+           <separator>
+           </separator>
+           \n
+           <filter '=', uid)]\"/&gt;\n                    &lt;separator/&gt;\n                    &lt;filter string=\"Late Activities\" name=\"activities_overdue\" domain=\"[(' '&lt;',="" action="" activity_ids.date_deadline',="" all="" before="" context_today().strftime('%y-%m-%d'))]\"="" date="" domain="\&quot;[('activity_ids.user_id'," for="" help='\"Show' is="" name='\"activities_my\"' next="" opportunities="" string='\"Activities' the="" today\"="" todo\"="" which="">
+           </filter>
+           \n
+           <filter %y-%m-%d'))]\"="" '=", context_today().strftime(" activities\"="" domain="\&quot;[('activity_ids.date_deadline'," name='\"activities_today\"' string='\"Today'>
+           </filter>
+           \n
+           <filter '&gt;',="" ]\"="" activities\"="" context_today().strftime('%y-%m-%d'))="" domain="\&quot;[('activity_ids.date_deadline'," name='\"activities_upcoming_all\"' string='\"Future'>
+           </filter>
+           \n\n
+           <separator>
+           </separator>
+           \n
+           <filter '=', 100)]\"/&gt;\n                    &lt;group expand=\"0\" string=\"Group By\" colspan=\"16\"&gt;\n                        &lt;filter string=\"Salesperson\" context=\"{' '&lt;',="" ('date_closed',="" active',="" context_today().strftime('%y-%m-%d')),="" domain="\&quot;[('date_deadline'," group_by':'user_id'}\"="" name='\"overdue_opp\"' opportunities\"="" stage_id.probability',="" string='\"Overdue'>
+           </filter>
+           \n
+           <filter channel\"="" context="\&quot;{'group_by':'team_id'}\&quot;/" string='\"Sales'>
+            \n
+            <filter context="\&quot;{'group_by':'country_id'}\&quot;/" string='\"Country\"'>
+             \n
+             <filter context="\&quot;{'group_by':'company_id'}\&quot;" invisible='\"1\"' modifiers='\"{"invisible":' string='\"Company\"' true}\"="">
+             </filter>
+             \n
+             <filter context="\&quot;{'group_by':'stage_id'}\&quot;/" name='\"stage\"' string='\"Stage\"'>
+              \n
+              <filter context="\&quot;{'group_by':'campaign_id'}\&quot;/" domain='\"[]\"' string='\"Campaign\"'>
+               \n
+               <filter context="\&quot;{'group_by':'medium_id'}\&quot;/" domain='\"[]\"' string='\"Medium\"'>
+                \n
+                <filter context="\&quot;{'group_by':'source_id'}\&quot;/" domain='\"[]\"' string='\"Source\"'>
+                 \n
+                 <separator orientation='\"vertical\"/'>
+                  \n
+                  <filter context="\&quot;{'group_by':'create_date:month'}\&quot;" month\"="" name='\"month\"/' string='\"Creation'>
+                   \n
+                   <filter closing="" context="\&quot;{'group_by':'date_deadline'}\&quot;/" date\"="" string='\"Expected'>
+                    \n
+                    <filter context="\&quot;{'group_by':'lost_reason'}\&quot;/" reason\"="" string='\"Lost'>
+                     \n
+                    </filter>
+                   </filter>
+                  </filter>
+                 </separator>
+                </filter>
+               </filter>
+              </filter>
+             </filter>
+            </filter>
+           </filter>
+          </filter>
+         </field>
+        </field>
+       </field>
+      </field>
+     </field>
+    </field>
+   </field>
+  </field>
+ </field>
+</search>
+\n
+", "fields": {"partner_id": {"help": "Linked partner (optional). Usually created when converting the lead.", "required": false, "string": "Customer", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "user_id": {"required": false, "string": "Salesperson", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "tag_ids": {"help": "Classify and analyze your lead/opportunity categories like: Training, Service", "required": false, "string": "Tags", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": false, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.lead.tag", "domain": [], "type": "many2many"}, "probability": {"group_operator": "avg", "required": false, "string": "Probability", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "float"}, "activity_summary": {"required": false, "string": "Next Activity Summary", "depends": ["activity_ids.summary"], "related": ["activity_ids", "summary"], "change_default": false, "sortable": false, "readonly": false, "store": false, "manual": false, "searchable": true, "groups": "base.group_user", "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "lost_reason": {"required": false, "string": "Lost Reason", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.lost.reason", "domain": [], "type": "many2one"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "team_id": {"help": "When sending mails, the default email address is taken from the sales channel.", "required": false, "string": "Sales Channel", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.team", "domain": [], "type": "many2one"}, "activity_type_id": {"required": false, "string": "Next Activity Type", "depends": ["activity_ids.activity_type_id"], "related": ["activity_ids", "activity_type_id"], "groups": "base.group_user", "relation": "mail.activity.type", "readonly": false, "store": false, "manual": false, "sortable": false, "searchable": true, "change_default": false, "views": {}, "context": {}, "company_dependent": false, "domain": "['|', ('res_model_id', '=', False), ('res_model_id', '=', res_model_id)]", "type": "many2one"}, "name": {"required": true, "string": "Opportunity", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}}, "view_id": 355, "model": "crm.lead", "name": "crm.lead.search.opportunity", "field_parent": false, "base_model": "crm.lead", "type": "search"}, "kanban": {"arch": "
+<kanban class='\"o_kanban_small_column' default_group_by='\"stage_id\"' o_opportunity_kanban\"="" on_create='\"crm.create_opportunity_simplified\"'>
+ \n
+ <field &quot;description&quot;,="" &quot;legend_priority&quot;:="" &quot;use="" can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"stage_id\"' of="" on_change='\"1\"' options='\"{"group_by_tooltip":' stars&quot;}}\"="" {&quot;requirements&quot;:="">
+  \n
+  <field modifiers='\"{}\"/' name='\"color\"'>
+   \n
+   <field modifiers='\"{}\"/' name='\"priority\"'>
+    \n
+    <field modifiers='\"{}\"/' name='\"planned_revenue\"'>
+     \n
+     <field modifiers='\"{"readonly":' name='\"kanban_state\"' true}\"="">
+     </field>
+     \n
+     <field modifiers='\"{"readonly":' name='\"activity_date_deadline\"' true}\"="">
+     </field>
+     \n
+     <field modifiers='\"{"readonly":' name='\"user_email\"' true}\"="">
+     </field>
+     \n
+     <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"user_id\"' on_change='\"1\"'>
+      \n
+      <field modifiers='\"{"readonly":' name='\"partner_address_email\"' true}\"="">
+      </field>
+      \n
+      <field modifiers='\"{"readonly":' name='\"message_needaction_counter\"' true}\"="">
+      </field>
+      \n
+      <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"partner_id\"' on_change='\"1\"'>
+       \n
+       <field modifiers='\"{}\"/' name='\"activity_summary\"'>
+        \n
+        <field modifiers='\"{}\"/' name='\"active\"'>
+         \n
+         <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"company_currency\"' true}\"="">
+         </field>
+         \n
+         <field modifiers='\"{"readonly":' name='\"activity_state\"' true}\"="">
+         </field>
+         \n
+         <field modifiers='\"{}\"/' name='\"activity_ids\"' on_change='\"1\"'>
+          \n
+          <progressbar &quot;danger&quot;}\"="" &quot;overdue&quot;:="" &quot;success&quot;,="" &quot;today&quot;:="" &quot;warning&quot;,="" colors='\"{"planned":' field='\"activity_state\"' sum_field='\"planned_revenue\"/'>
+           \n
+           <templates>
+            \n
+            <field modifiers='\"{}\"/' name='\"date_deadline\"'>
+             \n
+             <t t-name='\"kanban-box\"'>
+              \n
+              <div oe_kanban_global_click\"="" t-attf-class='\"#{kanban_color(record.color.raw_value)}'>
+               \n
+               <div class='\"o_dropdown_kanban' dropdown\"="">
+                \n\n
+                <a btn\"="" class='\"dropdown-toggle' data-toggle='\"dropdown\"' href='\"#\"'>
+                 \n
+                 <span class='\"fa' fa-ellipsis-v\"="">
+                 </span>
+                 \n
+                </a>
+                \n
+                <ul aria-labelledby='\"dLabel\"' class='\"dropdown-menu\"' role='\"menu\"'>
+                 \n
+                 <t t-if='\"widget.editable\"'>
+                  <li>
+                   <a type='\"edit\"'>
+                    Edit
+                   </a>
+                  </li>
+                 </t>
+                 \n
+                 <t t-if='\"widget.deletable\"'>
+                  <li>
+                   <a type='\"delete\"'>
+                    Delete
+                   </a>
+                  </li>
+                 </t>
+                 \n
+                 <li record.active.value\"="" t-if='\"!'>
+                  <a name='\"action_set_active\"' type='\"object\"'>
+                   Restore
+                  </a>
+                 </li>
+                 \n
+                 <li t-if='\"record.active.value\"'>
+                  <a name='\"action_set_unactive\"' type='\"object\"'>
+                   Archive
+                  </a>
+                 </li>
+                 \n
+                 <li>
+                  <ul class='\"oe_kanban_colorpicker\"' data-field='\"color\"/'>
+                  </ul>
+                 </li>
+                 \n
+                </ul>
+                \n
+               </div>
+               \n
+               <div class='\"oe_kanban_content\"'>
+                \n
+                <div>
+                 \n
+                 <strong class='\"o_kanban_record_title\"'>
+                  <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+                  </field>
+                 </strong>
+                 \n
+                </div>
+                \n
+                <div>
+                 \n
+                 <field 'color'}\"="" can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"tag_ids\"' options="\&quot;{'color_field':" widget='\"many2many_tags\"'>
+                  \n
+                 </field>
+                </div>
+                \n
+                <div class='\"text-muted' o_kanban_record_subtitle\"="">
+                 \n
+                 <t t-if='\"record.planned_revenue.raw_value\"'>
+                  <field 'company_currency'}\"="" modifiers='\"{}\"/' name='\"planned_revenue\"' options="\&quot;{'currency_field':" widget='\"monetary\"'>
+                   <span t-if='\"record.partner_id.value\"'>
+                    ,
+                   </span>
+                  </field>
+                 </t>
+                 <span t-if='\"record.partner_id.value\"'>
+                  <t t-esc='\"record.partner_id.value\"/'>
+                  </t>
+                 </span>
+                 \n
+                </div>
+                \n\n
+                <div class='\"o_kanban_record_bottom\"'>
+                 \n
+                 <div class='\"oe_kanban_bottom_left\"'>
+                  \n
+                  <field modifiers='\"{}\"/' name='\"priority\"' widget='\"priority\"'>
+                   \n
+                   <t t-if='\"record.message_needaction_counter.raw_value\"'>
+                    \n
+                    <span class='\"oe_kanban_mail_new\"' messages\"="" title='\"Unread'>
+                     <i class='\"fa' fa-comments\"="">
+                     </i>
+                     <t t-raw='\"record.message_needaction_counter.raw_value\"/'>
+                     </t>
+                    </span>
+                    \n
+                   </t>
+                   \n
+                   <field modifiers='\"{}\"/' name='\"activity_ids\"' on_change='\"1\"' widget='\"kanban_activity\"'>
+                    \n
+                   </field>
+                  </field>
+                 </div>
+                 \n
+                 <div class='\"oe_kanban_bottom_right\"'>
+                  \n
+                  <img 'image_small',="" class='\"oe_kanban_avatar\"/' height='\"24\"' record.user_id.raw_value)\"="" t-att-src="\&quot;kanban_image('res.users'," t-att-title='\"record.user_id.value\"' width='\"24\"'/>
+                  \n
+                 </div>
+                 \n
+                </div>
+                \n
+               </div>
+               \n
+               <div class='\"oe_clear\"/'>
+                \n
+               </div>
+               \n
+              </div>
+             </t>
+             \n
+            </field>
+           </templates>
+           \n
+          </progressbar>
+         </field>
+        </field>
+       </field>
+      </field>
+     </field>
+    </field>
+   </field>
+  </field>
+ </field>
+</kanban>
+", "fields": {"priority": {"required": false, "string": "Priority", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "selection": [["0", "Normal"], ["1", "Low"], ["2", "High"], ["3", "Very High"]], "sortable": true, "type": "selection"}, "user_email": {"required": false, "string": "User Email", "depends": ["user_id.email"], "related": ["user_id", "email"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": true, "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "partner_id": {"help": "Linked partner (optional). Usually created when converting the lead.", "required": false, "string": "Customer", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "user_id": {"required": false, "string": "Salesperson", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "tag_ids": {"help": "Classify and analyze your lead/opportunity categories like: Training, Service", "required": false, "string": "Tags", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": false, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.lead.tag", "domain": [], "type": "many2many"}, "partner_address_email": {"required": false, "string": "Partner Contact Email", "depends": ["partner_id.email"], "related": ["partner_id", "email"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": true, "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "activity_summary": {"required": false, "string": "Next Activity Summary", "depends": ["activity_ids.summary"], "related": ["activity_ids", "summary"], "change_default": false, "sortable": false, "readonly": false, "store": false, "manual": false, "searchable": true, "groups": "base.group_user", "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "kanban_state": {"required": false, "string": "Activity State", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "views": {}, "selection": [["grey", "No next activity planned"], ["red", "Next activity late"], ["green", "Next activity is planned"]], "sortable": false, "type": "selection"}, "date_deadline": {"help": "Estimate of the date on which the opportunity will be won.", "required": false, "string": "Expected Closing", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "date"}, "active": {"required": false, "string": "Active", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "boolean"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "planned_revenue": {"group_operator": "sum", "required": false, "string": "Expected Revenue", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "float"}, "message_needaction_counter": {"help": "Number of messages which requires an action", "group_operator": "sum", "required": false, "string": "Number of Actions", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "views": {}, "sortable": false, "type": "integer"}, "activity_state": {"help": "Status based on activities\nOverdue: Due date is already passed\nToday: Activity date is today\nPlanned: Future activities.", "store": false, "required": false, "string": "State", "depends": ["activity_ids.state"], "change_default": false, "company_dependent": false, "readonly": true, "selection": [["overdue", "Overdue"], ["today", "Today"], ["planned", "Planned"]], "manual": false, "searchable": false, "groups": "base.group_user", "views": {}, "sortable": false, "type": "selection"}, "activity_date_deadline": {"required": false, "string": "Next Activity Deadline", "depends": ["activity_ids.date_deadline"], "related": ["activity_ids", "date_deadline"], "change_default": false, "sortable": true, "readonly": true, "store": true, "manual": false, "searchable": true, "groups": "base.group_user", "views": {}, "company_dependent": false, "type": "date"}, "company_currency": {"required": false, "string": "Currency", "depends": ["company_id.currency_id"], "related": ["company_id", "currency_id"], "change_default": false, "relation": "res.currency", "store": false, "manual": false, "sortable": false, "searchable": true, "readonly": true, "views": {}, "context": {}, "company_dependent": false, "domain": [], "type": "many2one"}, "activity_ids": {"required": false, "string": "Activities", "depends": [], "groups": "base.group_user", "company_dependent": false, "readonly": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "relation_field": "res_id", "views": {}, "context": {}, "relation": "mail.activity", "domain": [["res_model", "=", "crm.lead"]], "type": "one2many"}, "color": {"group_operator": "sum", "required": false, "string": "Color Index", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "integer"}, "name": {"required": true, "string": "Opportunity", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}}, "view_id": 350, "model": "crm.lead", "toolbar": {"action": [{"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 132, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nif record:\n    action_values = env.ref('crm.crm_lead_lost_action').read()[0]\n    action_values.update({'context': env.context})\n    action = action_values\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark as lost", "display_name": "Mark as lost", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_as_lost", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark as lost", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 133, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.filtered(lambda a: a.state == 'overdue').action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark Late Activities as Done", "display_name": "Mark Late Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_late_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark Late Activities as Done", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 134, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark All Activities as Done", "display_name": "Mark All Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark All Activities as Done", "write_date": "2020-05-01 14:50:42"}], "relate": [], "print": []}, "name": "crm.lead.kanban.lead", "field_parent": false, "base_model": "crm.lead", "type": "kanban"}, "form": {"arch": "
+<form class='\"o_opportunity_form\"' string='\"Opportunities\"'>
+ \n
+ <header>
+  \n
+  <button &quot;='",' &quot;&lt;&quot;,="" '=", False),(" '&lt;',="" ('active','=",False), (" 100)]}\"="" 100]]}\"="" [&quot;probability&quot;,="" ['|',="" [('active',="" [[&quot;active&quot;,="" active_id}\"="" attrs="\&quot;{'invisible':" class='\"oe_highlight\"' default_lead_id':="" false],="" modifiers='\"{"invisible":' name='\"action_set_won_rainbowman\"' probability',="" string='\"Mark' type='\"object\"' won\"="">
+  </button>
+  \n
+  <field '=', False)]}\" on_change=\"1\" can_create=\"true\" can_write=\"true\" modifiers=\"{"invisible": [["active", "=", false]]}\"/&gt;\n                    &lt;/header&gt;\n                    &lt;sheet&gt;\n                        &lt;div class=\"oe_button_box\" name=\"button_box\"&gt;\n                            &lt;button class=\"oe_stat_button\" type=\"object\" context=\"{' 'fold'}\"="" ('team_id',="" [('active',="" clickable='\"True\"' domain="\&quot;['|'," icon='\"fa-calendar\"' invisible':="" name='\"action_schedule_meeting\"' options="\&quot;{'fold_field':" partner_id':="" partner_id}\"="" team_id',="" widget='\"statusbar\"'>
+   \n
+   <div class='\"o_stat_info\"'>
+    \n
+    <field class='\"o_stat_value\"' modifiers='\"{"readonly":' name='\"meeting_count\"' true}\"="">
+    </field>
+    \n
+    <span &quot;&lt;&quot;,="" '&lt;',="" 2)]}\"="" 2]]}\"="" [('meeting_count',="" [[&quot;meeting_count&quot;,="" attrs="\&quot;{'invisible':" class='\"o_stat_text\"' modifiers='\"{"invisible":'>
+     Meetings
+    </span>
+    \n
+    <span &quot;&gt;&quot;,="" '&gt;',="" 1)]}\"="" 1]]}\"="" [('meeting_count',="" [[&quot;meeting_count&quot;,="" attrs="\&quot;{'invisible':" class='\"o_stat_text\"' modifiers='\"{"invisible":'>
+     Meeting
+    </span>
+    \n
+   </div>
+   \n
+  </field>
+ </header>
+</form>
+\n
+<button &quot;='",' &quot;&lt;&quot;,="" '=", True), (" '&lt;',="" 100)]}\"="" 100]]}\"="" [&quot;probability&quot;,="" [('active',="" [[&quot;active&quot;,="" attrs="\&quot;{'invisible':" class='\"oe_stat_button\"' icon='\"fa-archive\"' modifiers='\"{"invisible":' name='\"toggle_active\"' probability',="" true],="" type='\"object\"'>
+ \n
+ <field &quot;archive&quot;}\"="" modifiers='\"{}\"/' name='\"active\"' options='\"{"terminology":' widget='\"boolean_button\"'>
+  \n
+ </field>
+</button>
+\n
+\n
+<div &quot;&lt;&quot;,="" '=', True)]}\" modifiers=\"{"invisible": ["|", ["probability", "&gt;", 0], ["active", "=", true]]}\"&gt;Lost&lt;/div&gt;\n                        &lt;div class=\"label label-success pull-right\" attrs=\"{' '&gt;',="" '&lt;',="" ('active',="" ('probability',="" 0),="" 100)]}\"="" 100]]}\"="" ['|',="" [('probability',="" [[&quot;probability&quot;,="" attrs="\&quot;{'invisible':" class='\"label' invisible':="" label-danger="" modifiers='\"{"invisible":' pull-right\"="">
+ Won
+</div>
+\n
+<div class='\"oe_title\"'>
+ \n
+ <label class='\"oe_edit_only\"/' for='\"name\"'>
+  \n
+  <h1>
+   <field modifiers='\"{"required":' name='\"name\"' placeholder='\"e.g.' pricing\"="" product="" true}\"="">
+   </field>
+  </h1>
+  \n
+  <h2 class='\"o_row\"'>
+   \n
+   <div>
+    \n
+    <label class='\"oe_edit_only\"/' for='\"planned_revenue\"'>
+     \n
+     <div class='\"o_row\"'>
+      \n
+      <field &quot;readonly&quot;:="" can_create='\"true\"' can_write='\"true\"' invisible='\"1\"' modifiers='\"{"invisible":' name='\"company_currency\"' true,="" true}\"="">
+      </field>
+      \n
+      <field 'company_currency'}\"="" modifiers='\"{}\"/' name='\"planned_revenue\"' options="\&quot;{'currency_field':" widget='\"monetary\"'>
+       \n
+       <span class='\"oe_grey\"'>
+        at
+       </span>
+       \n
+      </field>
+     </div>
+     \n
+    </label>
+   </div>
+   \n
+   <div>
+    \n
+    <label class='\"oe_edit_only\"/' for='\"probability\"'>
+     \n
+     <div class='\"o_row\"'>
+      \n
+      <field modifiers='\"{}\"/' name='\"probability\"' widget='\"integer\"'>
+       \n
+       <span>
+        %
+       </span>
+       \n
+      </field>
+     </div>
+     \n
+    </label>
+   </div>
+   \n
+  </h2>
+  \n
+ </label>
+</div>
+\n
+<group>
+ \n
+ <group>
+  \n
+  <field '=', True)]\" context=\"{' 'default_city':="" 'default_country_id':="" 'default_email':="" 'default_function':="" 'default_mobile':="" 'default_name':="" 'default_phone':="" 'default_state_id':="" 'default_street':="" 'default_street2':="" 'default_team_id':="" 'default_user_id':="" 'default_website':="" 'default_zip':="" 1,="" can_create='\"true\"' can_write='\"true\"' city,="" country_id,="" domain="\&quot;[('customer'," email_from,="" function,="" mobile,="" modifiers='\"{}\"/' name='\"partner_id\"' on_change='\"1\"' partner_name,="" phone,="" search_default_customer':="" state_id,="" street,="" street2,="" string='\"Customer\"' team_id,="" user_id,="" website}\"="" zip,="">
+   \n
+   <field modifiers='\"{}\"/' name='\"email_from\"' string='\"Email\"' widget='\"email\"'>
+    \n
+    <field modifiers='\"{}\"/' name='\"phone\"' widget='\"phone\"'>
+     \n
+    </field>
+   </field>
+  </field>
+ </group>
+ \n\n
+ <group>
+  \n
+  <field modifiers='\"{}\"/' name='\"date_deadline\"'>
+   \n
+  </field>
+ </group>
+ \n\n
+ <group>
+  \n
+  <field '=', False)]\" on_change=\"1\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                                &lt;field name=\"team_id\" widget=\"selection\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                            &lt;/group&gt;\n                            &lt;group&gt;\n                                &lt;field name=\"priority\" widget=\"priority\" modifiers=\"{}\"/&gt;\n                                &lt;field name=\"tag_ids\" widget=\"many2many_tags\" options=\"{' 'base.group_partner_manager',="" 'color',="" 'no_create_edit':="" 'sales_team.group_sale_salesman_all_leads'],="" 'team_id':="" ['base.group_user',="" can_create='\"true\"' can_write='\"true\"' color_field':="" context="\&quot;{'default_groups_ref':" domain="\&quot;[('share'," modifiers='\"{}\"/' name='\"user_id\"' team_id}\"="" true}\"="">
+   \n
+   <field '=', True)]}\" can_create=\"true\" can_write=\"true\" modifiers=\"{"invisible": [["active", "=", true]]}\"/&gt;\n                                &lt;field name=\"date_conversion\" invisible=\"1\" modifiers=\"{"invisible": true, "readonly": true}\"/&gt;\n                            &lt;/group&gt;\n                        &lt;/group&gt;\n\n                        &lt;notebook colspan=\"4\"&gt;\n                        &lt;page string=\"Internal Notes\"&gt;\n                            &lt;field name=\"description\" modifiers=\"{}\"/&gt;\n                        &lt;/page&gt;\n                        &lt;page name=\"lead\" string=\"Contact Information\"&gt;\n                            &lt;group&gt;\n                                &lt;group&gt;\n                                    &lt;field name=\"partner_name\" modifiers=\"{}\"/&gt;\n                                    &lt;label for=\"street\" string=\"Address\"/&gt;\n                                    &lt;div class=\"o_address_format\"&gt;\n                                        &lt;field name=\"street\" placeholder=\"Street...\" class=\"o_address_street\" modifiers=\"{}\"/&gt;\n                                        &lt;field name=\"street2\" placeholder=\"Street 2...\" class=\"o_address_street\" modifiers=\"{}\"/&gt;\n                                        &lt;field name=\"city\" placeholder=\"City\" class=\"o_address_city\" modifiers=\"{}\"/&gt;\n                                        &lt;field name=\"state_id\" class=\"o_address_state\" placeholder=\"State\" options=\"{"no_open": True}\" on_change=\"1\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                                        &lt;field name=\"zip\" placeholder=\"ZIP\" class=\"o_address_zip\" on_change=\"1\" modifiers=\"{}\"/&gt;\n                                        &lt;field name=\"country_id\" placeholder=\"Country\" class=\"o_address_country\" options=\"{"no_open": True, "no_create": True}\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                                    &lt;/div&gt;\n                                    &lt;field name=\"website\" widget=\"url\" placeholder=\"e.g. www.odoo.com\" modifiers=\"{}\"/&gt;\n                                &lt;/group&gt;\n\n                                &lt;group&gt;\n                                    &lt;label for=\"contact_name\"/&gt;\n                                    &lt;div class=\"o_row\"&gt;\n                                        &lt;field name=\"contact_name\" modifiers=\"{}\"/&gt;\n                                        &lt;field name=\"title\" placeholder=\"Title\" domain=\"[]\" options=\"{"no_open": True}\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                                    &lt;/div&gt;\n                                    &lt;field name=\"function\" modifiers=\"{}\"/&gt;\n                                    &lt;field name=\"mobile\" modifiers=\"{}\"/&gt;\n                                    &lt;field name=\"opt_out\" modifiers=\"{}\"/&gt;\n                                &lt;/group&gt;\n                                &lt;group string=\"Marketing\"&gt;\n                                    &lt;field name=\"campaign_id\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                                    &lt;field name=\"medium_id\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                                    &lt;field name=\"source_id\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                                &lt;/group&gt;\n                                &lt;group string=\"Misc\" name=\"Misc\"&gt;\n                                    &lt;field name=\"day_open\" invisible=\"1\" modifiers=\"{"invisible": true, "readonly": true}\"/&gt;\n                                    &lt;field name=\"day_close\" invisible=\"1\" modifiers=\"{"invisible": true, "readonly": true}\"/&gt;\n                                    &lt;field name=\"referred\" modifiers=\"{}\"/&gt;\n                                    &lt;field name=\"type\" invisible=\"1\" modifiers=\"{"required": true, "invisible": true}\"/&gt;\n                                &lt;/group&gt;\n                            &lt;/group&gt;\n                        &lt;/page&gt;\n                        &lt;/notebook&gt;\n                    &lt;/sheet&gt;\n                    &lt;div class=\"oe_chatter\"&gt;\n                        &lt;field name=\"message_follower_ids\" widget=\"mail_followers\" modifiers=\"{}\"/&gt;\n                        &lt;field name=\"activity_ids\" widget=\"mail_activity\" modifiers=\"{}\"/&gt;\n                        &lt;field name=\"message_ids\" widget=\"mail_thread\" options=\"{' 'display_log_button':="" 'recipients',="" [('active',="" attrs="\&quot;{'invisible':" modifiers='\"{}\"/' name='\"lost_reason\"' post_refresh':="" true}\"="">
+    \n
+   </field>
+  </field>
+ </group>
+</group>
+\n
+", "fields": {"street": {"required": false, "string": "Street", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "function": {"required": false, "string": "Job Position", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "street2": {"required": false, "string": "Street2", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "date_conversion": {"required": false, "string": "Conversion Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}, "title": {"required": false, "string": "Title", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.partner.title", "domain": [], "type": "many2one"}, "medium_id": {"help": "This is the method of delivery, e.g. Postcard, Email, or Banner Ad", "required": false, "string": "Medium", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "utm.medium", "domain": [], "type": "many2one"}, "priority": {"required": false, "string": "Priority", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "selection": [["0", "Normal"], ["1", "Low"], ["2", "High"], ["3", "Very High"]], "sortable": true, "type": "selection"}, "source_id": {"help": "This is the source of the link, e.g. Search Engine, another domain, or name of email list", "required": false, "string": "Source", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "utm.source", "domain": [], "type": "many2one"}, "website": {"help": "Website of the contact", "required": false, "string": "Website", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "partner_name": {"help": "The name of the future partner company that will be created while converting the lead into opportunity", "required": false, "string": "Customer Name", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "partner_id": {"help": "Linked partner (optional). Usually created when converting the lead.", "required": false, "string": "Customer", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "user_id": {"required": false, "string": "Salesperson", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "tag_ids": {"help": "Classify and analyze your lead/opportunity categories like: Training, Service", "required": false, "string": "Tags", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": false, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.lead.tag", "domain": [], "type": "many2many"}, "probability": {"group_operator": "avg", "required": false, "string": "Probability", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "float"}, "day_open": {"group_operator": "sum", "required": false, "string": "Days to Assign", "depends": ["date_open"], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "float"}, "email_from": {"help": "Email address of the contact", "required": false, "string": "Email", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "message_ids": {"required": false, "string": "Messages", "depends": [], "relation_field": "res_id", "company_dependent": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "mail.message", "domain": [["model", "=", "crm.lead"]], "type": "one2many"}, "city": {"required": false, "string": "City", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "opt_out": {"help": "If opt-out is checked, this contact has refused to receive emails for mass mailing and marketing campaign. Filter 'Available for Mass Mailing' allows users to filter the leads when performing mass mailing.", "required": false, "string": "Opt-Out", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "boolean"}, "mobile": {"required": false, "string": "Mobile", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "phone": {"required": false, "string": "Phone", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "description": {"required": false, "string": "Notes", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "text"}, "state_id": {"required": false, "string": "State", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.country.state", "domain": [], "type": "many2one"}, "country_id": {"required": false, "string": "Country", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.country", "domain": [], "type": "many2one"}, "referred": {"required": false, "string": "Referred By", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "day_close": {"group_operator": "sum", "required": false, "string": "Days to Close", "depends": ["date_closed"], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "float"}, "campaign_id": {"help": "This is a name that helps you keep track of your different campaign efforts, e.g. Fall_Drive, Christmas_Special", "required": false, "string": "Campaign", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "utm.campaign", "domain": [], "type": "many2one"}, "lost_reason": {"required": false, "string": "Lost Reason", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.lost.reason", "domain": [], "type": "many2one"}, "date_deadline": {"help": "Estimate of the date on which the opportunity will be won.", "required": false, "string": "Expected Closing", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "date"}, "active": {"required": false, "string": "Active", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "boolean"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "team_id": {"help": "When sending mails, the default email address is taken from the sales channel.", "required": false, "string": "Sales Channel", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "crm.team", "domain": [], "type": "many2one"}, "planned_revenue": {"group_operator": "sum", "required": false, "string": "Expected Revenue", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "float"}, "type": {"help": "Type is used to separate Leads and Opportunities", "store": true, "required": true, "string": "Type", "depends": [], "change_default": false, "company_dependent": false, "selection": [["lead", "Lead"], ["opportunity", "Opportunity"]], "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "selection"}, "zip": {"required": false, "string": "Zip", "depends": [], "change_default": true, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "message_follower_ids": {"required": false, "string": "Followers", "depends": [], "relation_field": "res_id", "company_dependent": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "mail.followers", "domain": [["res_model", "=", "crm.lead"]], "type": "one2many"}, "contact_name": {"required": false, "string": "Contact Name", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "company_currency": {"required": false, "string": "Currency", "depends": ["company_id.currency_id"], "related": ["company_id", "currency_id"], "change_default": false, "relation": "res.currency", "store": false, "manual": false, "sortable": false, "searchable": true, "readonly": true, "views": {}, "context": {}, "company_dependent": false, "domain": [], "type": "many2one"}, "activity_ids": {"required": false, "string": "Activities", "depends": [], "groups": "base.group_user", "company_dependent": false, "readonly": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "relation_field": "res_id", "views": {}, "context": {}, "relation": "mail.activity", "domain": [["res_model", "=", "crm.lead"]], "type": "one2many"}, "meeting_count": {"group_operator": "sum", "required": false, "string": "# Meetings", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "views": {}, "sortable": false, "type": "integer"}, "name": {"required": true, "string": "Opportunity", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}}, "view_id": 352, "model": "crm.lead", "toolbar": {"action": [{"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 132, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nif record:\n    action_values = env.ref('crm.crm_lead_lost_action').read()[0]\n    action_values.update({'context': env.context})\n    action = action_values\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark as lost", "display_name": "Mark as lost", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_as_lost", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark as lost", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 133, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.filtered(lambda a: a.state == 'overdue').action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark Late Activities as Done", "display_name": "Mark Late Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_late_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark Late Activities as Done", "write_date": "2020-05-01 14:50:42"}, {"help": false, "model_name": "crm.lead", "channel_ids": [], "state": "code", "partner_ids": [], "sequence": 5, "crud_model_name": false, "write_uid": [1, "Administrator"], "id": 134, "create_date": "2020-05-01 14:50:42", "binding_type": "action", "fields_lines": [], "code": "\nfor rec in records:\n    rec.activity_ids.action_feedback(feedback='Closed automatically in batch')\n            ", "type": "ir.actions.server", "template_id": false, "string": "Mark All Activities as Done", "display_name": "Mark All Activities as Done", "binding_model_id": [157, "Lead/Opportunity"], "child_ids": [], "xml_id": "crm.action_mark_activities_done", "usage": "ir_actions_server", "model_id": [157, "Lead/Opportunity"], "__last_update": "2020-05-01 14:50:42", "crud_model_id": false, "link_field_id": false, "create_uid": [1, "Administrator"], "name": "Mark All Activities as Done", "write_date": "2020-05-01 14:50:42"}], "relate": [], "print": []}, "name": "crm.lead.form.opportunity", "field_parent": false, "base_model": "crm.lead", "type": "form"}}, "fields": {"street": {"required": false, "string": "Street", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "function": {"required": false, "string": "Job Position", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "street2": {"required": false, "string": "Street2", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "date_conversion": {"required": false, "string": "Conversion Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "title": {"required": false, "string": "Title", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.partner.title", "domain": [], "type": "many2one"}, "medium_id": {"help": "This is the method of delivery, e.g. Postcard, Email, or Banner Ad", "required": false, "string": "Medium", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "utm.medium", "domain": [], "type": "many2one"}, "priority": {"required": false, "string": "Priority", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "selection": [["0", "Normal"], ["1", "Low"], ["2", "High"], ["3", "Very High"]], "sortable": true, "type": "selection"}, "source_id": {"help": "This is the source of the link, e.g. Search Engine, another domain, or name of email list", "required": false, "string": "Source", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "utm.source", "domain": [], "type": "many2one"}, "user_email": {"required": false, "string": "User Email", "depends": ["user_id.email"], "related": ["user_id", "email"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": true, "company_dependent": false, "translate": false, "type": "char"}, "user_login": {"help": "Used to log into the system", "required": false, "string": "User Login", "depends": ["user_id.login"], "related": ["user_id", "login"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": true, "company_dependent": false, "translate": false, "type": "char"}, "website": {"help": "Website of the contact", "required": false, "string": "Website", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "partner_name": {"help": "The name of the future partner company that will be created while converting the lead into opportunity", "required": false, "string": "Customer Name", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "__last_update": {"required": false, "string": "Last Modified on", "searchable": false, "depends": ["create_date", "write_date"], "readonly": true, "change_default": false, "company_dependent": false, "store": false, "sortable": false, "manual": false, "type": "datetime"}, "partner_id": {"help": "Linked partner (optional). Usually created when converting the lead.", "required": false, "string": "Customer", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "user_id": {"required": false, "string": "Salesperson", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "tag_ids": {"help": "Classify and analyze your lead/opportunity categories like: Training, Service", "required": false, "string": "Tags", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": false, "searchable": true, "readonly": false, "context": {}, "relation": "crm.lead.tag", "domain": [], "type": "many2many"}, "create_date": {"required": false, "string": "Create Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "probability": {"group_operator": "avg", "required": false, "string": "Probability", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "float"}, "day_open": {"group_operator": "sum", "required": false, "string": "Days to Assign", "depends": ["date_open"], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "email_from": {"help": "Email address of the contact", "required": false, "string": "Email", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "partner_address_email": {"required": false, "string": "Partner Contact Email", "depends": ["partner_id.email"], "related": ["partner_id", "email"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": true, "company_dependent": false, "translate": false, "type": "char"}, "message_unread_counter": {"help": "Number of unread messages", "group_operator": "sum", "required": false, "string": "Unread Messages Counter", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "sortable": false, "type": "integer"}, "message_ids": {"required": false, "string": "Messages", "depends": [], "relation_field": "res_id", "company_dependent": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "readonly": false, "context": {}, "relation": "mail.message", "domain": [["model", "=", "crm.lead"]], "type": "one2many"}, "city": {"required": false, "string": "City", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "opt_out": {"help": "If opt-out is checked, this contact has refused to receive emails for mass mailing and marketing campaign. Filter 'Available for Mass Mailing' allows users to filter the leads when performing mass mailing.", "required": false, "string": "Opt-Out", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "boolean"}, "mobile": {"required": false, "string": "Mobile", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "phone": {"required": false, "string": "Phone", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "activity_summary": {"required": false, "string": "Next Activity Summary", "depends": ["activity_ids.summary"], "related": ["activity_ids", "summary"], "change_default": false, "sortable": false, "readonly": false, "store": false, "manual": false, "searchable": true, "groups": "base.group_user", "company_dependent": false, "translate": false, "type": "char"}, "description": {"required": false, "string": "Notes", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "text"}, "kanban_state": {"required": false, "string": "Activity State", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "selection": [["grey", "No next activity planned"], ["red", "Next activity late"], ["green", "Next activity is planned"]], "sortable": false, "type": "selection"}, "display_name": {"required": false, "string": "Display Name", "depends": ["name"], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "sortable": false, "translate": false, "type": "char"}, "state_id": {"required": false, "string": "State", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.country.state", "domain": [], "type": "many2one"}, "date_closed": {"required": false, "string": "Closed Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "message_unread": {"help": "If checked new messages require your attention.", "required": false, "string": "Unread Messages", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "sortable": false, "type": "boolean"}, "date_open": {"required": false, "string": "Assigned", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "write_date": {"required": false, "string": "Update Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "country_id": {"required": false, "string": "Country", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.country", "domain": [], "type": "many2one"}, "referred": {"required": false, "string": "Referred By", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "message_needaction": {"help": "If checked, new messages require your attention.", "required": false, "string": "Action Needed", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": true, "readonly": true, "sortable": false, "type": "boolean"}, "day_close": {"group_operator": "sum", "required": false, "string": "Days to Close", "depends": ["date_closed"], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "campaign_id": {"help": "This is a name that helps you keep track of your different campaign efforts, e.g. Fall_Drive, Christmas_Special", "required": false, "string": "Campaign", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "utm.campaign", "domain": [], "type": "many2one"}, "lost_reason": {"required": false, "string": "Lost Reason", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "crm.lost.reason", "domain": [], "type": "many2one"}, "date_deadline": {"help": "Estimate of the date on which the opportunity will be won.", "required": false, "string": "Expected Closing", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "date"}, "create_uid": {"required": false, "string": "Created by", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "date_last_stage_update": {"required": false, "string": "Last Stage Update", "searchable": true, "depends": [], "readonly": false, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "active": {"required": false, "string": "Active", "searchable": true, "depends": [], "readonly": false, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "boolean"}, "partner_address_name": {"required": false, "string": "Partner Contact Name", "depends": ["partner_id.name"], "related": ["partner_id", "name"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": true, "company_dependent": false, "translate": false, "type": "char"}, "email_cc": {"help": "These email addresses will be added to the CC field of all inbound and outbound emails for this record before being sent. Separate multiple email addresses with a comma", "required": false, "string": "Global CC", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "text"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "write_uid": {"required": false, "string": "Last Updated by", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "team_id": {"help": "When sending mails, the default email address is taken from the sales channel.", "required": false, "string": "Sales Channel", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "crm.team", "domain": [], "type": "many2one"}, "planned_revenue": {"group_operator": "sum", "required": false, "string": "Expected Revenue", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "float"}, "type": {"help": "Type is used to separate Leads and Opportunities", "store": true, "required": true, "string": "Type", "depends": [], "change_default": false, "company_dependent": false, "selection": [["lead", "Lead"], ["opportunity", "Opportunity"]], "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "selection"}, "message_bounce": {"help": "Counter of the number of bounced emails for this contact", "group_operator": "sum", "required": false, "string": "Bounce", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "integer"}, "zip": {"required": false, "string": "Zip", "depends": [], "change_default": true, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "message_partner_ids": {"required": false, "string": "Followers (Partners)", "depends": ["message_follower_ids"], "change_default": false, "company_dependent": false, "store": false, "manual": false, "sortable": false, "searchable": true, "readonly": true, "context": {}, "relation": "res.partner", "domain": [], "type": "many2many"}, "date_action_last": {"required": false, "string": "Last Action", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "message_follower_ids": {"required": false, "string": "Followers", "depends": [], "relation_field": "res_id", "company_dependent": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "readonly": false, "context": {}, "relation": "mail.followers", "domain": [["res_model", "=", "crm.lead"]], "type": "one2many"}, "message_needaction_counter": {"help": "Number of messages which requires an action", "group_operator": "sum", "required": false, "string": "Number of Actions", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "sortable": false, "type": "integer"}, "company_id": {"required": false, "string": "Company", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.company", "domain": [], "type": "many2one"}, "contact_name": {"required": false, "string": "Contact Name", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "activity_state": {"help": "Status based on activities\nOverdue: Due date is already passed\nToday: Activity date is today\nPlanned: Future activities.", "store": false, "required": false, "string": "State", "depends": ["activity_ids.state"], "change_default": false, "company_dependent": false, "readonly": true, "selection": [["overdue", "Overdue"], ["today", "Today"], ["planned", "Planned"]], "manual": false, "searchable": false, "groups": "base.group_user", "sortable": false, "type": "selection"}, "activity_date_deadline": {"required": false, "string": "Next Activity Deadline", "depends": ["activity_ids.date_deadline"], "related": ["activity_ids", "date_deadline"], "change_default": false, "sortable": true, "readonly": true, "store": true, "manual": false, "searchable": true, "groups": "base.group_user", "company_dependent": false, "type": "date"}, "activity_user_id": {"required": false, "string": "Responsible", "depends": ["activity_ids.user_id"], "related": ["activity_ids", "user_id"], "groups": "base.group_user", "relation": "res.users", "readonly": false, "store": false, "manual": false, "sortable": false, "searchable": true, "change_default": false, "context": {}, "company_dependent": false, "domain": [], "type": "many2one"}, "company_currency": {"required": false, "string": "Currency", "depends": ["company_id.currency_id"], "related": ["company_id", "currency_id"], "change_default": false, "relation": "res.currency", "store": false, "manual": false, "sortable": false, "searchable": true, "readonly": true, "context": {}, "company_dependent": false, "domain": [], "type": "many2one"}, "message_is_follower": {"required": false, "string": "Is Follower", "searchable": true, "depends": ["message_follower_ids"], "readonly": true, "change_default": false, "company_dependent": false, "store": false, "sortable": false, "manual": false, "type": "boolean"}, "activity_ids": {"required": false, "string": "Activities", "depends": [], "groups": "base.group_user", "company_dependent": false, "readonly": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "relation_field": "res_id", "context": {}, "relation": "mail.activity", "domain": [["res_model", "=", "crm.lead"]], "type": "one2many"}, "meeting_count": {"group_operator": "sum", "required": false, "string": "# Meetings", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "sortable": false, "type": "integer"}, "message_channel_ids": {"required": false, "string": "Followers (Channels)", "depends": ["message_follower_ids"], "change_default": false, "company_dependent": false, "store": false, "manual": false, "sortable": false, "searchable": true, "readonly": true, "context": {}, "relation": "mail.channel", "domain": [], "type": "many2many"}, "color": {"group_operator": "sum", "required": false, "string": "Color Index", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "integer"}, "activity_type_id": {"required": false, "string": "Next Activity Type", "depends": ["activity_ids.activity_type_id"], "related": ["activity_ids", "activity_type_id"], "groups": "base.group_user", "relation": "mail.activity.type", "readonly": false, "store": false, "manual": false, "sortable": false, "searchable": true, "change_default": false, "context": {}, "company_dependent": false, "domain": "['|', ('res_model_id', '=', False), ('res_model_id', '=', res_model_id)]", "type": "many2one"}, "message_last_post": {"help": "Date of the last message posted on the record.", "required": false, "string": "Last Message Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "datetime"}, "name": {"required": true, "string": "Opportunity", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "id": {"required": false, "string": "ID", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "integer"}}, "filters": []}}

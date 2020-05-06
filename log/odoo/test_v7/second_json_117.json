@@ -1,0 +1,3 @@
+3
+/web/dataset/call_kw/crm.lead/onchange
+{"id": 575618366, "jsonrpc": "2.0", "result": {"value": {"street": "69 rue de Namur", "zip": "1300", "partner_name": "Agrolait", "function": "Analyst", "city": "Wavre", "country_id": [20, "Belgium"], "contact_name": "Michel Fletcher", "email_from": "michel.fletcher@agrolait.example.com"}}}

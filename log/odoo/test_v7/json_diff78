@@ -1,0 +1,30 @@
+/web/dataset/call_kw/mail.message/message_format
+JSON objekti imaju iste ključeve
+-date=2020-05-06 10:40:52
++date=2020-05-06 10:41:48
+-date=2020-05-04 11:47:25
++date=2020-05-04 11:48:03
+-new_value=Agrolait, Laith Jubair
++new_value=Administrator
+-changed_field=Customer
++changed_field=Salesperson
+-new_value=Administrator
++new_value=10000.0
+-changed_field=Salesperson
++changed_field=Expected Revenue
+-old_value=
++old_value=0.0
+-field_type=many2one
++field_type=float
+-new_value=Europe
++new_value=Agrolait, Laith Jubair
+-changed_field=Sales Channel
++changed_field=Customer
+-new_value=10000.0
++new_value=Europe
+-changed_field=Expected Revenue
++changed_field=Sales Channel
+-old_value=0.0
++old_value=
+-field_type=float
++field_type=many2one

@@ -1,0 +1,128 @@
+2
+/web/dataset/call_kw/crm.opportunity.report/load_views
+{"id": 857340751, "jsonrpc": "2.0", "result": {"fields_views": {"graph": {"arch": "
+<graph analysis\"="" stacked='\"True\"' string='\"Pipeline'>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"stage_id\"' true}\"="" type='\"row\"'>
+ </field>
+ \n
+ <field interval='\"month\"' modifiers='\"{"readonly":' name='\"date_deadline\"' true}\"="" type='\"row\"'>
+ </field>
+ \n
+ <field modifiers='\"{"readonly":' name='\"expected_revenue\"' true}\"="" type='\"measure\"'>
+ </field>
+ \n
+</graph>
+", "fields": {"date_deadline": {"required": false, "string": "Expected Closing", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "date"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "expected_revenue": {"group_operator": "sum", "digits": [16, 2], "string": "Probable Turnover", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "required": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "float"}}, "view_id": 368, "model": "crm.opportunity.report", "toolbar": {"action": [], "relate": [], "print": []}, "name": "crm.opportunity.report.graph", "field_parent": false, "base_model": "crm.opportunity.report", "type": "graph"}, "pivot": {"arch": "
+<pivot analysis\"="" disable_linking='\"True\"' string='\"Pipeline'>
+ \n
+ <field interval='\"month\"' modifiers='\"{"readonly":' name='\"create_date\"' true}\"="" type='\"col\"'>
+ </field>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"stage_id\"' true}\"="" type='\"row\"'>
+ </field>
+ \n
+ <field modifiers='\"{"readonly":' name='\"expected_revenue\"' true}\"="" type='\"measure\"'>
+ </field>
+ \n
+</pivot>
+", "fields": {"stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "create_date": {"required": false, "string": "Creation Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}, "expected_revenue": {"group_operator": "sum", "digits": [16, 2], "string": "Probable Turnover", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "required": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "float"}}, "view_id": 366, "model": "crm.opportunity.report", "toolbar": {"action": [], "relate": [], "print": []}, "name": "crm.opportunity.report.pivot", "field_parent": false, "base_model": "crm.opportunity.report", "type": "pivot"}, "search": {"arch": "
+<search analysis\"="" string='\"Opportunities'>
+ \n
+ <filter '=', uid)]\"/&gt;\n                    &lt;separator/&gt;\n                    &lt;filter name=\"lead\" string=\"Lead\" domain=\"[(' domain="\&quot;[('user_id'," help='\"Show' lead')]\"="" lead\"="" name='\"my\"' only="" opportunities\"="" string='\"My' type','=", ">
+ </filter>
+ \n
+ <filter domain="\&quot;[('type','=','opportunity')]\&quot;" help='\"Show' name='\"opportunity\"' only="" opportunity\"="" string='\"Opportunity\"'>
+ </filter>
+ \n
+ <separator>
+ </separator>
+ \n
+ <filter '=', False)]\"/&gt;\n                    &lt;field name=\"team_id\" context=\"{' active',="" can_create='\"true\"' can_write='\"true\"' domain="\&quot;[('probability'," false}\"="" invisible_team':="" modifiers='\"{"readonly":' name='\"won\"' probability',="" string='\"Won\"' true}\"="">
+ </filter>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"user_id\"' string='\"Salesperson\"' true}\"="">
+ </field>
+ \n
+ <separator>
+ </separator>
+ \n
+ <filter %y-%m-01'))]\"="" '&gt;=", context_today().strftime(" domain="\&quot;[('date_closed'," month\"="" name='\"this_month\"' string='\"This'>
+ </filter>
+ \n
+ <filter %y-%m-01')),="" '&gt;=", (context_today() - relativedelta(months=1)).strftime(" '&lt;',="" ('date_closed',="" context_today().strftime('%y-%m-01'))]\"="" domain="\&quot;['&amp;'," month\"="" name='\"last_month\"' string='\"Last'>
+ </filter>
+ \n
+ <separator>
+ </separator>
+ \n
+ <filter '=', False)]\"/&gt;\n                    &lt;group expand=\"0\" string=\"Extended Filters\"&gt;\n                        &lt;field name=\"partner_id\" filter_domain=\"[(' active',="" can_create='\"true\"' can_write='\"true\"' domain="\&quot;[('active'," modifiers='\"{"readonly":' name='\"current\"' partner_id','child_of',self)]\"="" string='\"Current\"' true}\"="">
+ </filter>
+ \n
+ <field '=", " ('team_id',="" can_create='\"true\"' can_write='\"true\"' domain="\&quot;['|'," modifiers='\"{"readonly":' name='\"stage_id\"' team_id')]\"="" team_id',="" true}\"="" widget='\"selection\"'>
+ </field>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"campaign_id\"' true}\"="" widget='\"selection\"'>
+ </field>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"medium_id\"' true}\"="" widget='\"selection\"'>
+ </field>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"source_id\"' true}\"="" widget='\"selection\"'>
+ </field>
+ \n
+ <field &quot;readonly&quot;:="" can_create='\"true\"' can_write='\"true\"' invisible='\"1\"' modifiers='\"{"invisible":' name='\"company_id\"' options="\&quot;{'no_create':" true,="" true}\"="">
+ </field>
+ \n
+ <newline>
+ </newline>
+ \n
+ <field modifiers='\"{"readonly":' name='\"create_date\"' true}\"="">
+ </field>
+ \n
+ <field modifiers='\"{"readonly":' name='\"opening_date\"' true}\"="">
+ </field>
+ \n
+ <field modifiers='\"{"readonly":' name='\"date_closed\"' true}\"="">
+ </field>
+ \n
+</search>
+\n
+<group by\"="" expand='\"1\"' string='\"Group'>
+ \n
+ <filter context="\&quot;{'group_by':'user_id'}\&quot;/" string='\"Salesperson\"'>
+  \n
+  <filter channel\"="" context="\&quot;{'group_by':'team_id'}\&quot;/" string='\"Sales'>
+   \n
+   <filter context="\&quot;{'group_by':'city'}\&quot;/" string='\"City\"'>
+    \n
+    <filter context="\&quot;{'group_by':'country_id'}\&quot;/" string='\"Country\"'>
+     \n
+     <filter context="\&quot;{'group_by':'company_id'}\&quot;" invisible='\"1\"' modifiers='\"{"invisible":' string='\"Company\"' true}\"="">
+     </filter>
+     \n
+     <filter context="\&quot;{'group_by':'stage_id'}\&quot;/" string='\"Stage\"'>
+      \n
+      <separator orientation='\"vertical\"/'>
+       \n
+       <filter context="\&quot;{'group_by':'create_date:month'}\&quot;" month\"="" name='\"month\"/' string='\"Creation'>
+        \n
+        <filter closing="" closing\"="" context="\&quot;{'group_by':'date_deadline:month'}\&quot;" help='\"Expiration' month\"="" name='\"date_deadline\"' string='\"Expected'>
+        </filter>
+        \n
+        <filter context="\&quot;{'group_by':'date_conversion:month'}\&quot;" date="" date\"="" from="" help='\"Conversion' lead="" name='\"conversion_date\"' opportunity\"="" string='\"Conversion' to="">
+        </filter>
+        \n
+        <filter context="\&quot;{'group_by':'lost_reason'}\&quot;/" reason\"="" string='\"Lost'>
+         \n
+        </filter>
+       </filter>
+      </separator>
+     </filter>
+    </filter>
+   </filter>
+  </filter>
+ </filter>
+</group>
+\n
+", "fields": {"campaign_id": {"required": false, "string": "Campaign", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "utm.campaign", "domain": [], "type": "many2one"}, "partner_id": {"required": false, "string": "Partner", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "source_id": {"required": false, "string": "Source", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "utm.source", "domain": [], "type": "many2one"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "user_id": {"required": false, "string": "User", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "create_date": {"required": false, "string": "Creation Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}, "team_id": {"required": false, "string": "Sales Channel", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "crm.team", "domain": [], "type": "many2one"}, "opening_date": {"required": false, "string": "Assignation Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}, "company_id": {"required": false, "string": "Company", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "res.company", "domain": [], "type": "many2one"}, "medium_id": {"required": false, "string": "Medium", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "utm.medium", "domain": [], "type": "many2one"}, "date_closed": {"required": false, "string": "Close Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}}, "view_id": 370, "model": "crm.opportunity.report", "name": "crm.opportunity.report.select", "field_parent": false, "base_model": "crm.opportunity.report", "type": "search"}}, "fields": {"campaign_id": {"required": false, "string": "Campaign", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "utm.campaign", "domain": [], "type": "many2one"}, "date_conversion": {"required": false, "string": "Conversion Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "partner_id": {"required": false, "string": "Partner", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "priority": {"required": false, "string": "Priority", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "selection": [["0", "Normal"], ["1", "Low"], ["2", "High"], ["3", "Very High"]], "sortable": true, "type": "selection"}, "date_deadline": {"required": false, "string": "Expected Closing", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "date"}, "total_revenue": {"group_operator": "sum", "digits": [16, 2], "string": "Total Revenue", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "required": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "date_last_stage_update": {"required": false, "string": "Last Stage Update", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "id": {"required": false, "string": "ID", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "integer"}, "source_id": {"required": false, "string": "Source", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "utm.source", "domain": [], "type": "many2one"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "crm.stage", "domain": "['|', ('team_id', '=', False), ('team_id', '=', team_id)]", "type": "many2one"}, "user_id": {"required": false, "string": "User", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "delay_open": {"help": "Number of Days to open the case", "group_operator": "avg", "digits": [16, 2], "string": "Delay to Assign", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "required": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "create_date": {"required": false, "string": "Creation Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "probability": {"group_operator": "avg", "digits": [16, 2], "string": "Probability", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "required": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "stage_name": {"required": false, "string": "Stage Name", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "sortable": true, "translate": false, "type": "char"}, "team_id": {"required": false, "string": "Sales Channel", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "crm.team", "domain": [], "type": "many2one"}, "type": {"help": "Type is used to separate Leads and Opportunities", "store": true, "required": false, "string": "Type", "depends": [], "change_default": false, "company_dependent": false, "selection": [["lead", "Lead"], ["opportunity", "Opportunity"]], "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "selection"}, "opening_date": {"required": false, "string": "Assignation Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "nbr_activities": {"group_operator": "sum", "required": false, "string": "# of Activities", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "sortable": true, "type": "integer"}, "display_name": {"required": false, "string": "Display Name", "depends": ["date_deadline"], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "sortable": false, "translate": false, "type": "char"}, "city": {"required": false, "string": "City", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "company_id": {"required": false, "string": "Company", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.company", "domain": [], "type": "many2one"}, "__last_update": {"required": false, "string": "Last Modified on", "searchable": false, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": false, "sortable": false, "manual": false, "type": "datetime"}, "medium_id": {"required": false, "string": "Medium", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "utm.medium", "domain": [], "type": "many2one"}, "lost_reason": {"required": false, "string": "Lost Reason", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "crm.lost.reason", "domain": [], "type": "many2one"}, "delay_close": {"help": "Number of Days to close the case", "group_operator": "avg", "digits": [16, 2], "string": "Delay to Close", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "required": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "delay_expected": {"group_operator": "avg", "digits": [16, 2], "string": "Overpassed Deadline", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "required": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "expected_revenue": {"group_operator": "sum", "digits": [16, 2], "string": "Probable Turnover", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "required": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "date_closed": {"required": false, "string": "Close Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "active": {"required": false, "string": "Active", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "boolean"}, "country_id": {"required": false, "string": "Country", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.country", "domain": [], "type": "many2one"}}, "filters": [{"user_id": false, "is_default": false, "id": 5, "name": "Expected Revenue by Team", "sort": "[]", "context": "{'group_by': ['create_date:month', 'team_id'], 'measures': ['expected_revenue', '__count__']}", "domain": "[]"}, {"user_id": false, "is_default": false, "id": 3, "name": "Leads By Salespersons", "sort": "[]", "context": "{'col_group_by': ['create_date:month'], 'group_by': ['user_id'], 'measures': ['__count__']}", "domain": "[]"}, {"user_id": false, "is_default": false, "id": 1, "name": "Opportunities Cohort", "sort": "[]", "context": "{'group_by': ['date_closed:month'],'col_group_by': ['create_date:month'], 'measures': ['__count__']}", "domain": "[('probability', '=', 100)]"}, {"user_id": false, "is_default": false, "id": 2, "name": "Opportunities Won Per Team", "sort": "[]", "context": "{'group_by': ['team_id'], 'col_group_by': ['date_last_stage_update:month'], 'measures': ['expected_revenue']}", "domain": "[('probability', '=', 100)]"}, {"user_id": false, "is_default": false, "id": 6, "name": "Team Activities", "sort": "[]", "context": "{'group_by': ['team_id'], 'measures': ['nbr_activities']}", "domain": "[]"}, {"user_id": false, "is_default": false, "id": 4, "name": "Won By Country", "sort": "[]", "context": "{'col_group_by': ['create_date:month'], 'group_by': ['country_id']}", "domain": "[('probability', '=', 100)]"}]}}

@@ -1,0 +1,36 @@
+14
+/web/action/load
+{"jsonrpc": "2.0", "result": {"help": "
+<p class='\"oe_view_nocontent_create\"'>
+ \n                    Click here to define a new sales channel.\n
+</p>
+<p>
+ \n                    Use sales channels to organize your sales departments. \n                    Each channel will work with a separate pipeline.\n
+</p>
+\n            ", "multi": false, "create_uid": [1, "Administrator"], "views": [[false, "kanban"], [false, "form"]], "__last_update": "2020-05-01 14:51:59", "name": "Sales Channels", "limit": 80, "domain": false, "create_date": "2020-05-01 14:51:59", "search_view": "{'arch': '
+<search search\"="" string='\"Salesteams'>
+ \\n
+ <filter \\'in\\',="" domain="\&quot;[(\\'favorite_user_ids\\'," favorites\"="" name='\"my_favorites\"' string='\"My' uid)]\"="">
+ </filter>
+ \\n
+ <separator>
+ </separator>
+ \\n
+ <filter domain="\&quot;[(\\'active\\',\\'=\\',False)]\&quot;/" name='\"inactive\"' string='\"Archived\"'>
+  \\n
+  <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+  </field>
+  \\n
+  <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"user_id\"'>
+   \\n
+   <group by...\"="" expand='\"0\"' string='\"Group'>
+    \\n
+    <filter context="\&quot;{\\'group_by\\':\\'user_id\\'}\&quot;/" domain='\"[]\"' leader\"="" string='\"Team'>
+     \\n
+    </filter>
+   </group>
+   \\n
+  </field>
+ </filter>
+</search>
+', 'view_id': 321, 'type': 'search', 'base_model': 'crm.team', 'field_parent': False, 'model': 'crm.team', 'name': 'Case Teams - Search', 'fields': {'name': {'views': {}, 'type': 'char', 'readonly': False, 'translate': True, 'required': True, 'depends': (), 'change_default': False, 'manual': False, 'store': True, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Sales Channel'}, 'user_id': {'views': {}, 'relation': 'res.users', 'type': 'many2one', 'readonly': False, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Channel Leader', 'store': True}}}", "context": "{'search_default_my_favorites': 1}", "src_model": false, "flags": {}, "xml_id": "sales_team.crm_team_salesteams_act", "target": "current", "auto_search": true, "view_mode": "kanban,form", "view_id": [321, "Case Teams - Search"], "type": "ir.actions.act_window", "filter": false, "id": 114, "search_view_id": false, "usage": false, "write_uid": [1, "Administrator"], "view_ids": [], "res_model": "crm.team", "binding_model_id": false, "groups_id": [], "write_date": "2020-05-01 14:51:59", "binding_type": "action", "display_name": "Sales Channels", "res_id": 0}, "id": 602303228}

@@ -1,0 +1,125 @@
+2
+/web/dataset/call_kw/res.company/load_views
+{"id": 439280407, "jsonrpc": "2.0", "result": {"fields_views": {"form": {"arch": "
+<form string='\"Company\"'>
+ \n
+ <sheet>
+  \n
+  <field class='\"oe_avatar\"' modifiers='\"{}\"/' name='\"logo\"' widget='\"image\"'>
+   \n
+   <div class='\"oe_title\"'>
+    \n
+    <label class='\"oe_edit_only\"/' for='\"name\"'>
+     \n
+     <h1>
+      \n
+      <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+      </field>
+      \n
+     </h1>
+     \n
+    </label>
+   </div>
+   \n
+   <notebook colspan='\"4\"'>
+    \n
+    <page information\"="" string='\"General'>
+     \n
+     <group>
+      \n
+      <group>
+       \n
+       <field &quot;readonly&quot;:="" can_create='\"true\"' can_write='\"true\"' invisible='\"1\"' modifiers='\"{"invisible":' name='\"partner_id\"' on_change='\"1\"' readonly='\"1\"' required='\"0\"' true,="" true}\"="">
+       </field>
+       \n
+       <label for='\"street\"' string='\"Address\"/'>
+        \n
+        <div class='\"o_address_format\"'>
+         \n
+         <field class='\"o_address_street\"' modifiers='\"{}\"/' name='\"street\"' placeholder='\"Street...\"'>
+          \n
+          <field 2...\"="" class='\"o_address_street\"' modifiers='\"{}\"/' name='\"street2\"' placeholder='\"Street'>
+           \n
+           <field class='\"o_address_city\"' modifiers='\"{}\"/' name='\"city\"' placeholder='\"City\"'>
+            \n
+            <field can_create='\"true\"' can_write='\"true\"' class='\"o_address_state\"' modifiers='\"{}\"/' name='\"state_id\"' on_change='\"1\"' options='\"{"no_open":' placeholder='\"State\"' true}\"="">
+             \n
+             <field class='\"o_address_zip\"' modifiers='\"{}\"/' name='\"zip\"' placeholder='\"ZIP\"'>
+              \n
+              <field can_create='\"true\"' can_write='\"true\"' class='\"o_address_country\"' modifiers='\"{}\"/' name='\"country_id\"' on_change='\"1\"' options='\"{"no_open":' placeholder='\"Country\"' true}\"="">
+               \n
+              </field>
+             </field>
+            </field>
+           </field>
+          </field>
+         </field>
+        </div>
+        \n
+        <field business="" global="" modifiers='\"{}\"/' name='\"report_header\"' placeholder='\"e.g.' solutions\"="">
+         \n
+        </field>
+       </label>
+      </group>
+      \n
+      <group>
+       \n
+       <field modifiers='\"{}\"/' name='\"website\"' placeholder='\"e.g.' widget='\"url\"' www.odoo.com\"="">
+        \n
+        <field modifiers='\"{}\"/' name='\"phone\"'>
+         \n
+         <field modifiers='\"{}\"/' name='\"email\"'>
+          \n
+          <field modifiers='\"{}\"/' name='\"vat\"'>
+           \n
+           <field modifiers='\"{}\"/' name='\"company_registry\"'>
+            \n
+            <field 'no_open':="" can_create='\"true\"' can_write='\"true\"' id='\"company_currency\"' modifiers='\"{"required":' name='\"currency_id\"' options="\&quot;{'no_create':" true,="" true}\"="">
+            </field>
+            \n
+            <label for='\"id\"' invisible='\"1\"' modifiers='\"{"invisible":' true}\"="">
+            </label>
+            \n
+            <p class='\"text-muted\"'>
+             \n
+             <a href='\"\"' name='\"62\"' type='\"action\"'>
+              Activate more currencies
+             </a>
+             .\n
+            </p>
+            \n                \n
+            <field can_create='\"true\"' can_write='\"true\"' invisible='\"1\"' modifiers='\"{"invisible":' name='\"parent_id\"' true}\"="">
+            </field>
+            \n
+            <field invisible='\"1\"' modifiers='\"{"invisible":' name='\"sequence\"' true}\"="">
+            </field>
+            \n
+            <field accounts,="" bank="" line\"="" modifiers='\"{}\"/' name='\"report_footer\"' one="" per="" placeholder='\"e.g.' your="">
+             \n
+            </field>
+           </field>
+          </field>
+         </field>
+        </field>
+       </field>
+      </group>
+      \n
+      <group name='\"social_media\"/'>
+       \n
+      </group>
+      \n
+     </group>
+    </page>
+    \n
+   </notebook>
+   \n
+  </field>
+ </sheet>
+ \n
+</form>
+", "fields": {"street": {"required": false, "string": "Street", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": false, "views": {}, "sortable": false, "translate": false, "type": "char"}, "street2": {"required": false, "string": "Street2", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": false, "views": {}, "sortable": false, "translate": false, "type": "char"}, "company_registry": {"required": false, "string": "Company Registry", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "char"}, "logo": {"help": "This field holds the image used as avatar for this contact, limited to 1024x1024px", "store": false, "required": false, "string": "Company Logo", "depends": ["partner_id.image"], "change_default": false, "company_dependent": false, "attachment": false, "manual": false, "sortable": false, "searchable": true, "readonly": false, "views": {}, "related": ["partner_id", "image"], "type": "binary"}, "sequence": {"help": "Used to order Companies in the company switcher", "group_operator": "sum", "required": false, "string": "Sequence", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "type": "integer"}, "website": {"help": "Website of Partner or Company", "required": false, "string": "Website", "depends": ["partner_id.website"], "related": ["partner_id", "website"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": false, "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "partner_id": {"required": true, "string": "Partner", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "vat": {"help": "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements.", "required": false, "string": "TIN", "depends": ["partner_id.vat"], "related": ["partner_id", "vat"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": false, "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "state_id": {"required": false, "string": "Fed. State", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "sortable": false, "searchable": false, "readonly": false, "views": {}, "context": {}, "relation": "res.country.state", "domain": [], "type": "many2one"}, "zip": {"required": false, "string": "Zip", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": false, "views": {}, "sortable": false, "translate": false, "type": "char"}, "currency_id": {"required": true, "string": "Currency", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.currency", "domain": [], "type": "many2one"}, "report_footer": {"help": "Footer text displayed at the bottom of all reports.", "required": false, "string": "Report Footer", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": true, "type": "text"}, "city": {"required": false, "string": "City", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": false, "views": {}, "sortable": false, "translate": false, "type": "char"}, "report_header": {"help": "Appears by default on the top right corner of your printed documents (report header).", "required": false, "string": "Company Tagline", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "sortable": true, "translate": false, "type": "text"}, "phone": {"required": false, "string": "Phone", "depends": ["partner_id.phone"], "related": ["partner_id", "phone"], "change_default": false, "sortable": true, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "email": {"required": false, "string": "Email", "depends": ["partner_id.email"], "related": ["partner_id", "email"], "change_default": false, "sortable": true, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "company_dependent": false, "translate": false, "type": "char"}, "parent_id": {"required": false, "string": "Parent Company", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "views": {}, "context": {}, "relation": "res.company", "domain": [], "type": "many2one"}, "country_id": {"required": false, "string": "Country", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "sortable": false, "searchable": false, "readonly": false, "views": {}, "context": {}, "relation": "res.country", "domain": [], "type": "many2one"}, "name": {"required": true, "string": "Company Name", "depends": ["partner_id.name"], "related": ["partner_id", "name"], "change_default": false, "sortable": true, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "company_dependent": false, "translate": false, "type": "char"}}, "view_id": 95, "model": "res.company", "name": "res.company.form", "field_parent": false, "base_model": "res.company", "type": "form"}, "search": {"arch": "
+<search string='\"Companies\"'>
+ <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+ </field>
+</search>
+", "fields": {"name": {"required": true, "string": "Company Name", "depends": ["partner_id.name"], "related": ["partner_id", "name"], "change_default": false, "sortable": true, "store": true, "manual": false, "searchable": true, "readonly": false, "views": {}, "company_dependent": false, "translate": false, "type": "char"}}, "model": "res.company", "name": "default", "field_parent": false, "type": "search"}}, "fields": {"street": {"required": false, "string": "Street", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": false, "sortable": false, "translate": false, "type": "char"}, "paperformat_id": {"required": false, "string": "Paper format", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "report.paperformat", "domain": [], "type": "many2one"}, "street2": {"required": false, "string": "Street2", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": false, "sortable": false, "translate": false, "type": "char"}, "company_registry": {"required": false, "string": "Company Registry", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "resource_calendar_ids": {"required": false, "string": "Working Hours", "depends": [], "relation_field": "company_id", "company_dependent": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "readonly": false, "context": {}, "relation": "resource.calendar", "domain": [], "type": "one2many"}, "bank_ids": {"help": "Bank accounts related to this company", "required": false, "string": "Bank Accounts", "depends": [], "relation_field": "company_id", "company_dependent": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "readonly": false, "context": {}, "relation": "res.partner.bank", "domain": [], "type": "one2many"}, "logo": {"help": "This field holds the image used as avatar for this contact, limited to 1024x1024px", "store": false, "required": false, "string": "Company Logo", "depends": ["partner_id.image"], "change_default": false, "company_dependent": false, "attachment": false, "manual": false, "sortable": false, "searchable": true, "readonly": false, "related": ["partner_id", "image"], "type": "binary"}, "account_no": {"required": false, "string": "Account No.", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "sequence": {"help": "Used to order Companies in the company switcher", "group_operator": "sum", "required": false, "string": "Sequence", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "type": "integer"}, "create_uid": {"required": false, "string": "Created by", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "website": {"help": "Website of Partner or Company", "required": false, "string": "Website", "depends": ["partner_id.website"], "related": ["partner_id", "website"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": false, "company_dependent": false, "translate": false, "type": "char"}, "external_report_layout": {"required": false, "string": "Document Template", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "selection": [["background", "Background"], ["boxed", "Boxed"], ["clean", "Clean"], ["standard", "Standard"]], "sortable": true, "type": "selection"}, "partner_id": {"required": true, "string": "Partner", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "write_uid": {"required": false, "string": "Last Updated by", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "id": {"required": false, "string": "ID", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "integer"}, "create_date": {"required": false, "string": "Created on", "searchable": true, "depends": [], "readonly": false, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "vat": {"help": "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements.", "required": false, "string": "TIN", "depends": ["partner_id.vat"], "related": ["partner_id", "vat"], "change_default": false, "sortable": false, "store": false, "manual": false, "searchable": true, "readonly": false, "company_dependent": false, "translate": false, "type": "char"}, "resource_calendar_id": {"required": false, "string": "Default Working Hours", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "resource.calendar", "domain": [], "type": "many2one"}, "state_id": {"required": false, "string": "Fed. State", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "sortable": false, "searchable": false, "readonly": false, "context": {}, "relation": "res.country.state", "domain": [], "type": "many2one"}, "zip": {"required": false, "string": "Zip", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": false, "sortable": false, "translate": false, "type": "char"}, "user_ids": {"required": false, "string": "Accepted Users", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": false, "searchable": true, "readonly": false, "context": {}, "relation": "res.users", "domain": [], "type": "many2many"}, "currency_id": {"required": true, "string": "Currency", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.currency", "domain": [], "type": "many2one"}, "display_name": {"required": false, "string": "Display Name", "depends": ["name"], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "sortable": false, "translate": false, "type": "char"}, "report_footer": {"help": "Footer text displayed at the bottom of all reports.", "required": false, "string": "Report Footer", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": true, "type": "text"}, "city": {"required": false, "string": "City", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": false, "sortable": false, "translate": false, "type": "char"}, "report_header": {"help": "Appears by default on the top right corner of your printed documents (report header).", "required": false, "string": "Company Tagline", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "text"}, "child_ids": {"required": false, "string": "Child Companies", "depends": [], "relation_field": "parent_id", "company_dependent": false, "store": true, "manual": false, "sortable": false, "change_default": false, "searchable": true, "readonly": false, "context": {}, "relation": "res.company", "domain": [], "type": "one2many"}, "phone": {"required": false, "string": "Phone", "depends": ["partner_id.phone"], "related": ["partner_id", "phone"], "change_default": false, "sortable": true, "store": true, "manual": false, "searchable": true, "readonly": false, "company_dependent": false, "translate": false, "type": "char"}, "email": {"required": false, "string": "Email", "depends": ["partner_id.email"], "related": ["partner_id", "email"], "change_default": false, "sortable": true, "store": true, "manual": false, "searchable": true, "readonly": false, "company_dependent": false, "translate": false, "type": "char"}, "__last_update": {"required": false, "string": "Last Modified on", "searchable": false, "depends": ["create_date", "write_date"], "readonly": true, "change_default": false, "company_dependent": false, "store": false, "sortable": false, "manual": false, "type": "datetime"}, "parent_id": {"required": false, "string": "Parent Company", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": false, "context": {}, "relation": "res.company", "domain": [], "type": "many2one"}, "write_date": {"required": false, "string": "Last Updated on", "searchable": true, "depends": [], "readonly": false, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "country_id": {"required": false, "string": "Country", "depends": [], "change_default": false, "company_dependent": false, "store": false, "manual": false, "sortable": false, "searchable": false, "readonly": false, "context": {}, "relation": "res.country", "domain": [], "type": "many2one"}, "logo_web": {"required": false, "string": "Logo Web", "depends": ["partner_id", "partner_id.image"], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "sortable": true, "attachment": false, "type": "binary"}, "name": {"required": true, "string": "Company Name", "depends": ["partner_id.name"], "related": ["partner_id", "name"], "change_default": false, "sortable": true, "store": true, "manual": false, "searchable": true, "readonly": false, "company_dependent": false, "translate": false, "type": "char"}}, "filters": []}}

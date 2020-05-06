@@ -1,0 +1,515 @@
+1
+/web/dataset/call_kw/crm.team/load_views
+{"jsonrpc": "2.0", "result": {"fields": {"create_uid": {"relation": "res.users", "type": "many2one", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Created by", "store": true}, "use_leads": {"help": "Check this box to filter and qualify incoming requests as leads before converting them into opportunities and assigning them to a salesperson.", "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Leads"}, "opportunities_count": {"type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Number of open opportunities", "group_operator": "sum"}, "name": {"type": "char", "readonly": false, "translate": true, "required": true, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Sales Channel"}, "alias_model_id": {"help": "The model (Odoo Document Kind) to which this alias corresponds. Any incoming email that does not reply to an existing record will cause the creation of a new record of this model (e.g. a Project Task)", "relation": "ir.model", "type": "many2one", "readonly": false, "required": true, "related": ["alias_id", "alias_model_id"], "depends": ["alias_id.alias_model_id"], "domain": "[('field_id.name', '=', 'message_ids')]", "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Aliased Model", "store": false}, "alias_user_id": {"help": "The owner of records created upon receiving emails on this alias. If this field is not set the system will attempt to find the right owner based on the sender (From) address, or will use the Administrator account if no system user is found for that address.", "relation": "res.users", "type": "many2one", "readonly": false, "required": false, "related": ["alias_id", "alias_user_id"], "depends": ["alias_id.alias_user_id"], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Owner", "store": false}, "create_date": {"depends": [], "change_default": false, "manual": false, "type": "datetime", "readonly": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Created on", "required": false, "store": true}, "opportunities_amount": {"type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Amount of quotations to invoice", "group_operator": "sum"}, "alias_force_thread_id": {"help": "Optional ID of a thread (record) to which all incoming messages will be attached, even if they did not reply to it. If set, this will disable the creation of new records completely.", "type": "integer", "readonly": false, "required": false, "related": ["alias_id", "alias_force_thread_id"], "depends": ["alias_id.alias_force_thread_id"], "change_default": false, "manual": false, "store": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Record Thread ID", "group_operator": "sum"}, "dashboard_graph_period_pipeline": {"help": "The time period this channel's dashboard graph will consider.", "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "company_dependent": false, "searchable": false, "selection": [["week", "Within a Week"], ["month", "Within a Month"], ["year", "Within a Year"]], "sortable": false, "string": "Expected to Close"}, "color": {"help": "The color of the channel", "type": "integer", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Color Index", "group_operator": "sum"}, "active": {"help": "If the active field is set to false, it will allow you to hide the sales channel without removing it.", "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Active"}, "message_unread_counter": {"help": "Number of unread messages", "type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Unread Messages Counter", "group_operator": "sum"}, "message_partner_ids": {"relation": "res.partner", "type": "many2many", "readonly": true, "required": false, "depends": ["message_follower_ids"], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Followers (Partners)", "store": false}, "dashboard_graph_group_pipeline": {"help": "How this channel's dashboard graph will group the results.", "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["day", "Expected Closing Day"], ["week", "Expected Closing Week"], ["month", "Expected Closing Month"], ["user", "Salesperson"], ["stage", "Stage"]], "sortable": true, "string": "Group by"}, "dashboard_graph_data": {"type": "text", "readonly": true, "translate": false, "required": false, "depends": ["dashboard_graph_group", "dashboard_graph_model", "dashboard_graph_period"], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Dashboard Graph Data"}, "alias_contact": {"help": "Policy to post a message on the document using the mailgateway.\n- everyone: everyone can post\n- partners: only authenticated partners\n- followers: only followers of the related document or members of following channels\n", "type": "selection", "readonly": false, "required": true, "related": ["alias_id", "alias_contact"], "depends": ["alias_id.alias_contact"], "change_default": false, "manual": false, "store": false, "company_dependent": false, "searchable": true, "selection": [["everyone", "Everyone"], ["partners", "Authenticated Partners"], ["followers", "Followers only"]], "sortable": true, "string": "Alias Contact Security"}, "id": {"depends": [], "change_default": false, "manual": false, "type": "integer", "readonly": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "ID", "required": false, "store": true}, "message_needaction_counter": {"help": "Number of messages which requires an action", "type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Number of Actions", "group_operator": "sum"}, "company_id": {"relation": "res.company", "type": "many2one", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Company", "store": true}, "dashboard_graph_model": {"help": "The graph this channel will display in the Dashboard.\n", "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["crm.opportunity.report", "Pipeline"]], "sortable": true, "string": "Content"}, "dashboard_graph_type": {"help": "The type of graph this channel will display in the dashboard.", "type": "selection", "readonly": true, "required": false, "depends": ["dashboard_graph_group", "dashboard_graph_model", "dashboard_graph_period"], "change_default": false, "manual": false, "store": false, "company_dependent": false, "searchable": false, "selection": [["line", "Line"], ["bar", "Bar"]], "sortable": false, "string": "Type"}, "alias_id": {"help": "The email address associated with this channel. New emails received will automatically create new leads assigned to the channel.", "relation": "mail.alias", "type": "many2one", "readonly": false, "required": true, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Alias", "store": true}, "is_favorite": {"help": "Favorite teams to display them in the dashboard and access them easily.", "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Show on dashboard"}, "reply_to": {"help": "The email address put in the 'Reply-To' of all emails sent by Odoo about cases in this sales channel", "type": "char", "readonly": false, "translate": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Reply-To"}, "team_type": {"help": "The type of this channel, it will define the resources this channel uses.", "type": "selection", "readonly": false, "required": true, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["sales", "Sales"], ["website", "Website"]], "sortable": true, "string": "Channel Type"}, "__last_update": {"depends": ["create_date", "write_date"], "change_default": false, "manual": false, "type": "datetime", "readonly": true, "searchable": false, "company_dependent": false, "sortable": false, "string": "Last Modified on", "required": false, "store": false}, "message_last_post": {"help": "Date of the last message posted on the record.", "type": "datetime", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Last Message Date"}, "use_opportunities": {"help": "Check this box to manage a presales process with opportunities.", "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Pipeline"}, "message_is_follower": {"depends": ["message_follower_ids"], "change_default": false, "manual": false, "type": "boolean", "readonly": true, "searchable": true, "company_dependent": false, "sortable": false, "string": "Is Follower", "required": false, "store": false}, "user_id": {"relation": "res.users", "type": "many2one", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Channel Leader", "store": true}, "dashboard_graph_group": {"help": "How this channel's dashboard graph will group the results.", "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["day", "Day"], ["week", "Week"], ["month", "Month"], ["user", "Salesperson"]], "sortable": true, "string": "Group by"}, "message_ids": {"relation_field": "res_id", "relation": "mail.message", "type": "one2many", "readonly": false, "required": false, "depends": [], "domain": [["model", "=", "crm.team"]], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Messages", "store": true}, "member_ids": {"relation_field": "sale_team_id", "relation": "res.users", "type": "one2many", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Channel Members", "store": true}, "alias_defaults": {"help": "A Python dictionary that will be evaluated to provide default values when creating new records for this alias.", "type": "text", "readonly": false, "translate": false, "required": true, "related": ["alias_id", "alias_defaults"], "depends": ["alias_id.alias_defaults"], "change_default": false, "manual": false, "store": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Default Values"}, "alias_parent_model_id": {"help": "Parent model holding the alias. The model holding the alias reference is not necessarily the model given by alias_model_id (example: project (parent_model) and task (model))", "relation": "ir.model", "type": "many2one", "readonly": false, "required": false, "related": ["alias_id", "alias_parent_model_id"], "depends": ["alias_id.alias_parent_model_id"], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Parent Model", "store": false}, "message_needaction": {"help": "If checked, new messages require your attention.", "type": "boolean", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": true, "company_dependent": false, "sortable": false, "string": "Action Needed"}, "dashboard_button_name": {"type": "char", "readonly": true, "translate": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Dashboard Button"}, "alias_domain": {"type": "char", "readonly": true, "translate": false, "required": false, "related": ["alias_id", "alias_domain"], "depends": ["alias_id.alias_domain"], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Alias domain"}, "currency_id": {"relation": "res.currency", "type": "many2one", "readonly": true, "required": false, "related": ["company_id", "currency_id"], "depends": ["company_id.currency_id"], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Currency", "store": false}, "message_follower_ids": {"relation_field": "res_id", "relation": "mail.followers", "type": "one2many", "readonly": false, "required": false, "depends": [], "domain": [["res_model", "=", "crm.team"]], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Followers", "store": true}, "alias_parent_thread_id": {"help": "ID of the parent record holding the alias (example: project holding the task creation alias)", "type": "integer", "readonly": false, "required": false, "related": ["alias_id", "alias_parent_thread_id"], "depends": ["alias_id.alias_parent_thread_id"], "change_default": false, "manual": false, "store": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Parent Record Thread ID", "group_operator": "sum"}, "favorite_user_ids": {"relation": "res.users", "type": "many2many", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Favorite Members", "store": true}, "write_uid": {"relation": "res.users", "type": "many2one", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Last Updated by", "store": true}, "message_channel_ids": {"relation": "mail.channel", "type": "many2many", "readonly": true, "required": false, "depends": ["message_follower_ids"], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Followers (Channels)", "store": false}, "alias_name": {"help": "The name of the email alias, e.g. 'jobs' if you want to catch emails for
+<jobs@example.odoo.com>
+ ", "type": "char", "readonly": false, "translate": false, "required": false, "related": ["alias_id", "alias_name"], "depends": ["alias_id.alias_name"], "change_default": false, "manual": false, "store": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Alias Name"}, "display_name": {"type": "char", "readonly": true, "translate": false, "required": false, "depends": ["name"], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Display Name"}, "unassigned_leads_count": {"type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Unassigned Leads", "group_operator": "sum"}, "message_unread": {"help": "If checked new messages require your attention.", "type": "boolean", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Unread Messages"}, "dashboard_graph_period": {"help": "The time period this channel's dashboard graph will consider.", "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["week", "Last Week"], ["month", "Last Month"], ["year", "Last Year"]], "sortable": true, "string": "Scale"}, "write_date": {"depends": [], "change_default": false, "manual": false, "type": "datetime", "readonly": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Last Updated on", "required": false, "store": true}}, "filters": [], "fields_views": {"search": {"arch": "
+ <search search\"="" string='\"Salesteams'>
+  \n
+  <filter 'in',="" domain="\&quot;[('favorite_user_ids'," favorites\"="" name='\"my_favorites\"' string='\"My' uid)]\"="">
+  </filter>
+  \n
+  <separator>
+  </separator>
+  \n
+  <filter domain="\&quot;[('active','=',False)]\&quot;/" name='\"inactive\"' string='\"Archived\"'>
+   \n
+   <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+   </field>
+   \n
+   <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"user_id\"'>
+    \n
+    <group by...\"="" expand='\"0\"' string='\"Group'>
+     \n
+     <filter context="\&quot;{'group_by':'user_id'}\&quot;/" domain='\"[]\"' leader\"="" string='\"Team'>
+      \n
+     </filter>
+    </group>
+    \n
+   </field>
+  </filter>
+ </search>
+ ", "view_id": 321, "type": "search", "base_model": "crm.team", "field_parent": false, "model": "crm.team", "name": "Case Teams - Search", "fields": {"name": {"views": {}, "type": "char", "readonly": false, "translate": true, "required": true, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Sales Channel"}, "user_id": {"views": {}, "relation": "res.users", "type": "many2one", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Channel Leader", "store": true}}}, "kanban": {"toolbar": {"action": [], "print": [], "relate": []}, "arch": "
+ <kanban class='\"oe_background_grey' create='\"0\"' o_kanban_dashboard="" o_salesteam_kanban\"="">
+  \n
+  <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+  </field>
+  \n
+  <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"user_id\"'>
+   \n
+   <field modifiers='\"{}\"/' name='\"member_ids\"'>
+    \n
+    <field modifiers='\"{}\"/' name='\"color\"'>
+     \n
+     <field modifiers='\"{"readonly":' name='\"dashboard_graph_type\"' true}\"="">
+     </field>
+     \n
+     <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"currency_id\"' true}\"="">
+     </field>
+     \n
+     <field modifiers='\"{}\"/' name='\"is_favorite\"'>
+      \n                \n
+      <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"required":' name='\"alias_id\"' on_change='\"1\"' true}\"="">
+      </field>
+      \n
+      <field modifiers='\"{}\"/' name='\"alias_name\"'>
+       \n
+       <field modifiers='\"{"readonly":' name='\"alias_domain\"' true}\"="">
+       </field>
+       \n
+       <field modifiers='\"{}\"/' name='\"use_leads\"' on_change='\"1\"'>
+        \n
+        <field modifiers='\"{}\"/' name='\"use_opportunities\"' on_change='\"1\"'>
+         \n
+         <templates>
+          \n
+          <t t-name='\"kanban-box\"'>
+           \n
+           <div t-attf-class='\"#{kanban_color(record.color.raw_value)}\"'>
+            \n
+            <div t-attf-class='\"o_kanban_card_header\"'>
+             \n
+             <div class='\"o_kanban_card_header_title\"'>
+              \n
+              <div class='\"o_primary\"'>
+               <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+               </field>
+              </div>
+              \n
+              <div and="" record.alias_domain.value\"="" record.alias_name.value="" t-if='\"record.use_leads.raw_value'>
+               \n
+               <small t-translation='\"off\"'>
+                <i class='\"fa' fa-envelope-o\"="">
+                </i>
+                &amp;nbsp;
+                <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"required":' name='\"alias_id\"' on_change='\"1\"' true}\"="">
+                </field>
+               </small>
+               \n
+              </div>
+              \n                    \n
+             </div>
+             \n
+             <div class='\"o_kanban_manage_button_section\"'>
+              \n
+              <a class='\"o_kanban_manage_toggle_button\"' href='\"#\"'>
+               <i class='\"fa' fa-ellipsis-v\"="">
+               </i>
+              </a>
+              \n
+             </div>
+             \n
+            </div>
+            \n
+            <div class='\"container' o_kanban_card_content\"="">
+             \n
+             <div class='\"row' o_kanban_card_upper_content\"="">
+              \n
+              <div class='\"col-xs-6' name='\"to_replace_in_sale_crm\"' o_kanban_primary_left\"="">
+               \n
+               <button btn-primary\"="" class='\"btn' name='\"action_primary_channel_button\"' type='\"object\"'>
+                <field modifiers='\"{"readonly":' name='\"dashboard_button_name\"' true}\"="">
+                </field>
+               </button>
+               \n
+              </div>
+              \n
+              <div class='\"col-xs-6' o_kanban_primary_right\"="" style='\"padding-bottom:0;\"'>
+               \n
+               <t name='\"first_options\"/'>
+                \n
+                <div class='\"row\"' t-if='\"record.unassigned_leads_count.raw_value\"'>
+                 \n
+                 <a context="\&quot;{'search_default_unassigned':" name='\"149\"' true}\"="" type='\"action\"'>
+                  \n
+                  <field modifiers='\"{"readonly":' name='\"unassigned_leads_count\"' true}\"="">
+                  </field>
+                  \n
+                  <t =='1\"' t-if='\"record.unassigned_leads_count.raw_value'>
+                   Unassigned Lead
+                  </t>
+                  \n
+                  <t t-else='\"\"'>
+                   Unassigned Leads
+                  </t>
+                  \n
+                 </a>
+                 \n
+                </div>
+                \n
+                <div class='\"row\"' t-if='\"record.opportunities_count.raw_value\"'>
+                 \n
+                 <div class='\"col-xs-8\"'>
+                  \n
+                  <a context="\&quot;{'search_default_open_opportunities':" name='\"150\"' true}\"="" type='\"action\"'>
+                   <!-- context=\"{'search_default_probability': NOT or < 100}\" -->
+                   \n
+                   <field modifiers='\"{"readonly":' name='\"opportunities_count\"' true}\"="">
+                   </field>
+                   \n
+                   <t =='1\"' t-if='\"record.opportunities_count.raw_value'>
+                    Open Opportunity
+                   </t>
+                   \n
+                   <t t-else='\"\"'>
+                    Open Opportunities
+                   </t>
+                   \n
+                  </a>
+                  \n
+                 </div>
+                 \n
+                 <div class='\"col-xs-4' text-right\"="">
+                  \n
+                  <field modifiers='\"{"readonly":' name='\"opportunities_amount\"' true}\"="" widget='\"monetary\"'>
+                  </field>
+                  \n
+                 </div>
+                 \n
+                </div>
+                \n                    \n
+                <t name='\"second_options\"/'>
+                 \n
+                 <t name='\"third_options\"/'>
+                  \n
+                 </t>
+                </t>
+               </t>
+              </div>
+              \n
+             </div>
+             \n
+             <div class='\"row\"'>
+              \n
+              <div class='\"col-xs-12' o_kanban_primary_bottom\"="">
+               \n
+               <t t-call='\"SalesTeamDashboardGraph\"/'>
+                \n
+               </t>
+              </div>
+              \n
+              <div bottom_block\"="" class='\"col-xs-12' o_kanban_primary_bottom="">
+               \n
+              </div>
+              \n
+             </div>
+             \n
+            </div>
+            <div class='\"container' o_kanban_card_manage_pane\"="">
+             \n
+             <div class='\"row\"'>
+              \n
+              <div class='\"col-xs-4' o_kanban_card_manage_section="" o_kanban_manage_view\"="">
+               \n
+               <div class='\"o_kanban_card_manage_title\"'>
+                \n
+                <span>
+                 View
+                </span>
+                \n
+               </div>
+               \n                                    \n
+               <div invisible='\"1\"' modifiers='\"{"invisible":' t-if='\"record.use_leads.raw_value\"' true}\"="">
+                \n
+                <a name='\"149\"' type='\"action\"'>
+                 \n                                Leads\n
+                </a>
+                \n
+               </div>
+               \n
+               <div t-if='\"record.use_opportunities.raw_value\"'>
+                \n
+                <a name='\"150\"' type='\"action\"'>
+                 \n                                Opportunities\n
+                </a>
+                \n
+               </div>
+               \n
+              </div>
+              \n
+              <div class='\"col-xs-4' o_kanban_card_manage_section="" o_kanban_manage_new\"="">
+               \n
+               <div class='\"o_kanban_card_manage_title\"'>
+                \n
+                <span>
+                 New
+                </span>
+                \n
+               </div>
+               \n                                    \n
+               <div t-if='\"record.use_opportunities.raw_value\"'>
+                \n
+                <a name='\"154\"' type='\"action\"'>
+                 \n                                Opportunity\n
+                </a>
+                \n
+               </div>
+               \n
+              </div>
+              \n
+              <div class='\"col-xs-4' o_kanban_card_manage_section="" o_kanban_manage_reports\"="">
+               \n
+               <div class='\"o_kanban_card_manage_title\"'>
+                \n
+                <span>
+                 Reporting
+                </span>
+                \n
+               </div>
+               \n                                    \n
+               <div invisible='\"1\"' modifiers='\"{"invisible":' t-if='\"record.use_leads.raw_value\"' true}\"="">
+                \n
+                <a name='\"151\"' type='\"action\"'>
+                 \n                                Leads\n
+                </a>
+                \n
+               </div>
+               \n
+               <div t-if='\"record.use_opportunities.raw_value\"'>
+                \n
+                <a name='\"152\"' type='\"action\"'>
+                 \n                                Opportunities\n
+                </a>
+                \n
+               </div>
+               \n
+               <div class='\"mb4\"' t-if='\"record.use_opportunities.raw_value\"'>
+                \n
+                <a name='\"145\"' type='\"action\"'>
+                 \n                                Activities Analysis\n
+                </a>
+                \n
+               </div>
+               \n
+              </div>
+              \n
+             </div>
+             \n\n
+             <div class='\"o_kanban_card_manage_settings' row\"="" t-if='\"widget.editable\"'>
+              \n
+              <div class='\"col-xs-8\"'>
+               \n
+               <ul class='\"oe_kanban_colorpicker\"' data-field='\"color\"/'>
+                \n
+               </ul>
+              </div>
+              \n
+              <div class='\"col-xs-4' text-right\"="">
+               \n
+               <a type='\"edit\"'>
+                Settings
+               </a>
+               \n
+              </div>
+              \n
+             </div>
+             \n
+             <div class='\"row' mb16\"="">
+              \n
+              <div class='\"col-xs-6\"'>
+               \n
+               <field modifiers='\"{}\"/' name='\"is_favorite\"' widget='\"boolean_favorite\"'>
+                \n
+               </field>
+              </div>
+              \n
+             </div>
+             \n
+            </div>
+            \n
+           </div>
+           \n
+          </t>
+          \n
+          <t t-name='\"SalesTeamDashboardGraph\"'>
+           \n
+           <div class='\"o_sales_team_kanban_graph_section\"' t-if='\"record.dashboard_graph_data.raw_value\"'>
+            \n
+            <field modifiers='\"{"readonly":' name='\"dashboard_graph_data\"' t-att-graph_type='\"record.dashboard_graph_type.raw_value\"' true}\"="" widget='\"dashboard_graph\"'>
+            </field>
+            \n
+           </div>
+           \n
+          </t>
+          \n
+         </templates>
+         \n
+        </field>
+       </field>
+      </field>
+     </field>
+    </field>
+   </field>
+  </field>
+ </kanban>
+ ", "view_id": 326, "type": "kanban", "base_model": "crm.team", "field_parent": false, "model": "crm.team", "name": "crm.team.dashboard", "fields": {"use_leads": {"help": "Check this box to filter and qualify incoming requests as leads before converting them into opportunities and assigning them to a salesperson.", "views": {}, "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Leads"}, "opportunities_count": {"views": {}, "type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Number of open opportunities", "group_operator": "sum"}, "name": {"views": {}, "type": "char", "readonly": false, "translate": true, "required": true, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Sales Channel"}, "opportunities_amount": {"views": {}, "type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Amount of quotations to invoice", "group_operator": "sum"}, "color": {"help": "The color of the channel", "views": {}, "type": "integer", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Color Index", "group_operator": "sum"}, "dashboard_graph_data": {"views": {}, "type": "text", "readonly": true, "translate": false, "required": false, "depends": ["dashboard_graph_group", "dashboard_graph_model", "dashboard_graph_period"], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Dashboard Graph Data"}, "dashboard_graph_type": {"help": "The type of graph this channel will display in the dashboard.", "views": {}, "type": "selection", "readonly": true, "required": false, "depends": ["dashboard_graph_group", "dashboard_graph_model", "dashboard_graph_period"], "change_default": false, "manual": false, "store": false, "company_dependent": false, "searchable": false, "selection": [["line", "Line"], ["bar", "Bar"]], "sortable": false, "string": "Type"}, "alias_id": {"help": "The email address associated with this channel. New emails received will automatically create new leads assigned to the channel.", "views": {}, "relation": "mail.alias", "type": "many2one", "readonly": false, "required": true, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Alias", "store": true}, "is_favorite": {"help": "Favorite teams to display them in the dashboard and access them easily.", "views": {}, "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Show on dashboard"}, "use_opportunities": {"help": "Check this box to manage a presales process with opportunities.", "views": {}, "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Pipeline"}, "user_id": {"views": {}, "relation": "res.users", "type": "many2one", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Channel Leader", "store": true}, "member_ids": {"relation_field": "sale_team_id", "views": {}, "relation": "res.users", "type": "one2many", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Channel Members", "store": true}, "dashboard_button_name": {"views": {}, "type": "char", "readonly": true, "translate": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Dashboard Button"}, "alias_domain": {"views": {}, "type": "char", "readonly": true, "translate": false, "required": false, "related": ["alias_id", "alias_domain"], "depends": ["alias_id.alias_domain"], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Alias domain"}, "currency_id": {"views": {}, "relation": "res.currency", "type": "many2one", "readonly": true, "required": false, "related": ["company_id", "currency_id"], "depends": ["company_id.currency_id"], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Currency", "store": false}, "alias_name": {"help": "The name of the email alias, e.g. 'jobs' if you want to catch emails for
+ <jobs@example.odoo.com>
+  ", "views": {}, "type": "char", "readonly": false, "translate": false, "required": false, "related": ["alias_id", "alias_name"], "depends": ["alias_id.alias_name"], "change_default": false, "manual": false, "store": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Alias Name"}, "unassigned_leads_count": {"views": {}, "type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Unassigned Leads", "group_operator": "sum"}}}, "form": {"toolbar": {"action": [], "print": [], "relate": []}, "arch": "
+  <form channel\"="" string='\"Sales'>
+   \n
+   <sheet>
+    \n
+    <div class='\"oe_button_box\"' name='\"button_box\"'>
+     \n
+     <button class='\"oe_stat_button\"' icon='\"fa-archive\"' name='\"toggle_active\"' type='\"object\"'>
+      \n
+      <field &quot;archive&quot;}\"="" modifiers='\"{}\"/' name='\"active\"' options='\"{"terminology":' widget='\"boolean_button\"'>
+       \n
+      </field>
+     </button>
+     \n
+    </div>
+    \n
+    <div class='\"oe_title\"'>
+     \n
+     <label channel\"="" class='\"oe_edit_only\"' for='\"name\"' string='\"Sales'>
+     </label>
+     \n
+     <h1>
+      \n
+      <field modifiers='\"{"required":' name='\"name\"' name...\"="" placeholder='\"Salesteam' true}\"="">
+      </field>
+      \n
+     </h1>
+     \n
+     <div &quot;!='",' &quot;sales&quot;],="" &quot;website&quot;]]}\"="" '!=", " ('team_type',="" [&quot;&amp;&quot;,="" [&quot;team_type&quot;,="" ['&amp;',="" attrs="\&quot;{'invisible':" modifiers='\"{"invisible":' name='\"options_active\"' sales'),="" website')]}\"="">
+      \n
+      <div class='\"o_row\"'>
+       \n
+       <field modifiers='\"{}\"/' name='\"use_opportunities\"' on_change='\"1\"'>
+        \n
+        <label for='\"use_opportunities\"/'>
+         \n
+         <span class='\"o_row\"' invisible='\"1\"' modifiers='\"{"invisible":' true}\"="">
+          \n
+          <field modifiers='\"{}\"/' name='\"use_leads\"' on_change='\"1\"'>
+           \n
+           <label for='\"use_leads\"' string='\"Leads\"/'>
+            \n
+           </label>
+          </field>
+         </span>
+         \n
+        </label>
+       </field>
+      </div>
+      \n
+     </div>
+     \n
+    </div>
+    \n
+    <group>
+     \n
+     <group name='\"left\"'>
+      \n
+      <field &quot;required&quot;:="" invisible='\"1\"' modifiers='\"{"invisible":' name='\"team_type\"' on_change='\"1\"' true,="" true}\"="">
+      </field>
+      \n
+      <field '=', False)]}\" modifiers=\"{"invisible": [["use_leads", "=", false], ["use_opportunities", "=", false]]}\"&gt;\n                            &lt;field name=\"alias_id\" class=\"oe_read_only oe_inline\" string=\"Email Alias\" required=\"0\" on_change=\"1\" can_create=\"true\" can_write=\"true\" modifiers=\"{}\"/&gt;\n                            &lt;div class=\"oe_edit_only oe_inline\" name=\"edit_alias\" style=\"display: inline;\"&gt;\n                                &lt;field name=\"alias_name\" class=\"oe_inline\" modifiers=\"{}\"/&gt;@&lt;field name=\"alias_domain\" class=\"oe_inline\" readonly=\"1\" modifiers=\"{"readonly": true}\"/&gt;\n                            &lt;/div&gt;\n                        &lt;/div&gt;\n                        &lt;field name=\"alias_contact\" class=\"oe_inline\" string=\"Accept Emails From\" invisible=\"1\" modifiers=\"{"invisible": true, "required": true}\"/&gt;\n                   \n                                &lt;field name=\"company_id\" options=\"{' [('use_leads',="" can_create='\"true\"' can_write='\"true\"' domain="\&quot;[('share'," invisible='\"1\"' invisible':="" modifiers='\"{"invisible":' name='\"user_id\"' no_create':="" true}\"="" use_opportunities',="">
+      </field>
+      \n
+     </group>
+     \n
+     <group name='\"right\"'>
+      \n
+     </group>
+     \n
+    </group>
+    \n
+    <notebook>
+     \n
+     <page &quot;ebay&quot;]]]}\"="" &quot;in&quot;,="" 'ebay'])]}\"="" 'in',="" [&quot;pos&quot;,="" ['pos',="" [('team_type',="" [[&quot;team_type&quot;,="" attrs="\&quot;{'invisible':" members\"="" modifiers='\"{"invisible":' name='\"members\"' string='\"Team'>
+      \n
+      <field modifiers='\"{}\"' name='\"member_ids\"' options="\&quot;{'not_delete':" true}\"="" widget='\"many2many\"'>
+       \n
+      </field>
+      \n
+     </page>
+     \n
+     <page name='\"dashboard\"' string='\"Dashboard\"'>
+      \n
+      <group name='\"graph\"' string='\"Graph\"'>
+       \n
+       <field &quot;ebay&quot;]]]}\"="" &quot;in&quot;,="" 'ebay'])]}\"="" 'in',="" [&quot;pos&quot;,="" ['pos',="" [('team_type',="" [[&quot;team_type&quot;,="" attrs="\&quot;{'readonly':" modifiers='\"{"readonly":' name='\"dashboard_graph_model\"' on_change='\"1\"'>
+       </field>
+       \n
+       <field &quot;='",' &quot;crm.opportunity.report&quot;]]}\"="" '=", " [('dashboard_graph_model',="" [[&quot;dashboard_graph_model&quot;,="" attrs="\&quot;{'invisible':" crm.opportunity.report')]}\"="" modifiers='\"{"invisible":' name='\"dashboard_graph_period\"'>
+       </field>
+       \n
+       <field &quot;!='",' &quot;crm.opportunity.report&quot;]]}\"="" '!=", " [('dashboard_graph_model',="" [[&quot;dashboard_graph_model&quot;,="" attrs="\&quot;{'invisible':" crm.opportunity.report')]}\"="" modifiers='\"{"invisible":' name='\"dashboard_graph_period_pipeline\"'>
+       </field>
+       \n                    \n
+       <field &quot;='",' &quot;crm.opportunity.report&quot;]]}\"="" '=", " [('dashboard_graph_model',="" [[&quot;dashboard_graph_model&quot;,="" attrs="\&quot;{'invisible':" crm.opportunity.report')]}\"="" modifiers='\"{"invisible":' name='\"dashboard_graph_group\"'>
+       </field>
+       \n
+       <field &quot;!='",' &quot;crm.opportunity.report&quot;]]}\"="" '!=", " [('dashboard_graph_model',="" [[&quot;dashboard_graph_model&quot;,="" attrs="\&quot;{'invisible':" crm.opportunity.report')]}\"="" modifiers='\"{"invisible":' name='\"dashboard_graph_group_pipeline\"' on_change='\"1\"'>
+       </field>
+       \n                    \n
+      </group>
+      \n
+     </page>
+     \n
+    </notebook>
+    \n
+   </sheet>
+   \n
+   <div class='\"oe_chatter\"'>
+    \n
+    <field associated="" automatically="" events="" help='\"Follow' modifiers='\"{}\"/' name='\"message_follower_ids\"' of="" salesteam="" team.\"="" the="" this="" to="" track="" users="" widget='\"mail_followers\"'>
+     \n
+     <field modifiers='\"{}\"' name='\"message_ids\"' options="\&quot;{'display_log_button':" true}\"="" widget='\"mail_thread\"'>
+     </field>
+     \n
+    </field>
+   </div>
+   \n
+  </form>
+  ", "view_id": 322, "type": "form", "base_model": "crm.team", "field_parent": false, "model": "crm.team", "name": "crm.team.form", "fields": {"use_leads": {"help": "Check this box to filter and qualify incoming requests as leads before converting them into opportunities and assigning them to a salesperson.", "views": {}, "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Leads"}, "name": {"views": {}, "type": "char", "readonly": false, "translate": true, "required": true, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Sales Channel"}, "dashboard_graph_period_pipeline": {"help": "The time period this channel's dashboard graph will consider.", "views": {}, "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": false, "company_dependent": false, "searchable": false, "selection": [["week", "Within a Week"], ["month", "Within a Month"], ["year", "Within a Year"]], "sortable": false, "string": "Expected to Close"}, "active": {"help": "If the active field is set to false, it will allow you to hide the sales channel without removing it.", "views": {}, "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Active"}, "dashboard_graph_group_pipeline": {"help": "How this channel's dashboard graph will group the results.", "views": {}, "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["day", "Expected Closing Day"], ["week", "Expected Closing Week"], ["month", "Expected Closing Month"], ["user", "Salesperson"], ["stage", "Stage"]], "sortable": true, "string": "Group by"}, "alias_contact": {"help": "Policy to post a message on the document using the mailgateway.\n- everyone: everyone can post\n- partners: only authenticated partners\n- followers: only followers of the related document or members of following channels\n", "views": {}, "type": "selection", "readonly": false, "required": true, "related": ["alias_id", "alias_contact"], "depends": ["alias_id.alias_contact"], "change_default": false, "manual": false, "store": false, "company_dependent": false, "searchable": true, "selection": [["everyone", "Everyone"], ["partners", "Authenticated Partners"], ["followers", "Followers only"]], "sortable": true, "string": "Alias Contact Security"}, "company_id": {"views": {}, "relation": "res.company", "type": "many2one", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Company", "store": true}, "dashboard_graph_model": {"help": "The graph this channel will display in the Dashboard.\n", "views": {}, "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["crm.opportunity.report", "Pipeline"]], "sortable": true, "string": "Content"}, "alias_id": {"help": "The email address associated with this channel. New emails received will automatically create new leads assigned to the channel.", "views": {}, "relation": "mail.alias", "type": "many2one", "readonly": false, "required": true, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Alias", "store": true}, "team_type": {"help": "The type of this channel, it will define the resources this channel uses.", "views": {}, "type": "selection", "readonly": false, "required": true, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["sales", "Sales"], ["website", "Website"]], "sortable": true, "string": "Channel Type"}, "use_opportunities": {"help": "Check this box to manage a presales process with opportunities.", "views": {}, "type": "boolean", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "Pipeline"}, "user_id": {"views": {}, "relation": "res.users", "type": "many2one", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": true, "string": "Channel Leader", "store": true}, "dashboard_graph_group": {"help": "How this channel's dashboard graph will group the results.", "views": {}, "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["day", "Day"], ["week", "Week"], ["month", "Month"], ["user", "Salesperson"]], "sortable": true, "string": "Group by"}, "message_ids": {"relation_field": "res_id", "views": {}, "relation": "mail.message", "type": "one2many", "readonly": false, "required": false, "depends": [], "domain": [["model", "=", "crm.team"]], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Messages", "store": true}, "member_ids": {"relation_field": "sale_team_id", "views": {"kanban": {"arch": "
+  <kanban create='\"true\"' delete='\"true\"' quick_create='\"false\"'>
+   \n
+   <field modifiers='\"{"readonly":' name='\"id\"' true}\"="">
+   </field>
+   \n
+   <field modifiers='\"{}\"/' name='\"name\"'>
+    \n
+    <templates>
+     \n
+     <t t-name='\"kanban-box\"'>
+      \n
+      <div 200px\"="" class='\"oe_kanban_global_click\"' style='\"max-width:'>
+       \n
+       <div class='\"o_kanban_record_top\"'>
+        \n
+        <img 'image_small',="" class='\"oe_avatar' height='\"40\"' mb0\"="" oe_kanban_avatar_smallbox="" record.id.raw_value)\"="" t-att-src="\&quot;kanban_image('res.users'," width='\"40\"'/>
+        \n
+        <div class='\"o_kanban_record_headings' ml8\"="">
+         \n
+         <strong class='\"o_kanban_record_title\"'>
+          <field modifiers='\"{}\"/' name='\"name\"'>
+          </field>
+         </strong>
+         \n
+        </div>
+        \n
+        <a class='\"text-danger\"' read_only_mode\"="" t-if='\"!' type='\"delete\"'>
+         \n
+         <i class='\"fa' fa-times\"="">
+         </i>
+         \n
+        </a>
+        \n
+       </div>
+       \n
+      </div>
+      \n
+     </t>
+     \n
+    </templates>
+    \n
+   </field>
+  </kanban>
+  \n                                ", "fields": {"name": {"views": {}, "type": "char", "readonly": false, "translate": false, "required": false, "related": ["partner_id", "name"], "depends": ["partner_id.name"], "change_default": false, "manual": false, "store": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Name"}, "id": {"views": {}, "type": "integer", "readonly": true, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "searchable": true, "company_dependent": false, "sortable": true, "string": "ID"}}}}, "relation": "res.users", "type": "one2many", "readonly": false, "required": false, "depends": [], "domain": [], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Channel Members", "store": true}, "alias_domain": {"views": {}, "type": "char", "readonly": true, "translate": false, "required": false, "related": ["alias_id", "alias_domain"], "depends": ["alias_id.alias_domain"], "change_default": false, "manual": false, "store": false, "searchable": false, "company_dependent": false, "sortable": false, "string": "Alias domain"}, "message_follower_ids": {"relation_field": "res_id", "views": {}, "relation": "mail.followers", "type": "one2many", "readonly": false, "required": false, "depends": [], "domain": [["res_model", "=", "crm.team"]], "change_default": false, "manual": false, "context": {}, "searchable": true, "company_dependent": false, "sortable": false, "string": "Followers", "store": true}, "alias_name": {"help": "The name of the email alias, e.g. 'jobs' if you want to catch emails for
+  <jobs@example.odoo.com>
+   ", "views": {}, "type": "char", "readonly": false, "translate": false, "required": false, "related": ["alias_id", "alias_name"], "depends": ["alias_id.alias_name"], "change_default": false, "manual": false, "store": false, "searchable": true, "company_dependent": false, "sortable": true, "string": "Alias Name"}, "dashboard_graph_period": {"help": "The time period this channel's dashboard graph will consider.", "views": {}, "type": "selection", "readonly": false, "required": false, "depends": [], "change_default": false, "manual": false, "store": true, "company_dependent": false, "searchable": true, "selection": [["week", "Last Week"], ["month", "Last Month"], ["year", "Last Year"]], "sortable": true, "string": "Scale"}}}}}, "id": 323569005}
+  </jobs@example.odoo.com>
+ </jobs@example.odoo.com>
+</jobs@example.odoo.com>

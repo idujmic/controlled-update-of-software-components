@@ -1,0 +1,65 @@
+4
+/web/action/load
+{"jsonrpc": "2.0", "result": {"help": false, "multi": false, "create_uid": [1, "Administrator"], "views": [[false, "graph"], [false, "pivot"]], "__last_update": "2020-05-01 14:52:06", "name": "Activities Analysis", "limit": 80, "domain": "[]", "create_date": "2020-05-01 14:52:06", "search_view": "{'arch': '
+<search analysis\"="" string='\"Activities'>
+ \\n
+ <filter \\'="\\'," activities\"="" domain="\&quot;[(\\'user_id\\'," name='\"activities_my\"' string='\"My' uid)]\"="">
+ </filter>
+ \\n
+ <separator>
+ </separator>
+ \\n
+ <filter \\'lead\\')]\"="" domain="\&quot;[(\\'lead_type\\',\\'=\\'," help='\"Show' lead\"="" name='\"lead\"' only="" string='\"Leads\"'>
+ </filter>
+ \\n
+ <filter domain="\&quot;[(\\'lead_type\\',\\'=\\',\\'opportunity\\')]\&quot;" help='\"Show' name='\"opportunity\"' only="" opportunity\"="" string='\"Opportunities\"'>
+ </filter>
+ \\n
+ <separator>
+ </separator>
+ \\n
+ <filter (\\'stage_id.on_change\\',="" (\\'stage_id.probability\\',="" 1)]\"="" 100),="" \\'="\\'," domain="\&quot;[\\'&amp;\\'," name='\"won\"' string='\"Won\"'>
+ </filter>
+ \\n
+ <separator>
+ </separator>
+ \\n
+ <filter \\'&gt;="\\'," context_today().strftime(\\'%y-%m-01\\'))]\"="" domain="\&quot;[(\\'date\\'," month\"="" name='\"this_month\"' string='\"This'>
+ </filter>
+ \\n
+ <filter (\\'date\\',="" (context_today()="" -="" \\'&gt;="\\'," \\'&lt;\\',="" context_today().strftime(\\'%y-%m-01\\'))]\"="" domain="\&quot;[\\'&amp;\\'," month\"="" name='\"last_month\"' relativedelta(months="1)).strftime(\\'%Y-%m-01\\'))," string='\"Last'>
+ </filter>
+ \\n
+ <field can_create='\"true\"' can_write='\"true\"' context="\&quot;{\\'invisible_team\\':" false}\"="" modifiers='\"{"readonly":' name='\"team_id\"' true}\"="">
+ </field>
+ \\n
+ <field by\"="" can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"author_id\"' string='\"Created' true}\"="">
+ </field>
+ \\n
+ <group by\"="" expand='\"1\"' string='\"Group'>
+  \\n
+  <filter by\"="" context="\&quot;{\\'group_by\\':\\'author_id\\'}\&quot;/" name='\"group_by_salesperson\"' string='\"Created'>
+   \\n
+   <filter channel\"="" context="\&quot;{\\'group_by\\':\\'team_id\\'}\&quot;/" string='\"Sales'>
+    \\n
+    <filter context="\&quot;{\\'group_by\\':\\'country_id\\'}\&quot;/" string='\"Country\"'>
+     \\n
+     <filter context="\&quot;{\\'group_by\\':\\'company_id\\'}\&quot;" invisible='\"1\"' modifiers='\"{"invisible":' string='\"Company\"' true}\"="">
+     </filter>
+     \\n
+     <filter context="\&quot;{\\'group_by\\':\\'stage_id\\'}\&quot;/" string='\"Stage\"'>
+      \\n
+      <filter context="\&quot;{\\'group_by\\':\\'date:month\\'}\&quot;" name='\"month\"/' string='\"Month\"'>
+       \\n
+       <filter context="\&quot;{\\'group_by\\':\\'lead_id\\'}\&quot;/" name='\"group_by_opportunity\"' string='\"Leads\"'>
+        \\n
+       </filter>
+      </filter>
+     </filter>
+    </filter>
+   </filter>
+  </filter>
+ </group>
+ \\n
+</search>
+', 'view_id': 365, 'type': 'search', 'base_model': 'crm.activity.report', 'field_parent': False, 'model': 'crm.activity.report', 'name': 'crm.activity.report.search', 'fields': {'author_id': {'views': {}, 'relation': 'res.partner', 'type': 'many2one', 'readonly': True, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Created By', 'store': True}, 'team_id': {'views': {}, 'relation': 'crm.team', 'type': 'many2one', 'readonly': True, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Sales Channel', 'store': True}}}", "context": "{'search_default_activities_my': True}", "src_model": false, "flags": {}, "xml_id": "crm.crm_activity_report_action", "target": "current", "auto_search": true, "view_mode": "graph,pivot", "view_id": false, "type": "ir.actions.act_window", "filter": false, "id": 144, "search_view_id": false, "usage": false, "write_uid": [1, "Administrator"], "view_ids": [], "res_model": "crm.activity.report", "binding_model_id": false, "groups_id": [], "write_date": "2020-05-01 14:52:06", "binding_type": "action", "display_name": "Activities Analysis", "res_id": 0}, "id": 112522580}

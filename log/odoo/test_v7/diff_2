@@ -1,0 +1,16 @@
+/web
+@@ -429,46 +429,46 @@
+ n: %22
+-f26662bd88be28b9ed06653c15056388a1b204
++1680878c140e6af3de428a09aa68ee3a2388c9
+ 79o%22
+@@ -567,593 +567,593 @@
+ = %7B%22
+-is_system%22: true, %22session_id%22: %22625ace9f051321d94aecb484a5a2d6c95f46784c%22, %22web_tours%22: %5B%5D, %22server_version_info%22: %5B11, 0, 0, %22final%22, 0, %22%22%5D, %22is_superuser%22: true, %22company_
++username%22: %22admin%22, %22web_tours%22: %5B%5D, %22db%22: %22odoo%22, %22user_context%22: %7B%22lang%22: %22en_US%22, %22tz%22: %22Europe/Brussels%22, %22u
+ id%22: 1
++%7D
+ , %22
+-user_companies%22: false, %22username%22: %22admin%22, %22db%22: %22odoo%22, %22uid%22: 1, %22partner_id%22: 3, %22user_context%22: %7B%22lang%22: %22en_US%22, %22tz%22: %22Europe/Brussels%22, %22uid%22: 1%7D, %22name%22: %22Administrator%22, %22web.base.url%22: %22http://localhost:8069%22, %22currencies%22: %7B%221%22: %7B%22digits%22: %5B69, 2%5D, %22position%22: %22after%22, %22symbol%22: %22%5Cu20ac%22%7D, %223%22: %7B%22digits%22: %5B69, 2%5D, %22position%22: %22before%22, %22symbol%22: %22$%22%7D%7D, %22server_version%22: %2211.0-20200417%22
++currencies%22: %7B%221%22: %7B%22position%22: %22after%22, %22digits%22: %5B69, 2%5D, %22symbol%22: %22%5Cu20ac%22%7D, %223%22: %7B%22position%22: %22before%22, %22digits%22: %5B69, 2%5D, %22symbol%22: %22$%22%7D%7D, %22server_version%22: %2211.0-20200417%22, %22name%22: %22Administrator%22, %22company_id%22: 1, %22is_system%22: true, %22server_version_info%22: %5B11, 0, 0, %22final%22, 0, %22%22%5D, %22web.base.url%22: %22http://localhost:8069%22, %22partner_id%22: 3, %22is_superuser%22: true, %22user_companies%22: false, %22session_id%22: %22ce8fc8e2501060251cbcdaab527977fd43b9a98a%22, %22uid%22: 1
+ %7D;%0A 

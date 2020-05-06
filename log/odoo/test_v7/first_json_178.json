@@ -1,0 +1,69 @@
+2
+/mail/client_action
+{"jsonrpc": "2.0", "result": {"channel_slots": {"channel_private_group": [], "channel_channel": [{"public": "groups", "id": 1, "state": "open", "name": "general", "message_unread_counter": 0, "message_needaction_counter": 0, "is_minimized": false, "channel_type": "channel", "group_based_subscription": true, "uuid": "902c4c44-3871-4746-9580-82da62dbe752", "seen_message_id": false, "mass_mailing": false}], "channel_direct_message": []}, "shortcodes": [{"description": "Smile", "substitution": "
+<img alt="\ud83d\ude42" src="/mail/static/src/img/smiley/smile.png"/>
+", "id": 1, "source": ":)", "unicode_source": "\ud83d\ude42", "shortcode_type": "image"}, {"description": "Smile with open mouth", "substitution": "
+<img alt="\ud83d\ude00" src="/mail/static/src/img/smiley/smile_open_mouth.png"/>
+", "id": 2, "source": ":D", "unicode_source": "\ud83d\ude00", "shortcode_type": "image"}, {"description": "Smile with with smiling eyes", "substitution": "
+<img alt="\ud83d\ude0a" src="/mail/static/src/img/smiley/normal_smile.png"/>
+", "id": 3, "source": "^^", "unicode_source": "\ud83d\ude0a", "shortcode_type": "image"}, {"description": "Laugh", "substitution": "
+<img alt="\ud83d\ude06" src="/mail/static/src/img/smiley/laugh.png"/>
+", "id": 4, "source": "xD", "unicode_source": "\ud83d\ude06", "shortcode_type": "image"}, {"description": "Tears of joy", "substitution": "
+<img alt="\ud83d\ude02" src="/mail/static/src/img/smiley/tears_of_joy.png"/>
+", "id": 5, "source": ":joy", "unicode_source": "\ud83d\ude02", "shortcode_type": "image"}, {"description": "Wink", "substitution": "
+<img alt="\ud83d\ude09" src="/mail/static/src/img/smiley/wink.png"/>
+", "id": 6, "source": ";)", "unicode_source": "\ud83d\ude09", "shortcode_type": "image"}, {"description": "Face with sunglass", "substitution": "
+<img alt="\ud83d\ude0e" src="/mail/static/src/img/smiley/sunglass.png"/>
+", "id": 7, "source": "B)", "unicode_source": "\ud83d\ude0e", "shortcode_type": "image"}, {"description": "Stuck Out Tongue Winking Eye", "substitution": "
+<img alt="\ud83d\ude1c" src="/mail/static/src/img/smiley/stuck_out_tongue.png"/>
+", "id": 8, "source": ";p", "unicode_source": "\ud83d\ude1c", "shortcode_type": "image"}, {"description": "Cheeky", "substitution": "
+<img alt="\ud83d\ude0b" src="/mail/static/src/img/smiley/yum.png"/>
+", "id": 9, "source": ":p", "unicode_source": "\ud83d\ude0b", "shortcode_type": "image"}, {"description": "Flushed face", "substitution": "
+<img alt="\ud83d\ude33" src="/mail/static/src/img/smiley/flushed.png"/>
+", "id": 10, "source": "o_o", "unicode_source": "\ud83d\ude33", "shortcode_type": "image"}, {"description": "Speechless/Neutral face", "substitution": "
+<img alt="\ud83d\ude10" src="/mail/static/src/img/smiley/neutral.png"/>
+", "id": 11, "source": ":|", "unicode_source": "\ud83d\ude10", "shortcode_type": "image"}, {"description": "Confused", "substitution": "
+<img alt="\ud83d\ude15" src="/mail/static/src/img/smiley/confused.png"/>
+", "id": 12, "source": ":/", "unicode_source": "\ud83d\ude15", "shortcode_type": "image"}, {"description": "Sad", "substitution": "
+<img alt="\ud83d\ude1e" src="/mail/static/src/img/smiley/sad.png"/>
+", "id": 13, "source": ":(", "unicode_source": "\ud83d\ude1e", "shortcode_type": "image"}, {"description": "Scream", "substitution": "
+<img alt="\ud83d\ude31" src="/mail/static/src/img/smiley/scream.png"/>
+", "id": 14, "source": ":@", "unicode_source": "\ud83d\ude31", "shortcode_type": "image"}, {"description": "Open Mouth", "substitution": "
+<img alt="\ud83d\ude2e" src="/mail/static/src/img/smiley/open_mouth.png"/>
+", "id": 15, "source": ":O", "unicode_source": "\ud83d\ude2e", "shortcode_type": "image"}, {"description": "Angry", "substitution": "
+<img alt="\ud83d\ude20" src="/mail/static/src/img/smiley/angry.png"/>
+", "id": 16, "source": "3:(", "unicode_source": "\ud83d\ude20", "shortcode_type": "image"}, {"description": "Face with evil", "substitution": "
+<img alt="\ud83d\ude08" src="/mail/static/src/img/smiley/evil.png"/>
+", "id": 17, "source": "3:)", "unicode_source": "\ud83d\ude08", "shortcode_type": "image"}, {"description": "No see", "substitution": "
+<img alt="\ud83d\ude48" src="/mail/static/src/img/smiley/monkey_eye.png"/>
+", "id": 18, "source": ":no_see", "unicode_source": "\ud83d\ude48", "shortcode_type": "image"}, {"description": "No hear", "substitution": "
+<img alt="\ud83d\ude49" src="/mail/static/src/img/smiley/monkey_hear.png"/>
+", "id": 19, "source": ":no_hear", "unicode_source": "\ud83d\ude49", "shortcode_type": "image"}, {"description": "No speak", "substitution": "
+<img alt="\ud83d\ude4a" src="/mail/static/src/img/smiley/monkey_speak.png"/>
+", "id": 20, "source": ":no_speak", "unicode_source": "\ud83d\ude4a", "shortcode_type": "image"}, {"description": "Bug", "substitution": "
+<img alt="\ud83d\udc1e" src="/mail/static/src/img/smiley/bug.png"/>
+", "id": 21, "source": ":bug", "unicode_source": "\ud83d\udc1e", "shortcode_type": "image"}, {"description": "Kitten", "substitution": "
+<img alt="\ud83d\ude38" src="/mail/static/src/img/smiley/cat.png"/>
+", "id": 22, "source": ":kitten", "unicode_source": "\ud83d\ude38", "shortcode_type": "image"}, {"description": "Heart", "substitution": "
+<img alt="\u2764" src="/mail/static/src/img/smiley/heart.png"/>
+", "id": 23, "source": "&lt;3", "unicode_source": "\u2764", "shortcode_type": "image"}, {"description": "Thumbs Up", "substitution": "
+<img alt="\ud83d\udc4d" src="/mail/static/src/img/smiley/thumbsup.png"/>
+", "id": 24, "source": ":+1", "unicode_source": "\ud83d\udc4d", "shortcode_type": "image"}, {"description": "Thumbs Down", "substitution": "
+<img alt="\ud83d\udc4e" src="/mail/static/src/img/smiley/thumbsdown.png"/>
+", "id": 25, "source": ":-1", "unicode_source": "\ud83d\udc4e", "shortcode_type": "image"}, {"description": "Poop", "substitution": "
+<img alt="\ud83d\udca9" src="/mail/static/src/img/smiley/poop.png"/>
+", "id": 26, "source": ":poop", "unicode_source": "\ud83d\udca9", "shortcode_type": "image"}, {"description": "Ghost", "substitution": "
+<img alt="\ud83d\udc7b" src="/mail/static/src/img/smiley/ghost.png"/>
+", "id": 27, "source": ":ghost", "unicode_source": "\ud83d\udc7b", "shortcode_type": "image"}, {"description": "Cookie", "substitution": "
+<img alt="\ud83c\udf6a" src="/mail/static/src/img/smiley/cookie.png"/>
+", "id": 28, "source": ":cookie", "unicode_source": "\ud83c\udf6a", "shortcode_type": "image"}, {"description": "Beer", "substitution": "
+<img alt="\ud83c\udf7a" src="/mail/static/src/img/smiley/beer.png"/>
+", "id": 29, "source": ":beer", "unicode_source": "\ud83c\udf7a", "shortcode_type": "image"}, {"description": "Coffee", "substitution": "
+<img alt="\u2615" src="/mail/static/src/img/smiley/coffee.png"/>
+", "id": 30, "source": ":coffee", "unicode_source": "\u2615", "shortcode_type": "image"}, {"description": "Cake", "substitution": "
+<img alt="\ud83c\udf82" src="/mail/static/src/img/smiley/cake.png"/>
+", "id": 31, "source": ":cake", "unicode_source": "\ud83c\udf82", "shortcode_type": "image"}, {"description": "Party", "substitution": "
+<img alt="\ud83c\udf89" src="/mail/static/src/img/smiley/party.png"/>
+", "id": 32, "source": ":party", "unicode_source": "\ud83c\udf89", "shortcode_type": "image"}, {"description": "Trophy", "substitution": "
+<img alt="\ud83c\udfc6" src="/mail/static/src/img/smiley/trophy.png"/>
+", "id": 33, "source": ":trophy", "unicode_source": "\ud83c\udfc6", "shortcode_type": "image"}], "needaction_inbox_counter": 21, "menu_id": 98, "starred_counter": 0, "mention_partner_suggestions": [], "commands": [{"help": "Show an helper message", "name": "help"}, {"help": "Leave this channel", "name": "leave"}, {"help": "List users in the current channel", "channel_types": ["channel", "chat"], "name": "who"}]}, "id": 258152773}

@@ -1,0 +1,98 @@
+/web/dataset/call_kw/res.country.state/name_create
+JSON objekti imaju iste ključeve
+-debug=Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 97, in wrapper
+    return f(dbname, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 337, in checked_call
+    result = self.endpoint(*a, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 939, in __call__
+    return self.method(*args, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 517, in response_wrap
+    response = f(*args, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/main.py", line 934, in call_kw
+    return self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/main.py", line 926, in _call_kw
+    return call_kw(request.env[model], method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 697, in call_kw
+    return call_kw_model(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 682, in call_kw_model
+    result = method(recs, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 1550, in name_create
+    record = self.create({self._rec_name: name})
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3435, in create
+    record = self.browse(self._create(old_vals))
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3528, in _create
+    cr.execute(query, tuple(u[2] for u in updates if len(u) > 2))
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 155, in wrapper
+    return f(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 232, in execute
+    res = self._obj.execute(query, params)
+psycopg2.IntegrityError: null value in column "country_id" violates not-null constraint
+DETAIL:  Failing row contains (680, null, Croata, null, 1, 2020-05-06 11:19:56.195994, 1, 2020-05-06 11:19:56.195994).
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 653, in _handle_exception
+    return super(JsonRequest, self)._handle_exception(exception)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 312, in _handle_exception
+    raise pycompat.reraise(type(exception), exception, sys.exc_info()[2])
+  File "/usr/lib/python3/dist-packages/odoo/tools/pycompat.py", line 87, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 695, in dispatch
+    result = self._call_function(**self.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 344, in _call_function
+    return checked_call(self.db, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 157, in wrapper
+    raise ValidationError(msg)
+odoo.exceptions.ValidationError: ('The operation cannot be completed:\n- Create/update: a mandatory field is not set.\n- Delete: another model requires the record being deleted. If possible, archive it instead.\n\nModel: Country state (res.country.state), Field: Country (country_id)', None)
+
++debug=Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 97, in wrapper
+    return f(dbname, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 337, in checked_call
+    result = self.endpoint(*a, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 939, in __call__
+    return self.method(*args, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 517, in response_wrap
+    response = f(*args, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/main.py", line 934, in call_kw
+    return self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/main.py", line 926, in _call_kw
+    return call_kw(request.env[model], method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 697, in call_kw
+    return call_kw_model(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 682, in call_kw_model
+    result = method(recs, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 1550, in name_create
+    record = self.create({self._rec_name: name})
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3435, in create
+    record = self.browse(self._create(old_vals))
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3528, in _create
+    cr.execute(query, tuple(u[2] for u in updates if len(u) > 2))
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 155, in wrapper
+    return f(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 232, in execute
+    res = self._obj.execute(query, params)
+psycopg2.IntegrityError: null value in column "country_id" violates not-null constraint
+DETAIL:  Failing row contains (680, null, Croata, null, 1, 2020-05-06 11:21:02.396449, 1, 2020-05-06 11:21:02.396449).
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 653, in _handle_exception
+    return super(JsonRequest, self)._handle_exception(exception)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 312, in _handle_exception
+    raise pycompat.reraise(type(exception), exception, sys.exc_info()[2])
+  File "/usr/lib/python3/dist-packages/odoo/tools/pycompat.py", line 87, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 695, in dispatch
+    result = self._call_function(**self.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 344, in _call_function
+    return checked_call(self.db, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 157, in wrapper
+    raise ValidationError(msg)
+odoo.exceptions.ValidationError: ('The operation cannot be completed:\n- Create/update: a mandatory field is not set.\n- Delete: another model requires the record being deleted. If possible, archive it instead.\n\nModel: Country state (res.country.state), Field: Country (country_id)', None)
+

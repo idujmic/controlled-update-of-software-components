@@ -1,0 +1,18 @@
+3
+/web/dataset/call_kw/mail.message/message_fetch
+{"jsonrpc": "2.0", "result": [{"record_name": "general", "author_id": [3, "YourCompany, Administrator"], "subtype_description": false, "starred_partner_ids": [], "is_note": false, "customer_email_status": "sent", "message_type": "email", "partner_ids": [], "customer_email_data": [], "body": "
+<p>
+ Welcome to the #general channel.
+</p>
+\n
+<p>
+ This channel is accessible to all users to
+ <b>
+  easily share company information
+ </b>
+ .
+</p>
+", "date": "2020-05-01 14:51:47", "subtype_id": [1, "Discussions"], "id": 1, "channel_ids": [1], "model": "mail.channel", "tracking_value_ids": [], "needaction_partner_ids": [], "res_id": 1, "email_from": "\"Administrator\"
+<admin@yourcompany.example.com>
+ ", "subject": "Welcome to Odoo!", "module_icon": "/mail/static/description/icon.png", "attachment_ids": []}], "id": 998658042}
+</admin@yourcompany.example.com>

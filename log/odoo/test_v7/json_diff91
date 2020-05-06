@@ -1,0 +1,20 @@
+/web/dataset/call_kw/mail.message/message_format
+JSON objekti imaju iste ključeve
+-date=2020-05-01 14:52:12
++date=2020-05-01 14:50:49
+-new_value=Europe
++new_value=Delta PC
+-changed_field=Sales Channel
++changed_field=Customer
+-new_value=Proposition
++new_value=Europe
+-changed_field=Stage
++changed_field=Sales Channel
+-new_value=Administrator
++new_value=Proposition
+-changed_field=Salesperson
++changed_field=Stage
+-new_value=Delta PC
++new_value=Administrator
+-changed_field=Customer
++changed_field=Salesperson

@@ -1,0 +1,3 @@
+16
+/web/dataset/call_kw/crm.lead.tag/read
+{"jsonrpc": "2.0", "result": [{"color": 2, "display_name": "Software", "id": 2}, {"color": 4, "display_name": "Information", "id": 4}, {"color": 7, "display_name": "Consulting", "id": 7}, {"color": 3, "display_name": "Services", "id": 3}, {"color": 1, "display_name": "Product", "id": 1}], "id": 860534232}

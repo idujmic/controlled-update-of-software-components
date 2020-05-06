@@ -1,0 +1,3 @@
+1
+/web/dataset/call_kw/mail.channel/channel_fetch_listeners
+{"jsonrpc": "2.0", "result": [{"email": "demo@yourcompany.example.com", "name": "Demo User", "id": 6}, {"email": "admin@yourcompany.example.com", "name": "Administrator", "id": 3}], "id": 232932881}

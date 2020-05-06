@@ -1,0 +1,3 @@
+6
+/web/dataset/call_kw/res.users/read
+{"jsonrpc": "2.0", "result": [{"company_id": [1, "YourCompany"], "id": 1}], "id": 754171264}

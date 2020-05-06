@@ -1,0 +1,36 @@
+14
+/web/action/load
+{"id": 602303228, "jsonrpc": "2.0", "result": {"help": "
+<p class='\"oe_view_nocontent_create\"'>
+ \n                    Click here to define a new sales channel.\n
+</p>
+<p>
+ \n                    Use sales channels to organize your sales departments. \n                    Each channel will work with a separate pipeline.\n
+</p>
+\n            ", "src_model": false, "view_ids": [], "groups_id": [], "search_view_id": false, "__last_update": "2020-05-01 14:50:34", "write_uid": [1, "Administrator"], "view_mode": "kanban,form", "id": 114, "binding_type": "action", "views": [[false, "kanban"], [false, "form"]], "context": "{'search_default_my_favorites': 1}", "res_id": 0, "type": "ir.actions.act_window", "flags": {}, "display_name": "Sales Channels", "view_id": [321, "Case Teams - Search"], "create_date": "2020-05-01 14:50:34", "binding_model_id": false, "res_model": "crm.team", "xml_id": "sales_team.crm_team_salesteams_act", "search_view": "{'arch': '
+<search search\"="" string='\"Salesteams'>
+ \\n
+ <filter \\'in\\',="" domain="\&quot;[(\\'favorite_user_ids\\'," favorites\"="" name='\"my_favorites\"' string='\"My' uid)]\"="">
+ </filter>
+ \\n
+ <separator>
+ </separator>
+ \\n
+ <filter domain="\&quot;[(\\'active\\',\\'=\\',False)]\&quot;/" name='\"inactive\"' string='\"Archived\"'>
+  \\n
+  <field modifiers='\"{"required":' name='\"name\"' true}\"="">
+  </field>
+  \\n
+  <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"user_id\"'>
+   \\n
+   <group by...\"="" expand='\"0\"' string='\"Group'>
+    \\n
+    <filter context="\&quot;{\\'group_by\\':\\'user_id\\'}\&quot;/" domain='\"[]\"' leader\"="" string='\"Team'>
+     \\n
+    </filter>
+   </group>
+   \\n
+  </field>
+ </filter>
+</search>
+', 'fields': {'user_id': {'required': False, 'string': 'Channel Leader', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'sortable': True, 'searchable': True, 'readonly': False, 'views': {}, 'context': {}, 'relation': 'res.users', 'domain': [], 'type': 'many2one'}, 'name': {'required': True, 'string': 'Sales Channel', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'searchable': True, 'readonly': False, 'views': {}, 'sortable': True, 'translate': True, 'type': 'char'}}, 'view_id': 321, 'model': 'crm.team', 'name': 'Case Teams - Search', 'field_parent': False, 'base_model': 'crm.team', 'type': 'search'}", "auto_search": true, "filter": false, "usage": false, "domain": false, "limit": 80, "multi": false, "write_date": "2020-05-01 14:50:34", "create_uid": [1, "Administrator"], "name": "Sales Channels", "target": "current"}}

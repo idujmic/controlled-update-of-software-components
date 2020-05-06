@@ -1,0 +1,32 @@
+/web/dataset/call_kw/mail.message/message_format
+JSON objekti imaju iste ključeve
+-date=2020-05-06 11:16:43
++date=2020-05-06 11:17:35
+-new_value=Administrator
++new_value=1000.0
+-changed_field=Salesperson
++changed_field=Expected Revenue
+-old_value=
++old_value=0.0
+-field_type=many2one
++field_type=float
+-new_value=Europe
++new_value=Agrolait, Michel Fletcher
+-changed_field=Sales Channel
++changed_field=Customer
+-new_value=Agrolait, Michel Fletcher
++new_value=New
+-changed_field=Customer
++changed_field=Stage
+-new_value=1000.0
++new_value=Administrator
+-changed_field=Expected Revenue
++changed_field=Salesperson
+-old_value=0.0
++old_value=
+-field_type=float
++field_type=many2one
+-new_value=New
++new_value=Europe
+-changed_field=Stage
++changed_field=Sales Channel

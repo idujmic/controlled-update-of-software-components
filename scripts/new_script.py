@@ -162,6 +162,6 @@ def read_config_file(path):
 legal_diffs,tokens_for_scraping = read_config_file("odoo_config.txt")
 print(legal_diffs)
 print(tokens_for_scraping)
-addons = [Writer(legal_diffs, 8070, tokens_for_scraping, "localhost", "odoo/test_v6/")]
+addons = [Writer(legal_diffs, 8070, tokens_for_scraping, "localhost", "odoo/test_v7/")]
 #addons = [Writer(["id"], 9000, [])]
 checker(addons)

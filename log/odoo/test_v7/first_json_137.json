@@ -1,0 +1,6 @@
+6
+/web/dataset/call_kw/mail.message/message_format
+{"jsonrpc": "2.0", "result": [{"record_name": "odoo dodo", "author_id": [3, "YourCompany, Administrator"], "subtype_description": "Lead created", "starred_partner_ids": [], "is_note": false, "customer_email_status": "sent", "message_type": "notification", "partner_ids": [], "customer_email_data": [], "body": "", "date": "2020-05-06 11:16:43", "subtype_id": [5, "Lead Created"], "id": 125, "channel_ids": [], "model": "crm.lead", "tracking_value_ids": [{"new_value": "Administrator", "changed_field": "Salesperson", "old_value": "", "field_type": "many2one", "id": 181}, {"new_value": "Europe", "changed_field": "Sales Channel", "old_value": "", "field_type": "many2one", "id": 182}, {"new_value": "Agrolait, Michel Fletcher", "changed_field": "Customer", "old_value": "", "field_type": "many2one", "id": 183}, {"new_value": 1000.0, "changed_field": "Expected Revenue", "old_value": 0.0, "field_type": "float", "id": 184}, {"new_value": "New", "changed_field": "Stage", "old_value": "", "field_type": "many2one", "id": 185}], "needaction_partner_ids": [], "res_id": 30, "email_from": "\"Administrator\"
+<admin@yourcompany.example.com>
+ ", "subject": false, "module_icon": "/crm/static/description/icon.png", "attachment_ids": []}], "id": 862690643}
+</admin@yourcompany.example.com>

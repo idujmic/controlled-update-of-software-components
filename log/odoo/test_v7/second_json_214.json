@@ -1,0 +1,3 @@
+10
+/web/action/load
+{"id": 835439923, "jsonrpc": "2.0", "result": {"help": false, "flags": {}, "name": "Chat", "display_name": "Chat", "tag": "mail.chat.instant_messaging", "binding_model_id": false, "res_model": "mail.channel", "xml_id": "mail.mail_channel_action_client_chat", "__last_update": "2020-05-01 14:50:21", "params_store": "{                 'default_active_id': 'channel_inbox'             }", "params": {"default_active_id": "channel_inbox"}, "write_uid": [1, "Administrator"], "id": 98, "create_date": "2020-05-01 14:50:21", "binding_type": "action", "create_uid": [1, "Administrator"], "context": "{}", "write_date": "2020-05-01 14:50:21", "target": "current", "type": "ir.actions.client"}}

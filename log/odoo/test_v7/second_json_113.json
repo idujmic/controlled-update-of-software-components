@@ -1,0 +1,3 @@
+2
+/web/dataset/call_kw/crm.stage/read
+{"id": 796426954, "jsonrpc": "2.0", "result": [{"id": 1, "legend_priority": false, "display_name": "New", "requirements": false}, {"id": 2, "legend_priority": false, "display_name": "Qualified", "requirements": false}, {"id": 3, "legend_priority": false, "display_name": "Proposition", "requirements": false}, {"id": 4, "legend_priority": false, "display_name": "Won", "requirements": false}]}

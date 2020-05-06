@@ -1,0 +1,6 @@
+1
+/web/dataset/call_kw/mail.message/message_format
+{"jsonrpc": "2.0", "result": [{"record_name": "New customer deal", "author_id": [3, "YourCompany, Administrator"], "subtype_description": "Lead created", "starred_partner_ids": [], "is_note": false, "customer_email_status": "sent", "message_type": "notification", "partner_ids": [], "customer_email_data": [], "body": "", "date": "2020-05-06 10:18:46", "subtype_id": [5, "Lead Created"], "id": 122, "channel_ids": [], "model": "crm.lead", "tracking_value_ids": [{"new_value": "Administrator", "changed_field": "Salesperson", "old_value": "", "field_type": "many2one", "id": 172}, {"new_value": "Europe", "changed_field": "Sales Channel", "old_value": "", "field_type": "many2one", "id": 173}, {"new_value": "Camptocamp", "changed_field": "Customer", "old_value": "", "field_type": "many2one", "id": 174}, {"new_value": 500.0, "changed_field": "Expected Revenue", "old_value": 0.0, "field_type": "float", "id": 175}, {"new_value": "New", "changed_field": "Stage", "old_value": "", "field_type": "many2one", "id": 176}], "needaction_partner_ids": [], "res_id": 29, "email_from": "\"Administrator\"
+<admin@yourcompany.example.com>
+ ", "subject": false, "module_icon": "/crm/static/description/icon.png", "attachment_ids": []}], "id": 632282011}
+</admin@yourcompany.example.com>

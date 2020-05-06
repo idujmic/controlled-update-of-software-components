@@ -1,0 +1,102 @@
+5
+/web/action/load
+{"jsonrpc": "2.0", "result": {"help": "
+<p class="oe_view_nocontent_create">
+ Click here to add new opportunities
+</p>
+", "multi": false, "create_uid": [1, "Administrator"], "views": [[349, "form"]], "__last_update": "2020-05-01 14:52:06", "name": "Create an Opportunity", "limit": 80, "domain": false, "create_date": "2020-05-01 14:52:06", "search_view": "{'arch': '
+<search leads\"="" string='\"Search'>
+ \\n
+ <field customer\"="" filter_domain="\&quot;[\\'|\\',\\'|\\',\\'|\\',(\\'partner_name\\',\\'ilike\\',self),(\\'email_from\\',\\'ilike\\',self),(\\'contact_name\\',\\'ilike\\',self),(\\'name\\',\\'ilike\\',self)]\&quot;" modifiers='\"{"required":' name='\"name\"' string='\"Lead' true}\"="">
+ </field>
+ \\n
+ <field \\'ilike\\',="" can_create='\"true\"' can_write='\"true\"' filter_domain="\&quot;[(\\'tag_ids\\'," modifiers='\"{}\"/' name='\"tag_ids\"' self)]\"="" string='\"Tag\"'>
+  \\n
+  <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"team_id\"'>
+   \\n
+   <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"user_id\"' on_change='\"1\"'>
+    \\n
+    <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"partner_id\"' on_change='\"1\"' operator='\"child_of\"' string='\"Customer\"'>
+     \\n
+     <field modifiers='\"{"readonly":' name='\"create_date\"' true}\"="">
+     </field>
+     \\n
+     <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"country_id\"'>
+      \\n
+      <separator>
+      </separator>
+      \\n
+      <filter are="" assigned="" domain="\&quot;[(\\'user_id\\',\\'=\\',uid)]\&quot;" help='\"Leads' leads\"="" me\"="" name='\"assigned_to_me\"' string='\"My' that="" to="">
+      </filter>
+      \\n
+      <filter domain="\&quot;[(\\'user_id\\',\\'=\\'," false)]\"="" help='\"No' name='\"unassigned\"' salesperson\"="" string='\"Unassigned\"'>
+      </filter>
+      \\n
+      <separator>
+      </separator>
+      \\n
+      <filter domain="\&quot;[(\\'message_needaction\\',\\'=\\',True)]\&quot;/" messages\"="" name='\"message_needaction\"' string='\"Unread'>
+       \\n
+       <filter \\'="\\'," domain="\&quot;[(\\'active\\'," false)]\"="" name='\"archived\"' string='\"Archived\"'>
+       </filter>
+       \\n
+       <separator>
+       </separator>
+       \\n
+       <filter \\'="\\'," ask="" be="" campaigns\"="" did="" domain="\&quot;[(\\'opt_out\\'," false)]\"="" help='\"Leads' in="" included="" mailing="" mass="" name='\"not_opt_out\"' not="" opt="" out\"="" string='\"Exclude' that="" to="">
+       </filter>
+       \\n
+       <separator>
+       </separator>
+       \\n
+       <filter \\'="\\'," activities\"="" domain="\&quot;[(\\'activity_ids.user_id\\'," name='\"activities_my\"' string='\"My' uid)]\"="">
+       </filter>
+       \\n
+       <separator>
+       </separator>
+       \\n
+       <filter \\'&lt;\\',="" action="" activities\"="" all="" before="" context_today().strftime(\\'%y-%m-%d\\'))]\"="" date="" domain="\&quot;[(\\'activity_ids.date_deadline\\'," has="" help='\"Show' is="" name='\"activities_overdue\"' next="" records="" string='\"Late' today\"="" which="">
+       </filter>
+       \\n
+       <filter \\'="\\'," activities\"="" context_today().strftime(\\'%y-%m-%d\\'))]\"="" domain="\&quot;[(\\'activity_ids.date_deadline\\'," name='\"activities_today\"' string='\"Today'>
+       </filter>
+       \\n
+       <filter (7="" (\\'activity_ids.date_deadline\\',="" (context_today()+datetime.timedelta(days="7)).strftime(\\'%Y-%m-%d\\'))" \\'&gt;="\\'," \\'&lt;="\\'," ]\"="" activities="" context_today().strftime(\\'%y-%m-%d\\')),="" days)\"="" domain="\&quot;[\\'&amp;\\'," name='\"activities_week\"' string='\"Future'>
+       </filter>
+       \\n
+       <filter (all)\"="" \\'&gt;\\',="" ]\"="" activities="" context_today().strftime(\\'%y-%m-%d\\'))="" domain="\&quot;[(\\'activity_ids.date_deadline\\'," name='\"activities_upcoming_all\"' string='\"Future'>
+       </filter>
+       \\n
+       <group by\"="" expand='\"0\"' string='\"Group'>
+        \\n
+        <filter context="\&quot;{\\'group_by\\':\\'user_id\\'}\&quot;/" domain='\"[]\"' name='\"groupby_salesperson\"' string='\"Salesperson\"'>
+         \\n
+         <filter channel\"="" context="\&quot;{\\'group_by\\':\\'team_id\\'}\&quot;/" domain='\"[]\"' name='\"groupby_team\"' string='\"Sales'>
+          \\n
+          <filter context="\&quot;{\\'group_by\\':\\'partner_id\\'}\&quot;/" domain='\"[]\"' help='\"Partner\"' name='\"customer\"' string='\"Customer\"'>
+           \\n
+           <filter context="\&quot;{\\'group_by\\':\\'campaign_id\\'}\&quot;/" domain='\"[]\"' name='\"groupby_campaign\"' string='\"Campaign\"'>
+            \\n
+            <filter context="\&quot;{\\'group_by\\':\\'source_id\\'}\&quot;/" domain='\"[]\"' name='\"groupby_source\"' string='\"Source\"'>
+             \\n
+             <filter context="\&quot;{\\'group_by\\':\\'medium_id\\'}\&quot;/" domain='\"[]\"' name='\"groupby_channel\"' string='\"Medium\"'>
+              \\n
+              <filter context="\&quot;{\\'group_by\\':\\'create_date\\'}\&quot;/" domain='\"[]\"' month\"="" name='\"groupby_createmonth\"' string='\"Creation'>
+               \\n
+              </filter>
+             </filter>
+            </filter>
+           </filter>
+          </filter>
+         </filter>
+        </filter>
+       </group>
+       \\n
+      </filter>
+     </field>
+    </field>
+   </field>
+  </field>
+ </field>
+</search>
+', 'view_id': 351, 'type': 'search', 'base_model': 'crm.lead', 'field_parent': False, 'model': 'crm.lead', 'name': 'crm.lead.search.lead', 'fields': {'country_id': {'views': {}, 'relation': 'res.country', 'type': 'many2one', 'readonly': False, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Country', 'store': True}, 'create_date': {'views': {}, 'type': 'datetime', 'readonly': True, 'required': False, 'depends': (), 'change_default': False, 'manual': False, 'store': True, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Create Date'}, 'name': {'views': {}, 'type': 'char', 'readonly': False, 'translate': False, 'required': True, 'depends': (), 'change_default': False, 'manual': False, 'store': True, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Opportunity'}, 'tag_ids': {'help': 'Classify and analyze your lead/opportunity categories like: Training, Service', 'views': {}, 'relation': 'crm.lead.tag', 'type': 'many2many', 'readonly': False, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': False, 'string': 'Tags', 'store': True}, 'team_id': {'help': 'When sending mails, the default email address is taken from the sales channel.', 'views': {}, 'relation': 'crm.team', 'type': 'many2one', 'readonly': False, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Sales Channel', 'store': True}, 'user_id': {'views': {}, 'relation': 'res.users', 'type': 'many2one', 'readonly': False, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Salesperson', 'store': True}, 'partner_id': {'help': 'Linked partner (optional). Usually created when converting the lead.', 'views': {}, 'relation': 'res.partner', 'type': 'many2one', 'readonly': False, 'required': False, 'depends': (), 'domain': [], 'change_default': False, 'manual': False, 'context': {}, 'searchable': True, 'company_dependent': False, 'sortable': True, 'string': 'Customer', 'store': True}}}", "context": "{}", "src_model": false, "flags": {}, "xml_id": "crm.create_opportunity_simplified", "target": "new", "auto_search": true, "view_mode": "form", "view_id": [349, "crm.lead.form.simple"], "type": "ir.actions.act_window", "filter": false, "id": 130, "search_view_id": false, "usage": false, "write_uid": [1, "Administrator"], "view_ids": [], "res_model": "crm.lead", "binding_model_id": false, "groups_id": [], "write_date": "2020-05-01 14:52:06", "binding_type": "action", "display_name": "Create an Opportunity", "res_id": 0}, "id": 492181203}

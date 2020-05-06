@@ -1,0 +1,60 @@
+2
+/web/dataset/call_button
+{"id": 577755549, "jsonrpc": "2.0", "result": {"help": "
+<p class='\"oe_view_nocontent_create\"'>
+ \n            Click to schedule a new meeting.\n
+</p>
+<p>
+ \n            The calendar is shared between employees and fully integrated with\n            other applications such as the employee leaves or the business\n            opportunities.\n
+</p>
+\n        ", "src_model": false, "view_ids": [18, 19, 20], "groups_id": [], "search_view_id": [315, "calendar.event.search"], "__last_update": "2020-05-01 14:50:29", "write_uid": [1, "Administrator"], "view_mode": "calendar,list,form", "id": 109, "binding_type": "action", "views": [[314, "calendar"], [311, "list"], [312, "form"]], "context": {"default_team_id": 1, "default_opportunity_id": 30, "default_partner_ids": [3, 24], "default_name": "odoo dodo", "default_partner_id": 24}, "res_id": 0, "type": "ir.actions.act_window", "flags": {}, "display_name": "Meetings", "view_id": [314, "calendar.event.calendar"], "create_date": "2020-05-01 14:50:29", "binding_model_id": false, "res_model": "calendar.event", "xml_id": "calendar.action_calendar_event", "search_view": "{'arch': '
+<search meetings\"="" string='\"Search'>
+ \\n
+ <field &quot;in&quot;,="" &quot;readonly&quot;:="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" filter_domain="\&quot;[(\\'name\\',\\'ilike\\',self)]\&quot;" modifiers='\"{"required":' name='\"name\"' string='\"Meeting\"' true,="">
+ </field>
+ \\n
+ <field &quot;in&quot;,="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"partner_ids\"'>
+ </field>
+ \\n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"categ_ids\"'>
+  \\n
+  <field &quot;in&quot;,="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"user_id\"'>
+  </field>
+  \\n
+  <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{}\"/' name='\"opportunity_id\"'>
+   \\n            \\n
+   <field &quot;in&quot;,="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" modifiers='\"{"readonly":' name='\"show_as\"'>
+   </field>
+   \\n
+   <field &quot;in&quot;,="" [&quot;done&quot;]]]}\"="" [[&quot;state&quot;,="" modifiers='\"{"readonly":' name='\"privacy\"' string='\"Privacy\"'>
+   </field>
+   \\n
+   <filter domain="\&quot;[(\\'user_id\\',\\'=\\',uid)]\&quot;" events\"="" help='\"My' string='\"My'>
+   </filter>
+   \\n
+   <filter 1}\"="" context='\"{"mymeetings":' help='\"My' meetings\"="" name='\"mymeetings\"' string='\"My'>
+   </filter>
+   \\n
+   <filter domain="\&quot;[(\\'message_needaction\\',\\'=\\',True)]\&quot;/" messages\"="" name='\"message_needaction\"' string='\"Unread'>
+    \\n
+    <separator>
+    </separator>
+    \\n
+    <group by\"="" expand='\"0\"' string='\"Group'>
+     \\n
+     <filter context="\&quot;{\\'group_by\\':\\'user_id\\'}\&quot;/" domain='\"[]\"' string='\"Responsible\"'>
+      \\n
+      <filter context="\&quot;{\\'group_by\\':\\'show_as\\'}\&quot;/" domain='\"[]\"' string='\"Availability\"'>
+       \\n
+       <filter context="\&quot;{\\'group_by\\':\\'privacy\\'}\&quot;/" domain='\"[]\"' string='\"Privacy\"'>
+        \\n
+       </filter>
+      </filter>
+     </filter>
+    </group>
+    \\n
+   </filter>
+  </field>
+ </field>
+</search>
+', 'fields': {'user_id': {'states': {'done': [('readonly', True)]}, 'required': False, 'string': 'Responsible', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'sortable': True, 'searchable': True, 'readonly': False, 'views': {}, 'context': {}, 'relation': 'res.users', 'domain': [], 'type': 'many2one'}, 'partner_ids': {'states': {'done': [('readonly', True)]}, 'required': False, 'string': 'Attendees', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'sortable': False, 'searchable': True, 'readonly': False, 'views': {}, 'context': {}, 'relation': 'res.partner', 'domain': [], 'type': 'many2many'}, 'categ_ids': {'required': False, 'string': 'Tags', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'sortable': False, 'searchable': True, 'readonly': False, 'views': {}, 'context': {}, 'relation': 'calendar.event.type', 'domain': [], 'type': 'many2many'}, 'show_as': {'store': True, 'states': {'done': [('readonly', True)]}, 'required': False, 'string': 'Show Time as', 'depends': (), 'change_default': False, 'company_dependent': False, 'selection': [('free', 'Free'), ('busy', 'Busy')], 'manual': False, 'searchable': True, 'readonly': False, 'views': {}, 'sortable': True, 'type': 'selection'}, 'privacy': {'store': True, 'states': {'done': [('readonly', True)]}, 'required': False, 'string': 'Privacy', 'depends': (), 'change_default': False, 'company_dependent': False, 'selection': [('public', 'Everyone'), ('private', 'Only me'), ('confidential', 'Only internal users')], 'manual': False, 'searchable': True, 'readonly': False, 'views': {}, 'sortable': True, 'type': 'selection'}, 'opportunity_id': {'required': False, 'string': 'Opportunity', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'sortable': True, 'searchable': True, 'readonly': False, 'views': {}, 'context': {}, 'relation': 'crm.lead', 'domain': \"[('type', '=', 'opportunity')]\", 'type': 'many2one'}, 'name': {'states': {'done': [('readonly', True)]}, 'required': True, 'string': 'Meeting Subject', 'depends': (), 'change_default': False, 'company_dependent': False, 'store': True, 'manual': False, 'searchable': True, 'readonly': False, 'views': {}, 'sortable': True, 'translate': False, 'type': 'char'}}, 'view_id': 315, 'model': 'calendar.event', 'name': 'calendar.event.search', 'field_parent': False, 'base_model': 'calendar.event', 'type': 'search'}", "auto_search": true, "filter": false, "usage": false, "domain": false, "limit": 80, "multi": false, "write_date": "2020-05-01 14:50:29", "create_uid": [1, "Administrator"], "name": "Meetings", "target": "current"}}

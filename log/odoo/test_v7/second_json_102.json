@@ -1,0 +1,73 @@
+1
+/web/dataset/call_kw/crm.activity.report/load_views
+{"id": 307424947, "jsonrpc": "2.0", "result": {"fields_views": {"graph": {"arch": "
+<graph analysis\"="" stacked='\"True\"' string='\"Activities'>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"mail_activity_type_id\"' true}\"="" type='\"col\"'>
+ </field>
+ \n
+ <field interval='\"month\"' modifiers='\"{"readonly":' name='\"date\"' true}\"="" type='\"row\"'>
+ </field>
+ \n
+</graph>
+", "fields": {"mail_activity_type_id": {"required": false, "string": "Activity Type", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "mail.activity.type", "domain": [], "type": "many2one"}, "date": {"required": false, "string": "Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}}, "view_id": 363, "model": "crm.activity.report", "toolbar": {"action": [], "relate": [], "print": []}, "name": "crm.activity.report.graph", "field_parent": false, "base_model": "crm.activity.report", "type": "graph"}, "pivot": {"arch": "
+<pivot analysis\"="" disable_linking='\"True\"' string='\"Activities'>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"mail_activity_type_id\"' true}\"="" type='\"col\"'>
+ </field>
+ \n
+ <field interval='\"month\"' modifiers='\"{"readonly":' name='\"date\"' true}\"="" type='\"row\"'>
+ </field>
+ \n
+</pivot>
+", "fields": {"mail_activity_type_id": {"required": false, "string": "Activity Type", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "mail.activity.type", "domain": [], "type": "many2one"}, "date": {"required": false, "string": "Date", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "views": {}, "sortable": true, "type": "datetime"}}, "view_id": 364, "model": "crm.activity.report", "toolbar": {"action": [], "relate": [], "print": []}, "name": "crm.activity.report.pivot", "field_parent": false, "base_model": "crm.activity.report", "type": "pivot"}, "search": {"arch": "
+<search analysis\"="" string='\"Activities'>
+ \n
+ <filter '=', uid)]\"/&gt;\n                    &lt;separator/&gt;\n                    &lt;filter name=\"lead\" string=\"Leads\" domain=\"[(' activities\"="" domain="\&quot;[('user_id'," help='\"Show' lead')]\"="" lead\"="" lead_type','=", " name='\"activities_my\"' only="" string='\"My'>
+ </filter>
+ \n
+ <filter domain="\&quot;[('lead_type','=','opportunity')]\&quot;" help='\"Show' name='\"opportunity\"' only="" opportunity\"="" string='\"Opportunities\"'>
+ </filter>
+ \n
+ <separator>
+ </separator>
+ \n
+ <filter %y-%m-01'))]\"="" '=', 1)]\"/&gt;\n                    &lt;separator/&gt;\n                    &lt;filter string=\"This Month\" name=\"this_month\" domain=\"[(' '&gt;=", context_today().strftime(" ('stage_id.probability',="" date',="" domain="\&quot;['&amp;'," name='\"won\"' stage_id.on_change',="" string='\"Won\"'>
+ </filter>
+ \n
+ <filter %y-%m-01')),="" '&gt;=", (context_today() - relativedelta(months=1)).strftime(" '&lt;',="" ('date',="" context_today().strftime('%y-%m-01'))]\"="" domain="\&quot;['&amp;'," month\"="" name='\"last_month\"' string='\"Last'>
+ </filter>
+ \n
+ <field can_create='\"true\"' can_write='\"true\"' context="\&quot;{'invisible_team':" false}\"="" modifiers='\"{"readonly":' name='\"team_id\"' true}\"="">
+ </field>
+ \n
+ <field by\"="" can_create='\"true\"' can_write='\"true\"' modifiers='\"{"readonly":' name='\"author_id\"' string='\"Created' true}\"="">
+ </field>
+ \n
+ <group by\"="" expand='\"1\"' string='\"Group'>
+  \n
+  <filter by\"="" context="\&quot;{'group_by':'author_id'}\&quot;/" name='\"group_by_salesperson\"' string='\"Created'>
+   \n
+   <filter channel\"="" context="\&quot;{'group_by':'team_id'}\&quot;/" string='\"Sales'>
+    \n
+    <filter context="\&quot;{'group_by':'country_id'}\&quot;/" string='\"Country\"'>
+     \n
+     <filter context="\&quot;{'group_by':'company_id'}\&quot;" invisible='\"1\"' modifiers='\"{"invisible":' string='\"Company\"' true}\"="">
+     </filter>
+     \n
+     <filter context="\&quot;{'group_by':'stage_id'}\&quot;/" string='\"Stage\"'>
+      \n
+      <filter context="\&quot;{'group_by':'date:month'}\&quot;" name='\"month\"/' string='\"Month\"'>
+       \n
+       <filter context="\&quot;{'group_by':'lead_id'}\&quot;/" name='\"group_by_opportunity\"' string='\"Leads\"'>
+        \n
+       </filter>
+      </filter>
+     </filter>
+    </filter>
+   </filter>
+  </filter>
+ </group>
+ \n
+</search>
+", "fields": {"author_id": {"required": false, "string": "Created By", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "team_id": {"required": false, "string": "Sales Channel", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "views": {}, "context": {}, "relation": "crm.team", "domain": [], "type": "many2one"}}, "view_id": 365, "model": "crm.activity.report", "name": "crm.activity.report.search", "field_parent": false, "base_model": "crm.activity.report", "type": "search"}}, "fields": {"id": {"required": false, "string": "ID", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "integer"}, "partner_id": {"required": false, "string": "Partner/Customer", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "subject": {"required": false, "string": "Summary", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "sortable": true, "translate": false, "type": "char"}, "company_id": {"required": false, "string": "Company", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.company", "domain": [], "type": "many2one"}, "__last_update": {"required": false, "string": "Last Modified on", "searchable": false, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": false, "sortable": false, "manual": false, "type": "datetime"}, "lead_type": {"help": "Type is used to separate Leads and Opportunities", "required": false, "string": "Type", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": false, "sortable": true, "translate": false, "type": "char"}, "subtype_id": {"required": false, "string": "Subtype", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "mail.message.subtype", "domain": [], "type": "many2one"}, "probability": {"group_operator": "avg", "required": false, "string": "Probability", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "searchable": true, "readonly": true, "sortable": true, "type": "float"}, "active": {"required": false, "string": "Active", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "boolean"}, "stage_id": {"required": false, "string": "Stage", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "crm.stage", "domain": [], "type": "many2one"}, "author_id": {"required": false, "string": "Created By", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.partner", "domain": [], "type": "many2one"}, "lead_id": {"required": false, "string": "Lead", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "crm.lead", "domain": [], "type": "many2one"}, "mail_activity_type_id": {"required": false, "string": "Activity Type", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "mail.activity.type", "domain": [], "type": "many2one"}, "country_id": {"required": false, "string": "Country", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.country", "domain": [], "type": "many2one"}, "team_id": {"required": false, "string": "Sales Channel", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "crm.team", "domain": [], "type": "many2one"}, "user_id": {"required": false, "string": "Salesperson", "depends": [], "change_default": false, "company_dependent": false, "store": true, "manual": false, "sortable": true, "searchable": true, "readonly": true, "context": {}, "relation": "res.users", "domain": [], "type": "many2one"}, "date": {"required": false, "string": "Date", "searchable": true, "depends": [], "readonly": true, "change_default": false, "company_dependent": false, "store": true, "sortable": true, "manual": false, "type": "datetime"}, "display_name": {"required": false, "string": "Display Name", "depends": ["id"], "change_default": false, "company_dependent": false, "store": false, "manual": false, "searchable": false, "readonly": true, "sortable": false, "translate": false, "type": "char"}}, "filters": []}}

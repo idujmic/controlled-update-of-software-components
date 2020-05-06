@@ -1,0 +1,3 @@
+8
+/web/dataset/search_read
+{"jsonrpc": "2.0", "result": {"length": 1, "records": [{"company_currency": [1, "EUR"], "activity_summary": false, "priority": "2", "color": 0, "tag_ids": [], "id": 28, "partner_id": [34, "Agrolait, Laith Jubair"], "activity_state": false, "name": "Customer Deal", "planned_revenue": 10000.0, "kanban_state": "grey", "user_id": [1, "Administrator"], "message_needaction_counter": 0, "partner_address_email": "laith.jubair@axelor.example.com", "date_deadline": false, "user_email": "admin@yourcompany.example.com", "active": true, "activity_ids": [], "activity_date_deadline": false, "stage_id": [2, "Qualified"]}]}, "id": 408971451}

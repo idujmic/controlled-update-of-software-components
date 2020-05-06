@@ -1,0 +1,4 @@
+11
+/web/dataset/call_kw/crm.lead.tag/read
+{"id": 684858767, "jsonrpc": "2.0", "result": [{"id": 4, "color": 4, "display_name": "Information"}, {"id": 7, "color": 7, "display_name": "Consulting"}, {"id": 3, "color": 3, "display_name": "Services"}, {"id": 1, "color": 1, "display_name": "Product"}]}
+: "2020-05-15", "activity_state": "overdue", "kanban_state": "grey", "user_email": "admin@yourcompany.example.com", "id": 13, "activity_date_deadline": false, "activity_ids": [1], "partner_id": false, "user_id": [1, "Administrator"], "active": true, "color": 0, "activity_summary": "Meeting to go over pricing information.", "name": "Plan to buy 60 keyboards and mouses"}]}}

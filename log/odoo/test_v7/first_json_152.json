@@ -1,0 +1,3 @@
+2
+/web/dataset/call_kw/calendar.event/search_read
+{"jsonrpc": "2.0", "result": [{"stop": "2020-05-05 19:00:00", "id": 2, "partner_id": [6, "YourCompany, Demo User"], "duration": 7.0, "name": "Initial discussion", "start": "2020-05-05 12:00:00", "partner_ids": [10, 11, 3], "allday": false, "display_name": "Initial discussion", "is_highlighted": false}, {"stop": "2020-05-03 16:30:00", "id": 1, "partner_id": [3, "YourCompany, Administrator"], "duration": 6.3, "name": "Follow-up for Project proposal", "start": "2020-05-03 10:20:00", "partner_ids": [8], "allday": false, "display_name": "Follow-up for Project proposal", "is_highlighted": false}], "id": 852914068}
