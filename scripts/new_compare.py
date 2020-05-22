@@ -110,18 +110,13 @@ class FlowComparator:
 							if isinstance(v1, list) and isinstance(v2, list):
 								v1 = sorted(v1, key = str.lower)
 								v2 = sorted(v2, key = str.lower)	
-							if v1 != v2:
-								print(str(k1) + " ima razliciti value")
-								print(v1)
-								print(v2)			
+							if v1 != v2:		
 								for diff in self.legal_diffs:
 									if diff in k1:
 										legal = True
 							else:
-								print(str(k1) +  " ima isti value")
 								legal = True
 					if not legal:
-						print(str(k1) +  "je ilegalac")
 						illegal_diffs.append(k1)
 					legal = False
 			if len(illegal_diffs) > 0:

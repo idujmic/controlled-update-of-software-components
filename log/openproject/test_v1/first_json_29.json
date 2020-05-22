@@ -1,0 +1,11 @@
+1
+/api/v3/memberships/available_projects?filters=%5B%7B%22id%22%3A%7B%22operator%22%3A%22%3D%22%2C%22values%22%3A%5B%221%22%5D%7D%7D%5D
+{"_type":"Collection","total":1,"count":1,"_embedded":{"elements":[{"_type":"Project","id":1,"identifier":"demo-project","name":"Demo project","active":true,"public":true,"description":{"format":"markdown","raw":"This is a short summary of the goals of this demo project.","html":"
+<p>
+ This is a short summary of the goals of this demo project.
+</p>
+"},"createdAt":"2020-05-21T14:57:22Z","updatedAt":"2020-05-21T14:57:22Z","status":"on track","statusExplanation":{"format":"markdown","raw":"All tasks are on schedule. The people involved know their tasks. The system is completely set up.","html":"
+<p>
+ All tasks are on schedule. The people involved know their tasks. The system is completely set up.
+</p>
+"},"_links":{"self":{"href":"/api/v3/projects/1","title":"Demo project"},"categories":{"href":"/api/v3/projects/1/categories"},"delete":{"href":"/api/v3/projects/1","method":"delete"},"schema":{"href":"/api/v3/projects/schema"},"parent":{"href":null,"title":null}}}]},"_links":{"self":{"href":"/api/v3/projects"}}}

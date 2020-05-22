@@ -1,0 +1,622 @@
+openproject/test_v1/
+<!DOCTYPE html>
+<html class="" lang="en" ng-csp="no-unsafe-eval" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="width=device-width" name="viewport"/>
+  <title>
+   Demo project | OpenProject
+  </title>
+  <meta content="" name="app_base_path">
+   <base href="/"/>
+   <meta data-project-id="1" data-project-identifier="demo-project" data-project-name="Demo project" name="current_project"/>
+   <meta data-id="2" data-mail="admin@example.net" data-name="OpenProject Admin" name="current_user"/>
+   <meta data-default-locale="en" data-edition="standard" data-environment="production" data-first-day-of-week="" data-locale="en" name="openproject_initializer"/>
+   <meta content="overview" name="current_menu_item"/>
+   <meta content="true" name="demo_projects_available"/>
+   <meta content="true" name="boards_demo_data_available"/>
+   <meta content="authenticity_token" name="csrf-param"/>
+   <meta content="oCHzSIld3zox4mzMOH52qkD/DWddhOV6gN68RODifX1twtT2+xiv9+loMIT3C6iHMHC5wuzbIJ0wScWu3FaIPA==" name="csrf-token"/>
+   <!-- global meta hooks before any scripts are loaded-->
+   <link href="/assets/favicon-939cbdbd3b0f071269abd28ddfcb2f922d6257ce6ef70ba4941ea1708a564ab3.ico" rel="shortcut icon" type="image/x-icon"/>
+   <link href="/assets/apple-touch-icon-120x120-7cc127b22515cb03208e0cd2ab29c30545d6c1d232a8d68058c751bf29626354.png" rel="apple-touch-icon" sizes="120x120" type="image/png"/>
+   <link href="/assets/openproject-fe4aeceda9880d8e364a5bf264333006f9f55bbb3caf8ea4cedbf469e939e423.css" media="all" rel="stylesheet"/>
+   <script src="/assets/frontend/vendor.40b5a49af3b5cb743a4d.js">
+   </script>
+   <script src="/assets/frontend/polyfills.edeb68febcc3ddfa7163.js">
+   </script>
+   <script src="/assets/frontend/runtime.baa3d2fe77f26693f113.js">
+   </script>
+   <script src="/assets/frontend/main.074518708a6e1846b535.js">
+   </script>
+   <link href="/assets/frontend/styles.74ed3c37efd51d3bbb37.css" media="screen" rel="stylesheet"/>
+   <link href="/highlighting/styles/5843bb64aef72d03449a4f1cfab2bc8cac6a4a5d7e6691e5b67f42df05633600.css" media="all" rel="stylesheet"/>
+   <script src="/assets/application-6b14dddee5a6f19ad2abbfa9cd1555060248ccef0d6cd58eb652f6dd50f5a79d.js">
+   </script>
+   <script src="/assets/locales/en-287044cc1a6fea3dcb4627f4727cd91869385959d62ad09dd0b2a44bee92c58d.js">
+   </script>
+   <!-- Text formatting specific includes -->
+   <script src="/assets/vendor/ckeditor/ckeditor-6d71ff793c26bf6440b52e06c693d9113b0ff288e130f88c5ab0e41f1686e755.js">
+   </script>
+   <!-- Onboarding specific includes -->
+   <script src="/assets/vendor/enjoyhint-478cf0936d28a06756841a13eb21afd2ef9918020a4eee2290d473501b9fdcd8.js">
+   </script>
+   <!-- project specific tags -->
+   <!-- page specific tags -->
+   <script nonce="ei8KQHzJIg5VM4Edp7yYo7ieIntewFkNi5oNZDR1Fg8=">
+   </script>
+   <!-- plug-in specific tags -->
+   <link href="/assets/costs/costs-2a5f7f3c6cfdf30e991565e8508a122cafb6ef3778393214a546edef0e7dfcfb.css" media="screen" rel="stylesheet"/>
+  </meta>
+ </head>
+ <body class="theme-core_design controller-overviews/overviews action-show ee-banners-visible -browser-firefox bcf-deactivated __overflowing_element_container __overflowing_body" data-overflowing-identifier=".__overflowing_body" data-relative_url_root="/">
+  <div class="warning-bar--wrapper">
+  </div>
+  <noscript>
+   <div class="top-shelf">
+    <p>
+     <span>
+      <i aria-hidden="true" class="icon3 icon-warning">
+      </i>
+      <strong>
+       JavaScript disabled
+      </strong>
+     </span>
+     You need to activate JavaScript in order to use OpenProject!
+     <a href="http://www.enable-javascript.com/" target="_blank">
+      Learn more
+     </a>
+    </p>
+   </div>
+  </noscript>
+  <notifications-container>
+  </notifications-container>
+  <div class="can-hide-navigation" id="wrapper" style="display:none">
+   <div id="top-menu">
+    <div id="header">
+     <div id="top-menu-items">
+      <h1 class="hidden-for-sighted">
+       Top Menu
+      </h1>
+      <main-menu-toggle>
+      </main-menu-toggle>
+      <a aria-label="Click here to skip over the menu and go to the content" class="hidden-for-sighted skip-navigation-link" href="">
+       Jump to content
+      </a>
+      <ul class="menu_root account-nav" id="account-nav-left">
+       <li class="drop-down">
+        <a aria-haspopup="true" class="" href="" id="projects-menu" title="Demo project">
+         <span class="button--dropdown-text">
+          Demo project
+         </span>
+         <i class="button--dropdown-indicator">
+         </i>
+        </a>
+        <ul class="menu-drop-down-container drop-down--projects" style="display:none">
+         <li data-name="list_projects">
+          <a accesskey="5" class="list-projects-menu-item ellipsis" href="/projects" title="View all projects">
+           <i aria-hidden="true" class="icon-show-all-projects icon4">
+           </i>
+           <span class="menu-item--title ellipsis">
+            View all projects
+           </span>
+          </a>
+         </li>
+         <li data-name="new_project">
+          <a accesskey="9" aria-label="New project" class="new-project-menu-item ellipsis" href="/projects/new" title="New project">
+           <i aria-hidden="true" class="icon-add icon4">
+           </i>
+           <span class="menu-item--title ellipsis">
+            Project
+           </span>
+          </a>
+         </li>
+         <li id="project-search-container">
+          <project-menu-autocomplete class="op-angular-component">
+          </project-menu-autocomplete>
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <div class="hidden-for-mobile" id="logo">
+       <a class="home-link" href="http://localhost:8000/">
+        Home
+       </a>
+      </div>
+      <div class="top-menu-items-right">
+       <div class="top-menu-search--wrapper">
+        <label class="hidden-for-sighted" for="q">
+         Search
+        </label>
+        <global-search-input>
+        </global-search-input>
+       </div>
+       <ul class="menu_root account-nav" id="account-nav-right">
+        <li class="drop-down">
+         <a aria-haspopup="true" class="" href="" icon="icon-menu" title="Modules">
+          <i aria-hidden="true" class="icon-menu">
+          </i>
+          <span class="button--dropdown-text">
+          </span>
+         </a>
+         <ul class="menu-drop-down-container drop-down--modules" id="more-menu" style="display:none">
+          <li data-name="work_packages">
+           <a class="work-packages-menu-item ellipsis" href="http://localhost:8000/work_packages" title="Work packages">
+            <span class="menu-item--title ellipsis">
+             Work packages
+            </span>
+           </a>
+          </li>
+          <li data-name="news">
+           <a class="news-menu-item ellipsis" href="http://localhost:8000/news" title="News">
+            <span class="menu-item--title ellipsis">
+             News
+            </span>
+           </a>
+          </li>
+          <li data-name="cost_reports_global">
+           <a class="cost-reports-global-menu-item ellipsis" href="http://localhost:8000/cost_reports" title="Cost reports">
+            <span class="menu-item--title ellipsis">
+             Cost reports
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="hidden-for-mobile drop-down">
+         <a aria-haspopup="true" class="menu-item--help" href="" title="Help">
+          <i aria-hidden="true" class="icon-help">
+          </i>
+         </a>
+         <ul class="menu-drop-down-container drop-down--help" style="display:none">
+          <li>
+           <span class="drop-down--help-headline" title="Getting started">
+            Getting started
+           </span>
+          </li>
+          <section data-augmented-model-wrapper="" data-modal-class-name="onboarding-modal -highlight" data-modal-iframe-url="https://player.vimeo.com/video/163426858?autoplay=1">
+           <li>
+            <a class="modal-wrapper--activation-link" href="" title="Introduction video">
+             Introduction video
+            </a>
+           </li>
+           <div class="modal-wrapper--content">
+            <div class="onboarding--start-modal">
+             <div class="onboarding--top-menu op-modal--modal-header">
+              <i aria-hidden="true" class="icon-context icon-user">
+              </i>
+              <h2>
+               Welcome to OpenProject
+              </h2>
+              <a aria-label="Close popup" class="op-modal--modal-close-button dynamic-content-modal--close-button" title="Close popup">
+               <i aria-hidden="true" class="icon-close">
+               </i>
+              </a>
+             </div>
+             <div class="onboarding--main op-modal--modal-body">
+              <h2>
+               Get an overview
+              </h2>
+              <div class="onboarding--video-block">
+               <div class="onboarding--video-text">
+                <span>
+                 Get a quick overview of project management and team collaboration with OpenProject.
+                </span>
+               </div>
+               <div class="onboarding--video iframe-target-wrapper">
+               </div>
+              </div>
+             </div>
+             <div class="onboarding--footer op-modal--modal-footer">
+              <span>
+               <em>
+                You can restart this video from the help menu
+               </em>
+              </span>
+              <button class="dynamic-content-modal--close-button button -highlight" title="Close">
+               Close
+              </button>
+             </div>
+            </div>
+           </div>
+          </section>
+          <hr class="form--separator"/>
+          <li>
+           <span class="drop-down--help-headline" title="Help and support">
+            Help and support
+           </span>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/enterprise-edition/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=ee-upsale-help-menu" target="_blank" title="Upgrade to Enterprise Edition">
+            Upgrade to Enterprise Edition
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/user-guide/" target="_blank" title="User guides">
+            User guides
+           </a>
+          </li>
+          <li>
+           <a href="https://www.youtube.com/c/OpenProjectCommunity" target="_blank" title="Videos">
+            Videos
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/user-guide/keyboard-shortcuts-access-keys/" target="_blank" title="Shortcuts">
+            Shortcuts
+           </a>
+          </li>
+          <li>
+           <a href="https://community.openproject.com/projects/openproject/forums" target="_blank" title="Community forum">
+            Community forum
+           </a>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/pricing/#support" target="_blank" title="Professional support">
+            Professional support
+           </a>
+          </li>
+          <hr class="form--separator"/>
+          <li>
+           <span class="drop-down--help-headline" title="Additional resources">
+            Additional resources
+           </span>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/data-privacy-and-security/" target="_blank" title="Data privacy and security policy">
+            Data privacy and security policy
+           </a>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=website-help-menu" target="_blank" title="OpenProject website">
+            OpenProject website
+           </a>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/newsletter/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=newsletter-help-menu" target="_blank" title="Security alerts / Newsletter">
+            Security alerts / Newsletter
+           </a>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/blog" target="_blank" title="OpenProject blog">
+            OpenProject blog
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/release-notes/" target="_blank" title="Release notes">
+            Release notes
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/development/report-a-bug/" target="_blank" title="Report a bug">
+            Report a bug
+           </a>
+          </li>
+          <li>
+           <a href="https://community.openproject.org/projects/openproject/roadmap" target="_blank" title="Development roadmap">
+            Development roadmap
+           </a>
+          </li>
+          <li>
+           <a href="https://crowdin.com/projects/opf" target="_blank" title="Add and edit translations">
+            Add and edit translations
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/api" target="_blank" title="API documentation">
+            API documentation
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="last-child drop-down">
+         <a aria-haspopup="true" class="" href="" icon="overridden-by-avatar" title="OpenProject Admin">
+          <i aria-hidden="true" class="overridden-by-avatar">
+          </i>
+          <span class="button--dropdown-text">
+           <user-avatar data-class-list="avatar avatar--gravatar-image avatar--fallback" data-user-id="2" data-user-name="OpenProject Admin">
+           </user-avatar>
+          </span>
+         </a>
+         <ul class="menu-drop-down-container" id="user-menu" style="display:none">
+          <li data-name="my_page">
+           <a class="my-page-menu-item ellipsis" href="/my/page" title="My page">
+            <span class="menu-item--title ellipsis">
+             My page
+            </span>
+           </a>
+          </li>
+          <li data-name="my_account">
+           <a class="my-account-menu-item ellipsis" href="http://localhost:8000/my/account" title="My account">
+            <span class="menu-item--title ellipsis">
+             My account
+            </span>
+           </a>
+          </li>
+          <li data-name="administration">
+           <a class="administration-menu-item ellipsis" href="http://localhost:8000/admin" title="Administration">
+            <span class="menu-item--title ellipsis">
+             Administration
+            </span>
+           </a>
+          </li>
+          <li data-name="logout">
+           <a class="logout-menu-item ellipsis" href="/logout" title="Sign out">
+            <span class="menu-item--title ellipsis">
+             Sign out
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="can-hide-navigation" id="main">
+    <div class="main-menu" id="main-menu">
+     <h1 class="hidden-for-sighted">
+      Side Menu
+     </h1>
+     <main-menu-resizer>
+     </main-menu-resizer>
+     <div id="menu-sidebar">
+      <ul class="menu_root open">
+       <li data-name="overview">
+        <a class="overview-menu-item ellipsis selected" href="http://localhost:8000/projects/demo-project" title="You are here: Overview">
+         <i aria-hidden="true" class="icon2 icon-info1">
+         </i>
+         <span class="menu-item--title ellipsis">
+          Overview
+         </span>
+        </a>
+       </li>
+       <li data-name="work_packages">
+        <a class="work-packages-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/work_packages" id="main-menu-work-packages" title="Work packages" wp-query-menu="wp-query-menu">
+         <i aria-hidden="true" class="icon2 icon-view-timeline">
+         </i>
+         <span class="menu-item--title ellipsis">
+          Work packages
+         </span>
+        </a>
+        <ul class="main-menu--children">
+         <li class="partial" data-name="work_packages_query_select">
+          <wp-query-select data-project-identifier="demo-project">
+          </wp-query-select>
+         </li>
+        </ul>
+       </li>
+       <li data-name="board_view">
+        <a class="board-view-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/boards" title="Boards">
+         <i aria-hidden="true" class="icon2 icon-boards">
+         </i>
+         <span class="menu-item--title ellipsis">
+          Boards
+         </span>
+        </a>
+        <ul class="main-menu--children">
+         <li class="partial" data-name="board_menu">
+          <boards-menu>
+          </boards-menu>
+         </li>
+        </ul>
+       </li>
+       <li data-name="news">
+        <a class="news-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/news" title="News">
+         <i aria-hidden="true" class="icon2 icon-news">
+         </i>
+         <span class="menu-item--title ellipsis">
+          News
+         </span>
+        </a>
+       </li>
+       <li data-name="wiki-wiki">
+        <a class="wiki-menu--main-item wiki-wiki-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/wiki/wiki" title="Wiki">
+         <i aria-hidden="true" class="icon2 icon-wiki">
+         </i>
+         <span class="menu-item--title ellipsis">
+          Wiki
+         </span>
+        </a>
+        <ul class="main-menu--children">
+         <li class="partial" data-name="wiki_menu_partial">
+          <div class="menu-wiki-pages-tree tree-menu--container" data-selected-page="">
+           <div class="main-menu--segment-header ellipsis">
+            Table of contents
+           </div>
+           <ul class="pages-hierarchy -with-hierarchy">
+            <li class="-hierarchy-expanded">
+             <span class="tree-menu--item" slug="wiki">
+              <span class="tree-menu--hierarchy-span">
+               <a class="tree-menu--hierarchy-indicator" role="button" tabindex="0">
+                <span aria-hidden="true" class="tree-menu--hierarchy-indicator-icon">
+                </span>
+                <span class="tree-menu--hierarchy-indicator-expanded hidden-for-sighted">
+                 Expanded. Click to collapse
+                </span>
+                <span class="tree-menu--hierarchy-indicator-collapsed hidden-for-sighted">
+                 Collapsed. Click to show
+                </span>
+               </a>
+              </span>
+              <a class="tree-menu--title ellipsis" href="/projects/demo-project/wiki/wiki">
+               Wiki
+              </a>
+             </span>
+             <ul class="pages-hierarchy -with-hierarchy">
+              <li class="-hierarchy-expanded">
+               <span class="tree-menu--item" slug="project-documentation">
+                <span class="tree-menu--hierarchy-span">
+                 <a class="tree-menu--hierarchy-indicator" role="button" tabindex="0">
+                  <span aria-hidden="true" class="tree-menu--hierarchy-indicator-icon">
+                  </span>
+                  <span class="tree-menu--hierarchy-indicator-expanded hidden-for-sighted">
+                   Expanded. Click to collapse
+                  </span>
+                  <span class="tree-menu--hierarchy-indicator-collapsed hidden-for-sighted">
+                   Collapsed. Click to show
+                  </span>
+                 </a>
+                </span>
+                <a class="tree-menu--title ellipsis" href="/projects/demo-project/wiki/project-documentation">
+                 Project documentation
+                </a>
+               </span>
+               <ul class="pages-hierarchy -with-hierarchy">
+                <li class="-hierarchy-expanded">
+                 <span class="tree-menu--item" slug="project-manual">
+                  <span class="tree-menu--hierarchy-span">
+                   <span class="tree-menu--leaf-indicator" tabindex="0">
+                    <span class="hidden-for-sighted">
+                     Hierarchy leaf
+                    </span>
+                   </span>
+                  </span>
+                  <a class="tree-menu--title ellipsis" href="/projects/demo-project/wiki/project-manual">
+                   Project manual
+                  </a>
+                 </span>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </div>
+         </li>
+        </ul>
+       </li>
+       <li data-name="members">
+        <a class="members-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/members" title="Members">
+         <i aria-hidden="true" class="icon2 icon-group">
+         </i>
+         <span class="menu-item--title ellipsis">
+          Members
+         </span>
+        </a>
+       </li>
+       <li data-name="settings">
+        <a class="settings-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/settings/generic" title="Project settings">
+         <i aria-hidden="true" class="icon2 icon-settings2">
+         </i>
+         <span class="menu-item--title ellipsis">
+          Project settings
+         </span>
+        </a>
+        <ul class="main-menu--children">
+         <li data-name="settings_generic">
+          <a class="settings-generic-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/settings/generic" title="Information">
+           <span class="menu-item--title ellipsis">
+            Information
+           </span>
+          </a>
+         </li>
+         <li data-name="settings_modules">
+          <a class="settings-modules-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/settings/modules" title="Modules">
+           <span class="menu-item--title ellipsis">
+            Modules
+           </span>
+          </a>
+         </li>
+         <li data-name="settings_types">
+          <a class="settings-types-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/settings/types" title="Work package types">
+           <span class="menu-item--title ellipsis">
+            Work package types
+           </span>
+          </a>
+         </li>
+         <li data-name="settings_custom_fields">
+          <a class="settings-custom-fields-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/settings/custom_fields" title="Custom fields">
+           <span class="menu-item--title ellipsis">
+            Custom fields
+           </span>
+          </a>
+         </li>
+         <li data-name="settings_versions">
+          <a class="settings-versions-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/settings/versions" title="Versions">
+           <span class="menu-item--title ellipsis">
+            Versions
+           </span>
+          </a>
+         </li>
+         <li data-name="settings_activities">
+          <a class="settings-activities-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/settings/activities" title="Time tracking activities">
+           <span class="menu-item--title ellipsis">
+            Time tracking activities
+           </span>
+          </a>
+         </li>
+         <li data-name="settings_categories">
+          <a class="settings-categories-menu-item ellipsis" href="http://localhost:8000/projects/demo-project/settings/categories" title="Work package categories">
+           <span class="menu-item--title ellipsis">
+            Work package categories
+           </span>
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <!-- Sidebar -->
+      <div id="sidebar">
+      </div>
+     </div>
+    </div>
+    <div class="content-overlay">
+    </div>
+    <div class="can-hide-navigation" id="content-wrapper">
+     <div class="can-hide-navigation" id="breadcrumb">
+      <span class="position-label hidden-for-sighted" style="display: block">
+       You are here:
+      </span>
+      <ul class="breadcrumb">
+       <li class="first-breadcrumb-element" style="list-style-image:none;">
+        translation missing: en.label_overviews/overview
+       </li>
+      </ul>
+     </div>
+     <div class="can-hide-navigation" id="content">
+      <h1 class="hidden-for-sighted">
+       Content
+      </h1>
+      <openproject-base>
+      </openproject-base>
+     </div>
+    </div>
+   </div>
+   <div id="ajax-indicator" style="display:none;">
+    <span>
+     Loading...
+    </span>
+   </div>
+  </div>
+  <script nonce="ei8KQHzJIg5VM4Edp7yYo7ieIntewFkNi5oNZDR1Fg8=">
+   // execute these lines to prevent flickering when page loads:
+
+  (function($) {
+    var wrapper = $('#wrapper');
+    var savedMainMenuWidth = window.OpenProject.guardedLocalStorage("openProject-mainMenuWidth");
+    var mainMenuCollapsed =  window.OpenProject.guardedLocalStorage("openProject-mainMenuCollapsed");
+
+    if (window.innerWidth < 680) {
+      // force hide on load for mobile
+      $('.can-hide-navigation').addClass('hidden-navigation');
+    }
+
+    if (mainMenuCollapsed === 'true') {
+      savedMainMenuWidth = 0;
+    }
+
+    if (savedMainMenuWidth || savedMainMenuWidth === 0) {
+      document.documentElement.style.setProperty("--main-menu-width", savedMainMenuWidth + 'px');
+    }
+
+    wrapper.show();
+
+    // Wrapper for page-specific JS from deprecated inline functions
+    // no longer available with CSP.
+    
+  }(jQuery));
+  </script>
+ </body>
+</html>

@@ -13,7 +13,11 @@ import queue
 import threading
 from new_compare import *
 import urllib.parse
-
+import os
+import binascii
+from requests_toolbelt.multipart import decoder
+from requests_toolbelt import MultipartEncoder
+import email.parser
 class Writer:
 	def __init__(self, legal_diffs, port, tokens_for_scraping, host, path):
 		self.cmp = FlowComparator(legal_diffs, path)
@@ -53,18 +57,46 @@ class Writer:
 			request_body = flow.request.get_text()
 			if len(request_body) > 0:
 				if "Content-Type" in flow.request.headers:
-					if "json" not in flow.request.headers["Content-Type"]:
-						body_dict = split_body(request_body)
-						for k1,v1 in body_dict.items():
-							for k2,v2 in self.token_dict.items():
-								k1_compared = k1
-								if "%" in k1:
-									k1_compared = urllib.parse.unquote(k1)
-								if k2 in k1_compared:
-										body_dict[k1] = v2
-						body = build_body(body_dict)
-						body = gzip.compress(bytes(body, 'utf-8'))
+					if "multipart" in flow.request.headers["Content-Type"]:
+						content_type_header = flow.request.headers['Content-Type']
+						response = ''
+						multipart_dict = {}
+						for part in decoder.MultipartDecoder(flow.request.content, content_type_header).parts:
+							response += part.text + "\n"
+							for k,v in part.headers.items():
+								if k.decode("utf-8") == "Content-Type":
+									continue
+					
+								v = v.decode("utf-8")
+								multipart_dict[v[v.find("name") + len("name") + 1:]] = part.text
+						for k,v in multipart_dict.items():
+							print(k)
+							print(self.token_dict)
+							print(k in self.token_dict)
+							for k1,v1 in self.token_dict.items():
+								if k1 in k:
+									print("Unutra")
+									multipart_dict[k] = self.token_dict[k1]
+						content_type_header = flow.request.headers["Content-Type"]
+						boundary = content_type_header[content_type_header.find("boundary") + len("boundary") + 1:]
+						m = encode_multipart_formdata(multipart_dict, boundary)
+						body = gzip.compress(bytes(m, "utf-8"))
 						flow_copy.request.content = gzip.decompress(body)
+					else:
+						if "json" not in flow.request.headers["Content-Type"]:
+							body_dict = split_body(request_body)
+							print(self.token_dict)
+							print(body_dict)
+							for k1,v1 in body_dict.items():
+								for k2,v2 in self.token_dict.items():
+									k1_compared = k1
+									if "%" in k1:
+										k1_compared = urllib.parse.unquote(k1)
+									if k2 in k1_compared:
+											body_dict[k1] = urllib.parse.quote(v2)
+							body = build_body(body_dict)
+							body = gzip.compress(bytes(body, 'utf-8'))
+							flow_copy.request.content = gzip.decompress(body)
 		if 'Cookie' in flow.request.headers:
 			flow_copy.request.headers["Cookie"] = self.cookie
 		if "view" in ctx.master.addons:
@@ -86,6 +118,18 @@ class Writer:
 				self.repeating_path_requests_dictionary[flow.request.path] += 1
 
 		ctx.master.commands.call("replay.client", [flow_copy])
+
+def encode_multipart_formdata(fields, boundary):
+	body = (
+		"".join("--%s\r\n"
+				"Content-Disposition: form-data; name=%s\r\n"
+				"\r\n"
+				"%s\r\n" % (boundary, field, value)
+				for field, value in fields.items()) +
+		"--%s--\r\n" % boundary
+	)
+
+	return body
 def scrape_response_for_tokens(response, tokens):
 	soup = BeautifulSoup(response, "html.parser")
 	tag_list = [tag.name for tag in soup.find_all()]
@@ -97,7 +141,19 @@ def scrape_response_for_tokens(response, tokens):
 			for k,v in t.attrs.items():
 				for token in tokens:
 					if token in v:
-						token_dict[v] = t.attrs["value"]
+						if tag == "meta":
+							if v == t.attrs["content"]:
+								continue
+							token_dict[v] = t.attrs["content"]
+							print("postavljam dict od " + str(v) + "na " + str(t.attrs["content"]))
+						else:
+							print("postavljam dict od " + str(v) + "na " + str(t.attrs["value"]))
+							token_dict[v] = t.attrs["value"]
+					elif token in k:
+						print("postavljam dict od " + str(k) + "na " + str(t.attrs[k]))
+						token_dict[k] = t.attrs[k]
+					else:
+					 continue
 	return token_dict, bool(token_dict)				
 def split_body(body):
 	body_dictionary = {}
@@ -159,9 +215,9 @@ def read_config_file(path):
 			continue
 	config_file.close()
 	return legal_diffs, tokens_for_scraping
-legal_diffs,tokens_for_scraping = read_config_file("odoo_config.txt")
+legal_diffs,tokens_for_scraping = read_config_file("openproject_config.txt")
 print(legal_diffs)
 print(tokens_for_scraping)
-addons = [Writer(legal_diffs, 8070, tokens_for_scraping, "localhost", "odoo/test_v7/")]
+addons = [Writer(legal_diffs, 8001, tokens_for_scraping, "localhost", "openproject/test_v1/")]
 #addons = [Writer(["id"], 9000, [])]
 checker(addons)

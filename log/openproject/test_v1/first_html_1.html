@@ -1,0 +1,830 @@
+openproject/test_v1/
+<!DOCTYPE html>
+<html class="" lang="en" ng-csp="no-unsafe-eval" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="width=device-width" name="viewport"/>
+  <title>
+   OpenProject
+  </title>
+  <meta content="" name="app_base_path">
+   <base href="/"/>
+   <meta data-id="2" data-mail="admin@example.net" data-name="OpenProject Admin" name="current_user"/>
+   <meta data-default-locale="en" data-edition="standard" data-environment="production" data-first-day-of-week="" data-locale="en" name="openproject_initializer"/>
+   <meta content="" name="current_menu_item"/>
+   <meta content="true" name="demo_projects_available"/>
+   <meta content="true" name="boards_demo_data_available"/>
+   <meta content="authenticity_token" name="csrf-param"/>
+   <meta content="947wvselN6wcJDBd4mveUDSnAYfFb+Neb33scenZhr8jsQIBzB1nuOnDa3l4JGwb/+mMJbfjojjt1JbK56SukQ==" name="csrf-token"/>
+   <!-- global meta hooks before any scripts are loaded-->
+   <link href="/assets/favicon-939cbdbd3b0f071269abd28ddfcb2f922d6257ce6ef70ba4941ea1708a564ab3.ico" rel="shortcut icon" type="image/x-icon"/>
+   <link href="/assets/apple-touch-icon-120x120-7cc127b22515cb03208e0cd2ab29c30545d6c1d232a8d68058c751bf29626354.png" rel="apple-touch-icon" sizes="120x120" type="image/png"/>
+   <link href="/assets/openproject-fe4aeceda9880d8e364a5bf264333006f9f55bbb3caf8ea4cedbf469e939e423.css" media="all" rel="stylesheet"/>
+   <script src="/assets/frontend/vendor.40b5a49af3b5cb743a4d.js">
+   </script>
+   <script src="/assets/frontend/polyfills.edeb68febcc3ddfa7163.js">
+   </script>
+   <script src="/assets/frontend/runtime.baa3d2fe77f26693f113.js">
+   </script>
+   <script src="/assets/frontend/main.074518708a6e1846b535.js">
+   </script>
+   <link href="/assets/frontend/styles.74ed3c37efd51d3bbb37.css" media="screen" rel="stylesheet"/>
+   <link href="/highlighting/styles/5843bb64aef72d03449a4f1cfab2bc8cac6a4a5d7e6691e5b67f42df05633600.css" media="all" rel="stylesheet"/>
+   <script src="/assets/application-6b14dddee5a6f19ad2abbfa9cd1555060248ccef0d6cd58eb652f6dd50f5a79d.js">
+   </script>
+   <script src="/assets/locales/en-287044cc1a6fea3dcb4627f4727cd91869385959d62ad09dd0b2a44bee92c58d.js">
+   </script>
+   <!-- Text formatting specific includes -->
+   <script src="/assets/vendor/ckeditor/ckeditor-6d71ff793c26bf6440b52e06c693d9113b0ff288e130f88c5ab0e41f1686e755.js">
+   </script>
+   <!-- Onboarding specific includes -->
+   <script src="/assets/vendor/enjoyhint-478cf0936d28a06756841a13eb21afd2ef9918020a4eee2290d473501b9fdcd8.js">
+   </script>
+   <!-- project specific tags -->
+   <!-- page specific tags -->
+  </meta>
+ </head>
+ <body class="theme-core_design controller-homescreen action-index ee-banners-visible -browser-firefox bcf-deactivated __overflowing_element_container __overflowing_body" data-overflowing-identifier=".__overflowing_body" data-relative_url_root="/">
+  <div class="warning-bar--wrapper">
+  </div>
+  <noscript>
+   <div class="top-shelf">
+    <p>
+     <span>
+      <i aria-hidden="true" class="icon3 icon-warning">
+      </i>
+      <strong>
+       JavaScript disabled
+      </strong>
+     </span>
+     You need to activate JavaScript in order to use OpenProject!
+     <a href="http://www.enable-javascript.com/" target="_blank">
+      Learn more
+     </a>
+    </p>
+   </div>
+  </noscript>
+  <notifications-container>
+  </notifications-container>
+  <div class="can-hide-navigation nosidebar" id="wrapper" style="display:none">
+   <div id="top-menu">
+    <div id="header">
+     <div id="top-menu-items">
+      <h1 class="hidden-for-sighted">
+       Top Menu
+      </h1>
+      <main-menu-toggle>
+      </main-menu-toggle>
+      <a aria-label="Click here to skip over the menu and go to the content" class="hidden-for-sighted skip-navigation-link" href="">
+       Jump to content
+      </a>
+      <ul class="menu_root account-nav" id="account-nav-left">
+       <li class="drop-down">
+        <a aria-haspopup="true" class="" href="" id="projects-menu" title="Select a project">
+         <span class="button--dropdown-text">
+          Select a project
+         </span>
+         <i class="button--dropdown-indicator">
+         </i>
+        </a>
+        <ul class="menu-drop-down-container drop-down--projects" style="display:none">
+         <li data-name="list_projects">
+          <a accesskey="5" class="list-projects-menu-item ellipsis" href="/projects" title="View all projects">
+           <i aria-hidden="true" class="icon-show-all-projects icon4">
+           </i>
+           <span class="menu-item--title ellipsis">
+            View all projects
+           </span>
+          </a>
+         </li>
+         <li data-name="new_project">
+          <a accesskey="9" aria-label="New project" class="new-project-menu-item ellipsis" href="/projects/new" title="New project">
+           <i aria-hidden="true" class="icon-add icon4">
+           </i>
+           <span class="menu-item--title ellipsis">
+            Project
+           </span>
+          </a>
+         </li>
+         <li id="project-search-container">
+          <project-menu-autocomplete class="op-angular-component">
+          </project-menu-autocomplete>
+         </li>
+        </ul>
+       </li>
+      </ul>
+      <div class="hidden-for-mobile" id="logo">
+       <a class="home-link" href="http://localhost:8000/">
+        Home
+       </a>
+      </div>
+      <div class="top-menu-items-right">
+       <div class="top-menu-search--wrapper">
+        <label class="hidden-for-sighted" for="q">
+         Search
+        </label>
+        <global-search-input>
+        </global-search-input>
+       </div>
+       <ul class="menu_root account-nav" id="account-nav-right">
+        <li class="drop-down">
+         <a aria-haspopup="true" class="" href="" icon="icon-menu" title="Modules">
+          <i aria-hidden="true" class="icon-menu">
+          </i>
+          <span class="button--dropdown-text">
+          </span>
+         </a>
+         <ul class="menu-drop-down-container drop-down--modules" id="more-menu" style="display:none">
+          <li data-name="work_packages">
+           <a class="work-packages-menu-item ellipsis" href="http://localhost:8000/work_packages" title="Work packages">
+            <span class="menu-item--title ellipsis">
+             Work packages
+            </span>
+           </a>
+          </li>
+          <li data-name="news">
+           <a class="news-menu-item ellipsis" href="http://localhost:8000/news" title="News">
+            <span class="menu-item--title ellipsis">
+             News
+            </span>
+           </a>
+          </li>
+          <li data-name="cost_reports_global">
+           <a class="cost-reports-global-menu-item ellipsis" href="http://localhost:8000/cost_reports" title="Cost reports">
+            <span class="menu-item--title ellipsis">
+             Cost reports
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="hidden-for-mobile drop-down">
+         <a aria-haspopup="true" class="menu-item--help" href="" title="Help">
+          <i aria-hidden="true" class="icon-help">
+          </i>
+         </a>
+         <ul class="menu-drop-down-container drop-down--help" style="display:none">
+          <li>
+           <span class="drop-down--help-headline" title="Getting started">
+            Getting started
+           </span>
+          </li>
+          <section data-augmented-model-wrapper="" data-modal-class-name="onboarding-modal -highlight" data-modal-iframe-url="https://player.vimeo.com/video/163426858?autoplay=1">
+           <li>
+            <a class="modal-wrapper--activation-link" href="" title="Introduction video">
+             Introduction video
+            </a>
+           </li>
+           <div class="modal-wrapper--content">
+            <div class="onboarding--start-modal">
+             <div class="onboarding--top-menu op-modal--modal-header">
+              <i aria-hidden="true" class="icon-context icon-user">
+              </i>
+              <h2>
+               Welcome to OpenProject
+              </h2>
+              <a aria-label="Close popup" class="op-modal--modal-close-button dynamic-content-modal--close-button" title="Close popup">
+               <i aria-hidden="true" class="icon-close">
+               </i>
+              </a>
+             </div>
+             <div class="onboarding--main op-modal--modal-body">
+              <h2>
+               Get an overview
+              </h2>
+              <div class="onboarding--video-block">
+               <div class="onboarding--video-text">
+                <span>
+                 Get a quick overview of project management and team collaboration with OpenProject.
+                </span>
+               </div>
+               <div class="onboarding--video iframe-target-wrapper">
+               </div>
+              </div>
+             </div>
+             <div class="onboarding--footer op-modal--modal-footer">
+              <span>
+               <em>
+                You can restart this video from the help menu
+               </em>
+              </span>
+              <button class="dynamic-content-modal--close-button button -highlight" title="Close">
+               Close
+              </button>
+             </div>
+            </div>
+           </div>
+          </section>
+          <hr class="form--separator"/>
+          <li>
+           <span class="drop-down--help-headline" title="Help and support">
+            Help and support
+           </span>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/enterprise-edition/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=ee-upsale-help-menu" target="_blank" title="Upgrade to Enterprise Edition">
+            Upgrade to Enterprise Edition
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/user-guide/" target="_blank" title="User guides">
+            User guides
+           </a>
+          </li>
+          <li>
+           <a href="https://www.youtube.com/c/OpenProjectCommunity" target="_blank" title="Videos">
+            Videos
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/user-guide/keyboard-shortcuts-access-keys/" target="_blank" title="Shortcuts">
+            Shortcuts
+           </a>
+          </li>
+          <li>
+           <a href="https://community.openproject.com/projects/openproject/forums" target="_blank" title="Community forum">
+            Community forum
+           </a>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/pricing/#support" target="_blank" title="Professional support">
+            Professional support
+           </a>
+          </li>
+          <hr class="form--separator"/>
+          <li>
+           <span class="drop-down--help-headline" title="Additional resources">
+            Additional resources
+           </span>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/data-privacy-and-security/" target="_blank" title="Data privacy and security policy">
+            Data privacy and security policy
+           </a>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=website-help-menu" target="_blank" title="OpenProject website">
+            OpenProject website
+           </a>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/newsletter/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=newsletter-help-menu" target="_blank" title="Security alerts / Newsletter">
+            Security alerts / Newsletter
+           </a>
+          </li>
+          <li>
+           <a href="https://www.openproject.org/blog" target="_blank" title="OpenProject blog">
+            OpenProject blog
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/release-notes/" target="_blank" title="Release notes">
+            Release notes
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/development/report-a-bug/" target="_blank" title="Report a bug">
+            Report a bug
+           </a>
+          </li>
+          <li>
+           <a href="https://community.openproject.org/projects/openproject/roadmap" target="_blank" title="Development roadmap">
+            Development roadmap
+           </a>
+          </li>
+          <li>
+           <a href="https://crowdin.com/projects/opf" target="_blank" title="Add and edit translations">
+            Add and edit translations
+           </a>
+          </li>
+          <li>
+           <a href="https://docs.openproject.org/api" target="_blank" title="API documentation">
+            API documentation
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="last-child drop-down">
+         <a aria-haspopup="true" class="" href="" icon="overridden-by-avatar" title="OpenProject Admin">
+          <i aria-hidden="true" class="overridden-by-avatar">
+          </i>
+          <span class="button--dropdown-text">
+           <user-avatar data-class-list="avatar avatar--gravatar-image avatar--fallback" data-user-id="2" data-user-name="OpenProject Admin">
+           </user-avatar>
+          </span>
+         </a>
+         <ul class="menu-drop-down-container" id="user-menu" style="display:none">
+          <li data-name="my_page">
+           <a class="my-page-menu-item ellipsis" href="/my/page" title="My page">
+            <span class="menu-item--title ellipsis">
+             My page
+            </span>
+           </a>
+          </li>
+          <li data-name="my_account">
+           <a class="my-account-menu-item ellipsis" href="http://localhost:8000/my/account" title="My account">
+            <span class="menu-item--title ellipsis">
+             My account
+            </span>
+           </a>
+          </li>
+          <li data-name="administration">
+           <a class="administration-menu-item ellipsis" href="http://localhost:8000/admin" title="Administration">
+            <span class="menu-item--title ellipsis">
+             Administration
+            </span>
+           </a>
+          </li>
+          <li data-name="logout">
+           <a class="logout-menu-item ellipsis" href="/logout" title="Sign out">
+            <span class="menu-item--title ellipsis">
+             Sign out
+            </span>
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="can-hide-navigation nosidebar" id="main">
+    <div class="content-overlay">
+    </div>
+    <div class="can-hide-navigation nosidebar" id="content-wrapper">
+     <div class="can-hide-navigation nosidebar" id="breadcrumb">
+      <span class="position-label hidden-for-sighted" style="display: block">
+       You are here:
+      </span>
+      <ul class="breadcrumb">
+       <li class="first-breadcrumb-element" style="list-style-image:none;">
+       </li>
+      </ul>
+     </div>
+     <div class="can-hide-navigation nosidebar" id="content">
+      <h1 class="hidden-for-sighted">
+       Content
+      </h1>
+      <h2 class="headline--application">
+       <span>
+        <i aria-hidden="true" class="icon-context icon-enterprise">
+        </i>
+       </span>
+       OpenProject
+      </h2>
+      <section class="widget-boxes -flex">
+       <div class="widget-box welcome">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           Welcome to OpenProject!
+          </h2>
+         </div>
+        </h3>
+        <div class="wiki">
+         <p>
+          Select one of the demo projects to get started with some demo data we have prepared for you.
+         </p>
+         <ul>
+          <li>
+           <a href="/projects/demo-project" rel="noopener noreferrer">
+            Demo project
+           </a>
+           : to get an overview about classical project management.
+          </li>
+          <li>
+           <a href="/projects/your-scrum-project" rel="noopener noreferrer">
+            Scrum project
+           </a>
+           : to learn about Agile and Scrum project management.
+          </li>
+         </ul>
+         <p>
+          Also, you can create a blank
+          <a href="/projects/new" rel="noopener noreferrer">
+           new project
+          </a>
+          .
+         </p>
+         <p>
+          Never stop collaborating. With open source and open mind.
+         </p>
+         <p>
+          You can change this welcome text
+          <a href="/settings" rel="noopener noreferrer">
+           here
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="widget-box projects">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           Projects
+          </h2>
+         </div>
+        </h3>
+        <p class="widget-box--additional-info">
+         Newest visible projects in this instance.
+        </p>
+        <ul class="widget-box--arrow-links">
+         <li>
+          <a href="/projects/your-scrum-project" title="This is a short summary of the goals of this demo Scrum project.">
+           Scrum project
+          </a>
+          <small>
+           (05/21/2020)
+          </small>
+         </li>
+         <li>
+          <a href="/projects/demo-project" title="This is a short summary of the goals of this demo project.">
+           Demo project
+          </a>
+          <small>
+           (05/21/2020)
+          </small>
+         </li>
+        </ul>
+        <div class="widget-box--blocks--buttons">
+         <a aria-label="New project" class="button -alt-highlight" href="/projects/new" title="New project">
+          <i aria-hidden="true" class="button--icon icon-add">
+          </i>
+          <span class="button--text">
+           Project
+          </span>
+         </a>
+         <a class="button -highlight-inverted" href="/projects" title="View all projects">
+          View all projects
+         </a>
+        </div>
+       </div>
+       <div class="widget-box new_features">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           New features
+          </h2>
+         </div>
+        </h3>
+        <homescreen-new-features-block>
+        </homescreen-new-features-block>
+       </div>
+       <div class="widget-box users">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           Users
+          </h2>
+         </div>
+        </h3>
+        <p class="widget-box--additional-info">
+         Newest registered users in this instance.
+        </p>
+        <ul class="widget-box--arrow-links">
+         <li>
+          <a href="/users/2" title="OpenProject Admin">
+           OpenProject Admin
+          </a>
+          <small>
+           (05/21/2020)
+          </small>
+         </li>
+        </ul>
+        <div class="widget-box--buttons">
+         <a class="button -alt-highlight" href="/users/new">
+          <i aria-hidden="true" class="button--icon icon-add">
+          </i>
+          <span class="button--text">
+           Invite user
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="widget-box my_account">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           My account
+          </h2>
+         </div>
+        </h3>
+        <ul class="widget-box--arrow-links">
+         <li>
+          <a href="/my/account" title="Profile">
+           Profile
+          </a>
+         </li>
+         <li>
+          <a href="/my/page" title="My page">
+           My page
+          </a>
+         </li>
+         <li>
+          <a href="/my/password" title="Change password">
+           Change password
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="widget-box news">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           Latest news
+          </h2>
+         </div>
+        </h3>
+        <ul class="widget-box--arrow-links">
+         <li class="-widget-box--arrow-multiline">
+          <div>
+           <user-avatar data-class-list="avatar-mini avatar--gravatar-image avatar--fallback" data-user-id="2" data-user-name="OpenProject Admin">
+           </user-avatar>
+           <a href="/projects/your-scrum-project">
+            Scrum project
+           </a>
+           :
+           <a href="/news/2-welcome-to-your-scrum-demo-project">
+            Welcome to your Scrum demo project
+           </a>
+           <br/>
+           <span class="additional-information">
+            Added by
+            <a href="/users/2" title="User OpenProject Admin">
+             OpenProject Admin
+            </a>
+            <time class="timestamp" datetime="2020-05-21T14:57:27Z" title="05/21/2020 02:57 PM">
+             24 minutes
+            </time>
+            ago
+           </span>
+          </div>
+         </li>
+         <li class="-widget-box--arrow-multiline">
+          <div>
+           <user-avatar data-class-list="avatar-mini avatar--gravatar-image avatar--fallback" data-user-id="2" data-user-name="OpenProject Admin">
+           </user-avatar>
+           <a href="/projects/demo-project">
+            Demo project
+           </a>
+           :
+           <a href="/news/1-welcome-to-your-demo-project">
+            Welcome to your demo project
+           </a>
+           <br/>
+           <span class="additional-information">
+            Added by
+            <a href="/users/2" title="User OpenProject Admin">
+             OpenProject Admin
+            </a>
+            <time class="timestamp" datetime="2020-05-21T14:57:23Z" title="05/21/2020 02:57 PM">
+             24 minutes
+            </time>
+            ago
+           </span>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="widget-box community">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           OpenProject community
+          </h2>
+         </div>
+        </h3>
+        <ul class="widget-box--arrow-links">
+         <li>
+          <a class="openproject--static-link" href="https://docs.openproject.org/user-guide/" target="_blank">
+           User guides
+          </a>
+         </li>
+         <li>
+          <a class="help-link-shortcuts-link" title="Shortcuts">
+           Shortcuts
+          </a>
+         </li>
+         <li>
+          <a class="openproject--static-link" href="https://community.openproject.com/projects/openproject/forums" target="_blank">
+           Community forum
+          </a>
+         </li>
+         <li>
+          <a class="openproject--static-link" href="https://www.openproject.org/pricing/#support" target="_blank">
+           Professional support
+          </a>
+         </li>
+         <li>
+          <a aria-label="OpenProject website" href="https://www.openproject.org/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=website-home-screen" target="_blank" title="OpenProject website">
+           OpenProject website
+          </a>
+         </li>
+         <li>
+          <a aria-label="Security alerts / Newsletter" href="https://www.openproject.org/newsletter/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=newsletter-home-screen" target="_blank" title="Security alerts / Newsletter">
+           Security alerts / Newsletter
+          </a>
+         </li>
+         <li>
+          <a class="openproject--static-link" href="https://www.openproject.org/blog" target="_blank">
+           OpenProject blog
+          </a>
+         </li>
+         <li>
+          <a class="openproject--static-link" href="https://docs.openproject.org/release-notes/" target="_blank">
+           Release notes
+          </a>
+         </li>
+         <li>
+          <a class="openproject--static-link" href="https://docs.openproject.org/development/report-a-bug/" target="_blank">
+           Report a bug
+          </a>
+         </li>
+         <li>
+          <a class="openproject--static-link" href="https://community.openproject.org/projects/openproject/roadmap" target="_blank">
+           Development roadmap
+          </a>
+         </li>
+         <li>
+          <a class="openproject--static-link" href="https://crowdin.com/projects/opf" target="_blank">
+           Add and edit translations
+          </a>
+         </li>
+         <li>
+          <a class="openproject--static-link" href="https://docs.openproject.org/api" target="_blank">
+           API documentation
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="widget-box administration">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           Administration
+          </h2>
+         </div>
+        </h3>
+        <ul class="widget-box--arrow-links">
+         <li>
+          <a href="/projects" title="Projects">
+           Projects
+          </a>
+         </li>
+         <li>
+          <a href="/users" title="Users">
+           Users
+          </a>
+         </li>
+         <li>
+          <a href="/admin/groups" title="Groups">
+           Groups
+          </a>
+         </li>
+         <li>
+          <a href="/admin/roles" title="Roles and permissions">
+           Roles and permissions
+          </a>
+         </li>
+         <li>
+          <a href="/types" title="Work package types">
+           Work package types
+          </a>
+         </li>
+         <li>
+          <a href="/statuses" title="Work package status">
+           Work package status
+          </a>
+         </li>
+         <li>
+          <a href="/workflows" title="Workflows">
+           Workflows
+          </a>
+         </li>
+         <li>
+          <a href="/custom_fields" title="Custom fields">
+           Custom fields
+          </a>
+         </li>
+         <li>
+          <a href="/settings" title="System settings">
+           System settings
+          </a>
+         </li>
+         <li>
+          <a href="/admin/design" title="Design">
+           Design
+          </a>
+         </li>
+        </ul>
+        <div class="security-badge--container">
+         <object data="https://releases.openproject.com/v1/check.svg?db=postgresql&amp;ee=false&amp;lang=en&amp;type=docker&amp;uuid=239343cc-cb75-460c-83a9-e285e5ee38a1&amp;version=10.5.1" type="image/svg+xml">
+         </object>
+         <a class="security-badge--help-icon icon-context icon-help1" href="https://docs.openproject.org/system-admin-guide/information/#security-badge" target="_blank" title="What is this?">
+         </a>
+        </div>
+       </div>
+       <div class="widget-box upsale">
+        <h3 class="widget-box--header">
+         <div class="widget-box--header-title title-container">
+          <h2 class="editable-toolbar-title--fixed">
+           Upgrade to Enterprise Edition
+          </h2>
+         </div>
+        </h3>
+        <div class="widget-box--description">
+         <img class="widget-box--teaser-image" src="/assets/enterprise_edition-c7c654e772b2c7d9d420fc7c47265b8f40340edf22a5bee885c5f150f9bc5797.png"/>
+         <p>
+          The OpenProject Enterprise Edition builds on top of the Community Edition. It includes premium features and professional support mainly aimed at organizations with more than 10 users that manage business critical projects with OpenProject.
+         </p>
+        </div>
+        <div class="widget-box--blocks--buttons">
+         <a class="button -alt-highlight" href="/admin/enterprise">
+          Start free trial
+         </a>
+         <a aria-label="More information" class="button -highlight-inverted" href="https://www.openproject.org/enterprise-edition/?utm_source=unknown&amp;utm_medium=community-edition&amp;utm_campaign=home-screen" target="_blank" title="More information">
+          <span class="button--text">
+           More information
+          </span>
+          <i aria-hidden="true" class="button--icon icon-external-link">
+          </i>
+         </a>
+        </div>
+        <span>
+         <b>
+          Become a hero!
+         </b>
+        </span>
+        <p>
+         Developers need to pay their bills, too. With the Enterprise Edition, you substantially contribute to this Open Source community effort.
+        </p>
+        <p>
+         <b>
+          We deliver the confidence of a tested and supported enterprise-class project management software - with Open Source and an open mind.
+         </b>
+        </p>
+       </div>
+      </section>
+      <section class="homescreen--links">
+       <a class="homescreen--links--item" href="https://docs.openproject.org/user-guide/" target="_blank" title="User guides">
+        <i aria-hidden="true" class="icon-context icon-rename">
+        </i>
+        User guides
+       </a>
+       <a class="homescreen--links--item" href="https://www.openproject.org/help/glossary/" target="_blank" title="Glossary">
+        <i aria-hidden="true" class="icon-context icon-glossar">
+        </i>
+        Glossary
+       </a>
+       <a class="homescreen--links--item" href="https://docs.openproject.org/user-guide/keyboard-shortcuts-access-keys/" target="_blank" title="Shortcuts">
+        <i aria-hidden="true" class="icon-context icon-shortcuts">
+        </i>
+        Shortcuts
+       </a>
+       <a class="homescreen--links--item" href="https://community.openproject.com/projects/openproject/forums" target="_blank" title="Community forum">
+        <i aria-hidden="true" class="icon-context icon-forums">
+        </i>
+        Community forum
+       </a>
+      </section>
+     </div>
+    </div>
+   </div>
+   <div id="ajax-indicator" style="display:none;">
+    <span>
+     Loading...
+    </span>
+   </div>
+  </div>
+  <script nonce="Og4RooAChgEBG+pHOYIDzC56NhPv/kJp/iwvMXd4wMw=">
+   // execute these lines to prevent flickering when page loads:
+
+  (function($) {
+    var wrapper = $('#wrapper');
+    var savedMainMenuWidth = window.OpenProject.guardedLocalStorage("openProject-mainMenuWidth");
+    var mainMenuCollapsed =  window.OpenProject.guardedLocalStorage("openProject-mainMenuCollapsed");
+
+    if (window.innerWidth < 680) {
+      // force hide on load for mobile
+      $('.can-hide-navigation').addClass('hidden-navigation');
+    }
+
+    if (mainMenuCollapsed === 'true') {
+      savedMainMenuWidth = 0;
+    }
+
+    if (savedMainMenuWidth || savedMainMenuWidth === 0) {
+      document.documentElement.style.setProperty("--main-menu-width", savedMainMenuWidth + 'px');
+    }
+
+    wrapper.show();
+
+    // Wrapper for page-specific JS from deprecated inline functions
+    // no longer available with CSP.
+    
+  }(jQuery));
+  </script>
+ </body>
+</html>

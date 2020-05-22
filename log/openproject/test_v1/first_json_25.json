@@ -1,0 +1,115 @@
+1
+/api/v3/grids?filters=%5B%7B%22scope%22%3A%7B%22operator%22%3A%22%3D%22%2C%22values%22%3A%5B%22%2Fprojects%2Fdemo-project%22%5D%7D%7D%5D
+{"_type":"Collection","total":1,"count":1,"pageSize":30,"offset":1,"_embedded":{"elements":[{"_type":"Grid","id":5,"rowCount":5,"columnCount":2,"options":{},"widgets":[{"_type":"GridWidget","id":17,"identifier":"custom_text","startRow":1,"endRow":2,"startColumn":1,"endColumn":3,"options":{"name":"Welcome","text":{"format":"markdown","raw":"![Teaser](/api/v3/attachments/8/content)","html":"
+<p>
+ <img alt='\"Teaser\"' src='\"/api/v3/attachments/8/content\"'/>
+</p>
+"}}},{"_type":"GridWidget","id":18,"identifier":"custom_text","startRow":2,"endRow":5,"startColumn":1,"endColumn":2,"options":{"name":"Getting started","text":{"format":"markdown","raw":"We are glad you joined! We suggest to try a few things to get started in OpenProject.\n\nDiscover the most important features with our [Guided Tour](/projects/demo-project/work_packages/?start_onboarding_tour=true).\n\n_Try the following steps:_\n\n1. *Invite new members to your project*: &amp;rightarrow Go to [Members](/projects/demo-project/members) in the project navigation.\n2. *View the work in your project*: &amp;rightarrow Go to [Work packages](/projects/demo-project/work_packages) in the project navigation.\n3. *Create a new work package*: &amp;rightarrow Go to [Work packages &amp;rightarrow Create](/projects/demo-project/work_packages/new).\n4. *Create and update a project plan*: &amp;rightarrow Go to [Project plan](/projects/demo-project/work_packages?query_id=2) in the project navigation.\n5. *Activate further modules*: &amp;rightarrow Go to [Project settings &amp;rightarrow Modules](/projects/demo-project/settings/modules).\n6. *Complete your tasks in the project*: &amp;rightarrow Go to [Work packages &amp;rightarrow Tasks](/projects/demo-project/work_packages/details/9/overview?query_id=4).\n\nHere you will find our [User Guides](https://docs.openproject.org/user-guide/).\nPlease let us know if you have any questions or need support. Contact us: [support[at]openproject.com](mailto:support@openproject.com).\n","html":"
+<p>
+ We are glad you joined! We suggest to try a few things to get started in OpenProject.
+</p>
+\n
+<p>
+ Discover the most important features with our
+ <a href='\"/projects/demo-project/work_packages/?start_onboarding_tour=true\"' noreferrer\"="" rel='\"noopener'>
+  Guided Tour
+ </a>
+ .
+</p>
+\n
+<p>
+ <em>
+  Try the following steps:
+ </em>
+</p>
+\n
+<ol>
+ \n
+ <li>
+  \n
+  <em>
+   Invite new members to your project
+  </em>
+  : → Go to
+  <a href='\"/projects/demo-project/members\"' noreferrer\"="" rel='\"noopener'>
+   Members
+  </a>
+  in the project navigation.
+ </li>
+ \n
+ <li>
+  \n
+  <em>
+   View the work in your project
+  </em>
+  : → Go to
+  <a href='\"/projects/demo-project/work_packages\"' noreferrer\"="" rel='\"noopener'>
+   Work packages
+  </a>
+  in the project navigation.
+ </li>
+ \n
+ <li>
+  \n
+  <em>
+   Create a new work package
+  </em>
+  : → Go to
+  <a href='\"/projects/demo-project/work_packages/new\"' noreferrer\"="" rel='\"noopener'>
+   Work packages → Create
+  </a>
+  .
+ </li>
+ \n
+ <li>
+  \n
+  <em>
+   Create and update a project plan
+  </em>
+  : → Go to
+  <a href='\"/projects/demo-project/work_packages?query_id=2\"' noreferrer\"="" rel='\"noopener'>
+   Project plan
+  </a>
+  in the project navigation.
+ </li>
+ \n
+ <li>
+  \n
+  <em>
+   Activate further modules
+  </em>
+  : → Go to
+  <a href='\"/projects/demo-project/settings/modules\"' noreferrer\"="" rel='\"noopener'>
+   Project settings → Modules
+  </a>
+  .
+ </li>
+ \n
+ <li>
+  \n
+  <em>
+   Complete your tasks in the project
+  </em>
+  : → Go to
+  <a href='\"/projects/demo-project/work_packages/details/9/overview?query_id=4\"' noreferrer\"="" rel='\"noopener'>
+   Work packages → Tasks
+  </a>
+  .
+ </li>
+ \n
+</ol>
+\n
+<p>
+ Here you will find our
+ <a href='\"https://docs.openproject.org/user-guide/\"' noreferrer\"="" rel='\"noopener'>
+  User Guides
+ </a>
+ .
+ <br/>
+ \nPlease let us know if you have any questions or need support. Contact us:
+ <a href='\"mailto:support@openproject.com\"' noreferrer\"="" rel='\"noopener'>
+  support[at]openproject.com
+ </a>
+ .
+</p>
+"}}},{"_type":"GridWidget","id":19,"identifier":"project_status","startRow":2,"endRow":3,"startColumn":2,"endColumn":3,"options":{}},{"_type":"GridWidget","id":20,"identifier":"project_description","startRow":3,"endRow":4,"startColumn":2,"endColumn":3,"options":{}},{"_type":"GridWidget","id":21,"identifier":"members","startRow":4,"endRow":5,"startColumn":2,"endColumn":3,"options":{"name":"Members"}},{"_type":"GridWidget","id":22,"identifier":"work_packages_overview","startRow":5,"endRow":6,"startColumn":1,"endColumn":3,"options":{"name":"Work packages"}},{"_type":"GridWidget","id":23,"identifier":"work_packages_table","startRow":6,"endRow":7,"startColumn":1,"endColumn":3,"options":{"name":"Milestones","queryId":"3"}}],"createdAt":"2020-05-21T14:57:29Z","updatedAt":"2020-05-21T14:57:29Z","_links":{"attachments":{"href":"/api/v3/grids/5/attachments"},"addAttachment":{"href":"/api/v3/grids/5/attachments","method":"post"},"scope":{"href":"/projects/demo-project","type":"text/html"},"self":{"href":"/api/v3/grids/5"},"updateImmediately":{"href":"/api/v3/grids/5","method":"patch"},"update":{"href":"/api/v3/grids/5/form","method":"post"}}}]},"_links":{"self":{"href":"/api/v3/grids?offset=1&amp;pageSize=30"},"jumpTo":{"href":"/api/v3/grids?offset=%7Boffset%7D&amp;pageSize=30","templated":true},"changeSize":{"href":"/api/v3/grids?offset=1&amp;pageSize=%7Bsize%7D","templated":true},"create":{"href":"/api/v3/grids/form","method":"post"},"createImmediately":{"href":"/api/v3/grids","method":"post"}}}

@@ -1,0 +1,3 @@
+1
+/api/v3/attachments
+{"_type":"Attachment","id":10,"fileName":"first_html_0.html","fileSize":27262,"description":{"format":"plain","raw":null,"html":""},"contentType":"text/html","digest":{"algorithm":"md5","hash":"de6656afae703eba360183d3028e51b7"},"createdAt":"2020-05-21T15:24:53Z","_links":{"self":{"href":"/api/v3/attachments/10","title":"first_html_0.html"},"author":{"href":"/api/v3/users/2","title":"OpenProject Admin"},"container":{"href":null},"staticDownloadLocation":{"href":"/api/v3/attachments/10/content"},"downloadLocation":{"href":"/api/v3/attachments/10/content"},"delete":{"href":"/api/v3/attachments/10","method":"delete"}}}
